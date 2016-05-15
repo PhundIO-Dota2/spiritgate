@@ -116,8 +116,7 @@ function tick_ping_menu() {
 	var distance = Math.sqrt((cursor_y - context_menu_origin_y) * (cursor_y - context_menu_origin_y) + (cursor_x - context_menu_origin_x) * (cursor_x - context_menu_origin_x)) / ((Game.GetScreenWidth() + Game.GetScreenHeight()) / 2)
 	
 	var inner_limit = 0.014
-	var outer_limit = 0.15
-	if (distance > inner_limit && distance < outer_limit) {
+	if (distance > inner_limit) {
 		context_menu_selection_image.style.opacity = 1
 		if(angle < 23 && angle > -50) {
 			context_menu_selection_image.style.transform = "rotateZ(" + -74 + "deg)"
