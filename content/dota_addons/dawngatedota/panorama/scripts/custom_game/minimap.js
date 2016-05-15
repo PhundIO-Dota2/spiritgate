@@ -51,26 +51,33 @@ function on_mouse_out() {
 var left_click_tracker = false
 var right_click_tracker = false
 
+var is_left_clicking_outside_minimap = false;
+
 function update_minimap() {
 	$.Schedule(0.01, update_minimap)
-	if(is_in_minimap) {
-		if(GameUI.IsMouseDown(0)) {
+	if(GameUI.IsMouseDown(0)) {
+		if(is_in_minimap && !is_left_clicking_outside_minimap) {
 			click_minimap()
-			if(!left_click_tracker) {
-				
-			}
-			left_click_tracker = true
 		} else {
-			left_click_tracker = false;
+			is_left_clicking_outside_minimap = true;
 		}
-		if(GameUI.IsMouseDown(1)) {
-			if(!right_click_tracker) {
+		if(!left_click_tracker) {
+			
+		}
+		left_click_tracker = true
+	} else {
+		left_click_tracker = false;
+		is_left_clicking_outside_minimap = false;
+	}
+	if(GameUI.IsMouseDown(1)) {
+		if(!right_click_tracker) {
+			if(is_in_minimap) {
 				right_click_minimap()
 			}
-			right_click_tracker = true
-		} else {
-			right_click_tracker = false;
 		}
+		right_click_tracker = true
+	} else {
+		right_click_tracker = false;
 	}
 
 	var camera_pos = Game.ScreenXYToWorld(Game.GetScreenWidth() / 2, Game.GetScreenHeight() / 2)
