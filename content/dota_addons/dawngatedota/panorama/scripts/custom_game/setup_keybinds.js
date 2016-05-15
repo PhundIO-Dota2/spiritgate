@@ -17,3 +17,4 @@ Game.AddCommand( "+SpiritgateAbilityW", WrapFunction("SpiritgateAbilityW"), "", 
 Game.AddCommand( "+SpiritgateAbilityE", WrapFunction("SpiritgateAbilityE"), "", 0 );
 Game.AddCommand( "+SpiritgateAbilityR", WrapFunction("SpiritgateAbilityR"), "", 0 );
 Game.AddCommand( "+SpiritgateAbilityWard", WrapFunction("SpiritgateAbilityWard"), "", 0 );
+Game.AddCommand( "+SpiritgateSelectChat", WrapFunction("SpiritgateSelectChat"), "", 0 );

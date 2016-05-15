@@ -3,10 +3,16 @@ var context_menu_origin_y = 0
 var current_context_menu_selection = null
 
 function tick_ping_menu() {
-	if($("#ContextPingMenu") == null){
+	if($("#ContextPingMenu") == null) {
 		$.CreatePanel("Panel", $.GetContextPanel(), "ContextPingMenu")
 		$.CreatePanel("Image", $("#ContextPingMenu"), "ContextPingMenuImage")
 		$.CreatePanel("Image", $("#ContextPingMenuImage"), "ContextPingSelectionImage")
+
+		$.CreatePanel("Label", $("#ContextPingMenuImage"), "ContextPingLabelRetreat")
+		$.CreatePanel("Label", $("#ContextPingMenuImage"), "ContextPingLabelAttention")
+		$.CreatePanel("Label", $("#ContextPingMenuImage"), "ContextPingLabelMissing")
+		$.CreatePanel("Label", $("#ContextPingMenuImage"), "ContextPingLabelOnMyWay")
+		$.CreatePanel("Label", $("#ContextPingMenuImage"), "ContextPingLabelDanger")
 	}
 	var context_menu = $("#ContextPingMenu")
 	var context_menu_size = 25
@@ -19,11 +25,73 @@ function tick_ping_menu() {
 	context_menu_image.style.width = "height-percentage(100%)"
 	context_menu_image.style.horizontalAlign = "center"
 
+	var label = $("#ContextPingLabelRetreat")
+	label.style.color = "#EEEEEE"
+	label.style.marginLeft = "13%"
+	label.style.marginTop = "75%"
+	label.style.fontWeight = "bold";
+	label.style.fontSize = "24px;"
+	label.style.textShadow = "0px 0px 4px #000000"
+	label.text = "Retreat"
+
+	label = $("#ContextPingLabelAttention")
+	label.style.color = "#EEEEEE"
+	label.style.marginLeft = "5%"
+	label.style.marginTop = "37%"
+	label.style.fontWeight = "bold";
+	label.style.fontSize = "24px;"
+	label.style.textShadow = "0px 0px 4px #000000"
+	label.text = "Attention"
+
+	label = $("#ContextPingLabelMissing")
+	label.style.color = "#EEEEEE"
+	label.style.marginLeft = "55%"
+	label.style.marginTop = "75%"
+	label.style.fontWeight = "bold";
+	label.style.fontSize = "24px;"
+	label.style.textShadow = "0px 0px 4px #000000"
+	label.text = "Missing"
+
+	label = $("#ContextPingLabelOnMyWay")
+	label.style.color = "#EEEEEE"
+	label.style.marginLeft = "59%"
+	label.style.marginTop = "40%"
+	label.style.fontWeight = "bold";
+	label.style.fontSize = "20px;"
+	label.style.textShadow = "0px 0px 4px #000000"
+	label.text = "On My Way"
+
+	label = $("#ContextPingLabelDanger")
+	label.style.color = "#EEEEEE"
+	label.style.marginLeft = "34.5%"
+	label.style.marginTop = "10%"
+	label.style.fontWeight = "bold";
+	label.style.fontSize = "24px;"
+	label.style.textShadow = "0px 0px 4px #000000"
+	label.text = "Danger"
+
 	if(GameUI.IsMouseDown(0) && GameUI.IsAltDown()) {
 		$.Schedule(0.01, tick_ping_menu)
 	} else {
 		if(current_context_menu_selection != null) {
 			GameUI.PingMinimapAtLocation(GameUI.GetScreenWorldPosition([context_menu_origin_x, context_menu_origin_y]))
+			var message = ""
+			if(current_context_menu_selection == 3) {
+				message = "Retreat!"
+			}
+			if(current_context_menu_selection == 4) {
+				message = "Attention Over here!"
+			}
+			if(current_context_menu_selection == 5) {
+				message = "Danger!"
+			}
+			if(current_context_menu_selection == 1) {
+				message = "On my way!"
+			}
+			if(current_context_menu_selection == 2) {
+				message = "Enemy Missing!"
+			}
+			GameEvents.SendCustomGameEventToServer("SpiritgateChat", { text: message })
 		}
 		current_context_menu_selection = null
 		context_menu.style.opacity = 0

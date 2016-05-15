@@ -1,33 +1,14 @@
-#BaseChatPaneMessages {
-	flow-children: down;
+#ChatMessage {
 	width: 100%;
-	height: fill-parent-flow(1);
-	overflow: squish scroll;
-}
-#BaseChatPaneMessages Label {
-	font-size: 26px;
+	height: 40px;
 }
 
-.ChatEntry {
-	height: 42px;
-}
-#ChatEntry {
-	width: fill-parent-flow(1);
-	height: 100%;
-}
-#ChatEntrySubmitButton {
-	width: 90px;
-	height: 100%;
-}
-#ChatEntrySubmitButton Label {
-	text-align: center;
-	width: 100%;
-	margin-top: 25%;
-	height: 100%;
-	border: 1px solid #AAA;
-	margin: 1px;
-}
-#MessageAvatar {
-	width: 26px;
-	margin-top: 6px;
+#ChatMessage Label {
+	margin: 2px;
+	font-size: 20px;
+	text-align: right;
+	horizontal-align: right;
+
+	background-color: #00000055;
+	border: 1px solid #000000AA;
 }

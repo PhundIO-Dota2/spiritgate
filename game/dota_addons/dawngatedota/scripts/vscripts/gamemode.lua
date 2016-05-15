@@ -208,8 +208,18 @@ function GameMode:InitGameMode()
   CustomGameEventManager:RegisterListener("MinimapMove", Dynamic_Wrap(GameMode, "OnMinimapMove"))
   CustomGameEventManager:RegisterListener("MinimapMovePlayer", Dynamic_Wrap(GameMode, "OnMinimapMovePlayer"))
 
+  CustomGameEventManager:RegisterListener("ContextPingSend", Dynamic_Wrap(GameMode, "OnContextPingSend"))
+
   GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, "FilterExecuteOrder"), self )
   GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, "FilterDamage"), self)
+end
+
+function GameMode:OnContextPingSend(source, event)
+  local pid = source.PlayerID
+  local entity = PlayerResource:GetSelectedHeroEntity(pid)
+
+  local ping_type = source.ping_type
+  GameRules:SendCustomMessageToTeam("TEST 123 " .. ping_type, entity:GetTeamNumber(), 0,0)
 end
 
 function GameMode:OnMinimapMove(source, event)

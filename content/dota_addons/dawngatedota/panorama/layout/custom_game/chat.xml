@@ -1,0 +1,19 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/root.css" />
+    <include src="file://{resources}/styles/custom_game/chat.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/chat.js" /> 
+  </scripts>
+  <Panel hittest="false" class="ChatHUDBase flow-right fill">
+    <Panel hittest="false" id="OffsetChat" style="width: 75%; height: 100%;"/>
+    <Panel hittest="false" id="Chat" style="width: 25%; height: 50%; margin-top: 12%;" class="flow-down">
+      <Panel hittest="false" id="ChatMessages" style="height: 90%; width: 98.5%;" class="flow-down">
+      </Panel>
+      <Panel hittest="false" id="ChatArea" style="height: 10%; width: 100%;">
+        <TextEntry hittest="false" id="ChatEntry" maxchars="100" style="width: 100%; height: 100%; background-color: #00000000;" oninputsubmit="OnChatSubmitted()"/>
+      </Panel>
+    </Panel>
+  </Panel>
+</root>
