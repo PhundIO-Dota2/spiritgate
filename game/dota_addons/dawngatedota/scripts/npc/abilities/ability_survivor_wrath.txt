@@ -1,0 +1,115 @@
+"ability_survivor_wrath"
+{
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"survivor_wrath"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"80 70 60"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+	
+    "AOERadius"						"255"
+	
+    "TargetInfo" {
+        "Type"      "Radius"
+        "Radius"    "255"
+    }
+
+	"AbilitySpecial"
+    {
+        "01" {
+            "var_type" 						"FIELD_INTEGER"
+            "radius" 						"255"
+        }
+        "02" {
+        	"var_type"						"FIELD_FLOAT"
+        	"fear_duration"					"1.5"
+        }
+        "03" {
+        	"var_type" 						"FIELD_INTEGER"
+        	"buff_duration"					"8"
+        }
+        "04" {
+        	"var_type"						"FIELD_INTEGER"
+        	"bonus_damage"					"175 250 325"
+        }
+        "05" {
+        	"var_type"						"FIELD_FLOAT"
+        	"bonus_damage_power_ratio"		"0.85"
+        }
+    }
+	
+	"OnSpellStart" {
+		"ActOnTargets"
+		{
+            "Target"
+            {
+                "Center" 	"CASTER"
+                "Radius" 	"%radius"
+                "Teams"  	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            }
+			"Action"
+			{
+				"RunScript"
+				{
+					"Caster"				"CASTER"
+					"Target"				"TARGET"
+					"ScriptFile"			"deal_damage"
+					"Function"				"disable"
+                    "Duration"           	"%fear_duration"
+                    "UniversalAbility"		"1"
+                    "DisableModifier"		"modifier_fear"
+				}
+			}
+		}
+		"ApplyModifier" {
+			"Target"		"CASTER"
+			"ModifierName"	"modifier_survivor_wrath_buff"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Axe.BerserkersCall.Item.Shoutmask"
+			"Target"  		"CASTER"
+		}
+        "FireEffect" {
+            "Target"                "CASTER"
+            "EffectName"            "particles/freia_wrath/wrath_base.vpcf"
+            "EffectAttachType"      "attach_origin"
+        }
+    }
+
+    "Modifiers" {
+    	"modifier_survivor_wrath_buff" {
+    		"TextureName"			"survivor_wrath"
+    		"Duration"				"%buff_duration"
+
+            "EffectName"            "particles/freia_wrath/wrath_buff_fire.vpcf"
+            "EffectAttachType"      "follow_origin"
+
+    		"OnAttackLanded" {
+    			"RunScript" {
+    				"ScriptFile"		"abilities/survivor_wrath_lua"
+    				"Function"			"on_attack_landed"
+    				"Target"			"TARGET"
+    				"Caster"			"CASTER"
+    				"Damage"			"%bonus_damage"
+    				"DamagePowerRatio"	"%bonus_damage_power_ratio"
+    			}
+    		}
+    	}
+    }
+
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+        "soundfile" "soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+        "particle"  "particles/freia_wrath/wrath_base.vpcf"
+        "particle"  "particles/freia_wrath/wrath_buff_fire.vpcf"
+	}
+}

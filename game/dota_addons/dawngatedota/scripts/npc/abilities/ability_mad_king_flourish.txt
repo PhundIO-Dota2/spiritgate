@@ -1,0 +1,74 @@
+"ability_mad_king_flourish" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"mad_king_flourish"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"5000000"
+	"AbilityCooldown"				"14 13 12 11 10"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"275"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "distance" 				"275"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/mad_king_flourish_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Distance"			"%distance"
+		}
+		"ApplyModifier" {
+			"Target"		"CASTER"
+			"ModifierName"	"modifier_mad_king_flourish_buff_hidden"
+		}
+		"ApplyModifier" {
+			"Target"		"CASTER"
+			"ModifierName"	"modifier_mad_king_flourish"
+		}
+	}
+	"Modifiers" {
+		"modifier_mad_king_flourish_buff_hidden" {
+			"IsHidden"				"1"
+			"IsPurgable"			"0"
+			"Duration"				"0.4"
+
+			"EffectName"			"particles/kom_flourish/flourish_base.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"States" {
+				"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_mad_king_flourish" {
+			"IsHidden"				"0"
+			"IsPurgable"			"0"
+			"Duration"				"4"
+
+			"EffectName"			"particles/kom_flourish/flourish_buff_base.vpcf"
+			"EffectAttachType"		"follow_origin"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/kom_flourish/flourish_base.vpcf"
+		"particle"	"particles/kom_flourish/flourish_buff_base.vpcf"
+	}
+}

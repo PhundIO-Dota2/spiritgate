@@ -1,0 +1,68 @@
+.hero-selection {
+	width: 100%;
+	height: 100%;
+	margin-top: 42px;
+}
+#HeroSelectionRoot {
+	width: 100%;
+	height: 100%;
+}
+#HeroInspectionScene {
+	width: 100%;
+	height: 70%;
+}
+#SpiritTeamLabel, #MortalTeamLabel {
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 20%;
+	font-size: 40px;
+}
+#MortalTeamLabel { color: #14a0e4; }
+#SpiritTeamLabel { color: #c60706; }
+
+.char-button {
+	border: 1px solid #222222;
+}
+.char-button:hover {
+	border: 1px solid #AAAAAA;
+}
+.char-button:active {
+	border: 2px solid #FFFFFF;
+}
+
+.role_container {
+	width: fill-parent-flow(1);
+	height: 100%;
+}
+.role_button {
+	height: 100%;
+	width: height-percentage(100%);
+	horizontal-align: center;
+	margin: 4px;
+	border: 1px solid black;
+}
+.role_button:hover {
+	border: 1px solid #999999;
+}
+.role_button:active {
+	border: 2px solid #FFFFFF;
+}
+.steam-avatar {
+	border: 1px solid #666;
+}
+
+#LockButton {
+	background-color: black;
+	border: 1px solid white;
+}
+#LockButton:hover {
+	background-color: #333;
+}
+#LockButton:active {
+	background-color: #000;
+	border: 2px solid white;
+}
+#LockButton:disabled {
+	background-color: #00aa00;
+	border: 1px solid #11FF11;
+}

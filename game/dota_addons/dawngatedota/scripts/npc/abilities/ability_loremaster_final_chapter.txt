@@ -1,0 +1,74 @@
+"ability_loremaster_final_chapter" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"loremaster_final_chapter"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"2750"
+	
+	"AbilityCooldown"				"100 90 80"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+    "AbilityChannelTime"			"0.5"
+
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"2750"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"275 375 475"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.8"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"2750"
+        }
+    }
+	
+	"OnAbilityPhaseStart" {
+		"FireSound" {
+			"EffectName"		"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  			"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/loremaster_final_chapter_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"	
+			"Range"				"%range"
+		}
+	}
+	"OnChannelSucceeded" {
+		"FireSound" {
+			"EffectName"		"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  			"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/loremaster_final_chapter_lua"
+			"Function"			"fire"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"	
+			"Range"				"%range"
+		}
+	}
+	"precache" {
+		"particle"	"particles/zalgus_final_chapter/final_chapter_base.vpcf"
+		"particle"	"particles/zalgus_final_chapter/final_chapter_projectile_base.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

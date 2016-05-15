@@ -1,0 +1,95 @@
+"item_glory"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4066"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_glory"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"glory"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"400"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_armour"			"40"
+		}
+	}
+	"Modifiers"
+	{
+		"item_glory_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"modifier_item_glory_datadriven_aura_emitter"
+        {
+            "Passive"               		"1"
+            "IsHidden"              		"0"
+            "EffectName"            		"particles/items2_fx/radiance_owner.vpcf"
+            "EffectAttachType"      		"follow_origin"
+            
+            "Aura"                  		"modifier_item_glory_datadriven_aura"
+            "Aura_Radius"           		"300"
+            "Aura_Teams"            		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Aura_Types"            		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            "Aura_Flags"            		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            "Aura_ApplyToCaster"    		"0"
+        }
+        "modifier_item_glory_datadriven_aura"
+        {
+            "Passive"           			"0"
+            "IsHidden"          			"0"
+            "IsBuff"            			"0"
+            "IsDebuff"          			"1"
+            "IsPurgable"        			"0"
+            "EffectName"            		"particles/items2_fx/radiance.vpcf"
+            "EffectAttachType"      		"follow_origin"
+            
+            "ThinkInterval"         		"1"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"            "deal_damage"
+                    "Function"              "damage"
+                    "Damage"				"20"
+                    "PowerRatio"			"0"
+                    "HealthRatio"			"0.015"
+                    "AbilityOverride"		"GLORY"
+                }
+            }
+        }
+	}
+
+}
+"item_recipe_glory"
+{
+	"ID"							"4065"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_glory"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_pride"
+	}
+}

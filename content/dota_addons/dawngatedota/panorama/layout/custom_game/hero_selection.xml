@@ -1,0 +1,91 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/root.css" />
+		<include src="file://{resources}/styles/custom_game/hero_selection.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/hero_selection.js" />
+	</scripts>
+    <Panel class="hero-selection" hittest="false">
+    	<Image id="HeroSelectionRoot" class="flow-right" src="file://{images}/custom_game/selection_screen/Background.png">
+    		<Panel id="LeftPanel" class="flow-down" style="margin-left: 0%; width: 20.75%; height: 100%;">
+    			<Panel id="MortalTeamLabelPanel"  style="height: 18.9%; width: 100%;">
+					<Label id="MortalTeamLabel" text=""/>
+    			</Panel>
+    			<Panel id="MortalTeam" style="margin-left: 5%; height: 63%; width: 100%;" class="flow-down">
+    			</Panel>
+    		</Panel>
+    		<Panel id="CenterPanel" class="flow-down" style="width: 58.5%; height: 100%;">
+    			<Panel id="SelectTimer" style="width: 100%; height: 15.5%;" class="flow-down">
+    				<Label id="SelectTimerLabel" style="height: 50%; horizontal-align: center; margin: 10px; font-size: 48px; color: #ffffff;" text="60 Seconds Left"/>
+    				<Label id="SelectTimerSelectLabel" style="height: 50%; horizontal-align: center; margin: 10px; font-size: 30px; color: #ffffff;" text=""/>
+    			</Panel>
+    			<Panel id="CharSelectPanel" style="width: 100%; height: 52%;" class="flow-right">
+    				<Panel id="CharSelectArea" class="flow-down" style="height: 100%; width: 48.5%;">
+    				</Panel>
+    				<Panel id="CharSelectInspectorArea" style="margin-left: 0%; width: 100%; height: 100%;">
+	    				<Panel id="CharSelectInspector" class="flow-down" style="margin-left: 10.5%; height: 100%; width: 100%;">
+	    				</Panel>
+	    				<Panel id="RoleInfoInspector" style="height: 100%; width: 100%; margin: 5%;" hittest="false">
+	    					<Label id="RoleInfoLabel" style="height: 100%; width: 100%; margin: 1%; color: white; font-size: 22;" text="" hittest="false">
+	    					</Label>
+	    				</Panel>
+                        <Panel id="SkinSelection" style="margin-left: 5%; width: 15%; height: 100%;" class="flow-down" hittest="false">
+                            <Label id="SkinSelectionTitle" style="width: 100%; height: 10%; color: white;" text=""/>
+                            <Panel id="SkinSelectionArea" style="width: 100%; height: 90%;" class="flow-down" hittest="false">
+
+                            </Panel>
+                        </Panel>
+    				</Panel>
+    			</Panel>
+    			<Panel id="SelectRoleContainer" style="width: 100%; height: 4%;" class="flow-right">
+    				<Label text="" style="width: 50%; height: 100%; font-size: 28px; color: white; text-align: center;"/>
+    			</Panel>
+    			<Panel id="BottomRowCenter" style="width: 100%; height: 8%; margin-top: 2%;" class="flow-right">
+    				<Panel id="RolesPanel" style="width: 50%; height: 100%;" class="flow-right">
+    					<Panel class="role_container">
+    						<Button id="RoleTactician" class="role_button" onmouseover="RoleMouseOver('Tactician')" onmouseout="RoleMouseOut('Tactician')" onactivate="RoleSelect('Tactician')">
+    							<Image id="RoleTacticianImage" src="file://{images}/custom_game/roles/role_tactician.png" class="fill"/>
+    						</Button>
+    					</Panel>
+    					<Panel class="role_container">
+    						<Button id="RoleGladiator" class="role_button" onmouseover="RoleMouseOver('Gladiator')" onmouseout="RoleMouseOut('Gladiator')" onactivate="RoleSelect('Gladiator')">
+    							<Image id="RoleGladiatorImage" src="file://{images}/custom_game/roles/role_gladiator.png" class="fill"/>
+    						</Button>
+    					</Panel>
+    					<Panel class="role_container">
+    						<Button id="RoleHunter" class="role_button" onmouseover="RoleMouseOver('Hunter')" onmouseout="RoleMouseOut('Hunter')" onactivate="RoleSelect('Hunter')">
+    							<Image id="RoleHunterImage" src="file://{images}/custom_game/roles/role_hunter.png" class="fill"/>
+    						</Button>
+    					</Panel>
+    					<Panel class="role_container">
+    						<Button id="RolePredator" class="role_button" onmouseover="RoleMouseOver('Predator')" onmouseout="RoleMouseOut('Predator')" onactivate="RoleSelect('Predator')">
+    							<Image id="RolePredatorImage" src="file://{images}/custom_game/roles/role_predator.png" class="fill"/>
+    						</Button>
+    					</Panel>
+    				</Panel>
+    				<Panel id="LockButtonPanel" style="width: 50%; height: 100%;">
+    					<Button id="LockButton" style="width: 100%; height: 100%; margin: 3%;" onactivate="LockSelections()">
+    						<Label id="LockButtonLabel" style="color: white; font-size: 40px; width: 100%; vertical-align: center; text-align: center;" text="Lock Shaper and Role"/>
+    					</Button>
+    				</Panel>
+    			</Panel>
+                <Panel id="BottomPanelChat" style="width: 100%; height: 18.5%;" class="flow-down">
+                    <Panel id="BottomPanelChatArea" style="width: 100%; height: 84%; overflow: squish scroll;" class="flow-down">
+
+                    </Panel>
+                    <Panel id="BottomPanelChatEntry" style="width: 100%; height: 15%;" class="flow-right">
+                        <TextEntry id="ChatEntry" maxchars="100" placeholder="Chat..." style="width: 100%; height: 100%;" oninputsubmit="OnChatSubmitted()"/>
+                    </Panel>
+                </Panel>
+    		</Panel>
+            <Panel id="RightPanel" class="flow-down" style="width: 20.75%; height: 100%;">
+                <Panel id="SpiritTeamLabelPanel"  style="height: 18.9%; width: 100%;">
+                    <Label id="SpiritTeamLabel" text=""/>
+                </Panel>
+                <Panel id="SpiritTeam" style="height: 63%; width: 100%;" class="flow-down">
+                </Panel>
+            </Panel>
+    	</Image>
+    </Panel>
+</root>

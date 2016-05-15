@@ -1,0 +1,97 @@
+"ability_rotting_tomb_desecrated_ground" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"rotting_tomb_desecrated_ground"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"650"
+	
+	"AbilityCooldown"				"12"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "275"
+        "Range"		"650"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"75 115 155 195  235"
+        }
+        "02" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"0.7"
+        }
+        "03" {
+        	"var_type"				"FIELD_FLOAT"
+        	"root_duration"			"1"
+        }
+        "04" {
+        	"var_type"				"FIELD_FLOAT"
+        	"persist_duration"		"3"
+        }
+        "05" {
+        	"var_type"				"FIELD_INTEGER"
+        	"%persist_movement_speed_reduction"		"-30"
+        }
+        "06" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"275"
+        }
+		"07" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"650"
+		}
+    }
+	
+    "Modifiers" {
+    	"modifier_desecrated_ground_slow" {
+    		"TextureName"			"rotting_tomb_desecrated_ground"
+    		"IsDebuff"				"1"
+
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%persist_movement_speed_reduction" 
+			}
+    	}
+    	"modifier_desecrated_ground_root" {
+    		"TextureName"			"rotting_tomb_desecrated_ground"
+    		"IsDebuff"				"1"
+
+			"States" {
+				"MODIFIER_STATE_ROOTED" 		"MODIFIER_STATE_VALUE_ENABLED" 
+			}
+    	}
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/rotting_tomb_desecrated_ground_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Caster"				"CASTER"
+
+			"PersistDuration"		"%persist_duration"
+			"Damage"				"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"
+			"RootDuration"			"%root_duration"
+			"Radius"				"%radius"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/desecrator_desecrated_ground/desecrated_ground_base.vpcf"
+	}
+}

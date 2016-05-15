@@ -1,0 +1,32 @@
+{
+	"folders":
+	[
+		{
+			"path": "game\\dota_addons\\dawngatedota\\resource"
+		},
+		{
+			"path": "game\\dota_addons\\dawngatedota\\scripts\\vscripts"
+		},
+		{
+			"path": "game\\dota_addons\\dawngatedota\\scripts\\npc\\abilities"
+		},
+		{
+			"path": "game\\dota_addons\\dawngatedota\\scripts\\npc\\units"
+		},
+		{
+			"path": "game\\dota_addons\\dawngatedota\\scripts\\npc\\heroes"
+		},
+		{
+			"path": "game\\dota_addons\\dawngatedota\\scripts\\npc\\items"
+		},
+		{
+			"path": "content\\dota_addons\\dawngatedota\\soundevents"
+		},
+		{
+			"path": "content\\dota_addons\\dawngatedota\\sounds"
+		},
+		{
+			"path": "content\\dota_addons\\dawngatedota\\panorama"
+		}
+	]
+}

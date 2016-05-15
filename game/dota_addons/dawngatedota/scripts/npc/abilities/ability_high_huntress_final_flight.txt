@@ -1,0 +1,57 @@
+"ability_high_huntress_final_flight" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"high_huntress_final_flight"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"1900"
+	
+	"AbilityCooldown"				"100 90 80"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "1900"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"125 225 325"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.65"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"cast_range"			"1900"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"		"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  			"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/high_huntress_final_flight_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"	
+			"CastRange"			"%cast_range"
+		}
+    }
+	"precache" {
+		"particle"	"particles/nissa_final_flight/final_flight_base.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

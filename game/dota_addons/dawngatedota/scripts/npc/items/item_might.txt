@@ -1,0 +1,77 @@
+"item_might" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4030"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_might"
+	
+	"ItemCost"						"900"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"might"
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "added_health" 			"150"
+        }
+        "02" {
+            "var_type" 				"FIELD_INTEGER"
+            "added_power" 			"15"
+        }
+
+	}
+	"Modifiers" {
+		"modifier_soul_collector" {
+			"IsHidden"	        "0"
+			"IsAuraActiveOnDeath" "1"
+			"RemoveOnDeath" 	"0"
+		} 
+		"modifier_soul_collector_hidden" {
+            "IsHidden"	        "1"
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"IsAuraActiveOnDeath" "1"
+			"RemoveOnDeath" 	"0"
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS"			"4"
+			}
+        }
+        "modifier_soul_collector_passive" {
+            "IsHidden"  "1"
+            "Passive"   "1"
+			"IsAuraActiveOnDeath" "1"
+			"RemoveOnDeath" 	"0"
+            "OnKill" {
+                "RunScript" {
+                    "Target"		"CASTER"
+                    "ScriptFile"	"items/might_lua"
+                    "Function"		"gain_stack"
+                }
+            }
+			"OnDestroy" {
+				"RunScript" {
+					"ScriptFile"		"items/might_lua"
+					"Function"			"on_remove"
+					"Target"			"CASTER"
+				}
+			}
+            "Properties" {
+                "MODIFIER_PROPERTY_HEALTH_BONUS"			"%added_health"
+            }
+        }
+	}
+			
+}
+"item_recipe_might" {
+	"ID"							"4029"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"520"
+	"ItemResult"					"item_might"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"			            "item_power"
+	}
+}

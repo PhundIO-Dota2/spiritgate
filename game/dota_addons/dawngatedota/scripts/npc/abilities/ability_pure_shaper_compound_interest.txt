@@ -1,0 +1,27 @@
+"ability_pure_shaper_compound_interest" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"pure_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_pure_shaper_compound_interest_passive" {
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"		"abilities/pure_shaper_compound_interest_lua"
+					"Function"			"add_stack"
+					"Caster"			"CASTER"
+					"Target"			"TARGET"
+				}
+			}
+		}
+		"modifier_pure_shaper_compound_interest_stack" {
+			"IsDebuff"			"1"
+			"Duration"			"2"
+		}
+	}
+}

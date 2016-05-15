@@ -1,0 +1,80 @@
+"item_furor"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4146"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_furor"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"furor"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_haste"			"30"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_life"			"125"
+		}
+	}
+	"Modifiers"
+	{
+		"item_furor_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+        "modifier_item_furor_datadriven_aura_emitter"
+        {
+            "Passive"               "1"
+            "IsHidden"              "1"
+            
+            "Aura"                  "modifier_item_furor_datadriven_aura"
+            "Aura_Radius"           "800"
+            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types"            "DOTA_UNIT_TARGET_HERO"
+            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            "Aura_ApplyToCaster"    "1"
+        }
+        "modifier_item_furor_datadriven_aura"
+        {
+            "TextureName"		"furor"
+            "OnAttackLanded" {
+            	"RunScript" {
+            		"ScriptFile"		"items/furor_lua"
+            		"Function"			"attack_landed"
+            		"Target"			"TARGET"
+            		"Caster"			"CASTER"
+            	}
+            }
+        }
+	}
+
+}
+"item_recipe_furor"
+{
+	"ID"							"4145"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1880"
+	"ItemResult"					"item_furor"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_inspiration"
+	}
+}

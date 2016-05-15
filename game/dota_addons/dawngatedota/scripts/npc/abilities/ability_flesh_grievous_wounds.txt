@@ -1,0 +1,60 @@
+"ability_flesh_grievous_wounds" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"flesh_grievous_wounds"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+
+	"AbilityCooldown"				"20 19 18 17 16"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 								"FIELD_FLOAT"
+			"%target_health_as_damage"   			"3 3.5 4 4.5 5"
+		}
+		"02" {
+			"var_type"								"FIELD_FLOAT"
+			"%target_health_as_damage_power_ratio"	"0.02"
+		}
+	}
+
+	"OnSpellStart" {
+		"RunScript"	{
+			"ScriptFile"		"abilities/flesh_grievous_wounds_lua"
+			"Function"			"cast"
+		}
+	}
+	
+	"Modifiers" {
+		"modifier_greivous_wounding" {
+			"TextureName"			"flesh_grievous_wounds"
+
+			"Passive"				"1"
+			"IsBuff"				"1"
+			"IsHidden"				"1"
+
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"							"abilities/flesh_grievous_wounds_lua" 
+					"Function"								"AttackLanded"
+					"Target"								"TARGET"
+					"Damage"								"%%target_health_as_damage"
+					"DamagePowerRatio"						"%%target_health_as_damage_power_ratio"
+				}
+			}
+		}
+		"modifier_greivous_wound_up" {
+			"TextureName"			"flesh_grievous_wounds"
+			"IsBuff"				"1"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+	}
+}

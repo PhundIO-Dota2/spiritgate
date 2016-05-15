@@ -1,0 +1,83 @@
+"ability_ancient_babysitter_final_protocol" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"ancient_babysitter_final_protocol"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"500"
+	
+	"AbilityCooldown"				"130 115 100"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+    "TargetInfo" {
+        "Type"      "UnitTargetRadius"
+        "Radius"    "250"
+        "Range"     "500"
+    }
+
+    "AbilitySpecial" {
+    	"01" {
+    		"var_type"				"FIELD_INTEGER"
+    		"damage"				"75 120 165"
+    	}
+    	"02" {
+    		"var_type"				"FIELD_FLOAT"
+    		"damage_power_ratio"	"0.25"
+    	}
+    	"03" {
+    		"var_type"				"FIELD_INTEGER"
+    		"shots"					"5"
+    	}
+    	"04" {
+    		"var_type"				"FIELD_FLOAT"
+    		"consecutive_reduction"	"0.50"
+    	}
+    	"05" {
+    		"var_type"				"FIELD_INTEGER"
+    		"delay"					"2"
+    	}
+    	"06" {
+    		"var_type"				"FIELD_INTEGER"
+    		"radius"				"250"
+    	}
+    }
+
+    "OnSpellStart" {
+		"RunScript" {
+			"ScriptFile" 			"abilities/ancient_babysitter_final_protocol_lua"
+			"Function" 				"on_spell_start"
+			"Damage"				"%damage"
+			"DamagePowerRatio" 		"%damage_power_ratio"
+			"Shots"					"%shots"
+			"ConsecutiveReduction"	"%consecutive_reduction"
+			"Delay"					"%delay"
+			"Radius"				"%radius"
+		}
+		"AttachEffect" {
+			"EffectName"			"particles/faris_final_protocol/final_protocol_target_circle_area.vpcf"
+			"EffectAttachType"		"PATTACH_ABSORIGIN_FOLLOW"
+			"Target"				"TARGET"
+		}
+        "FireSound" {
+            "EffectName"                "Hero_AncientBabysitter.AbilityFinalProtocol"
+            "Target"                    "CASTER"
+        }
+    }
+
+    "precache" {
+    	"particle"		"particles/faris_final_protocol/final_protocol_target_circle_area.vpcf"
+        "particle"      "particles/faris_final_protocol/final_protocol_target_base.vpcf"
+        "particle"      "particles/faris_final_protocol/final_protocol_mini_rocket_base.vpcf"
+        "particle"      "particles/faris_final_protocol/final_protocol_image.vpcf"
+    }
+}

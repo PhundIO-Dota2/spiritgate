@@ -1,0 +1,94 @@
+"item_impulse" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4136"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_impulse"
+	
+	"ItemCost"						"3070"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"impulse"
+	"AbilitySpecial" {
+        "01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"10"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_haste"				"35"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"%movespeed"				"5"
+		}
+	}
+    "Modifiers" {
+        "item_impulse_modifier" {
+            "IsHidden"      "1"
+            "IsBuff"        "1"
+            "IsPurgable"    "0"
+            "Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+	    	"Passive"       "1"
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+            }
+        	"OnOrder" {
+        		"RunScript" {
+        			"ScriptFile"		"items/impulse_lua"
+        			"Function"			"OnOrder"
+        			"Caster"			"CASTER"
+        			"Target"			"TARGET"
+        		}
+        	}
+        }
+        "item_impulse_melee_dash" {
+        	"Duration"		"0.75"
+        	"IsBuff"		"1"
+        	"OnAttackLanded" {
+        		"RunScript" {
+        			"ScriptFile"		"items/impulse_lua"
+        			"Function"			"OnAttackLanded"
+        			"Caster"			"CASTER"
+        			"Target"			"TARGET"
+        		}
+        	}
+        	"OnCreated" {
+        		"RunScript" {
+        			"ScriptFile"		"items/impulse_lua"
+        			"Function"			"ForceAttack"
+        			"Caster"			"CASTER"
+        			"Target"			"TARGET"
+        		}
+        	}
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "750"
+            }
+        }
+        "item_impulse_cooldown" {
+        	"IsDebuff"		"1"
+        	"TextureName"	"impulse"
+        	"Duration"		"20"
+        }
+    }
+
+}
+"item_recipe_impulse"
+{
+	"ID"							"4135"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"2015"
+	"ItemResult"					"item_impulse"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_motion"
+	}
+}

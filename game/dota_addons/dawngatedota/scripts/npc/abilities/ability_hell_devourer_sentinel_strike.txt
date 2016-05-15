@@ -1,0 +1,91 @@
+"ability_hell_devourer_sentinel_strike" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"hell_devourer_sentinel_strike"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"10 9 8 7 6"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 									"FIELD_INTEGER"
+			"damage"									"40 75 110 145 180"
+		}
+		"02" {
+			"var_type"									"FIELD_FLOAT"
+			"damage_power_ratio"						"0.7"
+		}
+		"03" {
+			"var_type"									"FIELD_INTEGER"
+			"radius"									"225"
+		}
+	}
+	
+	"OnSpellStart" {
+		"ApplyModifier" {
+			"Target"		"CASTER"
+			"ModifierName"	"modifier_sentinel_strike"
+		}
+        "FireSound" {
+            "EffectName"    "Hero_WarlockKnight.SentinelStrikeCast"
+            "Target"        "CASTER"
+        }
+		"RunScript" {
+			"ScriptFile"		"basic_attack_reset"
+			"Function"			"Reset"
+			"Target"			"CASTER"
+		}
+	}
+	"Modifiers" {
+		"modifier_sentinel_strike_passive" {
+			"IsHidden"		"1"
+			"Passive"		"1"
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"		"abilities/hell_devourer_sentinel_strike_lua"
+					"Function"			"attack_landed"
+					"Target"			"TARGET"
+					"Radius"			"%radius"
+					"Damage"			"%damage"
+					"PowerRatio"		"%damage_power_ratio"
+				}
+			}
+		}
+		"modifier_sentinel_strike" {
+			"TextureName"		"hell_devourer_sentinel_strike"
+			"Duration"			"6"
+            "OnCreated" {
+                "AttachEffect" {
+                    "EffectName"            "particles/voluc_sentinel_strike_base_ability/sentinel_strike_base.vpcf"
+                    //"EffectAttachType"      "attach_attack1"
+                    "Target"                "TARGET"
+                    "EffectAttachType"      "start_at_customorigin"
+                    "ControlPointEntities" {
+                        "CASTER" "attach_attack1"
+                        "CASTER" "attach_attack1"
+                        "CASTER" "attach_attack1"
+                        "CASTER" "attach_attack1"
+                        "CASTER" "attach_attack1"
+                    }
+                }
+            }
+            "OnAttackLanded" {
+                "FireSound" {
+                    "EffectName"    "Hero_WarlockKnight.SentinelStrikeAttack"
+                    "Target"        "CASTER"
+                }
+            }
+		}
+	}
+	"precache" {
+        "particle"		"particles/voluc_sentinel_strike_base_ability/sentinel_strike_base.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+    }
+}

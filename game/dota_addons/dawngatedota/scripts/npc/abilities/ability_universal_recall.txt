@@ -1,0 +1,35 @@
+"ability_universal_recall" {
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityTextureName"     "universal_recall"
+
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"               "1"
+
+    "AbilityCastPoint"       "0.0"
+
+    "AbilityCooldown"         "5.5"
+
+    "IsCastableWhileHidden"   "1"
+
+    "OnSpellStart" {
+        "RunScript" {
+            "ScriptFile"            "abilities/ability_channeled_lua"
+            "Function"              "cast"
+            "FunctionFile"          "abilities/universal_recall_lua"
+            "OnCast"                "cast"
+            "OnFinish"              "on_finish"
+            "OnCancel"              "on_cancel"
+
+            "CancelOnDamage"        "1"
+            "CancelOnAction"        "1"
+            "CancelOnStun"          "1"
+
+            "Duration"              "5"
+        }
+    }
+
+    "precache" {
+        "particle"      "particles/fountain_tele/fountain_tele_base.vpcf"
+    }
+}

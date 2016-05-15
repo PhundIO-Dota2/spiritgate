@@ -1,0 +1,59 @@
+"item_fate" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4152"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_fate"
+	
+	"ItemCost"						"2790"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"fate"
+	"AbilitySpecial" {
+        "01" {
+			"var_type"			"FIELD_INTEGER"
+			"added_haste"			"60"
+		}
+		"02"{
+			"var_type"			"FIELD_INTEGER"
+			"added_life"			"200"
+		}
+	}
+	"Modifiers" {
+		"item_fate_life_modifier" {
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_fate_effect" {
+			"Passive"		"1"
+			"IsHidden"		"1"
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"		"items/fate_lua"
+					"Function"			"attack_landed"
+				}
+			}
+		}
+	}
+	"precache" {
+		"particle"		"particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_sparks.vpcf"
+	}
+}
+"item_recipe_fate" {
+	"ID"							"4151"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1670"
+	"ItemResult"					"item_fate"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"			"item_inspiration"
+	}
+}

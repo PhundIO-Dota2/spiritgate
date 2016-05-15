@@ -1,0 +1,44 @@
+"item_integrity"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4018"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_integrity"
+	
+	"ItemCost"						"900"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"integrity"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_armour" 			"55"
+        }
+        "02"
+        {
+            "var_type" 				"FIELD_FLOAT"
+            "toughnessII" 			"0.10"
+        }
+	}
+}
+"item_recipe_integrity"
+{
+	"ID"							"4017"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"BaseClass"						"item_recipe_arcane_boots"
+	
+	"ItemCost"						"520"	
+	"ItemShopTags"					""
+	
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_integrity"
+	"ItemRequirements"
+	{
+		"01"						"item_resilience"
+	}
+}

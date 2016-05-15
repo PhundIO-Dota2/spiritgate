@@ -1,0 +1,50 @@
+"npc_dawngate_hero_rotting_tomb" {
+	"override_hero"				"npc_dota_hero_undying"
+
+    "Model"                 	"models/heroes/desecrator/desecrator.vmdl"
+    "ModelScale"            	"7.4"
+    "LoadoutScale"				"7.4"
+	
+	"AbilityLayout" 			"5"
+
+	"Ability1"					"ability_rotting_tomb_forgotten_tombs" 
+	"Ability2"					"ability_rotting_tomb_chilling_presence" 
+	"Ability3"					"ability_rotting_tomb_desecrated_ground" 
+	"Ability7"					"ability_rotting_tomb_deathfog" 
+	"Ability15"					"ability_mindrotting_shaper" 
+
+	"Ability4"					"ability_spacer1"
+	"Ability5"					"ability_universal_ability_ward"
+	"Ability6"					"ability_universal_ability"
+	"Ability8"					"ability_universal_attack"
+	"Ability9"					"ability_universal_recall"
+	"Ability10"					"consumable_vitality_potion" 	
+
+	"ArmorPhysical"				"0"										// Physical protection.
+	"MagicalResistance"			"0"										// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"61"									// Damage range min.
+	"AttackDamageMax"			"61"									// Damage range max.
+    "AttackRate"                "1.5"
+    "AttackAnimationPoint"		"0.3"
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"0"										// Base strength
+	"AttributeStrengthGain"		"0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"										// Base intelligence
+	"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"										// Base agility
+	"AttributeAgilityGain"		"0"										// Agility bonus per level.
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"305"									// Speed.
+	"MovementTurnRate"			"10000.0"								// Turning rate.
+
+	"StatusHealth"				"530"									// Base health.
+	"StatusHealthRegen"			"1.5"									// Health regeneration rate.
+	"StatusMana"				"1"										// Base mana.
+	"StatusManaRegen"			"0"										// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+}

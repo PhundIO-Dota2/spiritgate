@@ -1,0 +1,83 @@
+"ability_hell_devourer_devour" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"hell_devourer_devour"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"10 9.5 9 8.5 8"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+    "TargetInfo" {
+        "Type"      "Cone"
+        "Radius"    "425"
+        "Width"		"1.3"
+    }
+
+	"AbilityCastRange"				"425"
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 									"FIELD_INTEGER"
+			"damage"									"55 95 135 175 215"
+		}
+		"02" {
+			"var_type"									"FIELD_FLOAT"
+			"damage_power_ratio"						"0.6"
+		}
+		"03" {
+			"var_type"									"FIELD_INTEGER"
+			"radius"									"425"
+		}
+		"04" {
+			"var_type"									"FIELD_FLOAT"
+			"haste_per_stack"							"5 7.5 10 12.5 15"
+		}
+		"05" {
+			"var_type"									"FIELD_INTEGER"
+			"haste_shaper"								"2"
+		}
+		"06" {
+			"var_type"									"FIELD_INTEGER"
+			"haste_other"								"1"
+		}
+	}
+	
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"		"abilities/hell_devourer_devour_lua"
+			"Function"			"on_spell_start"
+			"Target"			"POINT"
+			"Radius"			"%radius"
+			"Damage"			"%damage"
+			"PowerRatio"		"%damage_power_ratio"
+			"ShaperStacks"		"%haste_shaper"
+			"OtherStacks"		"%haste_other"
+			"HasteStackRate"	"%haste_per_stack"
+		}
+		"FireSound" {
+			"EffectName"		"Hero_WarlockKnight.Devour"
+			"Target"			"CASTER"
+		}
+	}
+	
+	"Modifiers" {
+		"modifier_hell_devourer_vengeance" {
+			"TextureName"	"hell_devourer_devour"
+			"Duration"		"4"
+		}
+		"modifier_hell_devourer_vengeance_hidden" {
+			"IsHidden"		"1" //Because of the scaling increased haste, hide actual haste value added
+			"Duration"		"4"
+		}
+	}
+	"precache" {
+        "particle"		"particles/voluc_devour/devour_food.vpcf"
+        "particle"      "particles/voluc_devour/devour_ability_base.vpcf"
+		"soundfile"	    "soundevents/custom_sounds.vsndevts"
+    }
+}

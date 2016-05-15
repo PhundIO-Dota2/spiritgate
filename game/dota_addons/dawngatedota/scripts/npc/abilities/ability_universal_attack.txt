@@ -1,0 +1,22 @@
+    "ability_universal_attack"
+    {
+        "ScriptFile"                    "lua_abilities/ability_universal_attack"
+        "BaseClass"                     "ability_lua"
+        "AbilityTextureName"            "juggernaut_blade_dance"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+
+        "AbilityCannotSurge"            "1"
+
+        "AbilityCastPoint"              "0"
+        "AbilityDamage"                 "20"
+        "IsCastableWhileHidden"         "1"
+
+        "AbilityCooldown"               "0"
+        "AbilityChannelTime"            "0"
+        "MaxLevel"                      "1"
+
+        "AbilityManaCost"               "0"
+    }

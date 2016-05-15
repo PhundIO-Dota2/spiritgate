@@ -1,0 +1,83 @@
+"ability_desert_raider_the_big_haul" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"desert_raider_the_big_haul"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"750"
+	
+	"AbilityCooldown"				"120 110 100"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "750"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"150 225 300"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.6"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"%slow"					"-40 -50 -60"
+        }
+        "04" {
+        	"var_type"				"FIELD_INTEGER"
+        	"cast_range"			"750"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/desert_raider_the_big_haul_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"	
+			"CastRange"			"%cast_range"
+		}
+    }
+	"Modifiers" {
+		"modifier_big_haul_slow" {
+			"TextureName"     	"desert_raider_the_big_haul"
+			"IsBuff" 			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"        "1"
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%slow" 
+			}
+		}
+		"modifier_big_haul_self_slow" {
+			"TextureName"     	"desert_raider_the_big_haul"
+			"IsBuff" 			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"        "1"
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-80" 
+			}
+		}
+	}
+	"precache" {
+		"particle"	"particles/kahgen_the_big_haul/the_big_haul_rope.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

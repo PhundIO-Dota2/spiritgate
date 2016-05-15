@@ -1,0 +1,84 @@
+"ability_whale_hunter_surge" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"whale_hunter_surge"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"5000000"
+	"AbilityCooldown"				"13 12 11 10 9"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"400"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"basic_attack_damage"	"40 80 120 160 200"
+		}
+		"02" {
+			"var_type"				"FIELD_FLOAT"
+			"basic_attack_damage_power_ratio"			"0.6"
+		}
+        "03" {
+            "var_type" 				"FIELD_INTEGER"
+            "distance" 				"400"
+        }
+        "04" {
+            "var_type" 				"FIELD_FLOAT"
+            "%movespeed" 			"10 12.5 15 17.5 20"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/whale_hunter_surge_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Distance"			"%distance"
+			"Damage"			"%basic_attack_damage"
+			"DamagePowerRatio"	"%basic_attack_damage_power_ratio"
+		}
+	}
+
+	"Modifiers" {
+		"whale_hunter_surge_movement_speed" {
+			"Duration"		"4"
+
+			"Properties" {
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%movespeed" 
+			}
+		}
+		"whale_hunter_surge_visible_bonus_attack_damage" {
+			"Duration"		"4"
+
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"			"abilities/whale_hunter_surge_lua"
+					"Function"				"on_attack_landed"
+				}
+			}
+
+			"EffectName"		"particles/viridian_surge/surge_buff_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+		"whale_hunter_surge_bonus_attack_damage" {
+			"Duration"		"4"
+			"IsHidden"		"1"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/viridian_surge/surge_buff_base.vpcf"
+	}
+}

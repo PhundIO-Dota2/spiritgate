@@ -1,0 +1,59 @@
+"item_hope"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4088"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_hope"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"hope"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 					"FIELD_INTEGER"
+            "added_armour" 				"65"
+        }
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"40"
+		}
+	}
+	//Unique passive managed in deal_damage
+	"Modifiers" {
+		"modifier_item_hope_stack_armour" {
+			"IsHidden"				"1"
+		}
+		"modifier_item_hope_stack_magic_resistance" {
+			"IsHidden"				"1"
+		}
+		"modifier_item_hope" {
+			"TextureName"			"hope"
+		}
+		"item_hope_cooldown" {
+			"Duration"				"30"
+			"IsDebuff"				"1"
+			"TextureName"			"hope"
+		}
+	}
+}
+"item_recipe_hope"
+{
+	"ID"							"4087"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1600"
+	"ItemResult"					"item_hope"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_resolve"
+	}
+}

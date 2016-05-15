@@ -1,0 +1,68 @@
+"item_stability"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4100"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_stability"
+	
+	"ItemCost"						"2665"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"stability"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"30"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_haste"				"40"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_life"				"335"
+		}
+        "04"
+        {
+            "var_type"                  "FIELD_FLOAT"
+            "added_tenacity"            "30"
+        }
+	}
+	"Modifiers" {
+		"item_stability_modifier" {
+			"Passive" 		"1"  
+			"IsHidden" 		"1"  
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_stability_swift_recovery" {
+			"Duration"			"1"
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "40"
+			}
+		}
+	}
+
+}
+"item_recipe_stability" {
+	"ID"							"4099"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1180"
+	"ItemResult"					"item_stability"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_freedom"
+	}
+}

@@ -1,0 +1,71 @@
+"item_purity"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4010"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_purity"
+	
+	"ItemCost"						"1200"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"purity"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"250"
+        }
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"transfusion"			"15"
+		}
+	}
+	"Modifiers"
+	{
+		"item_purity_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+			"ThinkInterval" "%transfusion"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"items/purity_lua"
+					"Function"			"transfuse"
+					"Target"			"CASTER"
+				}
+			}
+		}
+	}
+	"precache"
+	{
+		"particle"		"particles/transfusion/transfusion_projectile.vpcf"
+	}
+}
+"item_recipe_purity"
+{
+	"ID"							"4009"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"BaseClass"						"item_recipe_arcane_boots"
+	
+	"ItemCost"						"780"	
+	"ItemShopTags"					""
+	
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_purity"
+	"ItemRequirements"
+	{
+		"01"						"item_life"
+	}
+}

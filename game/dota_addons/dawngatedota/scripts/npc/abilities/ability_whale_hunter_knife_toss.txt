@@ -1,0 +1,89 @@
+"ability_whale_hunter_knife_toss" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"whale_hunter_knife_toss"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"0.8"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+	
+    "AOERadius"						"525"
+
+    "TargetInfo" {
+    	"Type"		"Radius"
+    	"Radius"	"525"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"55 90 125 160 195"
+        }
+		"02" {
+			"var_type"				"FIELD_FLOAT"
+			"damage_power_ratio"	"0.55"
+		}
+		"03" {
+			"var_type"				"FIELD_FLOAT"
+			"increased_damage_taken"	"5 7.5 10 12.5 15"
+		}
+        "04" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"525"
+        }
+    }
+	
+	"OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"		"abilities/whale_hunter_knife_toss_lua"
+    		"Function"			"cast"
+    		"Damage"			"%damage"
+    		"DamagePowerRatio"	"%damage_power_ratio"
+    		"IncreasedDamageTaken"	"%increased_damage_taken"
+    		"Radius"			"%radius"
+    	}
+    }
+
+    "Modifiers" {
+    	"modifier_whale_hunter_knife_stuck" {
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+    		"Duration"			"5"
+    		"IsDebuff"			"1"
+
+            "OnCreated" {
+                "AttachEffect" {
+                    "EffectName"        "particles/viridian_knife_toss/knife_toss_hit_base.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+                "AttachEffect" {
+                    "EffectName"        "particles/viridian_knife_toss/knife_toss_hit_indicator.vpcf"
+                    "EffectAttachType"  "follow_overhead"
+                    "Target"            "TARGET"
+                }
+            }
+    	}
+    	"modifier_whale_hunter_knives" {
+    		"Passive"			"1"
+    		"ThinkInterval"		"6"
+    		"OnIntervalThink" {
+    			"RunScript" {
+    				"ScriptFile"	"abilities/whale_hunter_knife_toss_lua"
+    				"Function"		"AddKnife"
+    			}
+    		}
+    	}
+    }
+	 
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"	"particles/whale_hunter/knife_toss.vpcf"
+        "particle"  "particles/viridian_knife_toss/knife_toss_hit_base.vpcf"
+	}
+}

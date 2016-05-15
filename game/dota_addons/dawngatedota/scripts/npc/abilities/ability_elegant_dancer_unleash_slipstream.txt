@@ -1,0 +1,65 @@
+"ability_elegant_dancer_unleash_slipstream"
+{
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"elegant_dancer_unleash_slipstream"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"1100"
+	
+	"AbilityCooldown"				"12 11 10 9 8"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+    	"Type"		"FullLine"
+    	"Radius"	"1100"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"130 180 230 280 330"
+        }
+        "02" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"1.0"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"maximum_range"			"1100"
+        }
+        "04" {
+        	"var_type"				"FIELD_INTEGER"
+        	"storm_damage"			"60 105 150 195 240"
+        }
+        "05" {
+        	"var_type"				"FIELD_FLOAT"
+        	"storm_damage_power_ratio"	"0.65"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/elegant_dancer_unleash_slipstream_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"PowerRatio"		"%damage_power_ratio"	
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/ashabel_unleash/slipstream_base.vpcf"
+	}
+}

@@ -1,0 +1,21 @@
+"ability_wind_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"wind_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_wind_shaper" {
+			"Passive"		"1"
+			"IsHidden"		"1"
+		}
+		"modifier_wind_shaper_slow" {
+			"IsDebuff"		"1"
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-1"
+            }
+		}
+	}
+}

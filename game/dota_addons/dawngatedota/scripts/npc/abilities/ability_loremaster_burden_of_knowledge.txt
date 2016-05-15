@@ -1,0 +1,104 @@
+"ability_loremaster_burden_of_knowledge" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"loremaster_burden_of_knowledge"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    "TargetInfo" {
+        "Type"      "Cone"
+        "Radius"	"1200"
+        "Width"    	"1.1"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 						"FIELD_INTEGER"
+			"bonus_magical_attack_damage"   "15 30 45 60 75"
+		}
+		"02" {
+			"var_type"						"FIELD_FLOAT"
+			"bonus_magical_attack_damage_power_ratio"	"0.55"
+		}
+		"03" {
+			"var_type"						"FIELD_INTEGER"
+			"%slow"							"40 50 60 70 80"
+		}
+		"04" {
+			"var_type"						"FIELD_INTEGER"
+			"empower_interval"				"24 22 20 18 16"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_ArtProdigy.AbilityMuseCast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"	"abilities/loremaster_burden_of_knowledge_lua"
+			"Function"		"SetTarget"
+		}
+	}
+	"OnOwnerSpawned" {
+		"RunScript" {
+			"ScriptFile"	"abilities/loremaster_burden_of_knowledge_lua"
+			"Function"		"Spawn"
+		}
+	}
+	"OnOwnerDied" {
+		"RunScript" {
+			"ScriptFile"	"abilities/loremaster_burden_of_knowledge_lua"
+			"Function"		"Die"
+		}
+	}
+	"OnUpgrade" {
+		"RunScript" {
+			"ScriptFile"	"abilities/loremaster_burden_of_knowledge_lua"
+			"Function"		"Spawn"
+		}
+	}
+	"Modifiers" {
+		"modifier_loremaster_burden" {
+			"TextureName"			"loremaster_burden_of_knowledge"
+			"Passive"				"1"
+			"IsBuff"				"1"
+
+			"EffectName"			"particles/zalgus_burden_of_knowledge/burden_of_knowledge_buff_base.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"							"abilities/loremaster_burden_of_knowledge_lua" 
+					"Function"								"AttackLanded"
+					"Target"								"TARGET"
+					"BonusMagicalAttackDamage"				"%bonus_magical_attack_damage"
+					"BonusMagicalAttackDamagePowerRatio"	"%bonus_magical_attack_damage_power_ratio"
+					"Slow"									"%%slow"
+				}
+			}
+		}
+		"modifier_loremaster_burden_slow_cooldown" {
+			"TextureName"			"loremaster_burden_of_knowledge_cooldown"
+			"IsDebuff"				"1"
+			"Duration"				"%empower_interval"
+		}
+		"modifier_loremaster_burden_slow" {
+			"TextureName"			"loremaster_burden_of_knowledge"
+			"IsDebuff"				"1"
+			"IsPurgable"			"1"
+			"Duration"				"0.5"
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-1"
+            }
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+	}
+}

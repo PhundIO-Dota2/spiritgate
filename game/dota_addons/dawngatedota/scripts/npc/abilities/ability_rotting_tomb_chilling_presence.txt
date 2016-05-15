@@ -1,0 +1,95 @@
+"ability_rotting_tomb_chilling_presence" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"rotting_tomb_chilling_presence"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"10"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+    "AOERadius"						"350"
+	
+    "TargetInfo" {
+        "Type"      "Radius"
+        "Radius"    "350"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 					"FIELD_INTEGER"
+            "radius" 					"350"
+        }
+		"02" {
+            "var_type" 					"FIELD_INTEGER"
+            "%movespeed_reduction" 		"-15 -20 -25 -30 -35"
+        }
+		"03" {
+            "var_type" 					"FIELD_INTEGER"
+            "%attackspeed_reduction" 	"-15 -20 -25 -30 -35" //Mirrored in stat_finder / modifier_rotting_tomb_slow
+        }
+        "04" {
+        	"var_type"					"FIELD_INTEGER"
+        	"duration"					"2"
+        }
+    }
+	
+	"OnSpellStart" {
+		"ActOnTargets" {
+            "Target" {
+                "Center" 	"CASTER"
+                "Radius" 	"%radius"
+                "Teams"  	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            }
+			"Action" {
+				"RunScript" {
+					"ScriptFile"		"deal_damage"
+					"Function"			"disable"
+					"Target"			"TARGET"
+					"DisableModifier"	"modifier_rotting_tomb_slow"
+					"Duration"			"%duration"
+				}
+			}
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/rotting_tomb_chilling_presence_lua"
+			"Function"			"cast"
+		}
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  		"CASTER"
+		}
+		"FireEffect" {
+			"EffectName"		"particles/desecrator_chilling_presence/chilling_presence_base.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+		}
+    }
+	
+	"Modifiers" {
+		"modifier_rotting_tomb_slow" {
+			"TextureName"	"rotting_tomb_chilling_presence"
+			
+			"IsDebuff"		"1"
+			"IsPurgable"	"1"
+
+			"EffectName"		"particles/desecrator_chilling_presence/chilling_presence_debuff.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+
+			//Extended in stat_finder
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%%movespeed_reduction"
+			}
+		}
+	}
+	 
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"	"particles/desecrator_chilling_presence/chilling_presence_base.vpcf"
+	}
+}

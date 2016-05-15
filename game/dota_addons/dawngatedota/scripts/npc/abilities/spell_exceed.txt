@@ -1,0 +1,50 @@
+"spell_exceed" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"spell_exceed"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+
+	"AbilityCooldown"				"90"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+	"IsCastableWhileHidden" 		"1"
+	
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 								"FIELD_INTEGER"
+			"%increased_power"   					"30"
+		}
+		"02" {
+			"var_type"								"FIELD_FLOAT"
+			"added_power"							"30"
+		}
+		"03" {
+			"var_type"								"FIELD_INTEGER"
+			"duration"								"5"
+		}
+	}
+
+	"OnSpellStart" {
+		"ApplyModifier" {
+			"ModifierName"	"modifier_exceed"
+			"Target"		"CASTER"
+		}
+	}
+	"Modifiers" {
+		"modifier_exceed" {
+			"TextureName"		"spell_exceed"
+			"Duration"			"%duration"
+			"EffectName"		"particles/spell_exceed/exceed_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/spell_exceed/exceed_base.vpcf"
+	}
+}

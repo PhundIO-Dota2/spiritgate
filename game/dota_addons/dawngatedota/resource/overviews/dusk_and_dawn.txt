@@ -1,0 +1,8 @@
+dusk_and_dawn
+{
+	material materials/overviews/dusk_and_dawn.vmat
+	pos_x -8192
+	pos_y 8192
+	scale 16.000
+}
+

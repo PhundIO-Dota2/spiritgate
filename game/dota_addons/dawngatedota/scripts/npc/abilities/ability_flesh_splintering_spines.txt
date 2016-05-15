@@ -1,0 +1,56 @@
+"ability_flesh_splintering_spines" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"flesh_splintering_spines"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+
+	"AbilityCooldown"				"100 90 80"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"					"FIELD_INTEGER"
+        	"added_base_damage"			"30 45 60"
+        }
+        "02" {
+    		"var_type"					"FIELD_INTEGER"
+    		"%increased_attack_range"	"20"
+        }
+	}
+
+	"OnSpellStart" {
+		"ApplyModifier" {
+			"ModifierName"		"modifier_flesh_splintering_spines"
+			"Target"			"CASTER"
+		}
+	}
+	
+	"Modifiers" {
+		"modifier_flesh_splintering_spines" {
+			"TextureName"			"flesh_splintering_spines"
+
+			"IsBuff"				"1"
+			"Duration"				"8"
+
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"							"abilities/flesh_splintering_spines_lua" 
+					"Function"								"AttackLanded"
+					"Target"								"TARGET"
+				}
+			}
+			"Properties" {
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%added_base_damage"
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"			"45"
+			}
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/vex_splintering_spines/splintering_spines_base.vpcf"
+	}
+}

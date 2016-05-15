@@ -1,0 +1,73 @@
+"spell_stagger" {
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"AbilityTextureName"			"spell_stagger"
+	
+	"AbilityCastRange"				"625"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"180"
+	"AbilityManaCost"				"0"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"625"
+		}
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"base_damage"			"15"
+		}
+		"03" {
+			"var_type"				"FIELD_INTEGER"
+			"damage_per_level"		"10"
+		}
+		"04" {
+			"var_type"				"FIELD_FLOAT"
+			"minimum_duration"		"0.5"
+		}
+		"05" {
+			"var_type"				"FIELD_FLOAT"
+			"maximum_duration"		"2"
+		}
+		"06" {
+			"var_type"				"FIELD_INTEGER"
+			"%movement_speed_reduction"	"-80"
+		}
+	}
+	
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"			"abilities/spell_stagger_lua"
+			"Function"				"cast"
+			"Target"				"TARGET"
+			"MinimumDuration"		"%minimum_duration"
+			"MaximumDuration"		"%maximum_duration"
+			"MovementSpeedReduction"	"%%movement_speed_reduction"
+			"BaseDamage"			"%base_damage"
+			"DamagePerLevel"		"%damage_per_level"
+			"Radius"				"%radius"
+		}
+	}
+
+	"Modifiers" {
+		"modifier_staggered" {
+			"TextureName"	"spell_stagger"
+			"IsDebuff"		"1"
+
+			"Properties" {
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-1" 
+			}
+		}
+	}
+
+	"precache" {
+		"particle"	"particles/spell_stagger/stagger_base.vpcf"
+		"particle"	"particles/spell_stagger/stagger_hit.vpcf"
+	}
+}

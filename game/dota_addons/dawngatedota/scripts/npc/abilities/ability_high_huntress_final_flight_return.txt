@@ -1,0 +1,25 @@
+"ability_high_huntress_final_flight_return" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"high_huntress_final_flight_return"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"		"abilities/high_huntress_final_flight_lua"
+    		"Function"			"recast"
+    		"Target"			"TARGET"
+    	}
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  		"CASTER"
+		}
+    }
+	 
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+	}
+}

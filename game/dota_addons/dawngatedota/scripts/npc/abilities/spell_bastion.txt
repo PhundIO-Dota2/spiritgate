@@ -1,0 +1,60 @@
+"spell_bastion" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"spell_bastion"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+
+	"AbilityCooldown"				"210"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 								"FIELD_INTEGER"
+			"base_shield"   						"60"
+		}
+		"02" {
+			"var_type"								"FIELD_INTEGER"
+			"shield_per_level"						"20"
+		}
+		"03" {
+			"var_type"								"FIELD_INTEGER"
+			"armour_and_magic_resistance"			"20"				
+		}
+		"04" {
+			"var_type"								"FIELD_INTEGER"
+			"duration"								"2"
+		}
+	}
+
+	"OnSpellStart" {
+		"RunScript"	{
+			"ScriptFile"		"abilities/spell_bastion_lua"
+			"Function"			"cast"
+			"Radius"			"%radius"
+			"BaseShield"		"%base_shield"
+			"ShieldPerLevel"	"%shield_per_level"
+		}
+	}
+	"Modifiers" {
+    	"modifier_bastion_shield" {
+    		"TextureName"		"spell_bastion"
+    		"IsUniversalShield"	"1"
+    		"Duration"			"%duration"
+    		"EffectName"		"particles/spell_bastion/bastion_base.vpcf"
+    		"EffectAttachType"	"follow_hitloc"
+    	}
+    	"modifier_bastion_resists" {
+    		"IsHidden"			"1"
+    		"Duration"			"%duration"
+    	}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/spell_bastion/bastion_base.vpcf"
+	}
+}

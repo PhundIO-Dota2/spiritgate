@@ -1,0 +1,79 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/root.css" />
+    <include src="file://{resources}/styles/custom_game/shop_ui.css" />
+  </styles>
+  
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/shop_ui.js" />
+  </scripts>
+  
+  <Panel class="shop_ui" oncancel="HideShopOnly()" hittest="false">
+    <Panel id="ShopContainer" hittest="false" onactivate="HideShopOnly()" oncontextmenu="HideShopOnly()" style="width: 100%; height: 100%;">
+      <Panel id="Shop" class="shop flow-down is-not-visible" onactivate="">
+        <Label id="ShopTitle" text="Vitality Forging"/>
+        <Panel id="ShopBody" class="flow-down">
+          <Panel id="ItemBuild">
+          </Panel>
+          <Panel id="ShopItemPanel" class="flow-right">
+            <Panel class="shop-tier-panel flow-down" id="ShopItemsTier1" style="margin-left: 48px;">
+              <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemLifePanel" onactivate="ItemPanelOnActivate(1, '', 'Life')" onmouseover="ItemPanelMouseOver('Life')" onmouseout="ItemPanelMouseExit('Life')">
+                <Image class="shop-item shop-item-t1" id="ItemLife" src="file://{images}/custom_game/items/square_items/life.png" style=""/>
+                <Label text="Life\n    Cost: 420"/>
+              </Panel>
+              <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemResiliencePanel" onactivate="ItemPanelOnActivate(1, '', 'Resilience')" onmouseover="ItemPanelMouseOver('Resilience')" onmouseout="ItemPanelMouseExit('Resilience')">
+                <Image class="shop-item shop-item-t1" id="ItemResilience" src="file://{images}/custom_game/items/square_items/resilience.png" style=""/>
+                <Label text="Resilience\n    Cost: 380"/>
+              </Panel>
+              <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemWillPanel" onactivate="ItemPanelOnActivate(1, '', 'Will')" onmouseover="ItemPanelMouseOver('Will')" onmouseout="ItemPanelMouseExit('Will')">
+                <Image class="shop-item shop-item-t1" id="ItemWill" src="file://{images}/custom_game/items/square_items/will.png" style=""/>
+                <Label text="Will\n    Cost: 340"/>
+              </Panel>
+              <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemPowerPanel" onactivate="ItemPanelOnActivate(1, '', 'Power')" onmouseover="ItemPanelMouseOver('Power')" onmouseout="ItemPanelMouseExit('Power')">
+                <Image class="shop-item shop-item-t1" id="ItemPower" src="file://{images}/custom_game/items/square_items/power.png" style=""/>
+                <Label text="Power\n    Cost: 380"/>
+              </Panel>
+              <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemTimePanel" onactivate="ItemPanelOnActivate(1, '', 'Time')" onmouseover="ItemPanelMouseOver('Time')" onmouseout="ItemPanelMouseExit('Time')">
+                <Image class="shop-item shop-item-t1" id="ItemTime" src="file://{images}/custom_game/items/square_items/time.png" style=""/>
+                <Label text="Time\n    Cost: 420"/>
+              </Panel>
+              <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemHungerPanel" onactivate="ItemPanelOnActivate(1, '', 'Hunger')" onmouseover="ItemPanelMouseOver('Hunger')" onmouseout="ItemPanelMouseExit('Hunger')">
+                <Image class="shop-item shop-item-t1" id="ItemHunger" src="file://{images}/custom_game/items/square_items/hunger.png" style=""/>
+                <Label text="Hunger\n    Cost: 460"/>
+              </Panel>
+            </Panel>
+            <Panel class="shop-tier-panel flow-down" id="ShopItemsTier2">
+            </Panel>
+            <Panel class="shop-tier-panel flow-down" id="ShopItemsTier3" style="margin-right: 48px;">
+            </Panel>
+          </Panel>
+        </Panel>
+        <Panel id="ShopBottom" class="flow-right">
+          <Label style="margin-left: 4px;" text="Double click to buy and sell"/>
+          <Panel id="CurrentInventoryPanel" class="flow-right" style="width: 70%; height: 100%;">
+            <Panel id="InventoryItem1" class="current_inventory_item even-space-horiz fill-height">
+            </Panel>
+            <Panel id="InventoryItem2" class="current_inventory_item even-space-horiz fill-height">
+            </Panel>
+            <Panel id="InventoryItem3" class="current_inventory_item even-space-horiz fill-height">
+            </Panel>
+            <Panel id="InventoryItem4" class="current_inventory_item even-space-horiz fill-height">
+            </Panel>
+            <Panel id="InventoryItem5" class="current_inventory_item even-space-horiz fill-height">
+            </Panel>
+            <Panel id="InventoryItem6" class="current_inventory_item even-space-horiz fill-height">
+            </Panel>
+          </Panel>
+        </Panel>
+      </Panel>
+      <Panel class="shop_button_holder flow-right fill" style="margin-bottom: 0%;" hittest="false">
+        <Panel class="PlayerInfoSpacerFaker panel-bottom" style="width: height-percentage(68%); height: 35%;" hittest="false">
+        </Panel>
+        <Panel class="shop_button" onactivate="ShowShop()" hittest="true">
+          <Label id="ShopButtonLabel" text="Shop" class="margin-4">
+          </Label>
+        </Panel>
+      </Panel>
+    </Panel>
+  </Panel>
+</root>

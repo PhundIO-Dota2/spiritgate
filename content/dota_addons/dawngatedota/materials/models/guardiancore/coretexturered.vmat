@@ -1,0 +1,36 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "global_lit_simple.vfx"
+
+	//---- Normal Maps ----
+	F_NORMAL_MAP 1
+
+	//---- Specular ----
+	F_SPECULAR 1
+
+	//---- Color ----
+	g_vColorTint "[1.000000 1.000000 1.000000 0.000000]"
+	g_vTexCoordOffset "[0.000 0.000]"
+	g_vTexCoordScale "[1.000 1.000]"
+	TextureColor "materials/models/guardiancore/coretexturered.png"
+
+	//---- Normal Map ----
+	g_flBumpStrength "1.000"
+	TextureNormal "materials/models/guardiancore/corebumpmap1.png"
+
+	//---- Self Illum ----
+	TextureSelfIllumMask "[0.150000 0.150000 0.150000 0.000000]"
+
+	//---- Specular ----
+	g_flSpecularBloom "5.000"
+	g_flSpecularIntensity "1.300"
+	TextureBloom "[1.000000 1.000000 1.000000 0.000000]"
+	TextureReflectance "[0.500000 0.500000 0.500000 0.000000]"
+
+	SystemAttributes
+	{
+		PhysicsSurfaceProperties "metal"
+	}
+}

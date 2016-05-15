@@ -1,0 +1,76 @@
+"ability_enforcer_revolt" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"enforcer_revolt"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"235"
+	
+	"AbilityCooldown"				"3"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "235"
+    }
+
+    "AbilitySpecial" {
+        "01" {
+            "var_type"                    "FIELD_INTEGER"
+            "damage"                      "45 65 85 105 125"
+        }
+        "02" {
+            "var_type"                    "FIELD_FLOAT"
+            "damage_power_ratio"          "0.4"
+        }
+        "03" {
+            "var_type"                    "FIELD_INTEGER"
+            "boldened_damage"             "65 100 135 170 205"
+        }
+        "04" {
+            "var_type"                    "FIELD_FLOAT"
+            "boldened_damage_power_ratio" "0.8"
+        }
+    	"05" {
+    		"var_type"                    "FIELD_INTEGER"
+    		"range"	                      "235"
+    	}
+    }
+
+    "OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"			  "abilities/enforcer_revolt_lua"
+    		"Function"				  "cast"
+            "Target"                  "TARGET"
+    		"Damage"                  "%damage"
+    		"DamagePowerRatio"        "%damage_power_ratio"
+            "BoldenedDamage"          "%boldened_damage"
+            "BoldenedDamagePowerRatio""%boldened_damage_power_ratio"
+    	}
+        "FireSound" {
+            "Target"                "TARGET"
+            "EffectName"            "Hero_PhantomLancer.SpiritLance.Impact"
+        }
+    }
+
+    "Modifiers" {
+        "modifier_revolt_bold" {
+            "IsHidden"          "1"
+            "Duration"          "3"
+        }
+    }
+
+	"precache" {
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+        "particle"      "particles/basko_revolt/revolt_base.vpcf"
+	}
+}

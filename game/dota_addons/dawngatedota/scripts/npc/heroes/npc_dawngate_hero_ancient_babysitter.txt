@@ -1,0 +1,62 @@
+"npc_dawngate_hero_ancient_babysitter" {
+	"override_hero"				"npc_dota_hero_rattletrap"
+	"SoundSet"					"Hero_AncientBabysitter"
+	"Model"						"models/heroes/faris/faris.vmdl"
+    "ModelScale"                "1"
+
+	"BoundsHullName"            "DOTA_HULL_SIZE_LARGE"
+	"RingRadius"                "90"
+	
+	"AbilityLayout"             "4"
+
+	"Ability1"					"ability_ancient_babysitter_reconfigure" 
+	"Ability2"					"ability_ancient_babysitter_access_memory_sentinel" 
+	"Ability3"					"ability_ancient_babysitter_flashback" 
+	"Ability7"					"ability_ancient_babysitter_final_protocol" 
+	"Ability15"					"ability_pure_shaper" 
+
+	"Ability4"					"ability_spacer1"
+	"Ability5"					"ability_universal_ability_ward"
+	"Ability6"					"ability_universal_ability"
+	"Ability8"					"ability_universal_attack"
+	"Ability9"					"ability_universal_recall"
+	"Ability10"					"consumable_vitality_potion" 
+
+	"Ability11"					"ability_ancient_babysitter_access_memory_reaver" 
+	"Ability12"					"ability_ancient_babysitter_flashback_return" 
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"			"0"									// Magical protection (percentage).
+
+    "AttackRange"               "475"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	"ProjectileSpeed"           "1300"
+    "ProjectileModel"           "particles/faris_reconfigure/reconfigure_ranged_projectile_base.vpcf"
+    
+	"AttackDamageMin"			"59"										// Damage range min.
+	"AttackDamageMax"			"59"										// Damage range max.
+    "AttackRate"                "1.5"
+    "AttackAnimationPoint"		"0.2"
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"0"										// Base strength
+	"AttributeStrengthGain"		"0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"										// Base intelligence
+	"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"										// Base agility
+	"AttributeAgilityGain"		"0"										// Agility bonus per level.
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"310"									// Speed.
+	"MovementTurnRate"			"10000.0"								// Turning rate.
+
+	"StatusHealth"				"530"									// Base health.
+	"StatusHealthRegen"			"1.5"									// Health regeneration rate.
+	"StatusMana"				"1"										// Base mana.
+	"StatusManaRegen"			"0"										// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+
+	"BountyGoldMax"         	"0"
+	"BountyGoldMin"         	"0"
+}

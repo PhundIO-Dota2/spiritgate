@@ -1,0 +1,115 @@
+"ability_survivor_crippling_blow" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"survivor_crippling_blow"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"13 12 11 10 9"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+	
+    "AbilityCastRange"       		"150"
+	"AbilityCastPoint" 				"0.03"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "150"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 						"FIELD_INTEGER"
+			"damage"          				"40 60 80 100 120"
+		}
+        "02" {
+			"var_type" 						"FIELD_FLOAT"
+			"damage_power_ratio"    		"0.25"
+		} 
+		"03" {
+			"var_type"						"FIELD_INTEGER"
+			"%movespeed_slow"				"-40"
+		}
+		"04" {
+			"var_type"						"FIELD_INTEGER"
+			"movespeed_slow_duration"		"3"
+		}
+		"05" {
+			"var_type"						"FIELD_INTEGER"
+			"recast_stun_duration"			"1"
+		}
+		"06" {
+			"var_type"						"FIELD_FLOAT"
+			"recast_rage_cost"				"50"
+		}
+	}
+
+    "OnAbilityPhaseStart" {
+        "RunScript" {
+            "ScriptFile" 		"abilities/survivor_crippling_blow_lua"
+            "Function" 			"precast"
+            "RageRequirement"	"%recast_rage_cost"
+        }
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"					"Hero_Pudge.Dismember"
+			"Target"  						"CASTER"
+		} 
+		"FireSound" {
+			"EffectName"					"Hero_Huskar.ProjectileImpact"
+			"Target"  						"CASTER"
+		} 
+		"RunScript" {
+			"ScriptFile"					"abilities/survivor_crippling_blow_lua"
+			"Function"						"cast"
+			"Damage"						"%damage"
+			"DamagePowerRatio"				"%damage_power_ratio"
+			"Duration"						"%movespeed_slow_duration"
+			"RageRequirement"				"%recast_rage_cost"
+			"StunDuration"					"%recast_stun_duration"
+		}
+	}
+
+	"Modifiers" {
+		"modifier_survivor_crippling_blow_slow" {
+			"TextureName"			"survivor_crippling_blow"
+			"IsDebuff"				"1"
+			"IsPurgable"			"1"
+
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed_slow"
+            }
+            
+            "EffectName"			"particles/freia_crippling_blow/crippling_blow_base.vpcf"
+            "EffectAttachType"		"follow_origin"
+		}
+        "modifier_survivor_crippling_blow_stun"
+        {
+            "TextureName"   "survivor_crippling_blow"
+            
+            "IsDebuff"      "1"
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+
+            "EffectName"			"particles/freia_crippling_blow/crippling_blow_base.vpcf"
+            "EffectAttachType"		"follow_origin"
+        }
+	}
+
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+		"particle"	"particles/freia_crippling_blow/crippling_blow_base.vpcf"
+	}
+}

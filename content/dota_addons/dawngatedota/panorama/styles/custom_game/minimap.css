@@ -1,0 +1,21 @@
+#MinimapPanel {
+	width: 100%; 
+	height: width-percentage(100%); 
+	vertical-align: bottom; 
+	border: 2px solid white;
+	background-color: #000000AA;
+}
+#Minimap {
+	width: 100%;
+	height: 100%;
+	opacity-mask: url('file://{images}/custom_game/minimap_dusk_and_dawn.png');
+	opacity: 0.73;
+}
+
+#MinimapHeroImage {
+	opacity-mask: url('file://{images}/custom_game/minimap_player_icon_mask.png');
+	width: 60%;
+	height: 60%;
+	margin-left: 20%;
+	margin-top: 20%;
+}

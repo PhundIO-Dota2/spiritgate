@@ -1,0 +1,8 @@
+"ability_pure_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"pure_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+}

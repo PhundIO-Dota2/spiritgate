@@ -1,0 +1,1029 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"skewer_tar",
+				"skewer_target"
+			],
+			[
+				"skewer",
+				"skewer_target"
+			],
+			[
+				"skewer_t",
+				"skewer_target_choice"
+			],
+			[
+				"skewer_target_cho",
+				"skewer_target_choices"
+			],
+			[
+				"distance",
+				"distance_passed"
+			],
+			[
+				"GetGrou",
+				"GetGroundPosition"
+			],
+			[
+				"target_",
+				"target_point"
+			],
+			[
+				"modifier_whale_",
+				"modifier_whale_hunter_knife_stuck"
+			],
+			[
+				"whale_hu",
+				"whale_hunter_surge_visible_bonus_attack_damage"
+			],
+			[
+				"whale_",
+				"whale_hunter_surge_lua"
+			],
+			[
+				"OnAttack",
+				"OnAttackLanded	Hit"
+			],
+			[
+				"basic_",
+				"basic_attack_damage_power_ratio"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"GetOwner",
+				"GetPlayerOwner"
+			],
+			[
+				"npc_dota_hero_earth",
+				"npc_dota_hero_earth_spirit"
+			],
+			[
+				"whale_h",
+				"whale_hunter_knife_toss_lua"
+			],
+			[
+				"movement_s",
+				"movement_speed_duration"
+			],
+			[
+				"tick",
+				"ticks_left"
+			],
+			[
+				"GetCursorTarget",
+				"GetCursorCastTarget"
+			],
+			[
+				"GetCursor",
+				"GetCursorPosition"
+			],
+			[
+				"Ability",
+				"AbilityBehavior"
+			],
+			[
+				"modifier_bastion_",
+				"modifier_bastion_resists"
+			],
+			[
+				"modifier_bast",
+				"modifier_bastion_shield"
+			],
+			[
+				"ability-bar",
+				"ability-bar-side-pane"
+			],
+			[
+				"Second",
+				"secondary_damage"
+			],
+			[
+				"MODIFIERPROPERTY_MOVE",
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"
+			],
+			[
+				"dash",
+				"dash_damage_power_ratio"
+			],
+			[
+				"FIELD_",
+				"FIELD_INTEGER"
+			],
+			[
+				"ability_uni",
+				"ability_universal_ability"
+			],
+			[
+				"DOTA_UNIT_ORDER_CAST",
+				"DOTA_UNIT_ORDER_CAST_TARGET_TREE"
+			],
+			[
+				"DOTA_UNIT_ORDER_C",
+				"DOTA_UNIT_ORDER_CAST_TARGET"
+			],
+			[
+				"curr",
+				"current_channeled_ability"
+			],
+			[
+				"chan",
+				"channeled_ability"
+			],
+			[
+				"ApplyDaa",
+				"ApplyDataDrivenModifier"
+			],
+			[
+				"GetTeamN",
+				"GetTeamNumber"
+			],
+			[
+				"Part",
+				"ParticleManager_CreateParticle"
+			],
+			[
+				"modifier_nox",
+				"modifier_nox_aeterna"
+			],
+			[
+				"PATTACH_AB",
+				"PATTACH_ABSORIGIN_FOLLOW"
+			],
+			[
+				"Kill",
+				"Kill"
+			],
+			[
+				"DOTA_TEAM",
+				"DOTA_TEAM_GOODGUYS"
+			],
+			[
+				"PATT",
+				"PATTACH_CUSTOMORIGIN"
+			],
+			[
+				"skin_",
+				"skin_image_panel"
+			],
+			[
+				"ski",
+				"skin_image_panel"
+			],
+			[
+				"lo",
+				"loadout_stats"
+			],
+			[
+				"player_",
+				"player_id_to_64"
+			],
+			[
+				"Pla",
+				"PlayerResource"
+			],
+			[
+				"mouse",
+				"mouse_over_entity"
+			],
+			[
+				"target",
+				"target_info"
+			],
+			[
+				"targ",
+				"target_info"
+			],
+			[
+				"SendServer",
+				"Send_ServerToPlayer"
+			],
+			[
+				"Custom",
+				"CustomGameEventManager"
+			],
+			[
+				"targe",
+				"target_particle"
+			],
+			[
+				"multipl",
+				"multiplied_power"
+			],
+			[
+				"Aplp",
+				"ApplyDataDrivenModifier	No Description Set"
+			],
+			[
+				"modifier",
+				"modifier_pure_shaper_compound_interest_stack"
+			],
+			[
+				"DOTA_",
+				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			],
+			[
+				"pure_",
+				"pure_blood_modifier_ticker"
+			],
+			[
+				"modif",
+				"modifier_name"
+			],
+			[
+				"abili",
+				"ability_name"
+			],
+			[
+				"pur",
+				"pure_blood_modifier"
+			],
+			[
+				"pure",
+				"pure_blood_modifier_ticker"
+			],
+			[
+				"heal",
+				"heal_total"
+			],
+			[
+				"GetModf",
+				"GetModifierStackCount"
+			],
+			[
+				"create",
+				"CreateTimer"
+			],
+			[
+				"CastAbil",
+				"CastAbility	No Description Set"
+			],
+			[
+				"GetControll",
+				"GetMainControllingPlayer	Returns the player ID of the controlling player."
+			],
+			[
+				"CastAbility",
+				"CastAbilityImmediately	Cast an ability immediately."
+			],
+			[
+				"jungl",
+				"jungle_buff_reduction_count"
+			],
+			[
+				"jung",
+				"jungle_buff_reduction_count"
+			],
+			[
+				"SetCuros",
+				"SetCursorTargetingNothing	No Description Set"
+			],
+			[
+				"GetSelected",
+				"GetSelectedHeroEntity	No Description Set"
+			],
+			[
+				"GetPlayer",
+				"GetPlayer	No Description Set"
+			],
+			[
+				"Cast",
+				"CastAbilityOnPosition	Cast an ability on a position."
+			],
+			[
+				"GetAbility",
+				"GetAbilityTargetFlags	No Description Set"
+			],
+			[
+				"modifi",
+				"modifier_mad_king_finale_slow"
+			],
+			[
+				"cast",
+				"CastRange"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"attac",
+				"attack_move_target"
+			],
+			[
+				"SetExp",
+				"SetDeathXP	Set the XP bounty on this unit"
+			],
+			[
+				"universal_att",
+				"universal_attack_recaster"
+			],
+			[
+				"DOTA_UNIT_ATTAK",
+				"DOTA_UNIT_ORDER_ATTACK_MOVE"
+			],
+			[
+				"pyr",
+				"pyre_stacks"
+			],
+			[
+				"bush_",
+				"bush_origin"
+			],
+			[
+				"aff",
+				"affected_unit"
+			],
+			[
+				"applied_",
+				"applied_to_target"
+			],
+			[
+				"Random",
+				"RandomFloat	Get a random ''float'' within a range"
+			],
+			[
+				"pi",
+				"pierced_enemies"
+			],
+			[
+				"SetPAt",
+				"SetParticleControl	Set the control point data for a control on a particle effect"
+			],
+			[
+				"epl",
+				"expl_hits"
+			],
+			[
+				"damage_t",
+				"damage_type"
+			],
+			[
+				"attack",
+				"attack_landed_event"
+			],
+			[
+				"item_bui",
+				"item_built_from_t2"
+			],
+			[
+				"local",
+				"local_role"
+			],
+			[
+				"GetAbil",
+				"GetAbilityName	No Description Set"
+			],
+			[
+				"SetHealth",
+				"SetHealth	No Description Set"
+			],
+			[
+				"unit",
+				"unitMelee"
+			],
+			[
+				"guar",
+				"guardian_level"
+			],
+			[
+				"kill",
+				"killedUnit"
+			],
+			[
+				"Def",
+				"Defenses"
+			],
+			[
+				"mod",
+				"modifier_black_ice"
+			],
+			[
+				"abi",
+				"ability_frost_shaper"
+			],
+			[
+				"SetPAre",
+				"SetParticleControl	Set the control point data for a control on a particle effect"
+			],
+			[
+				"Preca",
+				"PrecacheUnitByNameAsync	Asynchronously precaches a DOTA unit by its dota_npc_units.txt name, provides a callback when it's finished."
+			],
+			[
+				"playerId",
+				"playerIDToIndex"
+			],
+			[
+				"playerto",
+				"playerIDToTeam"
+			],
+			[
+				"selec",
+				"selected_shapers"
+			],
+			[
+				"sele",
+				"selected_roles"
+			],
+			[
+				"dota_hero",
+				"npc_dota_hero_enigma"
+			],
+			[
+				"player",
+				"player_panel_bottom"
+			],
+			[
+				"Char",
+				"CharSelectInspector"
+			],
+			[
+				"char",
+				"char-button"
+			],
+			[
+				"CharSelec",
+				"CharSelectAreaRow"
+			],
+			[
+				"char_",
+				"char_y"
+			],
+			[
+				"shap",
+				"shaper_choices_table"
+			],
+			[
+				"cr",
+				"currentMortalIndex"
+			],
+			[
+				"re",
+				"RebuildPlayers"
+			],
+			[
+				"SetModel",
+				"SetModelScale	Sets the model's scale to "
+			],
+			[
+				"PrecacheUnit",
+				"PrecacheUnitByNameSync	Precaches a DOTA unit by its dota_npc_units.txt name"
+			],
+			[
+				"frost_",
+				"frost_ticker"
+			],
+			[
+				"reso",
+				"resource_width"
+			],
+			[
+				"resource",
+				"resource_modifier"
+			],
+			[
+				"abil",
+				"abil"
+			],
+			[
+				"modifier_",
+				"modifier_soul_collector"
+			],
+			[
+				"dec",
+				"decay_taken"
+			],
+			[
+				"item",
+				"item_strife_power_bonus"
+			],
+			[
+				"strife",
+				"strife_health_bonuses"
+			],
+			[
+				"bonus",
+				"bonus_power_per"
+			],
+			[
+				"item_Stri",
+				"item_strife_stacking"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Gavin/Desktop/changelog.txt",
+			"settings":
+			{
+				"buffer_size": 1236,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 213.0,
+		"last_filter": "package inst",
+		"selected_items":
+		[
+			[
+				"package inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 549.0
+	},
+	"console":
+	{
+		"height": 234.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game"
+	],
+	"file_history":
+	[
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/deal_damage.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/events.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/elegant_dancer_stance_dance_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/items/item_vibrance.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/items/vibrance_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/ability_bar_ui.js",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_ancient_babysitter.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_sculptor_inspiring_strike.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/sculptor_inspiration_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_winters_bride.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/hero_selection.js",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_whale_hunter.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_typhoon.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_tangled_dreamer.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_survivor.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_shepard.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_sculptor.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_rotting_tomb.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_pyrebug.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_purifier.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_noble_shadow.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_merchant_princess.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_mad_king.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_loremaster.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_hell_devourer.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_high_huntress.txt",
+		"/C/Program Files (x86)/Steam/steamapps/common/dota 2 beta/content/dota_addons/dawngatedota/tooltips_english.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_elegant_dancer.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_flesh.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_enforcer.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_cerulean.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_desert_raider.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_art_prodigy.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_alpha.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/main_ui.js",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/addoninfo.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/setup_keybinds.js",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_universal_ability_ward.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/gamemode.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/resource/addon_english.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/units/npc_parasite.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/mapscripts/parasite.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/loremaster_final_chapter_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/addon_game_mode.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/herolist.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_rage_shaper_adrenaline.txt",
+		"/C/Program Files (x86)/Steam/steamapps/common/Crusader Kings II/mod/DontPutModsHere.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/whale_hunter_deep_rising_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_whale_hunter_deep_rising.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/whale_hunter_heartstrike_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_whale_hunter_surge.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_whale_hunter_knife_toss.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_whale_hunter_heartstrike.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/whale_hunter_surge_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/rage_adrenaline_shaper_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/whale_hunter_knife_toss_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/ability_whale_hunter_deep_rising.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/stat_finder.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/panorama/localization/addon_english.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/ability_bar_ui.xml",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/notifications.css",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/notifications.js",
+		"/C/Program Files (x86)/R.G. Mechanics/Sid Meier's Civilization 5/steam_api.ini",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/ward_lua.lua",
+		"/C/Users/Gavin/Desktop/changelog.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_purifier_needle.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_alpha_heart_eater.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_inspired_shaper.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/spiritgate_math_util.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/stat_application_ratios.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/bush_script.lua",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/shop_ui.css",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/shop_ui.xml",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/shop_ui.js",
+		"/C/ftb/FTBHorizonsII/minecraft/config/difficultlife.cfg",
+		"/C/Projects/DoTA 2/dawngatedota/launcher/src/.gitignore",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_universal_recall.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/universal_recall_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/ability_channeled_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/ancient_babysitter_flashback_lua.lua",
+		"/C/Projects/Nekros/src/gun.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_stagger.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_stagger_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_stasis.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_stasis_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_dispel.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_dispel_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_vanquish.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_vanquish_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/units/npc_well_worker.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_wither.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_wither_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/loadout/unique_passive_duelist.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_drain.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/ability_bar_ui.css",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_drain_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/consumable_vitality_potion.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_blitz.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_exceed.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_tailwind.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_deflect.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_blink.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_bastion.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_spacer.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/ability_spacer.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/shepherd_sheep_toss_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_ancient_babysitter_access_memory_reaver.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/typhoon_tidal_prison_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/root.css",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_deflect_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_blitz_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_bastion_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_purifier_leech.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/coffeescript/custom_game/ability_bar_ui.coffee",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/tooltip.js",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/main_ui.xml",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/hero_selection.xml",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/barebones_hud_base.xml",
+		"/C/Users/Gavin/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Gavin/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Projects/Nekros/build.sh",
+		"/C/Projects/Nekros/love/changes.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_shepherd_titanic_charge.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/shepherd_titanic_charge_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_sculptor_kinetic_sculpture.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_shepherd_crook_sweep.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/shepherd_crook_sweep_lua.lua",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_shepherd_battle_cry.txt"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 128.0,
+		"where_history":
+		[
+			"<open folders>",
+			"D:\\Projects\\dawngatedota\\game\\dota_addons\\dawngatedota",
+			"D:\\Projects\\dawngatedota\\game\\dota_addons",
+			"D:\\Projects\\dawngatedota\\game\\dota_addons\\dawngatedota\\",
+			"D:\\Projects\\dawngatedota\\game\\dota_addons\\dawngatedota",
+			"D:\\Projects\\dawngatedota\\game\\dota_addons\\dawngatedota\\scripts",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"deal_damage_heal",
+			"msg",
+			"Msg",
+			"[   VScript ]:",
+			"print",
+			"heal",
+			"invalid input",
+			"damage",
+			"msg",
+			"resource",
+			"msg",
+			"passive",
+			"AbilityName",
+			"6",
+			"GetManaCost",
+			"Mana",
+			"msg",
+			"find_resource_amount",
+			"disable_abilities",
+			"6",
+			"4",
+			"role",
+			"UpdateItem",
+			"OnUpdateInventory",
+			"Button",
+			"ShowShop",
+			"exceed",
+			"ApplyDamage",
+			"Notifications:Bottom",
+			"AbilityRecall",
+			"consumable",
+			"$.Msg",
+			"Entities.GetAbility",
+			"local_ability =",
+			"Entities.GetAbility(local_entity, ability_id",
+			"Entities.GetAbility(local_entity, ability_id ",
+			"Entities.GetAbility(local_entity, ability_id",
+			"BuildAbilityBar",
+			"index",
+			"mortal strike",
+			"mortal_strike",
+			"exceed",
+			"mortal_strike",
+			"spell",
+			"style=\"height: width-percentage(100%); width: fill-parent-flow(1); margin: 4px;\"",
+			"opacity",
+			"17",
+			"GetOffsetX",
+			"SpellBook",
+			"point",
+			"skill",
+			"abilities",
+			"left",
+			"1",
+			"mouse",
+			"disable",
+			"shepard",
+			"stun",
+			"OnAssist",
+			"predator",
+			"OnAssist",
+			"kill_assist",
+			"assist",
+			"modifier_jungle_buff_armour_reduction_hidden",
+			"jungle",
+			"damage",
+			"well.pid",
+			"print",
+			"api",
+			"http://",
+			"SelectShaper",
+			"selectskin",
+			"select",
+			"regen",
+			"gladiat",
+			"tactician",
+			"0",
+			"GetNumber",
+			"Send_ServerToPlayer",
+			"$.Msg",
+			"for",
+			"HEALTH RATIO",
+			"HEALTH RATIO:",
+			"HEALTH COST",
+			"gale",
+			"gake",
+			"haste",
+			"$.Msg",
+			"npc_jungle_scary_fish",
+			"jungle",
+			"kill",
+			"modifier_jungle_buff_armour",
+			"jungle",
+			"modifier_jungle",
+			"haste_",
+			"particles/jungle_buffs/haste_buff.vpcf",
+			"ParticleManager:",
+			"modifier_jungle_buff_haste",
+			"buff",
+			"ability_universal_ability_ward",
+			"caster:HasModifier",
+			"background-color",
+			"=\"\"/>",
+			"\"\"\n",
+			"First cast",
+			"potency",
+			"barebones_spew",
+			"spew",
+			"resolut",
+			"deal_on_hit",
+			"ruin",
+			"conquest",
+			"retribution",
+			"ApplyDamage",
+			"target",
+			"momentum",
+			"is_ability",
+			"inspiration",
+			":\n",
+			"GetAbilityByName",
+			"PlayerPanealRoleImage",
+			"activ",
+			"Event",
+			"disable_abilit",
+			"q",
+			"resource",
+			"$.Msg",
+			"ADDED <font color='#f8d754'>LIFEDRAIN</font>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"class=\"spell-ability\"",
+			"shepherd",
+			"PlayerPanelRoleImage",
+			"ADDED <font color='#fffe6c'>LIFEDRAIN</font>",
+			"ADDED <font color='#ff3333'>LIFE</font>",
+			"<font color='#f8d754'>LIFEDRAIN</font>",
+			"ADDED <font color='#00faff'>MASTERY</font>",
+			"ADDED <font color='#f5c562'>ARMOUR</font>",
+			"ADDED <font color='#e39eed'>MAGIC RESISTANCE</font>",
+			"ADDED <font color='#d1deff'>HASTE</font>",
+			"ADDED <font color='#b8ffb3'>DEFENSE PENETRATION</font>",
+			"ADDED <font color='#ff3333'>LIFE</font>",
+			"ADDED <font color='#54ff52'>POWER</font>",
+			"		",
+			"	",
+			"grievous",
+			"npc_dota_hero_beastmaster       ",
+			"self:GetCaster():GetAttackAnimationPoint() / 3",
+			"binding",
+			"<font color='#54ff52'>POWER RATIO</font>",
+			"ability_ability_high_huntress_wing_clip",
+			"%%",
+			"art_prodigy"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Gavin/Desktop/changelog.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1236,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								298,
+								298
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Dota Reborn Package/dota-kv/dotaKV.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "spiritgate.sublime-project",
+	"replace":
+	{
+		"height": 80.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Projects\\gavingassmann.com\\gavingassmann.com.sublime-project"
+			]
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 490.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 780.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 390.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -1,0 +1,28 @@
+"ability_health_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"health_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_health_shaper_tick" {
+		    "ThinkInterval" "0.1"
+		    "OnIntervalThink" {
+		    	"RunScript"	{
+		    		"ScriptFile"		"abilities/health_shaper_lua"
+		    		"Function"			"tick"
+		    		"Caster"			"CASTER"
+		    		"Target"			"CASTER"
+		    	}
+		    }
+		    "Passive"		"1"
+		    "IsHidden"		"1"
+		}
+		"modifier_health_shaper_power" {
+			"TextureName"	"health_shaper"
+			"IsBuff"		"1"
+		}
+	}
+}

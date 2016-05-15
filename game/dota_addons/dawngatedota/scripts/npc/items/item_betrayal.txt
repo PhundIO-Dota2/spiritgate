@@ -1,0 +1,58 @@
+"item_betrayal"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4094"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_betrayal"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"betrayal"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 					"FIELD_INTEGER"
+            "added_haste" 				"25"
+        }
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"35"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"30"
+		}
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "added_will_thief"          "3"
+        }
+	}
+	"Modifiers" {
+		"modifier_betrayal_contempt" {
+			"Passive"		"1"
+			"IsHidden"		"1"
+		}
+	}
+}
+"item_recipe_betrayal"
+{
+	"ID"							"4093"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_betrayal"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_balance"
+	}
+}

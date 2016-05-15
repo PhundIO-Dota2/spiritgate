@@ -1,0 +1,59 @@
+"item_pursuit"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4999"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_pursuit"
+	
+	"ItemCost"						"2765"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"pursuit"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_power"			"45"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_haste"			"30"
+		}
+	}
+	"Modifiers" {
+		"modifier_pursuit_positive" {
+			"TextureName"		"pursuit"
+			"Duration"			"2"
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"50"
+			}
+		}
+		"modifier_pursuit_negative" {
+			"TextureName"		"pursuit"
+			"IsDebuff"			"1"
+			"Duration"			"2"
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-50"
+			}
+		}
+	}
+}
+"item_recipe_pursuit"
+{
+	"ID"							"4998"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1465"
+	"ItemResult"					"item_pursuit"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_control"
+	}
+}

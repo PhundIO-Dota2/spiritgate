@@ -1,0 +1,145 @@
+"ability_typhoon_tidal_prison" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"typhoon_tidal_prison"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"13 12 11 10 9"
+    
+    "AbilityManaCost"               "50 75 100 125 150"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "850"
+    }
+
+	"AbilityCastRange"				"850"
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 									"FIELD_INTEGER"
+			"damage"									"65 130 180 230 280"
+		}
+		"02" {
+			"var_type"									"FIELD_INTEGER"
+			"movespeed_reduction"					    "-35 -40 -45 -50 -55"
+		}
+		"03" {
+			"var_type"									"FIELD_FLOAT"
+			"power_ratio"								"0.75"
+		}
+        "04" {
+            "var_type"                                  "FIELD_FLOAT"
+            "duration"                                  "2.5"
+        }
+        "05" {
+            "var_type"                                  "FIELD_INTEGER"
+            "radius"                                    "850"
+        }
+	}
+	
+	"OnSpellStart" {
+		"RunScript" {
+            "ScriptFile"        "abilities/typhoon_tidal_prison_lua"
+            "Target"            "POINT"
+            "Function"          "cast"
+            "Damage"            "%damage"
+            "Radius"            "%radius"
+            "Duration"          "%duration"
+            "DamagePowerRatio"  "%power_ratio"
+        }
+		"FireSound" {
+			"EffectName"		"Hero_Winter_Wyvern.SplinterBlast.Splinter"
+			"Target"			"CASTER"
+		}
+	}
+	"OnProjectileHitUnit" {
+		"DeleteOnHit"  "1"
+		"FireSound" {
+			"EffectName"	"Hero_Winter_Wyvern.projectileImpact"
+			"Target"		"TARGET"
+		}
+        "DelayedAction" {
+            "Delay"         "%duration"
+            "Action" {
+                "FireSound" {
+                    "EffectName"        "Hero_TheTyphoon.TidalPrison.Pop"
+                    "Target"            "TARGET"
+                }
+                "ActOnTargets" {
+                    "Target" {
+                        "Center" 	"TARGET"
+                        "Radius" 	"%radius"
+                        "Teams"  	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                        "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                    }
+                    "Action" {
+                        "RunScript" {
+                            "Target"		"TARGET"
+                            "ScriptFile"	"deal_damage"
+                            "Function"		"damage"
+                            "Damage" 		"%damage"
+                            "PowerRatio"	"%power_ratio"
+                        }
+                    }
+                }
+                "RemoveModifier" {
+                    "Target"            "TARGET"
+                    "ModifierName"      "modifier_tidal_prison"
+                }
+            }
+        }
+        "ApplyModifier" {
+            "Target"		"TARGET"
+            "ModifierName"	"modifier_tidal_prison"
+        }
+        "RunScript" {
+            "ScriptFile"        "deal_damage"
+            "Function"          "disable"
+            "Target"            "TARGET"
+            "DisableModifier"   "modifier_tidal_prison_slowed"
+            "Duration"          "%duration"
+        }
+	}
+	
+	"Modifiers" {
+        "modifier_tidal_prison_slowed" {
+            "IsHidden"      "1"
+            "IsDebuff"      "1"
+            "IsPurgable"    "1"
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%movespeed_reduction"
+            }
+        }
+		"modifier_tidal_prison" {
+			"TextureName"	"typhoon_tidal_prison"
+			
+			"IsDebuff"		"1"
+			"Duration"		"%duration"
+
+            "OnCreated"  {
+                "AttachEffect" {
+                    "Target"                "CASTER"
+                    "EffectName"            "particles/amarynth_tidal_prison/tidal_prison_bubble_base.vpcf"
+                    "EffectAttachType"      "start_at_customorigin"
+                    "ControlPointEntities" {
+                        "TARGET"        "attach_hitloc"
+                        "TARGET"        "attach_hitloc"
+                    }
+                }
+            }
+		}
+	}
+	"precache" {
+        "particle"      "particles/amarynth_tidal_prison/tidal_prison_bubble_base.vpcf"
+        "particle"		"particles/amarynth_tidal_prison/tidal_prison_base_ability.vpcf"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+        "soundfile"		"soundevents/custom_sounds.vsndevts"
+    }
+}

@@ -1,0 +1,100 @@
+"item_prosperity"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4054"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_prosperity"
+	
+	"ItemCost"						"3300"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"prosperity"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				    "FIELD_INTEGER"
+            "added_health" 			    "450"
+        }
+        "02"
+        {
+            "var_type"			        "FIELD_INTEGER"
+            "added_armour"		        "20"
+        }
+        "03"
+        {
+            "var_type"		            "FIELD_INTEGER"
+            "added_magic_resistance"	"15"
+        }
+		"04"
+		{
+			"var_type"				    "FIELD_INTEGER"
+			"added_consume_health"	    "12"			
+		}
+		"05"
+		{
+			"var_type"				    "FIELD_FLOAT"
+			"added_consume_chance"	    "1"
+		}
+	}
+	"Modifiers"
+	{
+		"item_prosperity_modifier"
+		{
+			"Passive"       "1"  
+			"IsHidden"      "1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+			}
+            "ThinkInterval" "60"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"items/prosperity_lua"
+					"Function"			"add_stack"
+					"Target"			"CASTER"
+				}
+			}
+            "OnDestroy"
+            {
+				"RunScript"
+				{
+					"ScriptFile"		"items/prosperity_lua"
+					"Function"			"on_remove"
+					"Target"			"CASTER"
+				}
+            }
+		}
+        "item_prosperity_stack" {
+            "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT"
+        }
+        "item_prosperity_stack_health" {
+            "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
+            "IsHidden"		"1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_HEALTH_BONUS" 			"25"
+            }
+        }
+	}
+
+}
+"item_recipe_prosperity"
+{
+	"ID"							"4053"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"2400"
+	"ItemResult"					"item_prosperity"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			            "item_vigor"
+	}
+}

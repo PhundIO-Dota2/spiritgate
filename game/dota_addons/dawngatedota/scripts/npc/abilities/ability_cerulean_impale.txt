@@ -1,0 +1,70 @@
+"ability_cerulean_impale" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"cerulean_impale"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"12"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+	
+    "AbilityCastRange"       		"140"
+	"AbilityCastPoint" 				"0.1"
+
+    "TargetInfo" {
+    	"Type"		"Range"
+    	"Radius"	"140"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 				"FIELD_INTEGER"
+			"damage"          		"70 115 160 205 250"
+		}
+        "02" {
+			"var_type" 				"FIELD_FLOAT"
+			"power_ratio"          	".6"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_Impale"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"Target"		"TARGET"
+			"ScriptFile"	"abilities/cerulean_impale_lua"
+			"Function"		"cerulean_impale"
+		}
+		"RunScript" {
+			"ScriptFile"	"deal_damage"
+			"Function"		"damage"
+			"Target"		"TARGET"
+			"Damage"		"%damage"
+			"PowerRatio"	"%power_ratio"
+		}
+	}
+
+	"Modifiers" {
+		"modifier_impale_rooted" {
+			"IsHidden"		"1"
+
+			"States" {
+				"MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/warden/impale_trail.vpcf"
+	}
+}

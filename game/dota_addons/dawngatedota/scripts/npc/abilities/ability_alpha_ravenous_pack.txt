@@ -1,0 +1,50 @@
+"ability_alpha_ravenous_pack"
+{
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"alpha_ravenous_pack"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"120 110 100"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"wolves"				"5"
+		}
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"45 75 105"
+		}
+		"03" {
+			"var_type"				"FIELD_FLOAT"
+			"damage_power_ratio"	"0.6"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"5"
+		}
+    }
+	
+	"OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"		"abilities/alpha_ravenous_pack_lua"
+    		"Function"			"cast"
+    		"Target"			"CASTER"
+    		"Damage"			"%damage"
+    		"DamagePowerRatio"	"%damage_power_ratio"
+    	}
+		"FireSound" {
+			"EffectName"		"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  			"CASTER"
+		}
+    }
+	 
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"	"particles/fenmore_heart_eater/heart_eater_base.vpcf"
+	}
+}

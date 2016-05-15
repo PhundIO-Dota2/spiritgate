@@ -1,0 +1,60 @@
+"ability_binding_fire" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"binding_fire"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"825"
+	
+	"AbilityCooldown"				"0"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_ATTACK"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"165 200 250"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"1"
+        }
+    }
+	
+	"OnSpellStart" {
+		//"FireSound" {
+			//"EffectName"	"dawngatedota.merchant_princess_FinalPaymentStart"
+			//"Target"  		"CASTER"
+		//}
+		"RunScript" {
+			"ScriptFile"		"abilities/binding_fire_lua"
+			"Function"			"fire"
+			"Target"			"TARGET"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"	
+		}
+    }
+    "Modifiers" {
+    	"modifier_targetting_shaper" {
+    		"TextureName"			"binding_fire"
+    	}
+    	"modifier_targetting_shaper_stack" {
+    		"TextureName"			"binding_fire"
+    	}
+    }
+	"precache" {
+		"soundfile"	"soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/binding/binding_attack_base.vpcf"
+		"particle"	"particles/binding/laser.vpcf"
+	}
+}

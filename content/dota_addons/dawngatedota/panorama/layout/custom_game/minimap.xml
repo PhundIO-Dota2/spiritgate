@@ -1,0 +1,22 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/root.css" />
+    <include src="file://{resources}/styles/custom_game/minimap.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/minimap.js" /> 
+  </scripts>
+  <Panel hittest="false" class="MinimapBaseHUD flow-right" style="width: 100%; height: 100%;">
+    <Panel hittest="false" style="width: 83%; height: 100%;"/>
+    <Panel hittest="false" style="width: 17%; height: 100%;" class="flow-down">
+      <Panel id="MinimapPanel" hittest="true" onmouseover="on_mouse_over()" onmouseout="on_mouse_out()">
+        <Image id="Minimap" hittest="false" src="file://{images}/custom_game/minimap_dusk_and_dawn.png">
+        </Image>
+        <Panel id="MinimapUnits" class="fill">
+
+        </Panel>
+        <Panel id="MinimapCamera" hittest="false" style="border: 4px solid #DDDDDD; width: 20%; height: 14%;"/>
+      </Panel>
+    </Panel>
+  </Panel>
+</root>

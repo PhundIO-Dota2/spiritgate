@@ -1,0 +1,35 @@
+"ability_frost_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"frost_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_frost" {
+			"TextureName"		"frost_shaper"
+			"IsHidden"			"1"
+		}
+		"modifier_black_ice" {
+			"TextureName"		"frost_shaper"
+
+			"EffectName"		"particles/sakari_black_ice/black_ice_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"ThinkInterval"		"0.03"
+			"OnIntervalThink" {
+				"RunScript" {
+					"ScriptFile"		"abilities/frost_shaper_lua"
+					"Function"			"think"
+				}
+			}
+
+			"Duration"			"4"
+		}
+		"modifier_black_ice_armour" {
+			"IsHidden"			"1"
+			"Duration"			"4"
+		}
+	}
+}

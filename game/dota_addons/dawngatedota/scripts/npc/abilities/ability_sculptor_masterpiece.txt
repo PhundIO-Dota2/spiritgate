@@ -1,0 +1,159 @@
+"ability_sculptor_masterpiece"
+{
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"sculptor_masterpiece"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"675"
+	
+	"AbilityCooldown"				"120 110 100"
+	"AbilityCastPoint"              "0.1"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"0.5"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "400"
+        "Range"		"675"
+    }
+
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "sculpture_radius" 		"300"
+        }
+        "02"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "mud_radius" 			"400"
+        }
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"675"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"175 275 375"
+		}
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"movespeed_reduction"	"-40"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"power_ratio"			"0.65"
+		}
+    }
+	
+	"OnSpellStart"
+    {
+		"FireSound"
+		{
+			"EffectName"			"dawngatedota.sculptor_MasterpieceStart"
+			"Target"  				"CASTER"
+		}
+        "SpawnUnit"
+        {
+            "UnitName"			"npc_sculptor_masterpiece"
+            "UnitCount"			"1"
+            "UnitLimit"			"5"
+            "SpawnRadius"		"0"
+            "Duration"			"1"
+            "Target"			"POINT"
+            "GrantsGold"		"0"
+            "GrantsXP"			"0"
+        }
+        "ActOnTargets" {
+        	"Target" {
+        		"Center"		"POINT"
+        		"Radius"		"%sculpture_radius"
+        		"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        		"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        	}
+        	"Action" {
+    			"RunScript" {
+    				"ScriptFile"		"deal_damage"
+    				"Function"			"disable"
+    				"Target"			"TARGET"
+    				"DisableModifier"	"modifier_sculptor_masterpiece_slow"
+    				"Duration"			"2"
+    			}
+        	}
+        }
+		"DelayedAction"
+		{
+			"Delay"	"1.0"
+			"Action"
+			{
+                "FireSound"
+				{
+					"EffectName"		"dawngatedota.sculptor_MasterpieceAppear"
+					"Target"  			"CASTER"
+				}
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center" 		"POINT"
+						"Radius" 		"%sculpture_radius"
+						"Teams"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"Action"
+					{
+						"RunScript"
+						{
+							"Target"		"TARGET"
+							"ScriptFile"	"deal_damage"
+							"Function"		"damage"
+							"Damage" 		"%damage"
+							"PowerRatio"	"%power_ratio"
+                            "AoE"           "1"
+						}
+					}
+				}
+				"Knockback"
+				{
+					"Target"
+					{
+						"Center" 		"POINT"
+						"Radius" 		"%sculpture_radius"
+						"Teams"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"Center"			"POINT"
+					"Duration"			"1"
+					"Distance"			"%sculpture_radius * 0.5"
+					"Height"			"150"
+					"IsFixedDistance"	"1"
+				}
+			}
+		}
+    }
+    "Modifiers" {
+    	"modifier_sculptor_masterpiece_slow" {
+    		"TextureName"		"sculptor_masterpiece"
+    		"IsDebuff"			"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_reduction"
+			}
+    	}
+    }
+	"precache"
+	{
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+        "particle"  "particles/renzo_masterpiece/renzo_masterpiece_base_ability.vpcf"
+	}
+}

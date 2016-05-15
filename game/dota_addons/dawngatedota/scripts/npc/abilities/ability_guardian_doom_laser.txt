@@ -1,0 +1,62 @@
+"ability_guardian_doom_laser" {
+	"BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"guardian_doom_laser"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"1500"
+	
+	"AbilityCooldown"				"5"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 					"FIELD_INTEGER"
+            "damage" 					"1000"
+        }
+        "02" {
+            "var_type" 					"FIELD_FLOAT"
+            "damage_power_ratio" 		"6"
+        }
+        "03" {
+        	"var_type"					"FIELD_INTEGER"
+        	"duration"					"4"
+        }
+        "04" {
+        	"var_type"					"FIELD_INTEGER"
+        	"radius"					"360"
+        }
+        "05" {
+        	"var_type"					"FIELD_INTEGER"
+        	"range"						"1500"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"		"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  			"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/guardian_doom_laser_lua"
+			"Function"			"cast"
+			"Caster"			"CASTER"
+			"Target"			"POINT"
+			"Radius"			"%radius"
+			"Damage"			"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"
+			"Duration"			"%duration"
+		}
+    }
+	"precache" {
+		"particle"	"particles/guardian/guardian_fire_circle_base.vpcf"
+		"soundfile"	"soundevents/custom_sounds.vsndevts"
+	}
+}

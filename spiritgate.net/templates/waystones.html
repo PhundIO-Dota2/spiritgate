@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h2>Waystones</h2>
+		<br/>
+		<p><a href="/">Back to Home</a></p>
+	</div>
+	<div id="waystones-container" class="panel-body">
+		{% if 'user' in session %}
+			<object id="waystones" width="900" height="900" data="/waystones/swf/waystones.swf"></object>
+			<script>
+				function updateObject() {
+					$("#waystones").width($("#waystones-container").width());
+					$("#waystones").height($("#waystones").width());
+				}
+				$(document).ready(updateObject);
+				$(window).on("resize", updateObject);
+			</script>
+		{% else %}
+			<p>Error: You must be logged in to use the waystone loadout editor.</p>
+		{% endif %}
+<!--
+		<iframe id="waystones" src="waystones/html5/bin/index.html"></iframe>
+		<script>
+			$(document).ready(function(){
+				$("#waystones").width($("#waystones-container").width());
+				$("#waystones").height($("#waystones").width());
+				$(function() {
+					function maniplframe() {
+						$("#waystones").contents().find("#openfl-content").find("canvas").bind('contextmenu', function(e) {
+							return false;
+						});
+						setTimeout(maniplframe, 100);
+						return;
+					}
+					maniplframe();
+				})
+			});
+		</script>
+-->
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+"ability_inspired_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"inspired_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_inspiration" {
+			"TextureName"	"inspired_shaper"
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+			"IsHidden"		"1"
+		}
+	}
+}

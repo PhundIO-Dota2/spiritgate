@@ -1,0 +1,61 @@
+"ability_flesh_skewer" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"flesh_skewer"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"825"
+	"AbilityCooldown"				"12 11 10 9 8"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "825"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"65 110 155 200 245"
+		}
+		"02" {
+			"var_type"				"FIELD_FLOAT"
+			"damage_power_ratio"	"0.5"
+		}
+        "03" {
+            "var_type" 				"FIELD_INTEGER"
+            "distance" 				"825"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"		"Hero_TheTyphoon.Waverider"
+			"Target"  			"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/flesh_skewer_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Distance"			"%distance"
+			"DamagePowerRatio"	"%damage_power_ratio"
+			"Damage"			"%damage"
+		}
+	}
+	"Modifiers" {
+		"modifier_flesh_skewer_armour_reduction" {
+			"TextureName"		"flesh_skewer"
+			"IsDebuff"			"1"
+			"IsPurgable"		"0"
+			"Duration"			"5"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/vex_skewer/skewer_ability_base.vpcf"
+	}
+}

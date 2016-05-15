@@ -1,0 +1,38 @@
+"ability_tangled_dreamer_reverie_fly" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"tangled_dreamer_reverie"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"100000000"
+	
+	"AbilityCooldown"				"0"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "90"
+        "Range"		"INFINITY"
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"			"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  				"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/tangled_dreamer_reverie_lua"
+			"Function"				"recast"
+			"Target"				"POINT"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

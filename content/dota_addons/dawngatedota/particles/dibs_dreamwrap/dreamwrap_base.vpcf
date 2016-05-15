@@ -1,0 +1,107 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_flConstantRadius = 10.000000
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndTime = 0.400000
+			m_flEndScale = 10.000000
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 1
+		},
+		{
+			_class = "C_OP_RampScalarSplineSimple"
+			m_Rate = -20.000000
+			m_flEndTime = 0.700000
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_bLockRot = true
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/particle/particle_sphere_highlight5.vtex"
+			m_bDisableZBuffering = true
+			VisibilityInputs =
+			{
+				m_nCPin = 1
+			}
+		},
+		{
+			_class = "C_OP_RenderSprites"
+			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004b_mod.vtex"
+			VisibilityInputs =
+			{
+				m_nCPin = 0
+			}
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 150
+			m_nAlphaMax = 200
+		},
+		{
+			_class = "C_INIT_RandomScalar"
+			m_flMin = 10.000000
+			m_flMax = 9.000000
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				255,
+				79,
+				255,
+				255,
+			]
+			m_ColorMax =
+			[
+				251,
+				255,
+				0,
+				255,
+			]
+			m_TintMin =
+			[
+				0,
+				255,
+				0,
+				0,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 3
+		},
+	]
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/dibs_dreamwrap/dreamwrap_leaves.vpcf"
+		},
+	]
+	m_bShouldHitboxesFallbackToRenderBounds = false
+}

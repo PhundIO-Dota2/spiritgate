@@ -1,0 +1,167 @@
+"ability_sculptor_kinetic_sculpture"
+{
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"sculptor_kinetic_sculpture"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"13 12 11 10 9"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+	
+    "AbilityCastRange"       		"525"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "525"
+    }
+
+	"AbilitySpecial"
+    {
+        "01"
+        {
+			"var_type" 								"FIELD_INTEGER"
+			"damage"          						"50 85 120 155 190"
+		}
+        "02"
+        {
+			"var_type" 								"FIELD_FLOAT"
+			"stun_duration"      					"1.25"
+		}
+		"03"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"cast_range"							"525"
+		}
+		"04"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"inspired_armour_reduction"				"15 20 25 30 35"
+		}
+		"05"
+		{
+			"var_type"								"FIELD_INTEGER"
+			"inspired_armour_reduction_duration"	"3"
+		}
+		"06"
+		{
+			"var_type"								"FIELD_FLOAT"
+			"inspired_armour_reduction_power_ratio" "0.125"
+		}
+		"07"
+		{
+			"var_type"								"FIELD_FLOAT"
+			"damage_power_ratio"					"0.5"
+		}
+		"08"
+		{
+			"var_type"								"FIELD_FLOAT"
+			"stun_duration_power_ratio"				"0.0035"
+		}
+	}
+	
+	"OnSpellStart"
+    {
+		"FireSound"
+		{
+			"EffectName"	"dawngatedota.sculptor_KineticSculptureThrow"
+			"Target"		"CASTER"
+		}
+		"TrackingProjectile"
+		{
+			"Target"			"TARGET"
+			"EffectName"		"particles/neutral_fx/mud_golem_hurl_boulder.vpcf"
+			"Dodgeable"			"0"
+			"ProvidesVision"	"0"
+			"MoveSpeed"			"700"
+			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+    }
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"  "1"
+		"FireSound"
+		{
+			"EffectName"	"dawngatedota.sculptor_KineticSculptureHit"
+			"Target"		"TARGET"
+		}
+		"RunScript"
+		{
+			"Target"		"TARGET"
+			"ScriptFile"	"deal_damage"
+			"Function"		"damage"
+			"Damage" 		"%damage"
+			"PowerRatio"	"%damage_power_ratio"
+		}
+        "RunScript"
+        {
+            "Target"                "TARGET"
+            "ScriptFile"            "deal_damage"
+            "Function"              "disable"
+            "Duration"              "%stun_duration"
+            "DurationPowerRatio"    "%stun_duration_power_ratio"
+            "DisableModifier"       "modifier_sculptor_kinetic_sculpture_stun"
+        }
+		"RunScript" {
+			"TARGET"				"TARGET"
+			"ScriptFile"			"modifier_helper"
+			"Function"				"AddStacks"
+			"Stacks"				"%inspired_armour_reduction"
+			"PowerRatio"			"%inspired_armour_reduction_power_ratio"
+			"MaxStacks"				"100000000"
+			"ModifierName"			"modifier_sculptor_kinetic_sculpture_inspiration"
+			"AbilityName"			"ability_inspired_shaper"
+			"IsUniversalModifier"	"False"
+			"Duration"				"%inspired_armour_reduction_duration"
+
+			"Condition" {
+				"HasModifierStacks" {
+					"Target"				"CASTER"
+					"MinStacks"				"5"
+					"ModifierName"			"modifier_inspiration"
+					"ModifierAbilityName"	"ability_sculptor_inspiring_strike"
+				}
+			}
+		}
+		"RunScript"
+		{
+			"Target"		"TARGET"
+			"ScriptFile"	"abilities/sculptor_inspiration_lua"
+			"Function"		"inspiration_kinetic_sculpture"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_sculptor_kinetic_sculpture_inspiration"
+		{
+			"TextureName"	"sculptor_kinetic_sculpture"
+			
+			"IsDebuff"		"1"
+			"Duration"		"%inspired_armour_reduction_duration"
+		}
+        "modifier_sculptor_kinetic_sculpture_stun"
+        {
+            "TextureName"   "sculptor_kinetic_sculpture"
+            
+            "IsDebuff"      "1"
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+	}
+	 
+	"precache"
+	{
+		"soundfile"		"soundevents/custom_sounds.vsndevts"
+		"particle"		"particles/neutral_fx/mud_golem_hurl_boulder.vpcf"
+	}
+}

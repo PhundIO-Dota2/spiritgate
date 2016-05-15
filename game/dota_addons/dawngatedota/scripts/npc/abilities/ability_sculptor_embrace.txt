@@ -1,0 +1,110 @@
+"ability_sculptor_embrace" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"sculptor_embrace"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"11 10 9 8 7"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_ABILITY_4"
+	"AnimationPlaybackRate"			"0.6"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	
+    "AbilityCastRange"       		"580"
+	"AbilityCastPoint" 				"0"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "580"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 				"FIELD_INTEGER"
+			"shield_bonus"          "65 115 165 215 265"
+		}			
+		"02" {
+			"var_type"				"FIELD_FLOAT"
+			"shield_bonus_power_ratio"	"0.35"
+		}
+        "03" {
+			"var_type" 				"FIELD_INTEGER"
+			"armour_bonus"			"10 15 20 25 30"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"660"
+		}
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"5"
+		}
+        "06" {
+			"var_type" 				"FIELD_INTEGER"
+			"inspired_heal"			"50 90 130 170 210"
+		}
+		"07" {
+			"var_type"					"FIELD_FLOAT"
+			"inspired_heal_power_ratio"	"0.6"
+		}
+	}
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.sculptor_Embrace"
+			"Target"  		"TARGET"
+		}
+		"RunScript" {
+			"TARGET"				"TARGET"
+			"ScriptFile"			"modifier_helper"
+			"Function"				"AddStacks"
+			"Stacks"				"%armour_bonus"
+			"MaxStacks"				"%armour_bonus"
+			"ModifierName"			"modifier_sculptor_embrace"
+			"IsUniversalModifier"	"False"
+			"Duration"				"%duration"
+		}
+		"RunScript" {
+			"Target"				"TARGET"
+			"ScriptFile"			"abilities/sculptor_inspiration_lua"
+			"Function"				"inspiration_embrace"
+			"heal_amount"			"%inspired_heal"
+			"PowerRatio"			"%inspired_heal_power_ratio"
+		}
+		"RunScript" {
+			"TARGET"				"TARGET"
+			"ScriptFile"			"modifier_helper"
+			"Function"				"AddStacks"
+			"Stacks"				"%shield_bonus"
+			"PowerRatio"			"%shield_bonus_power_ratio"
+			"MaxStacks"				"10000000"
+			"ModifierName"			"modifier_universal_shield"
+			"IsUniversalModifier"	"True"
+			"Duration"				"%duration"
+		}
+	}
+	"Modifiers" {
+		"modifier_sculptor_embrace" {
+			"TextureName"	"sculptor_embrace"
+			"IsBuff"		"1"
+			"IsPurgable"	"1"
+			"Duration"		"%duration"
+			"OnCreated" {
+				"AttachEffect" {
+					"Target"			"TARGET"
+					"EffectName"		"particles/renzo_embrace/embrace_base.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Duration"			"%duration"
+				}
+			}
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/renzo_embrace/embrace_base.vpcf"
+	}
+}

@@ -1,0 +1,61 @@
+"ability_merchant_princess_final_payment" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"merchant_princess_final_payment"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"1800"
+	
+	"AbilityCooldown"				"140 120 100"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"0.5"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityChannelTime"			"2.5"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"	"1800"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"270 480 690"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "coins" 				"6"
+        }
+        "03" {
+            "var_type" 				"FIELD_FLOAT"
+            "power_ratio" 			"1.1"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentStart"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/npc_merchant_princess_final_payment_lua"
+			"Function"			"create_coins"
+			"Target"			"TARGET"
+			"Damage"		 	"%damage"
+			"Coins"				"%coins"
+			"PowerRatio"		"%power_ratio"	
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/custom_sounds.vsndevts"
+	}
+}

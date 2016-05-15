@@ -1,0 +1,57 @@
+"npc_dawngate_hero_art_prodigy" {
+	"override_hero"				"npc_dota_hero_spectre"
+	"SoundSet"					"Hero_ArtProdigy"
+	"Model"                 	"models/heroes/zeri/zeri.vmdl"
+    "ModelScale"                "1.3"
+    "HealthBarOffset"       	"240"
+
+	//"BoundsHullName"            "DOTA_HULL_SIZE_LARGE"
+	//"RingRadius"                "90"
+	
+	"AbilityLayout" 			"5"
+
+	"Ability1"					"ability_art_prodigy_splatter" 
+	"Ability2"					"ability_art_prodigy_muse" 
+	"Ability3"					"ability_art_prodigy_desaturate" 
+	"Ability7"					"ability_art_prodigy_prismatic_vortex" 
+	"Ability15"					"ability_pure_shaper" 
+
+	"Ability4"					"ability_spacer1"
+	"Ability5"					"ability_universal_ability_ward"
+	"Ability6"					"ability_universal_ability"
+	"Ability8"					"ability_universal_attack"
+	"Ability9"					"ability_universal_recall"
+	"Ability10"					"consumable_vitality_potion" 	
+
+	"ArmorPhysical"				"0"									// Physical protection.
+	"MagicalResistance"			"0"									// Magical protection (percentage).
+
+    "AttackRange"               "475"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	"ProjectileSpeed"           "1100"
+    "ProjectileModel"           "particles/zeri_weapon/zeri_attack_base.vpcf"
+    
+	"AttackDamageMin"			"53"										// Damage range min.
+	"AttackDamageMax"			"53"										// Damage range max.
+    "AttackRate"                "1.5"
+    "AttackAnimationPoint"		"0.4"
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"0"										// Base strength
+	"AttributeStrengthGain"		"0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"										// Base intelligence
+	"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"										// Base agility
+	"AttributeAgilityGain"		"0"										// Agility bonus per level.
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"									// Speed.
+	"MovementTurnRate"			"10000.0"								// Turning rate.
+
+	"StatusHealth"				"440"									// Base health.
+	"StatusHealthRegen"			"1"										// Health regeneration rate.
+	"StatusMana"				"1"										// Base mana.
+	"StatusManaRegen"			"0"										// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+}

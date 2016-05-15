@@ -1,0 +1,66 @@
+"item_fluidity"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4132"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_fluidity"
+	
+	"ItemCost"						"2620"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"fluidity"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_power"		"10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_haste"		"45"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"movespeed"			"10"
+		}
+	}
+    "Modifiers"
+    {
+        "item_fluidity_modifier"
+        {
+            "IsHidden"      "1"
+            "IsBuff"        "1"
+            "IsPurgable"    "0"
+            "Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+	    	"Passive"       "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%movespeed"
+            }
+            "States" {
+            	"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+
+}
+"item_recipe_fluidity"
+{
+	"ID"							"4131"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1565"
+	"ItemResult"					"item_fluidity"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_motion"
+	}
+}

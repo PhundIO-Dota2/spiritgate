@@ -1,0 +1,76 @@
+"item_hostility"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4124"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_hostility"
+	
+	"ItemCost"						"2915"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"hostility"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_power"			"30"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_mastery"			"10"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_life"			"210"
+		}
+	}
+	"Modifiers"
+	{
+		"item_hostility_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+        "modifier_item_hostility_datadriven_aura_emitter"
+        {
+            "Passive"               "1"
+            "IsHidden"              "1"
+            
+            "Aura"                  "modifier_item_hostility_datadriven_aura"
+            "Aura_Radius"           "800"
+            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            "Aura_ApplyToCaster"    "1"
+        }
+        "modifier_item_hostility_datadriven_aura"
+        {
+            "TextureName"		"hostility"
+        }
+	}
+}
+"item_recipe_hostility"
+{
+	"ID"							"4123"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1415"
+	"ItemResult"					"item_hostility"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_force"
+	}
+}

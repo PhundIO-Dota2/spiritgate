@@ -1,0 +1,76 @@
+"ability_high_huntress_branching_blade" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"high_huntress_branching_blade"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"10 9 8 7 6"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "AbilityCastRange"       		"500"
+
+    "AbilityManaCost"         		"40"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "500"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"60 95 130 165 200"
+		}
+		"02" {
+			"var_type"						"FIELD_FLOAT"
+			"damage_power_ratio"			"0.6"
+		}
+		"03" {
+			"var_type"						"FIELD_INTEGER"
+			"secondary_damage"				"60 95 130 165 200"
+		}
+		"04" {
+			"var_type"						"FIELD_FLOAT"
+			"secondary_damage_power_ratio"	"0.6"
+		}
+		"03" {
+			"var_type"						"FIELD_INTEGER"
+			"range"							"500"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_ArtProdigy.AbilityDesaturateCast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {	
+			"ScriptFile"					"abilities/high_huntress_branching_blade_lua"
+			"Function"						"cast"
+			"Target"						"TARGET"
+			"Caster"						"CASTER"
+			"Damage"						"%damage"
+			"DamagePowerRatio"				"%damage_power_ratio"
+			"SecondaryDamage"				"%secondary_damage"
+			"SecondaryDamagePowerRatio"		"%secondary_damage_power_ratio"
+			"Range"							"%range"
+		}
+		"RunScript" {
+			"ScriptFile"		"basic_attack_reset"
+			"Function"			"Reset"
+			"Target"			"CASTER"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/nissa_branching_blade/branching_blade_base.vpcf"
+		"particle"	"particles/nissa_branching_blade/branching_blade_branch.vpcf"
+	}
+}

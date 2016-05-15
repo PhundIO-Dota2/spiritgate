@@ -1,0 +1,85 @@
+"ability_cerulean_shores_calling" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"cerulean_shores_calling"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"110 100 90"
+
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+
+    "AbilityCastRange"       		"585"
+
+    "TargetInfo" {
+    	"Type"		"Range"
+    	"Radius"	"585"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 								"FIELD_INTEGER"
+            "health_restored_minimum" 				"90 150 210"
+        }
+        "02" {
+            "var_type" 								"FIELD_INTEGER"
+            "health_restored_maximum" 				"240 400 560"
+        }
+        "03" {
+        	"var_type"								"FIELD_FLOAT"
+        	"health_restored_minimum_health_ratio"	"1.5 3.0 4.5"
+        }
+        "04" {
+        	"var_type"								"FIELD_FLOAT"
+        	"health_restored_maximum_health_ratio"	"4 8 12"
+        }
+        "05" {
+        	"var_type"								"FIELD_FLOAT"
+        	"health_restored_missing_boundry"		"0.8"
+        }
+        "06" {
+        	"var_type"								"FIELD_INTEGER"
+        	"damage"								"240 360 480"
+        }
+        "07" {
+            "var_type" 								"FIELD_FLOAT"
+            "damage_power_ratio" 					"0.8"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_ShoresCallingStart"
+			"Target"  		"CASTER"
+		}
+		"DelayedAction" {
+			"Delay"			".2"
+			"Action" {
+				"FireSound" {
+					"EffectName"	"dawngatedota.cerulean_ShoresCalling"
+					"Target"  		"TARGET"
+				}
+			}
+		}
+		"RunScript" {
+			"Target"					"TARGET"
+			"ScriptFile"				"abilities/cerulean_shores_calling_lua"
+			"Function"					"cerulean_shores_calling"
+			"HealthRestoredMinimum"		"%health_restored_minimum"
+			"HealthRestoredMaximum"		"%health_restored_maximum"
+			"HealthRestoredMinimumRatio""%health_restored_minimum_health_ratio"
+			"HealthRestoredMaximumRatio""%health_restored_maximum_health_ratio"
+			"Damage"					"%damage"
+			"PowerRatio"				"%damage_power_ratio"
+		}
+    }
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+	}
+}

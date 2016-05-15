@@ -1,0 +1,94 @@
+"ability_noble_shadow_nox_aeterna" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"noble_shadow_nox_aeterna"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"100 90 80"
+
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+
+    "AbilityCastRange"       		"400"
+
+    "TargetInfo" {
+    	"Type"		"Range"
+    	"Radius"	"400"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"								"FIELD_INTEGER"
+        	"damage"								"90 145 200"
+        }
+        "07" {
+            "var_type" 								"FIELD_FLOAT"
+            "damage_power_ratio" 					"0.5"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_ShoresCallingStart"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"Target"					"TARGET"
+			"ScriptFile"				"abilities/noble_shadow_nox_aeterna_lua"
+			"Function"					"cast"
+			"Damage"					"%damage"
+			"DamagePowerRatio"			"%damage_power_ratio"
+		}
+		"ApplyModifier" {
+			"ModifierName"	"modifier_nox_aeterna_dashing"
+			"Target" 		"CASTER"
+		}
+		"ApplyModifier" {
+			"ModifierName"	"modifier_nox_aeterna"
+			"Target" 		"CASTER"
+		}
+    }
+
+    "Modifiers" {
+    	"modifier_nox_aeterna" {
+    		"Duration"			"6"
+    		"IsHidden"			"1"
+	        "EffectName" 		"particles/kindra_nox_aeterna/nox_aeterna_buff.vpcf"
+	        "EffectAttachType"	"follow_origin"
+    	}
+    	"modifier_nox_aeterna_dashing" {
+    		"Duration"			"0.3"
+    		"IsHidden"			"1"
+    		"EffectName"		"particles/kindra_nox_aeterna/nox_aeterna_base.vpcf"
+    		"EffectAttachType"	"follow_origin"
+
+		    "States" {
+		    	"MODIFIER_STATE_COMMAND_RESTRICTED"						"MODIFIER_STATE_VALUE_ENABLED"
+        		"MODIFIER_STATE_UNSELECTABLE"							"MODIFIER_STATE_VALUE_ENABLED"
+        		"MODIFIER_STATE_NO_UNIT_COLLISION"						"MODIFIER_STATE_VALUE_ENABLED"
+        		"MODIFIER_STATE_INVULNERABLE"							"MODIFIER_STATE_VALUE_ENABLED"
+		    }
+
+		    "Properties" {
+		    	"MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE"				"1000"
+			}
+    	}
+    	"modifier_nox_aeterna_damage_reduction" {
+    		"Duration"					"2"
+    		"Attributes" 				"MODIFIER_ATTRIBUTE_MULTIPLE"
+    	}
+    }
+
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/kindra_nox_aeterna/nox_aeterna_buff.vpcf"
+		"particle"	"particles/kindra_nox_aeterna/nox_aeterna_hit.vpcf"
+		"particle"	"particles/kindra_nox_aeterna/nox_aeterna_base.vpcf"
+	}
+}

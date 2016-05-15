@@ -1,0 +1,66 @@
+"item_rampancy"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4058"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_rampancy"
+	
+	"ItemCost"						"2400"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"rampancy"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				            "FIELD_INTEGER"
+            "added_health" 			            "550"
+        }
+        "02"
+		{
+			"var_type"				            "FIELD_INTEGER"
+			"added_consume_health"	            "12"			
+		}
+		"03"
+		{
+			"var_type"				            "FIELD_FLOAT"
+			"added_consume_chance"	            "1"
+		}
+        "04"
+        {
+            "var_type"                          "FIELD_FLOAT"
+            "added_life_percent_as_power"       "1.5" //Managed in stat_finder
+        }
+	}
+	"Modifiers"
+	{
+		"item_rampancy_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+			}
+		}
+	}
+
+}
+"item_recipe_rampancy"
+{
+	"ID"							"4057"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_rampancy"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			            "item_vigor"
+	}
+}

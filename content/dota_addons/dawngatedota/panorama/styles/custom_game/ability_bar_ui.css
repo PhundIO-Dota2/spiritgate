@@ -1,0 +1,192 @@
+.ability_bar_ui {
+	width: 100%;
+	height: 100%;
+}
+#TopBar {
+	height: 60%;
+	width: 100%;
+	margin-bottom: 4px;
+}
+.buff {
+	height: 100%;
+	width: height-percentage(100%);
+	background-color: black;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.buff-stacks{
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: Arial;
+	text-shadow: 2px 2px 8px 3.0 #333333b0;
+	vertical-align: bottom;
+	horizontal-align: right;
+}
+#AbilityBarPanel {
+	vertical-align: bottom;
+	horizontal-align: center;
+	height: 50%;
+	width: height-percentage(175%);
+}
+#AbilityBar {
+	width: 100%;
+	height: 100%;
+}
+.cooldown-label {
+	width: 100%;
+	vertical-align: center;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	text-shadow: 2px 2px 8px 3.0 #333333b0;
+}
+.cooldown-panel {
+	height: 100%;
+	background-color: #000000CC;
+}
+.ability-bar-side-pane {
+	width: 15%;
+	height: 100%;
+}
+.ability-bar-center {
+	width: 70%;
+	height: 100%;
+	background-color: #020202;
+}
+#AbilityBarLevelUps {
+	height: 9%;
+	width: 70%;
+	horizontal-align: center;
+}
+#AbilityBarAbilities {
+	width: 100%;
+	height: 60%;
+	background-color: #020202;
+}
+#AbilityBarBars {
+	width: 100%;
+	height: 40%;
+	background-color: #020202;
+}
+.ability-panel {
+	height: 100%;
+	width: fill-parent-flow(1);
+	margin: 1px;
+}
+.levelup-panel {
+	height: 100%;
+	width: fill-parent-flow(1);
+	margin: 1px;
+	margin-bottom: 0px;
+	color: #020202;
+	background-color: #00000000;
+	text-align: center;
+	background-image: url("file://{images}/custom_game/hud/spell_learn_action.png");
+	background-size: 100% 100%;
+}
+.levelup-panel:hover {
+	background-image: url("file://{images}/custom_game/hud/spell_learn_action_hover.png");
+}
+.levelup-panel:active {
+	background-image: url("file://{images}/custom_game/hud/spell_learn_action_active.png");
+}
+.levelup-panel:disabled {
+	background-image: url("file://{images}/null.png");
+	background-size: 0% 0%;
+	border: 0px solid red;
+}
+.level-indicator {
+	width: 10%;
+	height: 100%;
+	background-color: black;
+	vertical-align: center;
+}
+.level-indicator-tick {
+	width: 100%;
+	height: fill-parent-flow(1);
+	background-image: url("file://{images}/custom_game/hud/level_indicator_bar_inactive.png");
+	background-size: 100% 100%;
+}
+.level-indicator-tick-active {
+	background-image: url("file://{images}/custom_game/hud/level_indicator_bar.png");
+	background-size: 100% 100%;
+}
+
+.hotkey-label {
+	font-size: 15px;
+	color: white;
+	width: 100%;
+	font-family: Arial;
+	text-shadow: 2px 2px 8px 3.0 #333333b0;
+	vertical-align: bottom;
+}
+.ability-image {
+	width: height-percentage(100%);
+	height: 80%;
+	border: 1px solid #565656;
+	vertical-align: top;
+	horizontal-align: center;
+}
+
+#HealthBar {
+	width: 100%;
+	height: 50%;
+	background-color: #444;
+	margin: 2px;
+}
+#HealthBarProgress {
+	background-color: red;
+	height: 100%;
+	margin: 1px;
+}
+#ResourceBarProgress {
+	background-color: black;
+	height: 100%;
+	margin: 1px;
+}
+#ResourceBar {
+	width: 100%;
+	height: 45%;
+	background-color: #444;
+	margin: 2px;
+	margin-bottom: 0px;
+}
+
+#StatsVim {
+	horizontal-align: right;
+	width: 75%;
+	text-align: center;
+}
+#StatsExp {
+	horizontal-align: right;
+	width: 75%;
+	text-align: center;
+}
+#StatsLeft {
+	background-image: url("file://{images}/custom_game/hud/panel.png");
+	background-size: 100% 100%;
+}
+#StatsLeft  Label{
+	color: black;
+	font-size: 15px;
+}
+#IconLevel Label {
+	font-size: 28px;
+	text-align: center;
+	color: white;
+	margin-right: 6%;
+	text-shadow: 2px 2px 8px 3.0 #333333b0;
+}
+
+#HealthBarLabel, #ResourceBarLabel {
+	color: black;
+	text-shadow: 2px 2px 8px 3.0 #FFFFFF20;
+	margin-left: 2%;
+}
+
+.spell-ability {
+	height: width-percentage(100%);
+	width: fill-parent-flow(1);
+	margin: 4px;
+	vertical-align: center;
+}

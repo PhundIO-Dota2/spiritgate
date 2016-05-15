@@ -1,0 +1,133 @@
+"dota_shops"
+{
+    "consumables"
+    {
+        "item"          "item_vitality_potion"
+        "item"          "item_life"
+        "item"          "item_resilience"
+        "item"          "item_will"
+    }
+
+    "attributes"
+    {
+        "item"          "item_vigor"
+        "item"          "item_purity"
+        "item"          "item_pride"
+        "item"          "item_growth"
+        "item"          "item_form"
+        "item"          "item_integrity"
+        "item"          "item_discipline"
+        "item"          "item_resolve"
+        "item"          "item_conviction"
+        "item"          "item_balance"
+        "item"          "item_freedom"
+    }
+
+    "weapons_armor"
+    {
+        "item"          "item_might"
+        "item"          "item_command"
+        "item"          "item_aggression"
+        "item"          "item_force"
+        "item"          "item_control"
+        "item"          "item_motion"
+        "item"          "item_abolition"
+        "item"          "item_inspiration"
+        "item"          "item_item_clarity"
+        "item"          "item_energy"
+        "item"          "item_desire"
+        "item"          "item_consumption"
+    }
+
+    "misc"
+    {
+        "item"          "item_vitality_potion"
+        "item"          "item_power"
+        "item"          "item_time"
+        "item"          "item_hunger"
+    }      
+    "basics"
+    {
+        "item"          "item_prosperity"
+        "item"          "item_defiance"
+        "item"          "item_rampancy"
+        "item"          "item_harmony"
+        "item"          "item_devotion"
+        "item"          "item_pestilence"
+        "item"          "item_glory"
+        "item"          "item_vengeance"
+        "item"          "item_rebirth"
+        "item"          "item_creation"
+        "item"          "item_vibrance"
+    }
+    "support"
+    {  
+        "item"          "item_adamance"
+        "item"          "item_preservation"
+        "item"          "item_order"
+        "item"          "item_equilibrium"
+        "item"          "item_subjugation"
+        "item"          "item_empathy"
+        "item"          "item_hope"
+    }
+    "magics"
+    {
+        "item"          "item_faith"
+        "item"          "item_retribution"
+        "item"          "item_betrayal"
+        "item"          "item_oppression"
+        "item"          "item_valor"
+        "item"          "item_empathy"
+        "item"          "item_hope"
+        "item"          "item_stability"
+    }
+    "defense"
+    {
+        "item"          "item_supremacy"
+        "item"          "item_wisdom"
+        "item"          "item_justice"
+        "item"          "item_judgement"
+        "item"          "item_rage"
+        "item"          "item_destruction"
+        "item"          "item_inevitability"
+        "item"          "item_pursuit"
+        "item"          "item_hostility"
+        "item"          "item_pain"
+        "item"          "item_dominance"
+        "item"          "item_divinity"
+    }
+
+    "weapons"
+    {
+        "item"          "item_fluidity"
+        "item"          "item_influence"
+        "item"          "item_impulse"
+        "item"          "item_conquest"
+        "item"          "item_ruin"
+        "item"          "item_finesse"
+        "item"          "item_corruption"
+        "item"          "item_insight"
+        "item"          "item_potency"
+        "item"          "item_chaos"
+        "item"          "item_resonance"
+        "item"          "item_furor"
+    }
+    "artifacts"
+    {
+        "item"          "item_passion"
+        "item"          "item_ambition"
+        "item"          "item_voracity"
+    }
+    "sideshop1"
+    {
+
+    }
+    "sideshop2"
+    {
+
+    }
+    "secretshop"
+    {
+
+    }
+}

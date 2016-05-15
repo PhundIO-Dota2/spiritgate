@@ -1,0 +1,64 @@
+"ability_elegant_dancer_wrath_of_heaven" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"elegant_dancer_wrath_of_heaven"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"10000000"
+	
+	"AbilityCooldown"				"100 90 80"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	
+    "TargetInfo" {
+    	"Type"		"PointTargetRadius"
+    	"Radius"	"350"
+    	"Range"		"INFINITE"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"350"
+        }
+        "02" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"190 300 410"
+        }
+        "03" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"0.85"
+        }
+        "04" {
+        	"var_type"				"FIELD_FLOAT"
+        	"delay"					"1.5"
+        }
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/elegant_dancer_wrath_of_heaven_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Caster"				"CASTER"
+			"Damage"				"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"
+			"Radius"				"%radius"
+			"Delay"					"%delay"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/ashabel_wrath_of_the_heaven/wrath_of_the_heaven_base.vpcf"
+	}
+}

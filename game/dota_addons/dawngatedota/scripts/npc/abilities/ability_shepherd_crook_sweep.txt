@@ -1,0 +1,61 @@
+"ability_shepherd_crook_sweep" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"shepherd_crook_sweep"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"9"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+
+    "AOERadius"						"260"
+
+    "TargetInfo" {
+    	"Type"		"Radius"
+    	"Radius"	"260"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"260"
+        }
+        "02" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"60 100 140 180 220"
+        }
+		"03" {
+			"var_type"				"FIELD_FLOAT"
+			"damage_power_ratio"	"0.4"
+		}
+		"04" {
+			"var_type"				"FIELD_FLOAT"
+			"knockup_duration"		"0.5"
+		}
+    }
+	
+	"OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"		"abilities/shepherd_crook_sweep_lua"
+    		"Function"			"cast"
+    		"Damage"			"%damage"
+    		"DamagePowerRatio"	"%damage_power_ratio"
+    		"KnockupDuration"	"%knockup_duration"
+    		"Radius"			"%radius"
+    	}
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  		"CASTER"
+		}
+    }
+	 
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"	"particles/kel_crook_sweep/crook_sweep_base.vpcf"
+	}
+}

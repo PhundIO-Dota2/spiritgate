@@ -1,0 +1,29 @@
+"ability_momentum_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"momentum_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    
+    "Modifiers" {
+        "modifier_momentum_shaper" {
+            "ThinkInterval"     "0.1"
+            "IsHidden"          "1"
+            "Passive"           "1"
+            "OnIntervalThink" {
+                "RunScript" {
+                    "ScriptFile"        "abilities/momentum_shaper_lua"
+                    "Target"            "CASTER"
+                    "Function"          "regenerate_spirit"
+                }
+            }
+        }
+        "modifier_momentum_mana_scale" {
+            "IsHidden"      "1"
+            "Properties" {
+                "MODIFIER_PROPERTY_MANA_BONUS"      "75"
+            }
+        }
+    }
+}

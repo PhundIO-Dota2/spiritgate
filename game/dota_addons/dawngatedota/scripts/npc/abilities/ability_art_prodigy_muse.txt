@@ -1,0 +1,88 @@
+"ability_art_prodigy_muse" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"art_prodigy_muse"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"1.5"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+	
+    "AbilityCastRange"       		"600"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "600"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 				"FIELD_INTEGER"
+			"passive_power"         "8 12 16 20 24"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_ArtProdigy.AbilityMuseCast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"	"abilities/art_prodigy_muse_lua"
+			"Function"		"SetTarget"
+		}
+	}
+	"OnOwnerSpawned" {
+		"RunScript" {
+			"ScriptFile"	"abilities/art_prodigy_muse_lua"
+			"Function"		"Spawn"
+			"PassivePower"	"%passive_power"
+		}
+	}
+	"OnOwnerDied" {
+		"RunScript" {
+			"ScriptFile"	"abilities/art_prodigy_muse_lua"
+			"Function"		"Die"
+		}
+	}
+	"OnUpgrade" {
+		"RunScript" {
+			"ScriptFile"	"abilities/art_prodigy_muse_lua"
+			"Function"		"Spawn"
+			"PassivePower"	"%passive_power"
+		}
+	}
+	"Modifiers" {
+		"modifier_muse_bonus_power" {
+			"IsHidden"			"1"
+		}
+		"modifier_muse_bonus_haste" {
+			"IsHidden"			"1"
+		}
+		"modifier_muse_bonus_lifedrain" {
+			"IsHidden"			"1"
+		}
+		"modifier_muse_bonus_armour" {
+			"IsHidden"			"1"
+		}
+		"modifier_muse_bonus_magic_resistance" {
+			"IsHidden"			"1"
+		}
+		"modifier_muse_passive_power" {
+			"IsHidden"			"1"
+		}
+		"modifier_muse" {
+			"TextureName"			"art_prodigy_muse"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/zeri_muse/muse_ability_base.vpcf"
+		"particle"	"particles/zeri_muse/zeri_muse_buffring.vpcf"
+	}
+}

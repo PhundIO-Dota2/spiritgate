@@ -1,0 +1,87 @@
+"ability_high_huntress_wing_clip" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"high_huntress_wing_clip"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"575"
+	
+	"AbilityCooldown"				"14 13 12 11 10"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+
+	"AbilityManaCost"         		"30"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"	"100"
+        "Range"    	"575"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"100"
+        }
+        "02" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"80 140 200 260 320"
+        }
+        "03" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"1.2"
+        }
+        "04" {
+        	"var_type"				"FIELD_FLOAT"
+        	"%movement_speed_slow"	"-30 -35 -40 -45 -50"
+        }
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"575"
+		}
+		"06" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+    }
+	
+    "Modifiers" {
+    	"modifier_wing_clip_slow" {
+    		"TextureName"			"high_huntress_wing_clip"
+    		"IsDebuff"				"1"
+    		"IsPurgable"        	"1"
+    		"Duration"				"0.75"
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%movement_speed_slow" 
+			}
+    	}
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/high_huntress_wing_clip_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Caster"				"CASTER"
+			"Duration"				"%duration"
+			"Damage"				"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"
+			"Radius"				"%radius"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/nissa_branching_blade/branching_blade_base.vpcf"
+		"particle"	"particles/nissa_wing_clip/wing_clip_ability_base.vpcf"
+	}
+}

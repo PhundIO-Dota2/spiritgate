@@ -1,0 +1,59 @@
+"item_grace" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4148"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_grace"
+	
+	"ItemCost"						"2400"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"grace"
+	"AbilitySpecial" {
+        "01" {
+			"var_type"			"FIELD_INTEGER"
+			"added_haste"			"40"
+		}
+		"02" {
+			"var_type"			"FIELD_INTEGER"
+			"added_life"			"200"
+		}
+	}
+	"Modifiers" {
+		"item_grace_life_modifier" {
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+        "item_grace_ms_buff" {
+            "TextureName"		"item_grace"
+            "IsBuff"        	"1"
+            "IsPurgable"    	"1"
+            "Attributes"    	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+            "Duration"      	"2"
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "40"
+            }
+        }
+	}
+
+}
+"item_recipe_grace"
+{
+	"ID"							"4147"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1280"
+	"ItemResult"					"item_grace"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_inspiration"
+	}
+}

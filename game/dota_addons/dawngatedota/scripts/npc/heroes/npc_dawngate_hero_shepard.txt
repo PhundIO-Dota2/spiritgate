@@ -1,0 +1,50 @@
+"npc_dawngate_hero_shepherd" {
+	"override_hero"				"npc_dota_hero_spirit_breaker"
+	
+	"ModelScale"            	"1.07"
+
+	"AbilityLayout" 			"5"
+
+	"Ability1"					"ability_shepherd_sheep_toss" 
+	"Ability2"					"ability_shepherd_battle_cry" 
+	"Ability3"					"ability_shepherd_crook_sweep" 
+	"Ability7"					"ability_shepherd_titanic_charge" 
+	"Ability15"					"ability_pure_shaper" 
+
+	"Ability4"					"ability_spacer1"
+	"Ability5"					"ability_universal_ability_ward"
+	"Ability6"					"ability_universal_ability"
+	"Ability8"					"ability_universal_attack"
+	"Ability9"					"ability_universal_recall"
+	"Ability10"					"consumable_vitality_potion" 	
+	
+	//"Ability5"					"ability_pure_shaper_the_shepherd" 
+
+	"ArmorPhysical"				"0"										// Physical protection.
+	"MagicalResistance"			"0"										// Magical protection (percentage).
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"61"									// Damage range min.
+	"AttackDamageMax"			"61"									// Damage range max.
+    "AttackRate"                "1.5"
+    "AttackAnimationPoint"		"0.5"
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"0"										// Base strength
+	"AttributeStrengthGain"		"0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"										// Base intelligence
+	"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"										// Base agility
+	"AttributeAgilityGain"		"0"										// Agility bonus per level.
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"305"									// Speed.
+	"MovementTurnRate"			"10000.0"								// Turning rate.
+
+	"StatusHealth"				"530"									// Base health.
+	"StatusHealthRegen"			"1.6"										// Health regeneration rate.
+	"StatusMana"				"1"										// Base mana.
+	"StatusManaRegen"			"0"										// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+}

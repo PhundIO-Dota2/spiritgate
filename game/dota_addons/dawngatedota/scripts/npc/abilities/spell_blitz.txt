@@ -1,0 +1,60 @@
+"spell_blitz" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"spell_blitz"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+
+	"AbilityCooldown"				"210"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+	"IsCastableWhileHidden" 		"1"
+	
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 								"FIELD_INTEGER"
+			"%movement_speed"   					"30"
+		}
+		"02" {
+			"var_type"								"FIELD_INTEGER"
+			"ranged_shaper_duration"				"1.5"
+		}
+		"03" {
+			"var_type"								"FIELD_INTEGER"
+			"melee_shaper_duration"					"3"
+		}
+	}
+
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"			"abilities/spell_blitz_lua"
+			"Function"				"cast"
+			"RangedShaperDuration"	"%ranged_shaper_duration"
+			"MeleeShaperDuration"	"%melee_shaper_duration"
+		}
+	}
+	"Modifiers" {
+		"modifier_blitz" {
+			"IsHidden"			"1"
+		}
+		"modifier_blitz_movement_speed" {
+			"Duration"			"6"
+			"TextureName"		"spell_blitz"
+
+			"EffectName"		"particles/spell_blitz/blitz_base.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movement_speed"
+            }
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/spell_blitz/blitz_base.vpcf"
+	}
+}

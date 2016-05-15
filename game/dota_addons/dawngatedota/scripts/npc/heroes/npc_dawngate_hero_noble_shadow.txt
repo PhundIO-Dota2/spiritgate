@@ -1,0 +1,49 @@
+"npc_dawngate_hero_noble_shadow" {
+	"override_hero"				"npc_dota_hero_phantom_assassin"
+	
+	"AbilityLayout" 			"5"
+
+	"Ability1"					"ability_noble_shadow_night_strike" 
+	"Ability2"					"ability_noble_shadow_duskmantle" 
+	"Ability3"					"ability_noble_shadow_shadowstep" 
+	"Ability7"					"ability_noble_shadow_nox_aeterna" 
+	"Ability15"					"ability_pure_shaper_shadow_fury" 
+
+	"Ability4"					"ability_spacer1"
+	"Ability5"					"ability_universal_ability_ward"
+	"Ability6"					"ability_universal_ability"
+	"Ability8"					"ability_universal_attack"
+	"Ability9"					"ability_universal_recall"
+	"Ability10"					"consumable_vitality_potion" 	
+
+	"ArmorPhysical"				"0"										// Physical protection.
+	"MagicalResistance"			"0"										// Magical protection (percentage).
+
+    "AttackRate"                "1.5"     								// Speed of attack.
+	"AttackDamageMin"			"59"									// Damage range min.
+	"AttackDamageMax"			"59"									// Damage range max.
+	"AttackAnimationPoint"		"0.3"
+
+	"ProjectileModel"           "particles/kom_auto/kom_auto_base.vpcf"
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"0"										// Base strength
+	"AttributeStrengthGain"		"0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"										// Base intelligence
+	"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"										// Base agility
+	"AttributeAgilityGain"		"0"										// Agility bonus per level.
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"310"									// Speed.
+	"MovementTurnRate"			"10000.0"								// Turning rate.
+
+	//"AttackRange"               "130"
+
+	"StatusHealth"				"530"									// Base health.
+	"StatusHealthRegen"			"1.5"									// Health regeneration rate.
+	"StatusMana"				"1"										// Base mana.
+	"StatusManaRegen"			"0"										// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+}

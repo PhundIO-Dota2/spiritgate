@@ -1,0 +1,37 @@
+"addon"
+{
+	"Unassigned"      								"Unassigned Team"
+	"Spectator"       								"Spectator Team"
+	"Neutrals"        								"Neutral Team"
+	"NoTeam"          								"No Team"
+
+	"DOTA_GoodGuys"   								"Mortal"
+	"DOTA_BadGuys"    								"Spirit"
+	"DOTA_Custom1"    								"Pink Dragon"
+	"DOTA_Custom2"    								"Orange Dog"
+	"DOTA_Custom3"    								"Blue Rooster"
+	"DOTA_Custom4"    								"Green Ram"
+	"DOTA_Custom5"    								"Brown Rat"
+	"DOTA_Custom6"    								"Cyan Boar"
+	"DOTA_Custom7"    								"Olive Snake"
+	"DOTA_Custom8"    								"Purple Horse"
+	
+	"addonname"										"Spiritgate"
+
+	"error_not_enough_mana"							"Not enough mana"
+	"error_not_enough_resource"						"Not enough resource"
+	"error_cooldown"								"Cooling down"
+	"error_unlearned"								"Skill not learned"
+	"error_no_skill_points"							"No skill points"
+
+	//:Error: :Warning: :Message:
+	"error_not_enough_rage"																	"Not enough rage to recast this ability"
+	"error_recast_different_target"															"You cannot recast on a different target"
+	"error_not_enough_ice_shards"															"No Ice Shards"
+	"error_not_enough_frost"																"No Frost"
+
+	"role_description_gladiator"															"    The Vim gained for scoring the killing blow on lane minions is increased to 200% of normal.\n\n    Melee Only: You will store 50% of the total vim of minions that you fail to kill. The next time you kill a minion, you will gain any bonus vim you have stored this way (max 3 stacks)."
+	"role_description_tactician"															"    The vim gained for being near lane minions when they die is increased to 200% of normal.\n\n    You gain 20 bonus vim when you damage an enemy shaper (doubled to 40 for melee attacks). This effect has a 5 second cooldown."
+	"role_description_hunter"																"    You do 10% more damage to jungle creatures. \n\nWhen you kill a jungle creature, you will heal for 2.5% of the creature's maximum Health.\n\n    When you kill a jungle creature there is a 25% chance you will gain 30 bonus Vim."
+	"role_description_predator"																"    The vim gained for killing an enemy shaper is increased to 150% of normal.\n\n    The Vim gained for assists against an enemy shaper is increased to 200% of normal.\n\n    The experience gained for a kill or assist on an enemy shaper is increased to 130% of normal.\n\n   The Vim gained for killing spirit well workers is increased to 200% of normal."
+}

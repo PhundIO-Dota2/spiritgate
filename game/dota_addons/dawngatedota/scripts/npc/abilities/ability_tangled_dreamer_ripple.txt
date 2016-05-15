@@ -1,0 +1,75 @@
+"ability_tangled_dreamer_ripple" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"tangled_dreamer_ripple"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"450"
+	
+	"AbilityCooldown"				"13 12 11 10 9"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+	"AnimationPlaybackRate"			"1.2"
+	
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+    "TargetInfo" {
+        "Type"      "UnitTargetRadius"
+        "Radius"    "100"
+        "Range"     "450"
+    }
+
+    "AbilitySpecial" {
+        "01" {	
+            "var_type"                    		"FIELD_FLOAT"
+            "ally_slow_immune_duration"         "1 1.25 1.5 1.75 2"
+        }
+    	"02" {
+    		"var_type"		              		"FIELD_INTEGER"
+    		"enemy_damage"				     	"75 125 175 225 275"
+    	}
+        "03" {	
+            "var_type"                    		"FIELD_FLOAT"
+            "enemy_damage_power_ratio"          "0.6"
+        }
+        "03" {	
+            "var_type"                    		"FIELD_INTEGER"
+            "%enemy_movement_slow"          	"-40 -45 -50 -55 -60"
+        }
+    }
+
+    "OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"			  	"abilities/tangled_dreamer_ripple_lua"
+    		"Function"				 	"cast"
+            "Target"                  	"TARGET"
+    		"Damage"                  	"%enemy_damage"
+    		"DamagePowerRatio"        	"%enemy_damage_power_ratio"
+    		"MovementSpeedReduction"	"%%enemy_movement_slow"
+    	}
+        "FireSound" {
+            "Target"                	"TARGET"
+            "EffectName"            	"Hero_PhantomLancer.SpiritLance.Impact"
+        }
+    }
+
+    "Modifiers" {
+    	"modifier_dreamer_ripple_slow" {
+    		"IsDebuff"				"1"
+    		"Duration"				"2.5"
+
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-1"
+			}
+    	}
+    }
+
+	"precache" {
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+        "particle"		"particles/dibs_ripple/ripple_base.vpcf"
+	}
+}

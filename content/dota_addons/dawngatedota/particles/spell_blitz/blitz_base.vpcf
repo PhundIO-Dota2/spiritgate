@@ -1,0 +1,67 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_flConstantRadius = 90.000000
+	m_flConstantLifespan = 0.250000
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/spell_blitz/blitz_trail.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/spell_blitz/blitz_electricity.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/spell_blitz/blitz_glowyvpcf.vpcf"
+		},
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.000000
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flSelfIllumAmount = 1.000000
+			m_hTexture = resource:"materials/particle/electricity/electricity_22_c.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+		},
+		{
+			_class = "C_INIT_RandomScalar"
+			m_flMin = 30.000000
+			m_flMax = 60.000000
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 200
+			m_nAlphaMax = 225
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+		},
+	]
+}

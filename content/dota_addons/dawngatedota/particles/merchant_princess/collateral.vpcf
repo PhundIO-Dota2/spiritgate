@@ -1,0 +1,61 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 200
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_ModelList =
+			[
+				{
+					m_model = resource:"models/particle/coin.vmdl"
+				},
+			]
+			m_bOrientZ = true
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 2.500000
+			m_flRadiusMax = 2.500000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMin = 90.000000
+			m_flDegreesMax = 90.000000
+			m_nFieldOutput = 20
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+	m_Constraints =
+	[
+		{
+			_class = "C_OP_ConstrainDistance"
+			m_fMaxDistance = 0.000000
+		},
+	]
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/econ/items/rubick/rubick_force_gold_ambient/rubick_telekinesis_force_rocks_glow_gold_gold.vpcf"
+		},
+	]
+}

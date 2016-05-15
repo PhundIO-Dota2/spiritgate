@@ -1,0 +1,79 @@
+"ability_rotting_tomb_forgotten_tombs" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"rotting_tomb_forgotten_tombs"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"72500"
+	
+	"AbilityCooldown"				"13 12.5 12 11.5 11"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "900"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 						"FIELD_INTEGER"
+            "initial_damage" 				"90 140 190 240 290"
+        }
+        "02" {
+            "var_type" 						"FIELD_FLOAT"
+            "initial_damage_power_ratio" 	"0.9"
+        }
+        "03" {
+            "var_type" 						"FIELD_INTEGER"
+            "damage" 						"55 95 135 175 215"
+        }
+        "04" {
+            "var_type" 						"FIELD_FLOAT"
+            "damage_power_ratio" 			"0.4"
+        }
+        "05" {
+        	"var_type"						"FIELD_FLOAT"
+        	"knockup_duration"				"0.75"
+        }
+        "06" {
+            "var_type" 						"FIELD_INTEGER"
+            "cast_range" 					"900"
+        }
+        "07" {
+            "var_type" 						"FIELD_INTEGER"
+            "width" 						"315"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"				"abilities/rotting_tomb_forgotten_tombs_lua"
+			"Function"					"cast"
+			"Target"					"POINT"
+
+			"InitialDamage"				"%initial_damage"
+			"InitialDamagePowerRatio"	"%initial_damage_power_ratio"
+			"Damage"		 			"%damage"
+			"DamagePowerRatio"			"%damage_power_ratio"	
+			"KnockupDuration"			"%knockup_duration"
+			"Range"						"%cast_range"
+			"Width"						"%width"
+		}
+    }
+	"precache"
+	{
+		"particle"	"particles/desecrator_forgotten_tombs/rotting_tomb_forgotten_tombs_base.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

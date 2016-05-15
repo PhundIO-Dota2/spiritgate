@@ -1,0 +1,54 @@
+"item_chaos"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4160"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_chaos"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"chaos"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"40"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_mastery"			"20"
+		}
+	}
+	"Modifiers" {
+		"modifier_chaos_magic_damage_increased" {
+			"TextureName"			"chaos"
+			"IsDebuff"				"1"
+			"Duration"				"3"
+		}
+		"modifier_chaos_cooldown" {
+			"TextureName"			"chaos"
+			"IsDebuff"				"1"
+			"Duration"				"6"
+		}
+	}
+}
+"item_recipe_chaos"
+{
+	"ID"							"4159"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_chaos"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_energy"
+	}
+}

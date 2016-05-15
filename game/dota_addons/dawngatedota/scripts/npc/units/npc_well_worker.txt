@@ -1,0 +1,62 @@
+"npc_well_worker" {
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/wellworker/worker.vmdl"
+        "ModelScale"            "1.75"
+        "Level"                 "1"
+        "HealthBarOffset"       "140"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+        "AttackDamageMin"       "5"
+        "AttackDamageMax"       "5"
+        "AttackRate"            "0.5"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange""0"
+        "AttackRange"           "100"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        //"BountyGoldMin"         "6"
+        //"BountyGoldMax"         "6"
+        "BountyXP"              "15"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "100"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "206"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "100"
+        "StatusHealthRegen"     "0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "700"
+        "VisionNighttimeRange"  "700"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+        "DisableClumpingBehavior"   "1"
+}

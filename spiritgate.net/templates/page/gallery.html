@@ -1,0 +1,9 @@
+<div class="row">
+	{% for file in glob("static/image/screenshots/*.*") %}
+		<div class="col-xs-6">
+			<a class="thumbnail" href="{{file}}">
+				<img src="{{file}}"/>
+			</a>
+		</div>
+	{% endfor %}
+</div>

@@ -1,0 +1,83 @@
+"ability_alpha_soul_rend"
+{
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"alpha_soul_rend"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"11 9.5 8 6.5 5"
+
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        			"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"				"DAMAGE_TYPE_MAGICAL"	
+
+    "TargetInfo" {
+    	"Type"		"Range"
+    	"Radius"	"500"
+    }
+	
+    "AbilityCastRange"       			"500"
+	
+	"AbilitySpecial" {
+		"01" {
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"65 115 165 215 265"
+		}
+		"02" {
+			"var_type"						"FIELD_FLOAT"
+			"damage_power_ratio"			"0.65"
+		}
+        "03" {
+			"var_type" 						"FIELD_INTEGER"
+			"duration"    					"3"
+		}
+        "04" {
+			"var_type" 						"FIELD_INTEGER"
+			"shield_amount"    				"50 80 110 140 170"
+		}
+		"05" {
+			"var_type"						"FIELD_FLOAT"
+			"shield_amount_power_ratio"		"0.8"
+		}
+		"06" {
+			"var_type"						"FIELD_INTEGER"
+			"range"							"500"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"				"Hero_ArtProdigy.AbilityDesaturateCast"
+			"Target"  					"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"				"deal_damage"
+			"Function"					"damage"
+			"Caster"					"CASTER"
+			"Target"					"TARGET"
+			"Damage"					"%damage"
+			"PowerRatio"				"%damage_power_ratio"
+		}
+		"RunScript" {
+			"ScriptFile"				"abilities/alpha_soul_rend_lua"
+			"Function"					"cast"
+			"Target"					"TARGET"
+			"Duration"					"%duration"
+			"ShieldAmount"				"%shield_amount"
+			"ShieldAmountPowerRatio"	"%shield_amount_power_ratio"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/fenmore_soul_rend/soul_rend_shield_base.vpcf"
+		"particle"	"particles/fenmore_soul_rend/soul_rend_hit_base.vpcf"
+		"particle"	"particles/fenmore_soul_rend/soul_base.vpcf"
+		"particle"	"particles/fenmore_soul_rend/soul_pickup_area.vpcf"
+	}
+}

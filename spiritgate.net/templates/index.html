@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+	<div class="panel panel-default">
+		<center>
+			<ul class="pagination">
+				<li id="liabout">  <a onClick="changePage('about')"  >About</a></li>
+				<li id="ligallery"><a onClick="changePage('gallery')">Gallery</a></li>
+				<li id="liinstall"><a onClick="changePage('install')"><b> Play Now!</b></a></li>
+				<li id="liteam" >  <a onClick="changePage('team')"   >Team</a></li>
+				<li id="lipacks" > <a onClick="changePage('packs')"  >Supporter Packs</a></li>
+			</ul>
+		</center>
+		<div id="currentPage" class="panel">
+			<div id="currentPageBody" class="panel-body">
+			</div>
+		</div>
+	</div>
+	<script>
+		var lastLi = ""
+		function changePage(page) {
+			$.ajax({
+				url:"/page/" + page + ".html",
+				dataType: "html",
+				cache: false,
+				success: function(data) {
+					$("#currentPageBody").html(data)
+					jQuery('a.thumbnail').colorbox(closeButton = false);
+					if(lastLi != "") {
+						$("#li" + lastLi).removeClass("active")
+					}
+					$("#li" + page).addClass("active")
+					lastLi = page
+				}
+			})
+		}
+		changePage("about")
+	</script>
+{% endblock %}

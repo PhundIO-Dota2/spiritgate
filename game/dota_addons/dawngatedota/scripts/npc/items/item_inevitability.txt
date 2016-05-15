@@ -1,0 +1,180 @@
+"item_inevitability"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4120"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_inevitability"
+	
+	"ItemCost"						"2975"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"inevitability"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                              "FIELD_INTEGER"
+            "ranged_basic_attack_percent_frost"     "-25"
+        }
+        "02"
+        {
+            "var_type"                              "FIELD_INTEGER"
+            "melee_basic_attack_percent_frost"      "-40"
+        }
+        "03"
+        {
+            "var_type"                              "FIELD_INTEGER"
+            "ability_single_target_percent_frost"   "-35"
+        }
+        "04"
+        {
+            "var_type"                              "FIELD_INTEGER"
+            "ability_area_dot_target_percent_frost" "-15"
+        }
+        "05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"30"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_life"			"500"
+		}
+	}
+	"Modifiers"
+	{
+		"item_inevitability_modifier"
+		{
+			"Passive" 		"1"  
+			"IsHidden" 		"1"  
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+        "modifier_frostII_melee"
+        {
+            "TextureName"   "frost_ii"
+            "IsDebuff"      "1"
+            "IsPurgable"    "1"
+            
+            "OnCreated" 
+            {
+                "AttachEffect"
+                {
+                    "Target"                "CASTER"
+                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+                    "EffectAttachType"      "start_at_customorigin"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_origin" // Control Point 0
+                        "TARGET"    "attach_origin" // Control Point 1
+                    }
+                }
+            }
+            
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_area_dot_target_percent_frost"
+			}
+        }
+        "modifier_frostII_ranged"
+        {
+            "TextureName"   "frost_ii"
+            "IsDebuff"      "1"
+            "IsPurgable"    "1"
+            
+            "OnCreated" 
+            {
+                "AttachEffect"
+                {
+                    "Target"                "CASTER"
+                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+                    "EffectAttachType"      "start_at_customorigin"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_origin" // Control Point 0
+                        "TARGET"    "attach_origin" // Control Point 1
+                    }
+                }
+            }
+            
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ranged_basic_attack_percent_frost"
+			}
+        }
+        "modifier_frostII_single"
+        {
+            "TextureName"   "frost_ii"
+            "IsDebuff"      "1"
+            "IsPurgable"    "1"
+            
+            "OnCreated" 
+            {
+                "AttachEffect"
+                {
+                    "Target"                "CASTER"
+                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+                    "EffectAttachType"      "start_at_customorigin"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_origin" // Control Point 0
+                        "TARGET"    "attach_origin" // Control Point 1
+                    }
+                }
+            }
+            
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_single_target_percent_frost"
+			}
+        }
+        "modifier_frostII_other"
+        {
+            "TextureName"   "frost_ii"
+            "IsDebuff"      "1"
+            "IsPurgable"    "1"
+            
+            "OnCreated" 
+            {
+                "AttachEffect"
+                {
+                    "Target"                "CASTER"
+                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+                    "EffectAttachType"      "start_at_customorigin"
+                    "ControlPointEntities"
+                    {
+                        "TARGET"    "attach_origin" // Control Point 0
+                        "TARGET"    "attach_origin" // Control Point 1
+                    }
+                }
+            }
+            
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_area_dot_target_percent_frost"
+			}
+        }
+	}
+
+}
+"item_recipe_inevitability"
+{
+	"ID"							"4119"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1675"
+	"ItemResult"					"item_inevitability"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_control"
+	}
+}

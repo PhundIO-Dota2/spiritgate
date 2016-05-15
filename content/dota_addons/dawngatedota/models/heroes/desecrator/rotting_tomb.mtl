@@ -1,0 +1,12 @@
+# Blender MTL File: 'rotting_tomb.blend'
+# Material Count: 1
+
+newmtl desecrator.png
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.478072 0.762217 0.717080
+Ks 0.500000 0.500000 0.500000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\Gavin\Desktop\rotting_tomb_food.png

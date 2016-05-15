@@ -1,0 +1,77 @@
+"item_momentum" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4102"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_momentum"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"momentum"
+
+	"AbilityCooldown"				"30"
+
+	"AbilitySpecial" {
+        "01" {
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"25"
+		}
+		"02" {
+			"var_type"					"FIELD_INTEGER"
+			"added_haste"				"40"
+		}
+		"03" {
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"35"
+		}
+        "04" {
+            "var_type"                  "FIELD_FLOAT"
+            "added_tenacity"            "35"
+        }
+	}
+
+	"Modifiers" {
+		"modifier_momentum_enabler" {
+			"IsHidden"		"1"
+			"Passive"		"1"
+
+			"OnCreated" {
+				"ApplyModifier" {
+					"Target"		"CASTER"
+					"ModifierName"	"modifier_momentum_disable_block"
+				}
+			}
+			"OnRespawn" {
+				"ApplyModifier" {
+					"Target"		"CASTER"
+					"ModifierName"	"modifier_momentum_disable_block"
+				}
+			}
+		}
+		"modifier_momentum_disable_block" {
+			"TextureName"		"item_momentum"
+			"RemoveOnDeath"		"0"
+
+			"EffectName"		"particles/items3_fx/lotus_orb_shield.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+		}
+	}
+	"precache" {
+		"particle"		"particles/items3_fx/lotus_orb_shield.vpcf"
+	}
+}
+"item_recipe_momentum" {
+	"ID"							"4101"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1515"
+	"ItemResult"					"item_momentum"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"			"item_freedom"
+	}
+}

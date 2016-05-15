@@ -1,0 +1,10 @@
+"npc_dawngate_hero_fuck_that_stupid_fucking_pick_sound_jesus_fuck_im_so_sick_of_it" {
+	"override_hero"				"npc_dota_hero_bane"
+    "SoundSet"                  ""
+    "GameSoundsFile"            ""
+    "IdleSoundLoop"             ""
+    "VoiceFile"                 ""
+	"HeroSelectSoundEffect"     ""
+
+	"Model"						"models/development/invisiblebox.vmdl"
+}

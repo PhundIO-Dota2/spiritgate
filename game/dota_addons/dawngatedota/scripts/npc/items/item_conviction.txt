@@ -1,0 +1,66 @@
+"item_conviction"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4024"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_conviction"
+	
+	"ItemCost"						"900"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"conviction"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				    "FIELD_INTEGER"
+            "added_life" 			    "200"
+        }
+        "02"
+        {
+            "var_type" 				    "FIELD_INTEGER"
+            "added_magic_resistance" 	"35"
+        }
+	}
+    "Modifiers"
+    {
+        "modifier_conviction_passive"
+        {
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+            "OnTakeDamage"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "items/conviction_lua"
+                    "Function"      "take_damage"
+                    "Target"        "ATTACKER"
+                    "Damage"        "%attack_damage"
+                }
+            }
+        }
+    }
+
+}
+"item_recipe_conviction"
+{
+	"ID"							"4023"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"				    "1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"560"
+	"ItemResult"					"item_conviction"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			            "item_will"
+	}
+}

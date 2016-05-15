@@ -1,0 +1,59 @@
+"ability_typhoon_waverider" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"typhoon_waverider"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"5000000"
+	"AbilityCooldown"				"18 16 14 12 10"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+    
+    "AbilityManaCost"               "50 75 100 125 150"
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "550"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"65 110 155 200 245"
+		}
+		"02" {
+			"var_type"				"FIELD_FLOAT"
+			"power_ratio"			"0.6"
+		}
+        "03" {
+            "var_type" 				"FIELD_INTEGER"
+            "distance" 				"550"
+        }
+        "04" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 			    "300"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_TheTyphoon.Waverider"
+			"Target"  		"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/typhoon_waverider_lua"
+			"Function"			"waveride"
+			"Target"			"POINT"
+			"Distance"			"%distance"
+			"Radius"		    "%radius"
+			"PowerRatio"		"%power_ratio"
+			"Damage"			"%damage"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+	}
+}

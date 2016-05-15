@@ -1,0 +1,18 @@
+"ability_ancient_babysitter_flashback_return" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"ancient_babysitter_flashback_return"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+
+	"AbilityCannotSurge"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    
+    
+    "OnSpellStart" {
+        "RunScript" {
+			"ScriptFile"	        "abilities/ancient_babysitter_flashback_lua"
+			"Function"		        "return_to_position"
+		}
+    }
+}

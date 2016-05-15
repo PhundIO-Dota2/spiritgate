@@ -1,0 +1,65 @@
+"item_adamance"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4076"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_adamance"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"adamance"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 					"FIELD_INTEGER"
+            "added_armour" 				"55"
+        }
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"35"
+		}
+		"03"
+		{
+			"var_type"				    "FIELD_INTEGER"
+			"added_armour_as_damage"	"10"
+		}
+
+		//Unique Passive managed in deal damage
+	}
+	"Modifiers" {
+		"modifier_adamance_lockdown" {
+			"TextureName"		"adamance"
+			"Duration"			"4"
+		}
+		"modifier_adamance_lockdown_slow" {
+			"TextureName"		"adamance"
+			"Duration"			"3"
+			"IsDebuff"			"1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-30"
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-40"
+            }
+		}
+	}
+}
+"item_recipe_adamance"
+{
+	"ID"							"4075"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_adamance"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_form"
+	}
+}

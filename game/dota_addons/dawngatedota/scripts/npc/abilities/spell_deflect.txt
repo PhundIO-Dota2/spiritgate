@@ -1,0 +1,66 @@
+"spell_deflect" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"spell_deflect"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+
+	"AbilityCooldown"				"150"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+	"IsCastableWhileHidden" 		"1"
+	
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"				"FIELD_INTEGER"
+        	"base_shield"			"50"
+        }
+        "02" {
+        	"var_type"				"FIELD_INTEGER"
+        	"shield_per_level"		"10"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"radius"				"600"
+        }
+        "04" {
+        	"var_type"				"FIELD_INTEGER"
+        	"duration"				"3"
+        }
+	}
+
+	"OnSpellStart" {
+		"RunScript"	{
+			"ScriptFile"		"abilities/spell_deflect_lua"
+			"Function"			"cast"
+			"Radius"			"%radius"
+			"BaseShield"		"%base_shield"
+			"ShieldPerLevel"	"%shield_per_level"
+		}
+		"FireEffect" {
+			"EffectName"        "particles/spell_deflect/spell_deflect_base.vpcf"
+			"EffectAttachType"  "attach_origin"
+			"Target"            "CASTER"
+		}
+	}
+	"Modifiers" {
+		"modifier_deflect" {
+			"TextureName"		"spell_deflect"
+			"Duration"			"%duration"
+
+    		"IsUniversalShield"	"1"
+
+    		"EffectName"		"particles/spell_deflect/deflect_shield_base.vpcf"
+    		"EffectAttachType"	"follow_hitloc"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/spell_deflect/deflect_shield_base.vpcf"
+		"particle"	"particles/spell_deflect/spell_deflect_base.vpcf"
+	}
+}

@@ -1,0 +1,68 @@
+"ability_pyrebug_fireball" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"pyrebug_fireball"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"750"
+	"AbilityCooldown"				"10 9 8 7 6"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+	"AbilitySpecial" {
+		"01" {
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"20 40 60 80 100"
+		}
+		"02" {
+			"var_type"					"FIELD_FLOAT"
+			"damage_power_ratio"		"0.5"
+		}
+        "03" {
+            "var_type" 					"FIELD_INTEGER"
+            "distance" 					"750"
+        }
+        "04" {
+        	"var_type"					"FIELD_INTEGER"
+        	"explosion_radius"			"100"
+        }
+        "05" {
+        	"var_type"					"FIELD_FLOAT"
+        	"explosion_stun_duration"	"0.1"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"		"Hero_TheTyphoon.Waverider"
+			"Target"  			"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/pyrebug_fireball_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Distance"			"%distance"
+			"DamagePowerRatio"	"%damage_power_ratio"
+			"Damage"			"%damage"
+			"ExplosionRadius"	"%explosion_radius"
+		}
+	}
+	"Modifiers" {
+		"modifier_pyrebug_fireball_ministun" {
+			"Duration"			"%explosion_stun_duration"
+			"IsHidden"			"1"
+			"IsDebuff"			"1"
+            "States" {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/units/heroes/hero_phoenix/phoenix_fire_spirits_launch_bird.vpcf"
+		"particle"	"particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_shadowraze.vpcf"
+	}
+}

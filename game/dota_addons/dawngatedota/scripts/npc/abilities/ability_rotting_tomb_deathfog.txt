@@ -1,0 +1,75 @@
+"ability_rotting_tomb_deathfog" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"rotting_tomb_deathfog"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"1500"
+	
+	"AbilityCooldown"				"120 110 100"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "180"
+        "Range"		"1500"
+    }
+
+	"AbilitySpecial" {
+    	"01" {
+    		"var_type"									"FIELD_INTEGER"
+    		"%damage_of_maximum_health"					"3 5 7"
+    	}
+    	"02" {
+    		"var_type"									"FIELD_FLOAT"
+    		"%damage_power_ratio_of_maximum_health"		"0.016"
+    	}
+    	"03" {
+    		"var_type"									"FIELD_INTEGER"
+    		"max_damage_against_non_shaper"				"125 200 275"
+    	}
+    	"04" {
+    		"var_type"									"FIELD_INTEGER"
+    		"duration"									"8"
+    	}
+    	"05" {
+    		"var_type"									"FIELD_INTEGER"
+    		"radius"									"180"
+    	}
+		"06" {
+			"var_type"									"FIELD_INTEGER"
+			"cast_range"								"1500"
+		}
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"						"abilities/rotting_tomb_deathfog_lua"
+			"Function"							"cast"
+			"Target"							"POINT"
+			"Caster"							"CASTER"
+
+			"DamageOfMaximumHealth"				"%%damage_of_maximum_health"
+			"DamagePowerRatioOfMaximumHealth"	"%%damage_power_ratio_of_maximum_health"
+			"Duration"							"%duration"
+			"MaxDamageAgainstNonShaper"			"%max_damage_against_non_shaper"
+			"Radius"							"%radius"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/desecrator_deathfog/deathfog_base.vpcf"
+		"particle"	"particles/desecrator_deathfog/deathfog_zombie.vpcf"
+	}
+}

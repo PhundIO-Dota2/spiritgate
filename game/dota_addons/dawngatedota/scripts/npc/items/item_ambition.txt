@@ -1,0 +1,68 @@
+"item_ambition"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4166"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_ambition"
+	
+	"ItemCost"						"2700"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"ambition"
+	"AbilitySpecial"
+    {
+        "01" {
+			"var_type"				"FIELD_INTEGER"
+			"added_armour"			"25"
+		}
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"25"
+		}
+		"03" {
+			"var_type"				"FIELD_INTEGER"
+			"added_lifedrain"		"10"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"25"
+		}
+	}
+	"OnEquip" {
+		"RunScript" {
+			"ScriptFile"			"items/ambition_lua"
+			"Function"				"on_equip"
+			"Target"				"CASTER"
+		}
+	}
+	"OnUnequip" {
+		"RunScript" {
+			"ScriptFile"			"items/ambition_lua"
+			"Function"				"on_unequip"
+			"Target"				"CASTER"
+		}
+	}
+	"Modifiers" {
+		"modifier_ambition_stack" {
+			"TextureName"			"ambition"
+		}
+	}
+
+}
+"item_recipe_ambition"
+{
+	"ID"							"4165"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_ambition"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_desire"
+	}
+}

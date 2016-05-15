@@ -1,0 +1,81 @@
+"item_harmony"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4060"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_harmony"
+	
+	"ItemCost"						"2700"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"harmony"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_health" 			"325"
+        }
+        "02"
+        {
+            "var_type"			    "FIELD_INTEGER"
+            "added_haste"			"20"
+        }
+        // Unique passive managed in deal_damage
+	}
+	"Modifiers"
+	{
+		"item_harmony_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties. The aura will not stack
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+			}
+            
+            "Aura"          "item_harmony_modifier_aura"
+            "Aura_Teams"    "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Radius"   "800"
+            "Aura_Types"    "DOTA_UNIT_TARGET_HERO"
+		}
+        "item_harmony_modifier_aura"
+        {
+            "TextureName"       "harmony"
+            
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"2"
+            }
+        }
+        "item_harmony_cooldown_cooldown"
+        {
+            "IsHidden"      "1"
+            "Duration"      "0.5"
+        }
+        "item_harmony_power"
+        {
+            "TextureName"       "harmony"
+            "Duration"          "2"
+        }
+	}
+
+}
+"item_recipe_harmony"
+{
+	"ID"							"4059"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1800"
+	"ItemResult"					"item_harmony"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			            "item_purity"
+	}
+}

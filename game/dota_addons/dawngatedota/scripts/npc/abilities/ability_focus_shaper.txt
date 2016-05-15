@@ -1,0 +1,38 @@
+"ability_focus_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"focus_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"Modifiers" {
+		"modifier_focus_shaper_companion_handler" {
+			"Passive"				"1"
+			"IsHidden"				"1"
+			"OnCreated" {
+				"RunScript" {
+					"ScriptFile"			"abilities/focus_shaper_lua"
+					"Function"				"OnCreated"
+					"Target"				"TARGET"
+					"Caster"				"CASTER"
+				}
+			}
+			"OnDestroy" {
+				"RunScript" {
+					"ScriptFile"			"abilities/focus_shaper_lua"
+					"Function"				"OnDestroy"
+					"Target"				"TARGET"
+					"Caster"				"CASTER"
+				}
+			}
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"			"abilities/focus_shaper_lua"
+					"Function"				"OnAttackLanded"
+					"Target"				"TARGET"
+					"Caster"				"CASTER"
+				}
+			}
+		}
+	}
+}

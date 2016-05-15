@@ -1,0 +1,56 @@
+"spell_tailwind" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"spell_tailwind"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+
+	"AbilityCooldown"				"120"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+	"IsCastableWhileHidden" 		"1"
+	
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 								"FIELD_INTEGER"
+			"%movespeed"   							"30"
+		}
+		"02" {
+			"var_type"								"FIELD_FLOAT"
+			"radius"								"525"
+		}
+		"03" {
+			"var_type"								"FIELD_INTEGER"
+			"duration"								"3"
+		}
+	}
+
+	"OnSpellStart" {
+		"RunScript"	{
+			"ScriptFile"		"abilities/spell_tailwind_lua"
+			"Function"			"cast"
+			"Radius"			"%radius"
+		}
+	}
+	"Modifiers" {
+		"modifier_tailwind" {
+			"TextureName"		"spell_tailwind"
+			"Duration"			"%duration"
+
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+			}
+
+			"EffectName" 		"particles/units/heroes/hero_ember_spirit/ember_spirit_remnant_dash_embers.vpcf"
+			"EffectAttachType"	"follow_origin"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/units/heroes/hero_ember_spirit/ember_spirit_remnant_dash_embers.vpcf"
+	}
+}

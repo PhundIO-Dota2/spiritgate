@@ -1,0 +1,80 @@
+"ability_hell_devourer_damnation" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"hell_devourer_damnation"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	
+	"AbilityCooldown"				"100 90 80"
+	"AbilityCastPoint"              "0"  //TODO: Nerf ult by increasing cast point
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"0.5"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	
+    "TargetInfo" {
+        "Type"      "Radius"
+        "Radius"    "300"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"175 300 425"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "power_ratio" 			"1.0"
+        }
+		"03" {
+			"var_type"				"FIELD_INTEGER"
+			"added_lifedrain"		"30 45 60"
+		}
+        "04" {
+            "var_type"              "FIELD_INTEGER"
+            "radius"              	"300"
+        }
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_WarlockKnight.Damnation"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/hell_devourer_damnation_lua"
+			"Function"			"start"
+			"Target"			"CASTER"
+			"Damage"		 	"%damage"
+			"PowerRatio"		"%power_ratio"	
+			"Radius"			"%radius"
+			"Duration"			"%duration"
+			"Lifedrain"			"%added_lifedrain"
+		}
+		"ApplyModifier" {
+			"Target"		"CASTER"
+			"ModifierName"	"modifier_hell_devourer_damnation"
+		}
+    }
+	"Modifiers" {
+		"modifier_hell_devourer_damnation" {
+			"TextureName"		"hell_devourer_damnation"
+			"Duration"			"%duration"
+		}
+		"modifier_hell_devourer_damnation_hidden" {
+			"IsHidden"			"1"
+			"Duration" 			"%duration"
+		}
+	}
+	"precache" {
+        "particle"  "particles/warlock_knight/damnation.vpcf"
+        "particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_ring.vpcf"
+		"soundfile"	"soundevents/custom_sounds.vsndevts"
+	}
+}

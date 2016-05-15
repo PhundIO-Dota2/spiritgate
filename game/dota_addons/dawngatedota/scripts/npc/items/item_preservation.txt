@@ -1,0 +1,70 @@
+"item_preservation"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4078"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_preservation"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"preservation"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_armour" 			"40"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"30"
+		}
+	}
+	"Modifiers" {
+		"modifier_preservation_passive" {
+			"Passive"		"1"
+			"IsHidden"		"1"
+			"OnCreated" {
+				"RunScript" {
+					"ScriptFile" 	"items/preservation_lua"
+					"Function"		"OnCreated"
+					"Target"		"CASTER"
+				}
+			}
+			"OnDestroy" {
+				"RunScript" {
+					"ScriptFile" 	"items/preservation_lua"
+					"Function"		"OnDestroy"
+					"Target"		"CASTER"
+				}
+			}
+		}
+		"modifier_ablative_armour" {
+			"TextureName"			"preservation"
+		}
+		"modifier_ablative_damage_reduction" {
+			"TextureName"			"preservation"
+			"IsDebuff"				"1"
+			"Duration"				"4"
+		}
+	}
+}
+"item_recipe_preservation"
+{
+	"ID"							"4077"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_preservation"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_form"
+	}
+}

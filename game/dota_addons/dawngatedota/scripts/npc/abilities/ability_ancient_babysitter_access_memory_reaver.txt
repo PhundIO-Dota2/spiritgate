@@ -1,0 +1,67 @@
+"ability_ancient_babysitter_access_memory_reaver" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"ancient_babysitter_access_memory_reaver"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"0"
+	
+	"AbilityCooldown"				"14 13 12 11 10"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1.2"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "750"
+    }
+
+    "AbilitySpecial" {
+    	"01" {
+    		"var_type"					"FIELD_INTEGER"
+    		"creep_damage"				"50 90 130 170 210"
+    	}
+    	"02" {
+    		"var_type"					"FIELD_FLOAT"
+    		"creep_damage_power_ratio"	"0.6"
+    	}
+    	"03" {
+    		"var_type"					"FIELD_INTEGER"
+    		"shaper_damage"				"75 135 195 255 315"
+    	}
+    	"04" {
+    		"var_type"					"FIELD_FLOAT"
+    		"shaper_damage_power_ratio"	"0.9"
+    	}
+    	"05" {
+    		"var_type"					"FIELD_INTEGER"
+    		"range"						"750"
+    	}
+    }
+
+    "OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"				"abilities/ancient_babysitter_access_memory_reaver_lua"
+    		"Function"					"on_spell_start"
+            "Target"                    "POINT"
+    		"CreepDamage"				"%creep_damage"
+    		"CreepDamagePowerRatio"		"%creep_damage_power_ratio"
+    		"ShaperDamage"				"%shaper_damage"
+    		"ShaperDamagePowerRatio"	"%shaper_damage_power_ratio"
+    	}
+        "FireSound" {
+            "EffectName"                "Hero_AncientBabysitter.AbilityReaver"
+            "Target"                    "CASTER"
+        }
+    }
+
+	"precache" {
+		"particle"          "particles/faris_access_memory/reaver_ability_base.vpcf"
+        "soundfile"         "soundevents/custom_sounds.vsndevts"
+	}
+}

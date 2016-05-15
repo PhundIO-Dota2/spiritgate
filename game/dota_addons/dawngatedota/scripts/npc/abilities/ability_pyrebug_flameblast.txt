@@ -1,0 +1,71 @@
+"ability_pyrebug_flameblast" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"pyrebug_flameblast"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"500"
+	"AbilityCooldown"				"25 23 21 19 17"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityChannelTime" 			"5 4.5 4 3.5 3"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+	"AbilitySpecial" {
+		"01" {
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"200 350 500 650 800"
+		}
+		"02" {
+			"var_type"					"FIELD_FLOAT"
+			"damage_power_ratio"		"1.5"
+		}
+        "03" {
+            "var_type" 					"FIELD_INTEGER"
+            "cast_range" 				"500"
+        }
+        "04" {
+        	"var_type"					"FIELD_INTEGER"
+        	"radius_maximum"			"500"
+        }
+        "05" {
+        	"var_type"					"FIELD_INTEGER"
+        	"pyre_stacks_maximum"		"4 6 8 10 12"
+        }
+        "06" {
+        	"var_type"					"FIELD_FLOAT"
+        	"channel_time"				"5 4.5 4 3.5 3"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"		"Hero_TheTyphoon.Waverider"
+			"Target"  			"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/pyrebug_flameblast_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"ChannelTime"		"%channel_time"
+		}
+	}
+
+	"OnChannelFinish" {
+		"RunScript" {
+			"ScriptFile"		"abilities/pyrebug_flameblast_lua"
+			"Function"			"release"
+			"Target"			"POINT"
+			"Damage"			"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"
+			"PyreStacksMaximum"	"%pyre_stacks_maximum"
+		}
+	}
+
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/pyrebug/flameblast.vpcf"
+	}
+}

@@ -1,0 +1,178 @@
+"npc_jungle_small_fish" {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/slark/slark.vmdl"
+        "ModelScale"            "0.75"
+        "Level"                 "1"
+        "HealthBarOffset"       "140"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+        "AttackDamageMin"       "9.0"
+        "AttackDamageMax"       "9.0"
+        "AttackRate"            "2"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange""0"
+        "AttackRange"           "130"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        //"BountyGoldMin"         "4"
+        //"BountyGoldMax"         "4"
+        "BountyXP"              "20"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "206"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "300"
+        "StatusHealthRegen"     "0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "1400"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}
+"npc_jungle_big_fish" {
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/slark/slark.vmdl"
+        "ModelScale"            "1"
+        "Level"                 "1"
+        "HealthBarOffset"       "200"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+        "AttackDamageMin"       "37.0"
+        "AttackDamageMax"       "37.0"
+        "AttackRate"            "2"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange""0"
+        "AttackRange"           "130"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        //"BountyGoldMin"         "38"
+        //"BountyGoldMax"         "38"
+        "BountyXP"              "135"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "140"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "206"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "950"
+        "StatusHealthRegen"     "0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "1400"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}
+"npc_jungle_scary_fish" {
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/slardar/slardar.vmdl"
+        "ModelScale"            "1"
+        "Level"                 "1"
+        "HealthBarOffset"       "200"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+        "AttackDamageMin"       "42.0"
+        "AttackDamageMax"       "42.0"
+        "AttackRate"            "1"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange""0"
+        "AttackRange"           "130"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        //"BountyGoldMin"         "38"
+        //"BountyGoldMax"         "38"
+        "BountyXP"              "240"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "140"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "206"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "1350"
+        "StatusHealthRegen"     "0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "1400"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}

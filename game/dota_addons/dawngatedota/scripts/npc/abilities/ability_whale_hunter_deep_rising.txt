@@ -1,0 +1,57 @@
+"ability_whale_hunter_deep_rising" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"whale_hunter_deep_rising"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"100000"
+	
+	"AbilityCooldown"				"130 120 110"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+
+    "TargetInfo" {
+    	"Type"		"FullLine"
+    	"Radius"		"900"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"200 325 450"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.7"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"900"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/whale_hunter_deep_rising_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"
+			"Range"				"%range"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/viridian_deep_rising/deep_rising_base.vpcf"
+	}
+}

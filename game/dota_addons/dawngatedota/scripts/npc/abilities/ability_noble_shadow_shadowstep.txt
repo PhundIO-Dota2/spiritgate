@@ -1,0 +1,54 @@
+"ability_noble_shadow_shadowstep" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"noble_shadow_shadowstep"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"14 12.5 11 9.5 8"
+
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+
+    "AbilityCastRange"       		"450"
+
+    "TargetInfo" {
+    	"Type"		"Range"
+    	"Radius"	"450"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"								"FIELD_INTEGER"
+        	"damage"								"60 85 110 135 160"
+        }
+        "07" {
+            "var_type" 								"FIELD_FLOAT"
+            "damage_power_ratio" 					"0.55"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_ShoresCallingStart"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"Target"					"TARGET"
+			"ScriptFile"				"abilities/noble_shadow_shadowstep_lua"
+			"Function"					"cast"
+			"Damage"					"%damage"
+			"DamagePowerRatio"			"%damage_power_ratio"
+		}
+    }
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/kindra_shadowstep/shadowstep_base.vpcf"
+		"particle"	"particles/kindra_shadowstep/shadowstep_flash.vpcf"
+	}
+}

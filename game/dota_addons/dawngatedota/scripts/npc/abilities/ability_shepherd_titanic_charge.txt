@@ -1,0 +1,84 @@
+"ability_shepherd_titanic_charge" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"shepherd_titanic_charge"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"360"
+	
+	"AbilityCooldown"				"130 110 90"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "360"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				                    "FIELD_INTEGER"
+            "damage" 				                    "175 275 375"
+        }
+        "02" {
+            "var_type" 				                    "FIELD_FLOAT"
+            "damage_power_ratio" 	                    "0.7"
+        }
+        "03" {
+            "var_type"                                  "FIELD_INTEGER"
+            "secondary_damage"                          "150 225 300"
+        }
+        "04" {
+            "var_type"                                  "FIELD_FLOAT"
+            "secondary_damage_power_ratio"              "0.7"
+        }
+        "05" {
+            "var_type"                                  "FIELD_FLOAT"
+            "stun_duration"                             "1.5"
+        }
+        "06" {
+            "var_type"                                  "FIELD_FLOAT"
+            "secondary_knockup_duration"                "0.5"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	    "Hero_Spirit_Breaker.EmpoweringHaste.Cast"
+			"Target"  		    "CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/shepherd_titanic_charge_lua"
+			"Function"			"cast"
+			"Target"			"TARGET"
+			"Damage"		 	"%damage"
+			"PowerRatio"		"%damage_power_ratio"	
+            "SecondaryDamage"   "%secondary_damage"
+            "SecondaryDamagePowerRatio" "%secondary_damage_power_ratio"
+            "StunDuration"              "%stun_duration"
+            "SecondaryKnockupDuration"  "%secondary_knockup_duration"
+		}
+    }
+    "Modifiers" {
+        "modifier_shepherd_titanic_charge_stun" {
+            "IsDebuff"      "1"
+            "States" {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+    
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts"
+	}
+}

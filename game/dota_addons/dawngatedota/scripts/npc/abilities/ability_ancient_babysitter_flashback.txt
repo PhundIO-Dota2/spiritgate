@@ -1,0 +1,80 @@
+"ability_ancient_babysitter_flashback" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"ancient_babysitter_flashback"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"0"
+	
+	"AbilityCooldown"				"14 12.5 11 9.5 8"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"1.2"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "50"
+        "Range"     "525"
+    }
+
+    "AbilitySpecial" {
+    	"01" {
+    		"var_type"		              "FIELD_INTEGER"
+    		"damage"				      "50 85 120 155 190"
+    	}
+    	"02" {
+    		"var_type"                    "FIELD_FLOAT"
+    		"damage_power_ratio"          "0.7"
+    	}
+        "03" {
+            "var_type"                    "FIELD_INTEGER"
+            "slow"                        "-25 -30 -35 -40 -45"
+        }
+        "04" {
+            "var_type"                    "FIELD_INTEGER"
+            "duration"                    "3"
+        }
+        "05" {
+            "var_type"                    "FIELD_INTEGER"
+            "radius"                      "200"
+        }
+    	"06" {
+    		"var_type"                    "FIELD_INTEGER"
+    		"range"	                      "525"
+    	}
+    }
+
+    "OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"			  "abilities/ancient_babysitter_flashback_lua"
+    		"Function"				  "on_spell_start"
+            "Target"                  "POINT"
+    		"Damage"                  "%damage"
+    		"DamagePowerRatio"        "%damage_power_ratio"
+            "Radius"                  "%radius"
+            "Range"                   "%range"
+            "Duration"                "%duration"
+    	}
+    }
+
+    "Modifiers" {
+        "modifier_flashback" {
+            "TextureName"       "ancient_babysitter_flashback"
+            "IsDebuff"          "1"
+            "IsPurgable"        "1"
+
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%slow"
+            }
+        }
+    }
+
+	"precache" {
+		"particle"		"particles/ancient_babysitter/memory.vpcf"
+	}
+}

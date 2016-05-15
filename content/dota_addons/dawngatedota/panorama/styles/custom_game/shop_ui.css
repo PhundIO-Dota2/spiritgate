@@ -1,0 +1,147 @@
+.shop_ui {
+	width: 100%;
+	height: 100%;
+}
+.shop {
+	width: 60%;
+	height: 65%;
+	margin-left: 20%;
+	margin-top: 7%;
+	background-color: #201c1b;
+	box-shadow: #FFFFFF 0px 0px 3px 0px rgba(50, 50, 50, 1);
+}
+.shop_button {
+	width: 5%;
+	height: 3.5%;
+	vertical-align: bottom;
+	background-color: #201c1b;
+}
+.shop_button:hover  {
+	border: 1px solid #666;
+}
+.shop_button:active {
+	border: 2px solid white;
+}
+
+.shop-tier-panel {
+	width: fill-parent-flow(1);
+	height: 100%;
+	background-color: black;
+	margin: 5px;
+}
+.shop-item-panel:hover {
+	background-color: #333;
+}
+.shop-item-panel Label {
+	font-size: 19px;
+	color: white;
+}
+.shop-item-panel-selected-t1 {
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #121615 ), to( #0f4525 ));
+}
+.shop-item-panel-selected-t2 {
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #121615 ), to( #0a465e ));
+}
+.shop-item-panel-selected-t3 {
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #121615 ), to( #532884 ));
+}
+
+.shop-item {
+	width: height-percentage(100%);
+	height: 100%;
+	margin: 4px;
+}
+.shop-item-panel:hover .shop-item {
+	width: height-percentage(100%);
+	height: 100%;
+	margin: 0px;
+}
+.shop-item-t1 {
+	box-shadow: #4faa4d 0px 0px 2px 0px;
+	border: 1px solid #4faa4d;
+}
+.shop-item-t2 {
+	box-shadow: #1797c1 0px 0px 2px 0px;
+	border: 1px solid #1797c1;
+}
+.shop-item-t3 {
+	box-shadow: #a414a6 0px 0px 2px 0px;
+	border: 1px solid #a414a6;
+}
+
+#ShopItemsTier1 {
+	box-shadow: #4faa4d 0px 0px 2px 0px;
+}
+#ShopItemsTier2 {
+	box-shadow: #1797c1 0px 0px 2px 0px;
+}
+#ShopItemsTier3 {
+	box-shadow: #a414a6 0px 0px 2px 0px;
+}
+#ShopItemsTier1:hover {
+	box-shadow: #4faa4d 0px 0px 6px 0px;
+}
+#ShopItemsTier2:hover {
+	box-shadow: #1797c1 0px 0px 6px 0px;
+}
+#ShopItemsTier3:hover {
+	box-shadow: #a414a6 0px 0px 6px 0px;
+}
+
+#ShopTitle {
+	font-size: 30px;
+	margin: 4px;
+}
+#ShopBody {
+	background-color: #070302;
+	width: 100%;
+	height: 80%;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+#ItemBuild {
+	width: 100%;
+	height: 20%;
+	margin-bottom: 4px;
+	border-top: 1px solid #44403f;
+	border-bottom: 1px solid #44403f;
+}
+#ShopItemPanel {
+	width: 100%;
+	height: 80%;
+	margin-top: 4px;
+	border-bottom: 1px solid #44403f;
+}
+#ShopBottom {
+	height: 10%;
+	width: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #120c0c ), to( #0e0a09 ));
+}
+#ShopButtonLabel {
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+
+#CurrentInventoryPanel {
+	margin-left: 5%;
+}
+
+.current_inventory_item {
+	height: 100%;
+	width: fill-parent-flow(1);
+	margin: 2px;
+}
+.current_inventory_item Image {
+	height: 100%;
+	width: height-percentage(100%);
+	border: 1px solid #AAAAAA;
+}
+.current_inventory_item Image:hover {
+	border: 1px solid #FFFFFF;
+}
+.current_inventory_item Image:active {
+	border: 2px solid #FFFFFF;
+}

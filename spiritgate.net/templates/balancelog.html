@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h2>Balance Log</h2>
+		<br/>
+		<p><a href="/">Back to Home</a></p>
+	</div>
+	<div class="panel-body">
+		<center><h3>Current Funds: {{current_funds}}</h3></center>
+		<ul class="list-group">
+			{% for event in log[::-1] %}
+				<li class="list-group-item {% if event[2] >= 0 %} list-group-item-success {% else %} list-group-item-danger {% endif %}">{{event[1]}} : {{'${:,.2f}'.format(event[2] / 100)}}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{% endblock %}

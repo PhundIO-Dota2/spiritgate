@@ -1,0 +1,103 @@
+"item_decay" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4106"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_decay"
+	
+	"ItemCost"						"2715"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"decay"
+	"AbilitySpecial" {
+        "01" {
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"30"
+		}
+		"02" {
+			"var_type"					"FIELD_INTEGER"
+			"added_life"				"200"
+		}
+		"03" {
+			"var_type"					"FIELD_INTEGER"
+			"added_defense_penetration"	"10"
+		}
+	}
+	"Modifiers" {
+		"item_decay_life_modifier" {
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_decay_decaying" {
+			"IsDebuff"			"1"
+			"TextureName"		"item_decay"
+			"Duration"			"3"
+		    "ThinkInterval" 	"0.03"
+		    "OnIntervalThink" {
+		    	"RunScript" {
+		    		"ScriptFile"		"items/decay_lua"
+		    		"Function"			"decay"
+		    		"Target"			"TARGET"
+		    		"Caster"			"CASTER"
+		    	}
+		    }
+		}
+		"modifier_soul_collector_decay" {
+			"TextureName"		"item_decay"
+			"IsHidden"	        "0"
+			"IsAuraActiveOnDeath" "1"
+			"RemoveOnDeath" 	"0"
+		} 
+		"modifier_soul_collector_hidden_decay" {
+            "IsHidden"	        "1"
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+			"IsAuraActiveOnDeath" "1"
+			"RemoveOnDeath" 	"0"
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS"			"4"
+			}
+        }
+        "modifier_soul_collector_passive_decay" {
+            "IsHidden"  "1"
+            "Passive"   "1"
+			"IsAuraActiveOnDeath" "1"
+			"RemoveOnDeath" 	"0"
+            "OnKill" {
+                "RunScript" {
+                    "Target"		"CASTER"
+                    "ScriptFile"	"items/decay_lua"
+                    "Function"		"gain_stack"
+                }
+            }
+			"OnDestroy" {
+				"RunScript" {
+					"ScriptFile"		"items/decay_lua"
+					"Function"			"on_remove"
+					"Target"			"CASTER"
+				}
+			}
+            "Properties" {
+                "MODIFIER_PROPERTY_HEALTH_BONUS"			"%added_health"
+            }
+        }
+	}
+
+}
+"item_recipe_decay" {
+	"ID"							"4105"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1585"
+	"ItemResult"					"item_decay"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"			"item_might"
+	}
+}

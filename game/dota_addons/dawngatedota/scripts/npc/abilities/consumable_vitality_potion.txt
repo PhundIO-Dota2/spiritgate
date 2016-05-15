@@ -1,0 +1,42 @@
+"consumable_vitality_potion" {
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityTextureName"            "vitality_potion"
+
+    "AbilityCooldown"               "120"
+    "AbilityCannotSurge"            "1"
+    "AbilityCooldownFixed"          "1"
+    
+    "AbilitySpecial" {
+        "01" {
+            "var_type"              "FIELD_INTEGER"
+            "health_regen"          "10"
+        }
+        "02" {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "15"
+        }
+    }
+    "OnSpellStart" {
+        "ApplyModifier" {
+            "ModifierName"      "modifier_vitality_potion"
+            "Target"            "CASTER"
+        }
+        "FireSound" {
+            "EffectName"        "Item_VitalityPotion.Use"
+            "Target"            "CASTER"
+        }
+    }
+    "Modifiers" {
+        "modifier_vitality_potion" {
+            "TextureName"           "vitality_potion"
+            "Duration"              "%duration"
+            "Properties" {
+                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"        "%health_regen"
+            }
+        }
+    }
+    "precache" {
+        "soundfile"                 "soundevents/custom_sounds.vsndevts"
+    }
+}

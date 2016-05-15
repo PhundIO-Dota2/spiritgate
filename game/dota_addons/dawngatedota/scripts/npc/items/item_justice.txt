@@ -1,0 +1,78 @@
+"item_justice"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4112"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_justice"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"justice"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"35"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_life"			"200"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"20"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_mastery"			"10"
+		}
+	}
+	"Modifiers"
+	{
+		"item_justice_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_justice_cooldown" {
+			"Duration"		"2.5"
+			"TextureName"	"justice"
+			"IsDebuff"		"1"
+		}
+		"item_justice_power_overwhelming" {
+			"Duration"		"3"
+			"TextureName"	"justice"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "10"
+            }
+		}
+	}
+
+}
+"item_recipe_justice"
+{
+	"ID"							"4111"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1850"
+	"ItemResult"					"item_justice"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_command"
+	}
+}

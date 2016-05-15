@@ -1,0 +1,73 @@
+<root>
+	<styles>
+		<include src="file://{resources}/styles/custom_game/root.css" />
+		<include src="file://{resources}/styles/custom_game/main_ui.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/vector.js" />
+		<include src="file://{resources}/scripts/custom_game/main_ui.js" />
+		<include src="file://{resources}/scripts/custom_game/targetting_indicator.js" />
+		<include src="file://{resources}/scripts/custom_game/context_ping.js" />
+	</scripts>
+    <Panel class="main-ui" hittest="false"> <!--is-not-visible!-->
+    	<Panel id="MainUiFlow" class="flow-down fill" hittest="false">
+	    	<Panel id="TopBar" class="top-bar flow-right" hittest="false">
+	    		<Button id="TopBarOpenMenu" class="panel-left fill-height square margin-4" hittest="false">
+	    		</Button>
+	    	</Panel>
+	    	<Panel id="MainScreen" class="flow-right fill" hittest="false">
+	    		<Panel id="PlayerInfo" class="panel-bottom flow-down">
+	    			<Panel id="PlayerInfoTopRow" style="height: 72%;" class="fill-width flow-right">
+	    				<Panel id="PlayerInfoAvatar" style="width: height-percentage(75%); horizontal-align: center;" class="fill-height margin-4">
+	    					<DOTAScenePanel style="width:100%; height:100%;" map="faris_portrait" camera="camera1"/>
+	    				</Panel>
+	    			</Panel>
+	    			<Panel id="PlayerInfoBottomRow" class="fill flow-right	">
+	    				<Panel id="PlayerInfoPassives" style="width: height-percentage(50%);" class="flow-down">
+	    					<Image id="PlayerInfoRolePassive" src="file://{images}/custom_game/roles/role_tactician.png" style="margin-left: 4px; margin-bottom: 2px; margin-top: 4px;" class="even-space-vertical square panel-center passive" onmouseover="MouseOverRolePassive()" onmouseout="MouseOutRolePassive()"/>
+	    					<Image id="PlayerInfoShaperPassive" src="file://{images}/custom_game/spellicons/pure_shaper.png" style="margin-left: 4px; margin-bottom: 4px; margin-top: 2px;" class="even-space-vertical square panel-center passive" onmouseover="MouseOverShaperPassive()" onmouseout="MouseOutShaperPassive()"/>
+	    				</Panel>
+	    				<Panel id="PlayerInfoStats" class="fill flow-right margin-4">
+	    					<Panel id="PlayerInfoStatsLeftRow" class="fill flow-down even-space-horiz">
+	    						<Panel id="PlayerInfoStatsAttackDamage" class="fill-width even-space-vertical flow-right margin-4" onmouseover="showAttackDamageTooltip()" onmouseout="hideAttackDamageTooltip()">
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsAttackDamageLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #4fd077;" text="999"/>
+	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_attack.png" style=""/>
+	    						</Panel>
+	    						<Panel id="PlayerInfoStatsArmour" class="fill-width even-space-vertical flow-right margin-4">
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsArmourLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #f5c562;" text="999"/>
+	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_armour.png" style=""/>
+	    						</Panel>
+	    						<Panel id="PlayerInfoStatsMagicResistance" class="fill-width even-space-vertical flow-right margin-4">
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsMagicResistanceLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #e39eed;" text="999"/>
+	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_mresist.png" style=""/>
+	    						</Panel>
+	    					</Panel>
+	    					<Panel id="PlayerInfoStatsRightRow" class="fill flow-down even-space-horiz">
+	    						<Panel id="PlayerInfoStatsPower" class="fill-width even-space-vertical flow-right margin-4" onmouseover="showPowerTooltip()" onmouseout="hidePowerTooltip()">
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsPowerLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #54ff52;" text="999"/>
+	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_power.png" style=""/>
+	    						</Panel>
+	    						<Panel id="PlayerInfoStatsHaste" class="fill-width even-space-vertical flow-right margin-4" onmouseover="showHasteTooltip()" onmouseout="hideHasteTooltip()">
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsHasteLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #d1deff;" text="999"/>
+	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_haste.png" style=""/>
+	    						</Panel>
+    							<Panel id="PlayerInfoStatsMovespeed" class="fill-width even-space-vertical flow-right margin-4">
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsMovespeedLabel" style="color: #fcfcfc; font-size: 18px; text-align: center;" text="999"/>
+	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_movespeed.png" style=""/>
+	    						</Panel>
+	    					</Panel>
+	    				</Panel>
+	    			</Panel>
+	    		</Panel>
+		    	<Panel id="PanelInventory" class="flow-down">
+					<Panel id="PanelInventoryItem1" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
+		    		<Panel id="PanelInventoryItem2" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
+		    		<Panel id="PanelInventoryItem3" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
+		    		<Panel id="PanelInventoryItem4" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
+		    		<Panel id="PanelInventoryItem5" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
+		    		<Panel id="PanelInventoryItem6" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
+	    		</Panel>
+	    	</Panel>
+	    </Panel>
+    </Panel>
+</root>

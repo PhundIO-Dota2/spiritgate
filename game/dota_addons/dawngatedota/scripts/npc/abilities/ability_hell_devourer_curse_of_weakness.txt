@@ -1,0 +1,128 @@
+"ability_hell_devourer_curse_of_weakness" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"hell_devourer_curse_of_weakness"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"475"
+	
+	"AbilityCooldown"				"14 13 12 11 10"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "475"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				                    "FIELD_INTEGER"
+            "damage" 				                    "30 45 60 75 90"
+        }
+        "02" {
+            "var_type" 				                    "FIELD_FLOAT"
+            "damage_power_ratio" 	                    "0.3"
+        }
+        "03" {
+            "var_type" 				                    "FIELD_INTEGER"
+            "movement_reduction_primary"                "-40 -45 -50 -55 -60"
+        }
+        "04" {
+            "var_type" 				                    "FIELD_INTEGER"
+            "movement_reduction_primary_duration"       "4"
+        }
+        "05" {
+            "var_type" 				                    "FIELD_INTEGER"
+            "movement_reduction_secondary"              "-19 -23 -27 -31 -35"
+        }
+        "06" {
+            "var_type" 				                    "FIELD_INTEGER"
+            "movement_reduction_secondary_duration"     "2"
+        }
+        "07" {
+            "var_type"                                  "FIELD_INTEGER"
+            "curse_of_weakness_damage"                  "50 75 100 125 150"
+        }
+        "08" {
+            "var_type"                                  "FIELD_FLOAT"
+            "curse_of_weakness_damage_power_ratio"      "0.5"
+        }
+        "09" {
+            "var_type"                                  "FIELD_INTEGER"
+            "range"                                     "475"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	    "Hero_WarlockKnight.CurseOfWeaknessCast"
+			"Target"  		    "CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/npc_curse_of_weakness_lua"
+			"Function"			"create_curse_of_weakness"
+			"Target"			"TARGET"
+			"Damage"		 	"%damage"
+			"PowerRatio"		"%damage_power_ratio"	
+            "DurationPrimary"   "%movement_reduction_primary_duration"
+            "DurationSecondary" "%movement_reduction_secondary_duration"
+		}
+    }
+    
+    "Modifiers" {
+        "modifier_curse_of_weakness_primary" {
+            "TextureName"       "hell_devourer_curse_of_weakness"
+            "IsDebuff"          "1"
+            "IsPurgable"        "1"
+
+            "EffectName"        "particles/voluc_curse_of_weakness/curse_of_weakness_debuff.vpcf"
+            "EffectAttachType"  "follow_hitloc"
+
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%movement_reduction_primary"
+            }
+        }
+        "modifier_curse_of_weakness_secondary" {
+            "TextureName"       "hell_devourer_curse_of_weakness"
+            "IsDebuff"          "1"
+            "IsPurgable"        "1"
+
+            "EffectName"        "particles/voluc_curse_of_weakness/curse_of_weakness_debuff.vpcf"
+            "EffectAttachType"  "follow_hitloc"
+
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%movement_reduction_secondary"
+            }
+        }
+        "modifier_curse_of_weakness" {
+            "IsHidden"      "1"
+            "Passive"       "1"
+            "OnAttackLanded" {
+                "RunScript" {
+                    "ScriptFile"        "abilities/curse_of_weakness_lua"
+                    "Function"          "on_attack"
+                    "Target"            "TARGET"
+                    "Damage"            "%curse_of_weakness_damage"
+                    "PowerRatio"        "%curse_of_weakness_damage_power_ratio"
+                }
+            }
+        }
+    }
+    
+	"precache" {
+		"soundfile"	"soundevents/custom_sounds.vsndevts"
+        "particle"  "particles/voluc_curse_of_weakness/curse_of_weakness_base.vpcf"
+        "particle"  "particles/voluc_curse_of_weakness/curse_of_weakness_debuff.vpcf"
+	}
+}

@@ -1,0 +1,62 @@
+"spell_stasis" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"spell_stasis"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+
+	"AbilityCooldown"				"240"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+	"IsCastableWhileHidden" 		"1"
+	
+	"AbilitySpecial" {
+		"01" {
+			"var_type"								"FIELD_INTEGER"
+			"duration"								"2"
+		}
+	}
+
+	"OnSpellStart" {
+		"ApplyModifier" {
+			"ModifierName"	"modifier_stasis"
+			"Target"		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"	"abilities/spell_stasis_lua"
+			"Function"		"cast"
+		}
+	}
+	"Modifiers" {
+		"modifier_stasis" {
+			"Duration"			"%duration"
+
+			"StatusEffectName" 		"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone.vpcf" 	   
+			"StatusEffectPriority"  "1"
+
+			"EffectName"			"particles/spell_stasis/stasis_base.vpcf"
+			"EffectAttachType"		"follow_origin"
+
+			"OverrideAnimation" "ACT_DOTA_TELEPORT"
+
+			"States" {
+				"MODIFIER_STATE_NO_HEALTH_BAR" 		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_MAGIC_IMMUNE" 		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_COMMAND_RESTRICTED"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_UNSELECTABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_jade_stone.vpcf"
+		"particle"	"particles/spell_stasis/stasis_base.vpcf"
+	}
+}

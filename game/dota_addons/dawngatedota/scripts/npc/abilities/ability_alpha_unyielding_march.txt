@@ -1,0 +1,85 @@
+"ability_alpha_unyielding_march" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"alpha_unyielding_march"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"18 16 14 12 10"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	"AbilitySpecial" {
+		"01" {
+            "var_type" 				"FIELD_INTEGER"
+            "%movespeed" 			"15 20 25 30 35"
+        }
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"10 20 30 40 50"
+		}
+		"03" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"health_cost"			"25 40 55 70 85"
+		}
+    }
+	
+	"OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"		"modifier_helper"
+    		"Function"			"AddStacks"
+    		"Target"			"CASTER"
+    		"ModifierName"		"modifier_alpha_unyielding_march_power"
+    		"Stacks"			"%added_power"
+    		"MaxStacks"			"%added_power"
+    		"Duration"			"%duration"
+    		"HealthCost"		"%health_cost"
+    	}
+    	"RunScript" {
+    		"ScriptFile"		"abilities/alpha_unyielding_march_lua"
+    		"Function"			"cast"
+    		"HealthCost"		"%health_cost"
+    	}
+    	"RunScript" {
+    		"ScriptFile"		"modifier_helper"
+    		"Function"			"DoPurge"
+    		"Target"			"CASTER"
+    	}
+    	"ApplyModifier" {
+    		"Target"			"CASTER"
+    		"ModifierName"		"modifier_alpha_unyielding_march"
+    	}
+		"FireSound" {
+			"EffectName"		"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  			"CASTER"
+		}
+    }
+	
+	"Modifiers" {
+		"modifier_alpha_unyielding_march" {
+			"TextureName"		"alpha_unyielding_march"
+
+			"EffectName"		"particles/fenmore_unyielding_march/unyielding_march_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"Duration"			"%duration"
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%%movespeed"
+			}
+		}
+		"modifier_alpha_unyielding_march_power" {
+			"IsHidden"		"1"
+			"Duration"		"%duration"
+		}
+	}
+	 
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"	"particles/fenmore_unyielding_march/unyielding_march_base.vpcf"
+	}
+}

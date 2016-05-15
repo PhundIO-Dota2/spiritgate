@@ -1,0 +1,101 @@
+"ability_survivor_blinding_speed" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"survivor_blinding_speed"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"525"
+	
+	"AbilityCooldown"				"9 8 7 6 5"
+	"AbilityCastPoint"              "0.03"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	"AnimationPlaybackRate"			"1.2"
+	
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "525"
+    }
+
+    "AbilitySpecial" {
+    	"01" {
+    		"var_type"		              "FIELD_INTEGER"
+    		"damage"				      "40 60 80 100 120"
+    	}
+        "02" {
+            "var_type"                    "FIELD_FLOAT"
+            "damage_power_ratio"          "0.35"
+        }
+        "03" {
+            "var_type"                    "FIELD_INTEGER"
+            "radius"                      "200"
+        }
+    	"04" {
+    		"var_type"                    "FIELD_INTEGER"
+    		"range"	                      "525"
+    	}
+        "05" {
+            "var_type"                    "FIELD_INTEGER"
+            "%recast_movement_speed"      "60"
+        }
+        "06" {
+            "var_type"                         "FIELD_INTEGER"
+            "recast_movement_speed_duration"   "3"
+        }
+        "07" {
+            "var_type"                    "FIELD_INTEGER"
+            "recast_rage_cost"            "50"
+        }
+    }
+
+    "OnAbilityPhaseStart" {
+        "RunScript" {
+            "ScriptFile"              "abilities/survivor_blinding_speed_lua"
+            "Function"                "precast"
+            "RageRequirement"         "%recast_rage_cost"
+        }
+    }
+
+    "OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"			  "abilities/survivor_blinding_speed_lua"
+    		"Function"				  "on_spell_start"
+            "Target"                  "POINT"
+    		"Damage"                  "%damage"
+    		"DamagePowerRatio"        "%damage_power_ratio"
+            "Radius"                  "%radius"
+            "Range"                   "%range"
+            "RageRequirement"         "%recast_rage_cost"
+    	}
+        "FireSound" {
+            "Target"                "TARGET"
+            "EffectName"            "Hero_PhantomLancer.SpiritLance.Impact"
+        }
+    }
+
+    "Modifiers" {
+        "modifier_survivor_blinding_speed_movement_speed" {
+            "TextureName"       "survivor_blinding_speed"
+            "Duration"          "%recast_movement_speed_duration"
+            "IsBuff"            "1"
+
+            "EffectName"        "particles/freia_blinding_speed/blinding_speed_ability_base.vpcf"
+            "EffectAttachType"  "follow_origin"
+
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%recast_movement_speed"
+            }
+        }
+    }
+
+	"precache" {
+		"particle"		"particles/freia_blinding_speed/blinding_speed_ability_base.vpcf"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+	}
+}

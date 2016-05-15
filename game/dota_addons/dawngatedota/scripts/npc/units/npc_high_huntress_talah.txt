@@ -1,0 +1,53 @@
+"npc_high_huntress_talah" {
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/items/courier/courier_janjou/courier_janjou.vmdl"
+        "ModelScale"            "1"
+        "Level"                 "1"
+        "HealthBarOffset"       "1400000"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        "BountyGoldMin"         "0"
+        "BountyGoldMax"         "0"
+        "BountyXP"              "0"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "60"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "700"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "100000"
+        "StatusHealthRegen"     "100000"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1800"
+        "VisionNighttimeRange"  "1800"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}

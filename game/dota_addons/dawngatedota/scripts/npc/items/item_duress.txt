@@ -1,0 +1,51 @@
+"item_duress" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4156"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_duress"
+
+	"AbilityCooldown"				"15"
+	
+	"ItemCost"						"2700"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"duress"
+	"AbilitySpecial" {
+        "01" {
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"40"
+		}
+	}
+	"Modifiers" {
+		"modifier_duress_rooted" {
+			"TextureName"			"item_duress"
+			"IsDebuff"				"1"
+			"IsPurgable"			"1"
+
+            "EffectName"            "particles/units/heroes/hero_siren/siren_net.vpcf"
+            "EffectAttachType"      "follow_origin"
+
+			"States" {
+                "MODIFIER_STATE_ROOTED"     "MODIFIER_STATE_VALUE_ENABLED"
+            }
+		}
+	}
+	"precache" {
+		"particle"		"particles/units/heroes/hero_siren/siren_net.vpcf"
+	}
+}
+"item_recipe_duress" {
+	"ID"							"4155"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1580"
+	"ItemResult"					"item_duress"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"						"item_inspiration"
+	}
+}

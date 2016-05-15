@@ -1,0 +1,91 @@
+"ability_winters_bride_avalanche" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"winters_bride_avalanche"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"675"
+	
+	"AbilityCooldown"				"130 120 110"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"2"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "250"
+        "Range"     "675"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "50 100 150"
+        }
+        "02" {
+            "var_type"              "FIELD_FLOAT"
+            "damage_power_ratio"    "0.2"
+        }
+        "03" {
+            "var_type"              "FIELD_INTEGER"
+            "burst_damage"          "150 225 300"
+        }
+        "04" {
+            "var_type"              "FIELD_FLOAT"
+            "damage_power_ratio"    "0.6"
+        }
+        "05" {
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"675"
+        }
+        "06" {
+            "var_type"              "FIELD_INTEGER"
+            "burst_radius"          "250"
+        }
+        "06" {
+            "var_type"              "FIELD_INTEGER"
+            "stun_radius"           "100"
+        }
+    }
+
+    "Modifiers" {
+        "modifier_avalanche_winters_bride_stun" {
+            "TextureName"       "winters_bride_avalanche"
+
+            "IsDebuff"          "1"
+
+            "EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+            "EffectAttachType"  "follow_overhead"
+            "States" { 
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	            "dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		            "CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		        "abilities/winters_bride_avalanche_lua"
+			"Function"			        "cast"
+			"Target"			        "POINT"
+			"Range"				        "%range"
+            "Damage"                    "%damage"
+            "DamagePowerRatio"          "%damage_power_ratio"
+            "BurstDamage"               "%burst_damage"
+            "BurstDamagePowerRatio"     "%burst_damage_power_ratio"
+            "BurstRadius"               "%burst_radius"
+            "StunRadius"               "%stun_radius"
+		}
+    }
+	"precache" {
+        "particle"  "particles/sakari_avalanche/avalanche_ability_base.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

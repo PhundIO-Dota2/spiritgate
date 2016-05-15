@@ -1,0 +1,65 @@
+"ability_enforcer_onslaught" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"enforcer_onslaught"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"5000000"
+	"AbilityCooldown"				"10"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOUR_IMMEDIATE"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+    	"Type"		"Cone"
+    	"Radius"	"250"
+    	"Width"		"1.3"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"							"FIELD_INTEGER"
+			"first_cast_damage"					"50 75 100 125 150"
+		}
+		"02" {
+			"var_type"							"FIELD_FLOAT"
+			"first_cast_damage_power_ratio"		"0.5"
+		}
+		"03" {
+			"var_type"							"FIELD_INTEGER"
+			"second_cast_damage"				"50 75 100 125 150"
+		}
+		"04" {
+			"var_type"							"FIELD_FLOAT"
+			"second_cast_damage_power_ratio"	"0.5"
+		}
+		"05" {
+			"var_type"							"FIELD_FLOAT"
+			"second_cast_stun_duration"			"0.75"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"					"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  						"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"					"abilities/enforcer_onslaught_lua"
+			"Function"						"cast"
+			"Target"						"POINT"
+			"FirstCastDamage"				"%first_cast_damage"
+			"FirstCastDamagePowerRatio"		"%first_cast_damage_power_ratio"
+			"SecondCastDamage"				"%second_cast_damage"
+			"SecondCastDamagePowerRatio"	"%second_cast_damage_power_ratio"
+			"SecondCastStunDuration"		"%second_cast_stun_duration"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/basko_onslaught/onslaught_first_base.vpcf"
+		"particle"	"particles/basko_onslaught/onslaught_second_base.vpcf"
+	}
+}

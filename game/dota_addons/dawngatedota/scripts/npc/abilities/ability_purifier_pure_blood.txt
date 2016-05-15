@@ -1,0 +1,105 @@
+"ability_purifier_pure_blood" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"purifier_pure_blood"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"700"
+	
+	"AbilityCooldown"				"0.5"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"	"130"
+        "Range"		"700"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"55 80 105 130 155"
+        }
+        "02" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"0.5"
+        }
+        "03" {
+        	"var_type"				"FIELD_FLOAT"
+        	"reduced_healing"		"-25 -35 -45 -55 -65"
+        }
+		"03" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"700"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"blood_orb_regen_time"	"22 20 18 16 14"
+		}
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"heal"					"45"
+		}
+		"06" {
+			"var_type"				"FIELD_FLOAT"
+			"heal_health_ratio"		"0.08"
+		}
+    }
+
+    "Modifiers" {
+    	"modifier_purifier_blood_orb" {
+    		"TextureName"			"purifier_pure_blood"
+    		"Passive"				"1"
+    		"ThinkInterval"			"%blood_orb_regen_time"
+    		"OnIntervalThink" {
+    			"RunScript" {
+    				"ScriptFile"			"abilities/purifier_pure_blood_lua"
+    				"Function"				"add_blood_orb"
+    			}
+    		}
+    	}
+    	"modifier_heal_allied_shapers_ticker" {
+    		"IsHidden"			"1"
+    		"Passive"			"1"
+    		"ThinkInterval"			"0.5"
+    		"OnIntervalThink" {
+    			"RunScript" {
+    				"ScriptFile"			"abilities/purifier_pure_blood_lua"
+    				"Function"				"tick_blood_orbs"
+    				"Heal"					"%heal"
+    				"HealHealthRaito"		"%heal_health_ratio"
+    			}
+    		}
+    	}
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/purifier_pure_blood_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Caster"				"CASTER"
+			"Duration"				"%duration"
+			"Damage"				"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"
+			"ReducedHealing"		"%reduced_healing"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/viyanna_pure_blood/pure_blood_base.vpcf"
+		"particle"	"particles/viyanna_pure_blood/pure_blood_explosion_base.vpcf"
+		"particle"	"particles/purity/purityblob_base.vpcf"
+	}
+}

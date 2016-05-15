@@ -1,0 +1,83 @@
+"AddonInfo"
+{
+	"addonSteamAppID"				"466395768"
+	"addontitle"					"Spiritgate"
+	"addonversion"					"3"
+	"addontagline"					"Spiritgate"
+	"addonauthor"					"Gavin Gassmann"
+	"addonSteamGroupName"			""
+	"addonauthorSteamID"			"gigimoi00"
+	"addonContent_Campaign"			"0"
+	"addonURL0"						"https://www.reddit.com/r/spiritgate"
+	"addonDescription"				"Spiritgate"
+
+	"TeamCount"                     "2"
+	"maps"                          "dusk_and_dawn"
+	"IsPlayable"                    "1"
+	"dusk_and_dawn" {
+		"MaxPlayers"                    "10"
+	}
+
+  	"Default_Keys" {
+        "01" {
+            "Key"       "1"
+            "Command"   "+SpiritgateSpell1"
+            "Name"      "SpiritgateSpell1"
+        }
+        "02" {
+            "Key"       "2"
+            "Command"   "+SpiritgateSpell2"
+            "Name"      "SpiritgateSpell2"
+        }
+        "03" {
+            "Key"       "3"
+            "Command"   "+SpiritgateSpell3"
+            "Name"      "SpiritgateSpell3"
+        }
+        "04" {
+            "Key"       "4"
+            "Command"   "+SpiritgateConsumable"
+            "Name"      "SpiritgateConsumable"
+        }
+        "05" {
+            "Key"       "B"
+            "Command"   "+SpiritgateRecall"
+            "Name"      "SpiritgateRecall"
+        }
+        "06" {
+            "Key"       "P"
+            "Command"   "+SpiritgateShop"
+            "Name"      "SpiritgateShop"
+        }
+        "07" {
+            "Key"       "SPACE"
+            "Command"   "+SpiritgateCenterCamera"
+            "Name"      "SpiritgateCenterCamera"
+        }
+        "08" {
+            "Key"       "Q"
+            "Command"   "+SpiritgateAbilityQ"
+            "Name"      "SpiritgateAbilityQ"
+        }
+        "09" {
+            "Key"       "W"
+            "Command"   "+SpiritgateAbilityW"
+            "Name"      "SpiritgateAbilityW"
+        }
+        "10" {
+            "Key"       "E"
+            "Command"   "+SpiritgateAbilityE"
+            "Name"      "SpiritgateAbilityE"
+        }
+        "11" {
+            "Key"       "R"
+            "Command"   "+SpiritgateAbilityR"
+            "Name"      "SpiritgateAbilityR"
+        }
+        "12" {
+            "Key"       "F"
+            "Command"   "+SpiritgateAbilityWard"
+            "Name"      "SpiritgateAbilityWard"
+        }
+    }
+}

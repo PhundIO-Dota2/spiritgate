@@ -1,0 +1,49 @@
+"ability_cerulean_ritual_bulwark" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"cerulean_ritual_bulwark"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	
+	"AbilityCooldown"				"15"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "base_added_defenses" 	"20 30 40 50 60"
+        }
+    }
+	
+	"OnSpellStart" {
+        "ApplyModifier" {
+            "Target"       "CASTER"
+            "ModifierName" "modifier_cerulean_armour"
+        }
+        "RunScript" {
+        	"Target"		"CASTER"
+        	"ScriptFile"	"abilities/cerulean_ritual_bulwark_lua"
+        	"Function"		"cast"
+        	"Defenses"		"%base_added_defenses"
+        }
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_RitualBulwark"
+			"Target"  		"CASTER"
+		}
+	}
+	"Modifiers" {
+		"modifier_cerulean_armour" {
+			"TextureName"		"cerulean_ritual_bulwark"
+			"EffectName"		"particles/econ/courier/courier_golden_roshan/golden_roshan_ambient.vpcf"
+			"EffectAttachType"	"follow_origin"
+			
+			"IsBuff"			"1"
+			"Duration"			"4"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+	}
+}

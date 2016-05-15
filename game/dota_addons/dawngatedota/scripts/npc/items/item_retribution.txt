@@ -1,0 +1,54 @@
+"item_retribution" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4092"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_retribution"
+	
+	"ItemCost"						"2640"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"retribution"
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 					"FIELD_INTEGER"
+            "added_life" 				"255"
+        }
+		"02" {
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"40"
+		}
+		"03" {
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"10"
+		}
+	}
+	"Modifiers" {
+		"item_retribution_modifier" {
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_retribution_mage_slayer_stacks" {  			//Stacks added in deal_damage
+			"TextureName"		"retribution"
+		}
+	}
+
+}
+"item_recipe_retribution" {
+	"ID"							"4091"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1300"
+	"ItemResult"					"item_retribution"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"						"item_conviction"
+	}
+}

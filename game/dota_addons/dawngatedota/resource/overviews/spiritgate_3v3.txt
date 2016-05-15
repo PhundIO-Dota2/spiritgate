@@ -1,0 +1,8 @@
+spiritgate_3v3
+{
+	material materials/overviews/spiritgate_3v3.vmat
+	pos_x -8192
+	pos_y 384
+	scale 8.500
+}
+

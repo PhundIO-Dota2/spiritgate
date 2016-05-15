@@ -1,0 +1,40 @@
+"npc_winters_bride_iceberg" {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/particle/ice_shards.vmdl"
+        "ModelScale"            "0"
+        "Level"                 "1"
+        "HealthBarOffset"       "14000000"
+
+        "ArmorPhysical"         "2000"
+        "MagicalResistance"     "2000"
+       
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "120"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0"
+        "StatusHealth"          "999999"
+        "StatusHealthRegen"     "999999"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+}
+"npc_winters_bride_avalanche" {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/particle/ice_shards.vmdl"
+        "ModelScale"            "0"
+        "Level"                 "1"
+        "HealthBarOffset"       "14000000"
+
+        "ArmorPhysical"         "2000"
+        "MagicalResistance"     "2000"
+       
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "120"
+
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0"
+        "StatusHealth"          "999999"
+        "StatusHealthRegen"     "999999"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+}

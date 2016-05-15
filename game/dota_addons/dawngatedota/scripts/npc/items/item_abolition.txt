@@ -1,0 +1,47 @@
+"item_abolition"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4042"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_abolition"
+	
+	"ItemCost"						"1500"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"abolition"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_haste" 			"20"
+        }
+		"02"
+		{
+			"var_type"			    "FIELD_INTEGER"
+			"added_power"			"20"
+		}
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "added_precision"       "20"
+        }
+	}
+}
+"item_recipe_abolition"
+{
+	"ID"							"4041"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"				    "1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1040"
+	"ItemResult"					"item_abolition"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_time"
+	}
+}

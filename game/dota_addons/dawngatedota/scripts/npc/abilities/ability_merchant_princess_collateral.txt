@@ -1,0 +1,69 @@
+"ability_merchant_princess_collateral" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"merchant_princess_collateral"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"725"
+	
+	"AbilityCooldown"				"10 9.5 9 8.5 8"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"725"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"50 80 110 140 170"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "slow" 					"-15 -17.5 -20 -22.5 -25"
+        }
+        "03" {
+            "var_type" 				"FIELD_FLOAT"
+            "power_ratio" 			"0.4"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/npc_merchant_princess_collateral_lua"
+			"Function"			"create_coin"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"PowerRatio"		"%power_ratio"	
+		}
+    }
+	"Modifiers" {
+		"modifier_merchant_princess_collateral_slow" {
+			"TextureName"     	"merchant_princess_collateral"
+			"IsBuff" 			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"        "1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+			}
+		}
+	}
+	"precache" {
+		"particle"	"particles/merchant_princess/collateral.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

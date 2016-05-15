@@ -1,0 +1,59 @@
+"spell_drain" {
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"AbilityTextureName"			"spell_drain"
+	
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"180"
+	"AbilityManaCost"				"0"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"550"
+		}
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"base_damage"			"69"
+		}
+		"03" {
+			"var_type"				"FIELD_INTEGER"
+			"damage_per_level"		"21"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"5"
+		}
+	}
+	
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"			"abilities/spell_drain_lua"
+			"Function"				"cast"
+			"Target"				"TARGET"
+			"Duration"				"%duration"
+			"BaseDamage"			"%base_damage"
+			"DamagePerLevel"		"%damage_per_level"
+		}
+	}
+
+	"Modifiers" {
+		"modifier_drain_taking_damage" {
+			"TextureName"	"spell_drain"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+		}
+	}
+
+	"precache" {
+		"particle"		"particles/spell_drain/drain_base.vpcf"
+		"particle"		"particles/spell_drain/drain_health.vpcf"
+	}
+}

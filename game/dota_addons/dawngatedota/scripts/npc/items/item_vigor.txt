@@ -1,0 +1,62 @@
+"item_vigor"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4008"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_vigor"
+	
+	"ItemCost"						"900"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"vigor"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"350"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_consume_health"	"7"			
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"added_consume_chance"	"0.66"
+		}
+	}
+	"Modifiers"
+	{
+		"item_vigor_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+	}
+}
+"item_recipe_vigor"
+{
+	"ID"							"4007"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"BaseClass"						"item_recipe_arcane_boots"
+	
+	"ItemCost"						"480"	
+	"ItemShopTags"					""
+	
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_vigor"
+	"ItemRequirements"
+	{
+		"01"						"item_life"
+	}
+}

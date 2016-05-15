@@ -1,0 +1,78 @@
+"ability_loremaster_chains_of_fate" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"loremaster_chains_of_fate"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"900"
+	
+	"AbilityCooldown"				"13 12 11 10 9"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"900"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"50 96 140 185 230"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.6"
+        }
+        "03" {
+        	"var_type"				"FIELD_FLOAT"
+        	"root_duration"			"0.75 1.00 1.25 1.50 1.75"
+        }
+        "04" {
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"900"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"		"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  			"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/loremaster_chains_of_fate_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"	
+			"Range"				"%range"
+			"RootDuration"		"%root_duration"
+		}
+	}
+	"Modifiers" {
+		"modifier_chains_of_fate" {
+			"TextureName"		"loremaster_chains_of_fate"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+			"EffectName"		"particles/zalgus_chains_of_fate/chains_of_fate_rings_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"States" {
+				"MODIFIER_STATE_ROOTED" 		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+	"precache" {
+		"particle"	"particles/zalgus_chains_of_fate/chains_of_fate_base.vpcf"
+		"particle"	"particles/zalgus_chains_of_fate/chains_of_fate_rings_base.vpcf"
+		"particle"	"particles/zalgus_chains_of_fate/chains_effects.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

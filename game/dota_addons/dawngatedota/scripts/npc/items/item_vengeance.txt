@@ -1,0 +1,78 @@
+"item_vengeance"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4068"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_vengeance"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"vengeance"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"350"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_armour"			"30"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"15"
+		}
+	}
+	"Modifiers"
+	{
+		"item_vengeance_modifier" {
+			"Passive" 		"1"  
+			"IsHidden" 		"1"  
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_vengeance_attack_modifier" {
+			"Passive"		"1"
+			"IsHidden"		"1"
+		}
+		"item_vengeance_burning_hidden" {
+			"IsHidden"				"1"
+			"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration"				"3"
+		}
+		"item_vengeance_burning" {
+			"TextureName"			"vengeance"
+			"IsDebuff"				"1"
+			"EffectName"			"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+			"EffectAttachType"		"follow_hitloc"
+		}
+	}
+	"precache" {
+		"particle"		"particles/item_vengeance/hellfire_blast_base.vpcf"
+		"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+	}
+}
+"item_recipe_vengeance"
+{
+	"ID"							"4067"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_vengeance"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_pride"
+	}
+}

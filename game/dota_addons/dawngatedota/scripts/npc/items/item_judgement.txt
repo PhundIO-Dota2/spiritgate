@@ -1,0 +1,80 @@
+"item_judgement"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4114"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_judgement"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"judgement"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"added_power"					"50"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"added_life"					"250"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"added_defense_penetration"		"15"
+		}
+		//Unique passive managed in deal_damage
+	}
+	"Modifiers"
+	{
+		"item_judgement_modifier"
+		{
+			"Passive" 			"1"  
+			"IsHidden"			"1"  
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_judgement_sundering_strikes_armour_hit" {
+			"IsHidden"		"1"
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration"		"4"
+		}
+		"item_judgement_sundering_strikes_magic_resistance_hit" {
+			"IsHidden"		"1"
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration"		"4"
+		}
+		"item_judgement_sundering_strikes_armour_visible" {
+			"TextureName"		"sundering_strikes_armour"
+			"IsDebuff"			"1"
+		}
+		"item_judgement_sundering_strikes_magic_resistance_visible" {
+			"TextureName"		"sundering_strikes_magic_resistance"
+			"IsDebuff"			"1"
+		}
+	}
+
+}
+"item_recipe_judgement"
+{
+	"ID"							"4113"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_judgement"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_aggression"
+	}
+}

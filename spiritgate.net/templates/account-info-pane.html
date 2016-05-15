@@ -1,0 +1,164 @@
+<div class="col-xs-4">
+	<center><a href="/"><img src="/image/logo.png" style="width: 50%; margin-bottom: 2rem;"></a></center>
+	<div class="panel panel-default">
+		<div class="panel-heading"><center><h2>User Panel</h2></center></div>
+		<div class="panel-body">
+			{% if not 'user' in session %}
+				<p>Login:</p>
+				<form id="loginForm" action="/login/" method="post">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">email</span>
+						<input class="form-control" type="email" name="email" placeholder="me@gmail.com" aria-describedby="basic-addon1">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">password</span>
+						<input class="form-control" type="password" name="password" placeholder="********" aria-describedby="basic-addon1">
+						<span class="input-group-btn">
+							<button id="loginButton" class="btn btn-default btn-primary" type="submit">Login</button>
+							<script>
+								$(function(){
+									$('#loginButton').on('click', function(e){
+							            e.preventDefault(); // prevent the default click action
+
+							            var $form = $('#loginForm');
+
+							            $.ajax({
+							                url: $form.attr("action"),
+							                type: $form.attr("method"),
+							                data: $form.serialize(),
+							                success: function (response) {
+							                	if(response == "success") {
+							                		swal({title: "Success!", text:"Logging you in...", type:"success",timer: 200000, showConfirmButton: false})
+							                		location.reload();
+							                	} else if(response == "incorrect_email") {
+							                		swal("Oops...", "Incorrect email or account doesn't exist", "error")
+							                	} else if (response == "incorrect_password") {
+							                		swal("Oops", "Incorrect password", "error")
+							                	}
+							                },
+							                error: function (response) {
+							                    swal("Oops...", "Something went horribly wrong while logging in", "error")
+							                },
+							            });
+							        });
+								})
+							</script>
+						</span>
+					</div>
+				</form>
+				<br/>
+				<br/>
+				<p>Create New Account:</p>
+				<form id="createAccountForm" action="/create_account/" method="post">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">email</span>
+						<input class="form-control" type="email" name="email" placeholder="me@gmail.com" aria-describedby="basic-addon1">
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">password</span>
+						<input class="form-control" type="password" name="password" placeholder="********" aria-describedby="basic-addon1">
+						<span class="input-group-btn">
+							<button id="createAccountButton" class="btn btn-default" type="submit">Create Account</button>
+							<script>
+								$(function(){
+									$('#createAccountButton').on('click', function(e){
+							            e.preventDefault(); // prevent the default click action
+
+							            var $form = $('#createAccountForm');
+
+							            $.ajax({
+							                url: $form.attr("action"),
+							                type: $form.attr("method"),
+							                data: $form.serialize(),
+							                success: function (response) {
+							                	if(response == "success") {
+							                		swal({title: "Success!", text:"Account created... Logging you in...", type:"success",timer: 200000, showConfirmButton: false})
+							                		location.reload();
+							                	} else if(response == "incorrect_email") {
+							                		swal("Oops...", "A user with this email already exists", "error")
+							                	} else if (response == "incorrect_password") {
+							                		swal("Oops", "Invalid Password", "error")
+							                	}
+							                },
+							                error: function (response) {
+							                    swal("Oops...", "Something went horribly wrong while creating an account", "error")
+							                },
+							            });
+							        });
+								})
+							</script>
+						</span>
+					</div>
+				</form>
+			{% else %}
+				<p>Signed in as: {{session['user']}}</p>
+				<p>Karma: {{query_db("SELECT karma FROM users WHERE email=?", [session['user']])[0][0]}}
+				<br/>
+				{% if query_db("SELECT steamid FROM users WHERE email=?", [session['user']])[0][0] == None %}
+					<span>
+						<button id="linkSteamAccountButton" class="btn btn-default">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+							Link Steam Account
+						</button>
+						<script>
+							$(function() {
+								$('#linkSteamAccountButton').on('click', function(e) {
+									window.location.assign("/login/steam/")
+								});
+							});
+						</script>
+					</span>
+					<button id="logoutButton" class="btn btn-small btn-default">Log out</button>
+				{% else %}
+					<p>Linked Steam Account: <a href='{{get_steam_info(query_db("SELECT steamid FROM users WHERE email=?", [session['user']])[0][0])['profileurl']}}' target="_blank">{{get_steam_info(query_db("SELECT steamid FROM users WHERE email=?", [session['user']])[0][0])['personaname']}}</a></p>
+					<div class="row">
+						<center>
+							<button id="unlinkSteamAccountButton" class="btn btn-small btn-default"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Unlink Steam Account</button>
+							<button id="logoutButton" class="btn btn-small btn-default">Log Out</button>
+						</center>
+					</div>
+					<script>
+						$(function() {
+							$('#unlinkSteamAccountButton').on('click', function(e) {
+								swal({title: "Are you sure?", text: "You will be able to relink your account to a different account afterwards",type: "warning",   showCancelButton: true,   confirmButtonColor: "#DD6B55",   confirmButtonText: "Yes!",   closeOnConfirm: false }, 
+									function(){
+							            $.ajax({
+							                url: "/unlink/steam/",
+							                type: "POST",
+							                data: "",
+							                success: function (response) {
+												swal("Unlinked!", "Your steam account has been unlinked.", "success"); 
+												location.reload();
+											}
+										})
+									}
+								);
+							});
+						});
+					</script>
+				{% endif %}
+				<script>
+					$('#logoutButton').on('click', function(e) {
+			            $.ajax({
+			                url: "/logout/",
+			                type: "POST",
+			                data: "",
+			                success: function (response) {
+								window.location.assign("/")
+							}
+						})
+						swal({title: "Logging Out...", timer: 200000, showConfirmButton: false})
+					});
+				</script>
+			{% endif %}
+		</div>
+		{% if 'user' in session %}
+			<div class="panel-footer">
+				<div class="btn-group" role="group" aria-label="...">
+					<button id="inventoryButton" class="btn btn-primary" onclick='location.assign("/inventory/skins")'><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>  Inventory</button>
+					<button id="inventoryButton" class="btn btn-primary" onclick='location.assign("/waystones")'>Waystones</button>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</div>

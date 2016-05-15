@@ -1,0 +1,788 @@
+"dawngatedota.cerulean_Attack" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/cerulean/CeruleanAttack1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.cerulean_WhirlingStrike" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/cerulean/CeruleanWhirlingStrike1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.cerulean_RitualBulwark" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/cerulean/CeruleanRitualBulwark1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.cerulean_Impale" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/cerulean/CeruleanImpale1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.cerulean_ShoresCalling" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/cerulean/CeruleanShoresCalling1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.cerulean_ShoresCallingStart" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/cerulean/CeruleanShoresCallingStart1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.sculptor_InspiringStrike" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/sculptor/InspiringStrike1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.sculptor_Embrace" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/sculptor/Embrace1.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.sculptor_KineticSculptureThrow" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/sculptor/KineticSculptureThrow.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.sculptor_KineticSculptureHit" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/sculptor/KineticSculptureHit.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.sculptor_MasterpieceStart" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/sculptor/MasterpieceStart.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.sculptor_MasterpieceAppear" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/sculptor/MasterpieceAppear.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.merchant_princess_FinalPaymentStart" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/merchant_princess/FinalPaymentStart.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"dawngatedota.merchant_princess_FinalPaymentCoin" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/merchant_princess/FinalPaymentCoin.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"item_EnergyShock" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/item/energyshock.vsnd"
+		}
+	}
+	"volume_min"     { "value" "6.000000" }
+	"volume_max"     { "value" "6.000000" }
+	"pitch_min"      { "value" "1.100000" }
+	"pitch_max"      { "value" "0.900000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_TheTyphoon.Attack" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/typhoon/typhoonattack.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_TheTyphoon.FeedingFrenzy" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/typhoon/feedingFrenzyChomp.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.400000" }
+	"pitch_max"      { "value" "0.600000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_TheTyphoon.FeedingFrenzyHit" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/typhoon/feedingFrenzyHit.vsnd"
+		}
+	}
+	"volume_min"     { "value" "12.000000" }
+	"volume_max"     { "value" "12.500000" }
+	"pitch_min"      { "value" "1.200000" }
+	"pitch_max"      { "value" "0.800000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_TheTyphoon.TidalPrison.Pop" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/typhoon/pop.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.400000" }
+	"pitch_max"      { "value" "0.600000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_TheTyphoon.Waverider" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/typhoon/waverider.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.400000" }
+	"pitch_max"      { "value" "0.600000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_TheTyphoon.Riptide" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/typhoon/riptide.vsnd"
+		}
+	}
+	"volume_min"     { "value" "6.000000" }
+	"volume_max"     { "value" "6.500000" }
+	"pitch_min"      { "value" "1.400000" }
+	"pitch_max"      { "value" "0.600000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_WarlockKnight.SentinelStrikeCast" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/warlock_knight/WarlockKnightSentinelStrikeCast.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_WarlockKnight.SentinelStrikeAttack" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/warlock_knight/WarlockKnightSentinelStrikeHit.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_WarlockKnight.CurseOfWeaknessCast" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/warlock_knight/WarlockKnightCurseOfWeaknessCast.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_WarlockKnight.CurseOfWeaknessHit" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/warlock_knight/WarlockKnightCurseOfWeaknessHit.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_WarlockKnight.CurseOfWeaknessTick" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/warlock_knight/WarlockKnightCurseOfWeaknessTick.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_WarlockKnight.Devour" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/warlock_knight/WarlockKnightDevour.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_WarlockKnight.Damnation" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/warlock_knight/WarlockKnightDamnation.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.000000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Item_VitalityPotion.Use" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/item/VitalityPotionUse.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.Attack" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/AncientBabysitterAttackStart.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.ProjectileImpact" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/AncientBabysitterAttackImpact.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.AbilityReaver" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/Ability_01.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.AbilitySentinel" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/Ability_02_final.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.AbilityFinalProtocol" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/Ability_03_final.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.AbilityFlashbackCast" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/AncBabySitter_Dash.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.AbilityFlashbackReturn" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/AncBabySitter_FlashbackReturn.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+
+"Hero_AncientBabysitter.AbilityReconfigureMelee" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/AncBabySitter_MeleeSwitch.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_AncientBabysitter.AbilityReconfigureRanged" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/ancient_babysitter/AncBabySitter_RangeSwitch.vsnd"
+		}
+	}
+	"volume_min"     { "value" "3.000000" }
+	"volume_max"     { "value" "3.500000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_ArtProdigy.AbilityDesaturateCast" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/art_prodigy/ArtProdigy_Desaturate.vsnd"
+		}
+	}
+	"volume_min"     { "value" "10.00000" }
+	"volume_max"     { "value" "10.50000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_ArtProdigy.AbilityMuseCast" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/art_prodigy/ArtProdigy_Muse_butterflyFlys.vsnd"
+		}
+	}
+	"volume_min"     { "value" "10.00000" }
+	"volume_max"     { "value" "10.50000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_ArtProdigy.AbilityMuseLoop" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/art_prodigy/ArtProdigy_Muse_butterflyLoop.vsnd"
+		}
+	}
+	"volume_min"     { "value" "10.00000" }
+	"volume_max"     { "value" "10.50000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_ArtProdigy.AbilityPrismaticVortexCast" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/art_prodigy/ArtProdigy_PrismaticVortex.vsnd"
+		}
+	}
+	"volume_min"     { "value" "10.00000" }
+	"volume_max"     { "value" "10.50000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+"Hero_ArtProdigy.AbilitySplatterCast" { "operator_stacks" { "update_stack" { "reference_operator" { "operator" "sos_reference_stack" "reference_stack" "dota_src1_2d" "operator_variables" {
+	"vsnd_files"
+	{
+		"value"
+		{
+			"value0"        "sounds/art_prodigy/ArtProdigy_Splatter_Launch.vsnd"
+		}
+	}
+	"volume_min"     { "value" "10.00000" }
+	"volume_max"     { "value" "10.50000" }
+	"pitch_min"      { "value" "1.000000" }
+	"pitch_max"      { "value" "1.000000" }
+	"chan_type"      { "value" "6"        }
+	"memory_type"    { "value" "0"        }
+	"soundlevel_min" { "value" "100.0000" }
+	"soundlevel_max" { "value" "100.0000" }
+}}}}}
+
+"Hero_ArtProdigy.AbilitySplatterLand" {
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator"          "sos_reference_stack"
+                "reference_stack"           "src1_2d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0"        "sounds/art_prodigy/ArtProdigy_Splatter_Land.vsnd"
+                        }
+                    }
+                    "volume_min"
+                    {
+                        "value"     "5.000000"
+                    }
+                    "volume_max"
+                    {
+                        "value"     "5.000000"
+                    }
+                    "pitch_min"
+                    {
+                        "value"     "1.000000"
+                    }
+                    "pitch_max"
+                    {
+                        "value"     "1.000000"
+                    }
+                    "chan_type"
+                    {
+                        "value"     "6"
+                    }
+                    "memory_type"
+                    {
+                        "value"     "0"
+                    }
+                    "soundlevel_min"
+                    {
+                        "value"     "100.000000"
+                    }
+                    "soundlevel_max"
+                    {
+                        "value"     "100.000000"
+                    }
+                }
+            }
+        }
+    }
+}

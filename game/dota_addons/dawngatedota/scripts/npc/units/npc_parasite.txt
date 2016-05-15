@@ -1,0 +1,39 @@
+"npc_parasite" {
+    "BaseClass"             "npc_dota_creature"
+    "Model"                 "models/heroes/tiny_01/tiny_01.vmdl"
+    "ModelScale"            "2"
+    "HasInventory"          "0"
+
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "RingRadius"            "130"
+
+    "VisionDaytimeRange"    "2000"
+    "VisionNighttimeRange"  "2000"
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackDamageMin"       "48.0"
+    "AttackDamageMax"       "48.0"
+    "AttackRate"            "1.0"
+    "AttackAnimationPoint"  "0.4"
+    "AttackAcquisitionRange""1000"
+    "AttackRange"           "180"
+
+    "ProjectileModel"       "particles/guardian/guardian_aa_base.vpcf"
+    "ProjectileSpeed"       "900"
+
+    "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"         "0"
+
+    "AbilityLayout"         "5"
+    "Ability1"              "ability_guardian_missile_barrage"
+    "Ability2"              "ability_guardian_snare_bubble"
+    "Ability3"              "ability_guardian_doom_laser"
+    "Ability4"              "ability_guardian_fire_field"
+    "Ability5"              "ability_universal_ability"
+
+    "HealthBarOffset"       "500"
+
+    "StatusHealth"          "3775"
+    "StatusHealthRegen"     "2"
+}

@@ -1,0 +1,67 @@
+"ability_elegant_dancer_stance_dance" {
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "elegant_dancer_stance_dance"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "5"
+
+    "AbilityCannotSurge"            "1"
+    
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityCooldown"               "1.5"
+    "AbilityCooldownFixed"          "1"
+    
+    "AbilitySpecial" {
+        "01" {
+            "var_type"                          "FIELD_INTEGER"
+            "%passive_gale_increased_damage"    "5 10 15 20 25"
+        }
+        "02" {
+            "var_type"                          "FIELD_INTEGER"
+            "%increased_gale_range"             "20"
+        }
+        "03" {
+            "var_type"                          "FIELD_INTEGER"
+            "%decreased_gale_range"             "-20"
+        }
+        "04" {
+            "var_type"                          "FIELD_INTEGER"
+            "%increased_gale_damage"            "25"
+        }
+    }
+    
+    "OnSpellStart" {
+        "RunScript" {
+            "ScriptFile"            "abilities/elegant_dancer_stance_dance_lua"
+            "Function"              "toggle"
+        }
+        "AttachEffect" {
+            "EffectName"            "particles/ashabel_stance_dance/stance_dance_effect_base.vpcf"
+            "Target"                "CASTER"
+            "EffectAttachType"      "follow_origin"
+        }
+    }
+
+    "Modifiers" {
+        "modifier_gale_ticker" {
+            "Passive"       "1"
+
+            "ThinkInterval" "0.1"
+            "OnIntervalThink" {
+                "RunScript" {
+                    "ScriptFile"        "abilities/elegeant_dancer_gale_lua"
+                    "Function"          "tick_gale"
+                    "Caster"            "CASTER"
+                    "Target"            "TARGET"
+                }
+            }
+        }
+    }
+    
+    "precache" {
+        "particle"              "particles/ashabel_stance_dance/stance_dance_effect_base.vpcf"
+
+        "particle"  "particles/ashabel_radius/asha750.vpcf"
+        "particle"  "particles/ashabel_radius/asha500.vpcf"
+        "particle"  "particles/ashabel_radius/asha900.vpcf"
+    }
+}

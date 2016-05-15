@@ -1,0 +1,107 @@
+"ability_art_prodigy_prismatic_vortex" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"art_prodigy_prismatic_vortex"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"115 100 85"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+	
+    "AbilityCastRange"       		"700"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "700"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"							"FIELD_INTEGER"
+			"health"							"300 400 500"
+		}
+		"02" {
+			"var_type"							"FIELD_FLOAT"
+			"health_power_ratio"				"1.15"
+		}
+		"03" {
+			"var_type"							"FIELD_INTEGER"
+			"shaper_power_drain"				"10 15 20"
+		}
+		"04" {
+			"var_type"							"FIELD_FLOAT"
+			"shaper_power_drain_power_ratio"	"0.025"
+		}
+		"05" {
+			"var_type"							"FIELD_INTEGER"
+			"minion_power_drain"				"3 4 5"
+		}
+		"06" {
+			"var_type"							"FIELD_INTEGER"
+			"duration"							"5"
+		}
+		"07" {
+			"var_type"							"FIELD_INTEGER"
+			"cast_range"						"700"
+		}
+		"08" {
+			"var_type"							"FIELD_INTEGER"
+			"drain_radius"						"375"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"					"Hero_ArtProdigy.AbilityPrismaticVortexCast"
+			"Target"  						"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"					"abilities/art_prodigy_prismatic_vortex_lua"
+			"Function"						"StartSpell"
+			"Duration"						"%duration"
+			"Health"						"%health"
+			"HealthPowerRatio"				"%health_power_ratio"
+			"ShaperPowerDrain"				"%shaper_power_drain"
+			"ShaperPowerDrainPowerRatio"	"%shaper_power_drain_power_ratio"
+			"MinionPowerDrain"				"%minion_power_drain"
+			"DrainRadius"					"%drain_radius"
+		}
+		"ApplyModifier" {
+			"ModifierName"					"modifier_prismatic_vortex"
+			"Target"						"TARGET"
+		}
+	}
+	"Modifiers" {
+		"modifier_prismatic_vortex_power_gain" {
+			"Duration"				"0.5"
+		}
+		"modifier_prismatic_vortex_power_loss" {
+			"Duration"				"0.5"
+			"IsDebuff"				"1"
+		}
+		"modifier_prismatic_vortex_health" {
+			"IsHidden"				"1"
+			"Duration"				"%duration"
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS"	"1"
+			}
+		}
+		"modifier_prismatic_vortex" {
+			"IsHidden"			"1"
+			"TextureName"		"art_prodigy_prismatic_vortex"
+			"EffectName"		"particles/zeri_prismatic_vortex/prismatic_vortex_ability_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"Target"			"TARGET"
+			"Duration"			"%duration"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/zeri_prismatic_vortex/prismatic_vortex_ability_base.vpcf"
+	}
+}

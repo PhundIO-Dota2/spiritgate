@@ -1,0 +1,57 @@
+"item_hunger"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4001"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_hunger"
+	
+	"ItemCost"						"460"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"hunger"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_power" 			"5"
+        }
+		"02"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "life_leech" 			"5"
+        }
+	}
+    "Modifiers"
+    {
+		"modifier_hunger_life_leech_handler"
+		{
+			"Passive"  "1"
+			"IsHidden" "1"
+			"OnCreated"
+			{
+				"ApplyModifier"
+				{
+					"Target"		"CASTER"
+					"ModifierName"	"modifier_hunger_life_leech"
+				}
+			}
+			"OnDestroy"
+			{
+				"RemoveModifier"
+				{
+					"Target"		"CASTER"
+					"ModifierName"	"modifier_hunger_life_leech"
+				}
+			}
+		}
+        "modifier_hunger_life_leech"
+        {
+            "Passive"  "0"
+            "IsHidden" "1"
+		}
+	}
+}

@@ -1,0 +1,89 @@
+"ability_winters_bride_iceberg" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"winters_bride_iceberg"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"650"
+	
+	"AbilityCooldown"				"0"
+	"AbilityCastPoint"              "0.03"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "100"
+        "Range"     "650"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "added_power" 			"10 15 20 25 30"
+        }
+        "02" {
+            "var_type"              "FIELD_FLOAT"
+            "frost_replenish_speed" "0.5 1 1.5 2 2.5"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"650"
+        }
+        "04" {
+            "var_type"              "FIELD_INTEGER"
+            "ice_shard_storage"     "2 3 4 5 5"
+        }
+    }
+	
+    "OnAbilityPhaseStart" {
+        "RunScript" {
+            "ScriptFile"        "abilities/winters_bride_iceberg_lua"
+            "Function"          "precast"
+        }
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	    "dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		     "CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/winters_bride_iceberg_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Range"				"%range"
+		}
+    }
+    "Modifiers" {
+        "modifier_ice_shard" {
+            "TextureName"       "winters_bride_iceberg"
+        }
+        "modifier_iceberg_replenish_passive" {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "ThinkInterval"     "0.4"
+            "OnIntervalThink" {
+                "RunScript" {
+                    "ScriptFile"        "abilities/winters_bride_iceberg_lua"
+                    "Function"          "tick"
+                    "Caster"            "CASTER"
+                    "Target"            "CASTER"
+                }
+            }
+        }
+        "modifier_iceberg_power" {
+            "IsHidden"          "1"
+            "RemoveOnDeath"     "0"
+        }
+    }
+	"precache" {
+        "particle"  "particles/sakari_iceberg/iceberg_base.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

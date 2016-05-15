@@ -1,0 +1,5 @@
+flask
+beaker
+authomatic
+stripe
+python3-openid

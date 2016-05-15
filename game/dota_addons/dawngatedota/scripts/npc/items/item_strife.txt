@@ -1,0 +1,87 @@
+"item_strife" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4104"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_strife"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"strife"
+	"AbilitySpecial" {
+        "01" {
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"30"
+		}
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"added_life"			"250"
+		}
+	}
+	"Modifiers" {
+		"item_strife_modifier" {
+			"Passive" 		"1"  
+			"IsHidden" 		"1"  
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"modifier_strife_soul_collector" {
+			"IsHidden"					"1"
+			"RemoveOnDeath"				"0"
+			"IsAuraActiveOnDeath"		"1"
+		}
+		"item_strife_modifier_master" {
+			"Passive"			"1"
+			"IsHidden"			"1"
+            "OnKill" {
+                "RunScript" {
+                    "Target"		"CASTER"
+                    "ScriptFile"	"items/strife_lua"
+                    "Function"		"gain_stack"
+                }
+            }
+			"OnDestroy" {
+				"RunScript" {
+					"ScriptFile"		"items/strife_lua"
+					"Function"			"on_remove"
+					"Target"			"CASTER"
+				}
+			}
+		}
+		"item_strife_stacking" {
+			"RemoveOnDeath"			"0"
+			"TextureName"			"item_strife"
+			"IsAuraActiveOnDeath"	"1"
+		}
+		"item_strife_power_bonus" {
+			"RemoveOnDeath"			"0"
+			"IsHidden"				"1"
+		}
+		"item_strife_health_bonus" {
+			"RemoveOnDeath"			"0"
+			"IsHidden"				"1"
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"1"
+			}
+		}
+	}
+
+}
+"item_recipe_strife" {
+	"ID"							"4103"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1870"
+	"ItemResult"					"item_strife"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"			"item_might"
+	}
+}

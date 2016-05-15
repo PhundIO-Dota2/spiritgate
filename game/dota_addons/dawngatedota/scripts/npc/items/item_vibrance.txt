@@ -1,0 +1,83 @@
+"item_vibrance"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4076"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_vibrance"
+	
+	"ItemCost"						"1920"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"vibrance"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"300"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_life_regen"		"8"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"25"
+		}
+	}
+
+	"OnEquip" {
+		"RunScript" {
+			"ScriptFile"		"items/vibrance_lua"
+			"Function"			"equip"
+			"Target"			"CASTER"
+		}
+	}
+	"OnUnequip" {
+		"RunScript" {
+			"ScriptFile"		"items/vibrance_lua"
+			"Function"			"unequip"
+			"Target"			"CASTER"
+		}
+	}
+
+	"Modifiers"
+	{
+		"item_vibrance_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+			}
+		}
+		"item_vibrance_regen_modifier" {
+			"IsHidden"									"1"
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"0.1"
+			}
+		}
+	}
+}
+"item_recipe_vibrance"
+{
+	"ID"							"1921"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"980"
+	"ItemResult"					"item_vibrance"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_growth"
+	}
+}

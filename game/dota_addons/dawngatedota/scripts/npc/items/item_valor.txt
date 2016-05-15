@@ -1,0 +1,72 @@
+"item_valor"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4098"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_valor"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"valor"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"35"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"40"
+		}
+    	"03"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "added_will_thief"          "3"
+        }
+	}
+	"Modifiers" {
+		"modifier_valor_passive" {
+			"Passive"				"1"
+		    "ThinkInterval" 		"0.03"
+		    "IsHidden"				"1"
+		    "OnIntervalThink" {
+		        "RunScript" {
+		        	"ScriptFile"		"items/valor_lua"
+		        	"Function"			"tick"
+		        }
+		    }
+		}
+		"modifier_valor_power" {
+			"TextureName"		"valor"
+		}
+		"modifier_valor_last_stand" {
+			"TextureName"		"last_stand"
+			"Duration"			"5"
+		}
+		"modifier_valor_last_stand_cooldown" {
+			"Duration"			"60"
+			"IsDebuff"			"1"
+			"TextureName"		"last_stand"
+		}
+	}
+}
+"item_recipe_valor"
+{
+	"ID"							"4097"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_valor"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_balance"
+	}
+}

@@ -1,0 +1,67 @@
+"ability_shepherd_sheep_toss" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"shepherd_sheep_toss"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"750"
+	
+	"AbilityCooldown"				"12 11 10 9 8"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"750"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"50 70 90 110 130"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.3"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"dash_damage"			"50 70 90 110 130"
+        }
+       	"04" {
+       		"var_type"				"FIELD_FLOAT"
+       		"dash_damage_power_ratio"	"0.3"
+       	}
+        "05" {	
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"750"
+    	}
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_PhantomLancer.SpiritLance.Impact"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/shepherd_sheep_toss_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"	
+			"Range"				"%range"
+			"DashDamage"		"%dash_damage"
+			"DashDamagePowerRatio"	"%dash_damage_power_ratio"
+		}
+    }
+	"precache" {
+		"soundfile"     "soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+		"particle"		"particles/kel_sheep_toss/sheep_toss_base.vpcf"
+	}
+}

@@ -1,0 +1,46 @@
+"ability_mindrotting_shaper" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"mindrotting_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_mindrotting_shaper" {
+			"IsHidden"		"1"
+			"IsBuff"		"1"
+			"IsPurgable"	"0"
+			"Passive"		"1"
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"		"abilities/mindrotting_shaper_lua"
+					"Function"			"on_attack_landed"
+					"Target"			"TARGET"
+					"Attacker"			"ATTACKER"
+					"Caster"			"CASTER"
+				}
+			}
+		}
+		"modifier_mindrotting_shaper_silence" {
+			"TextureName"		"mindrotting_shaper"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+			"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States" {
+				"MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_mindrotting_shaper_cooldown" {
+			"Duration"		"5"
+			"IsHidden"		"1"
+			"IsDebuff"		"1"
+		}
+	}
+	"precache" {
+		"particle"			"particles/generic_gameplay/generic_silenced.vpcf"
+	}
+}

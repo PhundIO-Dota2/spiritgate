@@ -1,0 +1,54 @@
+"item_equilibrium"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4082"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_equilibrium"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"equilibrium"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_armour" 			"85"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"40"
+		}
+		//Unique passive managed in deal_damage
+	}
+	"Modifiers" {
+		"modifier_equilibrium_subdued" {
+			"TextureName"		"equilibrium"
+			"Duration"			"3"
+			"IsDebuff"			"1"
+			"Properties" {
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-30"
+			}
+		}
+	}
+
+}
+"item_recipe_equilibrium"
+{
+	"ID"							"4081"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_equilibrium"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_discipline"
+	}
+}

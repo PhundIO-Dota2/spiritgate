@@ -1,0 +1,75 @@
+"item_defiance"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4056"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_defiance"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"defiance"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				    "FIELD_INTEGER"
+            "added_health" 			    "900"
+        }
+        "02"
+		{
+			"var_type"				    "FIELD_INTEGER"
+			"added_consume_health"	    "12"			
+		}
+		"03"
+		{
+			"var_type"				    "FIELD_FLOAT"
+			"added_consume_chance"	    "1"
+		}
+        //Unique passive managed in deal_damage
+	}
+	"Modifiers"
+	{
+		"item_defiance_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+			}
+            "ThinkInterval"     "0.5"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "items/defiance_lua"
+                    "Function"          "tick"
+                }
+            }
+		}
+        "item_defiance_cdr"
+        {
+            "TextureName"           "defiance"
+        }
+	}
+
+}
+"item_recipe_defiance"
+{
+	"ID"							"4055"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_defiance"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_vigor"
+	}
+}

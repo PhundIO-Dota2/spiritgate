@@ -1,0 +1,5442 @@
+"DOTAAbilities"
+{
+	"item_abolition"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4042"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_abolition"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"abolition"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_haste" 			"20"
+	        }
+			"02"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"added_power"			"20"
+			}
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "added_precision"       "20"
+	        }
+		}
+	}
+	"item_recipe_abolition"
+	{
+		"ID"							"4041"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"				    "1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1040"
+		"ItemResult"					"item_abolition"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_time"
+		}
+	}
+	"item_adamance"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4076"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_adamance"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"adamance"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_armour" 				"55"
+	        }
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"35"
+			}
+			"03"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"added_armour_as_damage"	"10"
+			}
+	
+			//Unique Passive managed in deal damage
+		}
+		"Modifiers" {
+			"modifier_adamance_lockdown" {
+				"TextureName"		"adamance"
+				"Duration"			"4"
+			}
+			"modifier_adamance_lockdown_slow" {
+				"TextureName"		"adamance"
+				"Duration"			"3"
+				"IsDebuff"			"1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-30"
+	                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-40"
+	            }
+			}
+		}
+	}
+	"item_recipe_adamance"
+	{
+		"ID"							"4075"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_adamance"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_form"
+		}
+	}
+	"item_aggression"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4034"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_aggression"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"aggression"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				        "FIELD_INTEGER"
+	            "added_power" 			        "30"
+	        }
+	        "02"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "added_defense_penetration"     "15"
+	        }
+		}
+	}
+	"item_recipe_aggression"
+	{
+		"ID"							"4033"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"						"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1125"
+		"ItemResult"						"item_aggression"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_power"
+		}
+	}
+	"item_ambition"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4166"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_ambition"
+		
+		"ItemCost"						"2700"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"ambition"
+		"AbilitySpecial"
+	    {
+	        "01" {
+				"var_type"				"FIELD_INTEGER"
+				"added_armour"			"25"
+			}
+			"02" {
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"25"
+			}
+			"03" {
+				"var_type"				"FIELD_INTEGER"
+				"added_lifedrain"		"10"
+			}
+			"04" {
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"25"
+			}
+		}
+		"OnEquip" {
+			"RunScript" {
+				"ScriptFile"			"items/ambition_lua"
+				"Function"				"on_equip"
+				"Target"				"CASTER"
+			}
+		}
+		"OnUnequip" {
+			"RunScript" {
+				"ScriptFile"			"items/ambition_lua"
+				"Function"				"on_unequip"
+				"Target"				"CASTER"
+			}
+		}
+		"Modifiers" {
+			"modifier_ambition_stack" {
+				"TextureName"			"ambition"
+			}
+		}
+	
+	}
+	"item_recipe_ambition"
+	{
+		"ID"							"4165"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_ambition"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_desire"
+		}
+	}
+	"item_assimilation" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4170"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_assimilation"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"assimilation"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"			"FIELD_INTEGER"
+				"added_power"			"50"
+			}
+			"02" {
+				"var_type"			"FIELD_INTEGER"
+				"added_lifedrain"		"10"
+			}
+			"03" {
+				"var_type"					"FIELD_INTEGER"
+				"added_defense_penetration"	"10"
+			}
+	
+			//Unique passive managed in events:OnAssist
+		}
+	}
+	"item_recipe_assimilation" {
+		"ID"							"4169"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_assimilation"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			"item_consumption"
+		}
+	}
+	"item_balance"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4026"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_balance"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"balance"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_power" 			    "20"
+	        }
+	        "02"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_magic_resistance"    "30"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "added_will_thief"          "3"
+	        }
+		}
+	    "Modifiers"
+	    {
+	        "modifier_item_balance"
+	        {
+	            "Passive"       "1"
+	            "IsHidden"      "1"
+	            "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+	        }
+	    }
+	}
+	"item_recipe_balance"
+	{
+		"ID"							"4025"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"						"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1160"
+		"ItemResult"						"item_balance"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_will"
+		}
+	}
+	"item_betrayal"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4094"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_betrayal"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"betrayal"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_haste" 				"25"
+	        }
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"30"
+			}
+	        "04"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "added_will_thief"          "3"
+	        }
+		}
+		"Modifiers" {
+			"modifier_betrayal_contempt" {
+				"Passive"		"1"
+				"IsHidden"		"1"
+			}
+		}
+	}
+	"item_recipe_betrayal"
+	{
+		"ID"							"4093"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_betrayal"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_balance"
+		}
+	}
+	"item_chaos"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4160"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_chaos"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"chaos"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_mastery"			"20"
+			}
+		}
+		"Modifiers" {
+			"modifier_chaos_magic_damage_increased" {
+				"TextureName"			"chaos"
+				"IsDebuff"				"1"
+				"Duration"				"3"
+			}
+			"modifier_chaos_cooldown" {
+				"TextureName"			"chaos"
+				"IsDebuff"				"1"
+				"Duration"				"6"
+			}
+		}
+	}
+	"item_recipe_chaos"
+	{
+		"ID"							"4159"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_chaos"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_energy"
+		}
+	}
+	"item_item_clarity"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"2046"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_clarity"
+		
+		"ItemCost"						"900"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"clarity"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_haste" 			"30"
+	        }
+		}
+	
+	}
+	"item_recipe_item_clarity"
+	{
+		"ID"							"2045"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"440"
+		"ItemResult"				    "item_item_clarity"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_time"
+		}
+	}
+	"item_command"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4032"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_command"
+		
+		"ItemCost"						"1200"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"command"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_power" 			"30"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_surge" 			"1"
+	        }
+		}
+	
+	}
+	"item_recipe_command"
+	{
+		"ID"							"4031"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"820"
+		"ItemResult"					"item_command"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_power"
+		}
+	}
+	"item_conquest"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4138"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_conquest"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"conquest"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"%movespeed"			"5"
+			}
+		}
+	    "Modifiers"
+	    {
+	        "item_conquest_modifier"
+	        {
+	            "IsHidden"      "1"
+	            "IsBuff"        "1"
+	            "IsPurgable"    "0"
+	            "Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+		    	"Passive"       "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+	            }
+	        }
+	        "item_conquest_aftermath" {
+	        	"TextureName"		"conquest"
+	        	"Duration"			"6"
+	        }
+	        "item_conquest_aftermath_cooldown" {
+	        	"IsDebuff"		"1"
+	        	"TextureName"	"conquest"
+	        	"Duration"		"3"
+	    	}
+	    }
+	
+	}
+	"item_recipe_conquest"
+	{
+		"ID"							"4137"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_conquest"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_abolition"
+		}
+	}
+	"item_consumption"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4052"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_consumption"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"consumption"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_power" 			"35"
+	        }
+	        "02"
+	        {
+	            "var_type"			"FIELD_INTEGER"
+	            "added_lifedrain"		"10"
+	        }
+		}
+	
+	}
+	"item_recipe_consumption"
+	{
+		"ID"							"4051"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1080"
+		"ItemResult"					"item_consumption"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_hunger"
+		}
+	}
+	"item_control"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4036"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_control"
+		
+		"ItemCost"						"1200"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"control"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "ranged_basic_attack_percent_frost"     "-15"
+	        }
+	        "02"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "melee_basic_attack_percent_frost"      "-25"
+	        }
+	        "03"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "ability_single_target_percent_frost"   "-20"
+	        }
+	        "04"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "ability_area_dot_target_percent_frost" "-10"
+	        }
+	        "05"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_power" 			"25"
+	        }
+		}
+	    "Modifiers"
+	    {
+	        "modifier_frostI_melee"
+	        {
+	            "TextureName"   "frost_i"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_area_dot_target_percent_frost"
+				}
+	        }
+	        "modifier_frostI_ranged"
+	        {
+	            "TextureName"   "frost_i"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ranged_basic_attack_percent_frost"
+				}
+	        }
+	        "modifier_frostI_single"
+	        {
+	            "TextureName"   "frost_i"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_single_target_percent_frost"
+				}
+	        }
+	        "modifier_frostI_other"
+	        {
+	            "TextureName"   "frost_i"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_area_dot_target_percent_frost"
+				}
+	        }
+	    }
+		"precache"
+	    {
+	        "particle"      "particles/slow_particles/slow_effect.vpcf"
+	    }
+	}
+	"item_recipe_control"
+	{
+		"ID"							"4035"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"820"
+		"ItemResult"					"item_control"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_power"
+		}
+	}
+	"item_conviction"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4024"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_conviction"
+		
+		"ItemCost"						"900"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"conviction"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_life" 			    "200"
+	        }
+	        "02"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_magic_resistance" 	"35"
+	        }
+		}
+	    "Modifiers"
+	    {
+	        "modifier_conviction_passive"
+	        {
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+	            "OnTakeDamage"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "items/conviction_lua"
+	                    "Function"      "take_damage"
+	                    "Target"        "ATTACKER"
+	                    "Damage"        "%attack_damage"
+	                }
+	            }
+	        }
+	    }
+	
+	}
+	"item_recipe_conviction"
+	{
+		"ID"							"4023"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"				    "1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"560"
+		"ItemResult"					"item_conviction"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			            "item_will"
+		}
+	}
+	"item_corruption"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4144"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_corruption"
+		
+		"ItemCost"						"2335"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"corruption"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"40"
+			}
+			//Unique passive managed in deal_daamge
+		}
+	
+	}
+	"item_recipe_corruption"
+	{
+		"ID"							"4143"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1215"
+		"ItemResult"					"item_corruption"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_inspiration"
+		}
+	}
+	"item_creation"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4074"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_creation"
+		
+		"ItemCost"						"2215"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"creation"
+		"AbilitySpecial" {
+	        "01" {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"250"
+	        }
+			"02" {
+				"var_type"				"FIELD_INTEGER"
+				"added_life_regen"		"5"
+			}
+			"03" {
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"35"
+			}
+		}
+		"Modifiers"
+		{
+			"item_creation_unique_modifier" {
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnCreated" {
+					"RunScript" {
+						"ScriptFile"		"items/creation_lua"
+						"Function"			"OnCreated"
+						"Target"			"CASTER"
+					}
+				}
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile"		"items/creation_lua"
+						"Function"			"OnDestroy"
+						"Target"			"CASTER"
+					}
+				}
+			}
+			"item_creation_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+				}
+			}
+		}
+	
+	}
+	"item_recipe_creation"
+	{
+		"ID"							"4073"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"715"
+		"ItemResult"					"item_creation"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_growth"
+		}
+	}
+	"item_decay" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4106"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_decay"
+		
+		"ItemCost"						"2715"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"decay"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"30"
+			}
+			"02" {
+				"var_type"					"FIELD_INTEGER"
+				"added_life"				"200"
+			}
+			"03" {
+				"var_type"					"FIELD_INTEGER"
+				"added_defense_penetration"	"10"
+			}
+		}
+		"Modifiers" {
+			"item_decay_life_modifier" {
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_decay_decaying" {
+				"IsDebuff"			"1"
+				"TextureName"		"item_decay"
+				"Duration"			"3"
+			    "ThinkInterval" 	"0.03"
+			    "OnIntervalThink" {
+			    	"RunScript" {
+			    		"ScriptFile"		"items/decay_lua"
+			    		"Function"			"decay"
+			    		"Target"			"TARGET"
+			    		"Caster"			"CASTER"
+			    	}
+			    }
+			}
+			"modifier_soul_collector_decay" {
+				"TextureName"		"item_decay"
+				"IsHidden"	        "0"
+				"IsAuraActiveOnDeath" "1"
+				"RemoveOnDeath" 	"0"
+			} 
+			"modifier_soul_collector_hidden_decay" {
+	            "IsHidden"	        "1"
+	            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsAuraActiveOnDeath" "1"
+				"RemoveOnDeath" 	"0"
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"4"
+				}
+	        }
+	        "modifier_soul_collector_passive_decay" {
+	            "IsHidden"  "1"
+	            "Passive"   "1"
+				"IsAuraActiveOnDeath" "1"
+				"RemoveOnDeath" 	"0"
+	            "OnKill" {
+	                "RunScript" {
+	                    "Target"		"CASTER"
+	                    "ScriptFile"	"items/decay_lua"
+	                    "Function"		"gain_stack"
+	                }
+	            }
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile"		"items/decay_lua"
+						"Function"			"on_remove"
+						"Target"			"CASTER"
+					}
+				}
+	            "Properties" {
+	                "MODIFIER_PROPERTY_HEALTH_BONUS"			"%added_health"
+	            }
+	        }
+		}
+	
+	}
+	"item_recipe_decay" {
+		"ID"							"4105"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1585"
+		"ItemResult"					"item_decay"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			"item_might"
+		}
+	}
+	"item_defiance"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4056"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_defiance"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"defiance"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_health" 			    "900"
+	        }
+	        "02"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"added_consume_health"	    "12"			
+			}
+			"03"
+			{
+				"var_type"				    "FIELD_FLOAT"
+				"added_consume_chance"	    "1"
+			}
+	        //Unique passive managed in deal_damage
+		}
+		"Modifiers"
+		{
+			"item_defiance_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+				}
+	            "ThinkInterval"     "0.5"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "items/defiance_lua"
+	                    "Function"          "tick"
+	                }
+	            }
+			}
+	        "item_defiance_cdr"
+	        {
+	            "TextureName"           "defiance"
+	        }
+		}
+	
+	}
+	"item_recipe_defiance"
+	{
+		"ID"							"4055"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_defiance"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_vigor"
+		}
+	}
+	"item_desire"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4050"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_desire"
+		
+		"ItemCost"						"1200"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"desire"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_power" 			"10"
+	        }
+	        "02"
+	        {
+	            "var_type"			    "FIELD_INTEGER"
+	            "added_armour"			"25"
+	        }
+	        "03"
+	        {
+	            "var_type"			    "FIELD_INTEGER"
+	            "added_lifedrain"		"8"
+	        }
+		}
+	
+	}
+	"item_recipe_desire"
+	{
+		"ID"							"4049"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"780"
+		"ItemResult"				    "item_desire"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_hunger"
+		}
+	}
+	"item_destruction"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4118"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_destruction"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"destruction"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_power"			"60"
+			}
+		}
+		"Modifiers" {
+			"modifier_item_destruction_pen" {
+				"IsHidden"				"1"
+				"Passive"				"1"
+			}
+		}
+	
+	}
+	"item_recipe_destruction"
+	{
+		"ID"							"4117"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_destruction"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_aggression"
+		}
+	}
+	"item_devotion"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4062"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_devotion"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"devotion"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"300"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_armour"			"30"
+			}
+		}
+		"Modifiers"
+		{
+			"item_devotion_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+	        "modifier_item_devotion_datadriven_aura_emitter"
+	        {
+	            "Passive"               "1"
+	            "IsHidden"              "1"
+	            
+	            "Aura"                  "modifier_item_devotion_datadriven_aura"
+	            "Aura_Radius"           "800"
+	            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	            "Aura_ApplyToCaster"    "1"
+	        }
+	        "modifier_item_devotion_datadriven_aura"
+	        {
+	            "TextureName"		"devotion"
+	        }
+		}
+	
+	}
+	"item_recipe_devotion"
+	{
+		"ID"							"4061"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1850"
+		"ItemResult"					"item_devotion"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_purity"
+		}
+	}
+	"item_discipline"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4020"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_discipline"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"discipline"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_armour" 			"40"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_haste" 			"20"
+	        }
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_inner_peace"		"10"
+			}
+		}
+	}
+	"item_recipe_discipline"
+	{
+		"ID"							"4019"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		"ItemCost"						"1120"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_discipline"
+		"ItemRequirements"
+		{
+			"01"						"item_resilience"
+		}
+	}
+	"item_divinity"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4130"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_divinity"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"divinity"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_mastery"			"20"
+			}
+		}
+		"Modifiers" {
+			"modifier_item_divinity_prodigy" {
+				"IsHidden"			"1"
+				"Passive"			"1"
+			}
+		}
+	}
+	"item_recipe_divinity"
+	{
+		"ID"							"4129"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_divinity"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_force"
+		}
+	}
+	"item_dominance"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4128"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_dominance"
+		
+		"ItemCost"						"3515"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"dominance"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_mastery"			"20"
+			}
+		}
+		"Modifiers" {
+			"modifier_dominance_obliterate" {
+				"IsHidden"			"1"
+				"Passive"			"1"
+			}
+		}
+	
+	}
+	"item_recipe_dominance"
+	{
+		"ID"							"4127"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"2015"
+		"ItemResult"					"item_dominance"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_force"
+		}
+	}
+	"item_duress" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4156"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_duress"
+	
+		"AbilityCooldown"				"15"
+		
+		"ItemCost"						"2700"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"duress"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"40"
+			}
+		}
+		"Modifiers" {
+			"modifier_duress_rooted" {
+				"TextureName"			"item_duress"
+				"IsDebuff"				"1"
+				"IsPurgable"			"1"
+	
+	            "EffectName"            "particles/units/heroes/hero_siren/siren_net.vpcf"
+	            "EffectAttachType"      "follow_origin"
+	
+				"States" {
+	                "MODIFIER_STATE_ROOTED"     "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+			}
+		}
+		"precache" {
+			"particle"		"particles/units/heroes/hero_siren/siren_net.vpcf"
+		}
+	}
+	"item_recipe_duress" {
+		"ID"							"4155"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1580"
+		"ItemResult"					"item_duress"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"						"item_inspiration"
+		}
+	}
+	"item_empathy"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4086"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_empathy"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"empathy"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_armour" 				"100"
+	        }
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"65"
+			}
+		}
+	
+	}
+	"item_recipe_empathy"
+	{
+		"ID"							"4085"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1600"
+		"ItemResult"					"item_empathy"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_resolve"
+		}
+	}
+	"item_energy"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4048"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_energy"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"energy"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_haste" 			"25"
+	        }
+	        "02"
+	        {
+	            "var_type"			    "FIELD_INTEGER"
+	            "added_mastery"			"10"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "added_shock"           "1"
+	        }
+		}
+	}
+	"item_recipe_energy"
+	{
+		"ID"							"4047"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1040"
+		"ItemResult"					"item_energy"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_time"
+		}
+	}
+	"item_equilibrium"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4082"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_equilibrium"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"equilibrium"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_armour" 			"85"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"40"
+			}
+			//Unique passive managed in deal_damage
+		}
+		"Modifiers" {
+			"modifier_equilibrium_subdued" {
+				"TextureName"		"equilibrium"
+				"Duration"			"3"
+				"IsDebuff"			"1"
+				"Properties" {
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-30"
+				}
+			}
+		}
+	
+	}
+	"item_recipe_equilibrium"
+	{
+		"ID"							"4081"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_equilibrium"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_discipline"
+		}
+	}
+	"item_faith"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4090"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_faith"
+		
+		"ItemCost"						"2730"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"faith"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_life" 				"300"
+	        }
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"50"
+			}
+		}
+		"Modifiers"
+		{
+			"item_faith_modifier_single" {
+				"Passive"			"1"
+				"IsHidden"			"1"
+			    "ThinkInterval" "3"
+			    "OnIntervalThink"
+			    {
+			        "RunScript"  {
+			        	"ScriptFile"	"items/faith_lua"
+			        	"Function"		"add_stack"
+			        	"Target"		"CASTER"
+			        }
+			    }
+	            "OnTakeDamage"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "items/conviction_lua"
+	                    "Function"      "take_damage"
+	                    "Target"        "ATTACKER"
+	                    "Damage"        "%attack_damage"
+	                }
+	            }
+			}
+			"item_faith_modifier" {
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"modifier_arcane_aegis" {
+				"TextureName"		"arcane_aegis"
+			}
+		}
+	
+	}
+	"item_recipe_faith"
+	{
+		"ID"							"4089"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1390"
+		"ItemResult"					"item_faith"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_conviction"
+		}
+	}
+	"item_fate" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4152"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_fate"
+		
+		"ItemCost"						"2790"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"fate"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"			"60"
+			}
+			"02"{
+				"var_type"			"FIELD_INTEGER"
+				"added_life"			"200"
+			}
+		}
+		"Modifiers" {
+			"item_fate_life_modifier" {
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_fate_effect" {
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnAttackLanded" {
+					"RunScript" {
+						"ScriptFile"		"items/fate_lua"
+						"Function"			"attack_landed"
+					}
+				}
+			}
+		}
+		"precache" {
+			"particle"		"particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_sparks.vpcf"
+		}
+	}
+	"item_recipe_fate" {
+		"ID"							"4151"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1670"
+		"ItemResult"					"item_fate"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			"item_inspiration"
+		}
+	}
+	"item_finesse"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4142"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_finesse"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"finesse"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"35"
+			}
+	        "03"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "added_precision"       "20"
+	        }
+		}
+	}
+	"item_recipe_finesse"
+	{
+		"ID"							"4141"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_finesse"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_abolition"
+		}
+	}
+	"item_fluidity"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4132"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_fluidity"
+		
+		"ItemCost"						"2620"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"fluidity"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_power"		"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"		"45"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed"			"10"
+			}
+		}
+	    "Modifiers"
+	    {
+	        "item_fluidity_modifier"
+	        {
+	            "IsHidden"      "1"
+	            "IsBuff"        "1"
+	            "IsPurgable"    "0"
+	            "Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+		    	"Passive"       "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%movespeed"
+	            }
+	            "States" {
+	            	"MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	    }
+	
+	}
+	"item_recipe_fluidity"
+	{
+		"ID"							"4131"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1565"
+		"ItemResult"					"item_fluidity"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_motion"
+		}
+	}
+	"item_force"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4038"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_force"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"force"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_power" 			"30"
+	        }
+	        "02"
+	        {
+	            "var_type"			    "FIELD_INTEGER"
+	            "added_mastery"			"10"
+	        }
+		}
+	}
+	"item_recipe_force"
+	{
+		"ID"							"4037"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1125"
+		"ItemResult"					"item_force"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_power"
+		}
+	}
+	"item_form"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4016"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_form"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"form"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	        	"var_type" 				    "FIELD_INTEGER"
+	           	"added_armour" 			    "40"
+	        }
+			"02"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"added_power"			    "20"
+			}
+			"03"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"added_armour_as_damage"	"10"
+			}
+		}
+	}
+	"item_recipe_form"
+	{
+		"ID"							"4015"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1120"
+		"ItemResult"					"item_form"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_resilience"
+		}
+	}
+	"item_freedom"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4028"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_freedom"
+		
+		"ItemCost"						"1485"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"balance"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_haste" 			    "20"
+	        }
+	        "02"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_magic_Resistance" 	"25"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_FLOAT"
+	            "added_tenacity"            "30"
+	        }
+		}
+	
+	}
+	"item_recipe_freedom"
+	{
+		"ID"							"4027"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"860"
+		"ItemResult"					"item_freedom"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			            "item_will"
+		}
+	}
+	"item_furor"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4146"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_furor"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"furor"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"			"30"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_life"			"125"
+			}
+		}
+		"Modifiers"
+		{
+			"item_furor_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+	        "modifier_item_furor_datadriven_aura_emitter"
+	        {
+	            "Passive"               "1"
+	            "IsHidden"              "1"
+	            
+	            "Aura"                  "modifier_item_furor_datadriven_aura"
+	            "Aura_Radius"           "800"
+	            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Types"            "DOTA_UNIT_TARGET_HERO"
+	            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	            "Aura_ApplyToCaster"    "1"
+	        }
+	        "modifier_item_furor_datadriven_aura"
+	        {
+	            "TextureName"		"furor"
+	            "OnAttackLanded" {
+	            	"RunScript" {
+	            		"ScriptFile"		"items/furor_lua"
+	            		"Function"			"attack_landed"
+	            		"Target"			"TARGET"
+	            		"Caster"			"CASTER"
+	            	}
+	            }
+	        }
+		}
+	
+	}
+	"item_recipe_furor"
+	{
+		"ID"							"4145"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1880"
+		"ItemResult"					"item_furor"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_inspiration"
+		}
+	}
+	"item_glory"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4066"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_glory"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"glory"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"400"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_armour"			"40"
+			}
+		}
+		"Modifiers"
+		{
+			"item_glory_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"modifier_item_glory_datadriven_aura_emitter"
+	        {
+	            "Passive"               		"1"
+	            "IsHidden"              		"0"
+	            "EffectName"            		"particles/items2_fx/radiance_owner.vpcf"
+	            "EffectAttachType"      		"follow_origin"
+	            
+	            "Aura"                  		"modifier_item_glory_datadriven_aura"
+	            "Aura_Radius"           		"300"
+	            "Aura_Teams"            		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	            "Aura_Types"            		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            "Aura_Flags"            		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	            "Aura_ApplyToCaster"    		"0"
+	        }
+	        "modifier_item_glory_datadriven_aura"
+	        {
+	            "Passive"           			"0"
+	            "IsHidden"          			"0"
+	            "IsBuff"            			"0"
+	            "IsDebuff"          			"1"
+	            "IsPurgable"        			"0"
+	            "EffectName"            		"particles/items2_fx/radiance.vpcf"
+	            "EffectAttachType"      		"follow_origin"
+	            
+	            "ThinkInterval"         		"1"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"            "deal_damage"
+	                    "Function"              "damage"
+	                    "Damage"				"20"
+	                    "PowerRatio"			"0"
+	                    "HealthRatio"			"0.015"
+	                    "AbilityOverride"		"GLORY"
+	                }
+	            }
+	        }
+		}
+	
+	}
+	"item_recipe_glory"
+	{
+		"ID"							"4065"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_glory"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_pride"
+		}
+	}
+	"item_grace" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4148"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_grace"
+		
+		"ItemCost"						"2400"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"grace"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"			"40"
+			}
+			"02" {
+				"var_type"			"FIELD_INTEGER"
+				"added_life"			"200"
+			}
+		}
+		"Modifiers" {
+			"item_grace_life_modifier" {
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+	        "item_grace_ms_buff" {
+	            "TextureName"		"item_grace"
+	            "IsBuff"        	"1"
+	            "IsPurgable"    	"1"
+	            "Attributes"    	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+	            "Duration"      	"2"
+	            "Properties" {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "40"
+	            }
+	        }
+		}
+	
+	}
+	"item_recipe_grace"
+	{
+		"ID"							"4147"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1280"
+		"ItemResult"					"item_grace"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_inspiration"
+		}
+	}
+	"item_growth"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4014"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_growth"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"growth"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"225"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life_regen" 		"5"
+	        }
+	        "03"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_haste" 			"20"
+	        }
+		}
+		"Modifiers"
+		{
+			"item_growth_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+				}
+			}
+		}
+	}
+	"item_recipe_growth"
+	{
+		"ID"							"4013"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		"ItemCost"						"1080"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_growth"
+		"ItemRequirements"
+		{
+			"01"						"item_life"
+		}
+	}
+	"item_harmony"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4060"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_harmony"
+		
+		"ItemCost"						"2700"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"harmony"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_health" 			"325"
+	        }
+	        "02"
+	        {
+	            "var_type"			    "FIELD_INTEGER"
+	            "added_haste"			"20"
+	        }
+	        // Unique passive managed in deal_damage
+		}
+		"Modifiers"
+		{
+			"item_harmony_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties. The aura will not stack
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+				}
+	            
+	            "Aura"          "item_harmony_modifier_aura"
+	            "Aura_Teams"    "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Radius"   "800"
+	            "Aura_Types"    "DOTA_UNIT_TARGET_HERO"
+			}
+	        "item_harmony_modifier_aura"
+	        {
+	            "TextureName"       "harmony"
+	            
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"2"
+	            }
+	        }
+	        "item_harmony_cooldown_cooldown"
+	        {
+	            "IsHidden"      "1"
+	            "Duration"      "0.5"
+	        }
+	        "item_harmony_power"
+	        {
+	            "TextureName"       "harmony"
+	            "Duration"          "2"
+	        }
+		}
+	
+	}
+	"item_recipe_harmony"
+	{
+		"ID"							"4059"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1800"
+		"ItemResult"					"item_harmony"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			            "item_purity"
+		}
+	}
+	"item_hope"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4088"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_hope"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"hope"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_armour" 				"65"
+	        }
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"40"
+			}
+		}
+		//Unique passive managed in deal_damage
+		"Modifiers" {
+			"modifier_item_hope_stack_armour" {
+				"IsHidden"				"1"
+			}
+			"modifier_item_hope_stack_magic_resistance" {
+				"IsHidden"				"1"
+			}
+			"modifier_item_hope" {
+				"TextureName"			"hope"
+			}
+			"item_hope_cooldown" {
+				"Duration"				"30"
+				"IsDebuff"				"1"
+				"TextureName"			"hope"
+			}
+		}
+	}
+	"item_recipe_hope"
+	{
+		"ID"							"4087"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1600"
+		"ItemResult"					"item_hope"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_resolve"
+		}
+	}
+	"item_hostility"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4124"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_hostility"
+		
+		"ItemCost"						"2915"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"hostility"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_power"			"30"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_mastery"			"10"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_life"			"210"
+			}
+		}
+		"Modifiers"
+		{
+			"item_hostility_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+	        "modifier_item_hostility_datadriven_aura_emitter"
+	        {
+	            "Passive"               "1"
+	            "IsHidden"              "1"
+	            
+	            "Aura"                  "modifier_item_hostility_datadriven_aura"
+	            "Aura_Radius"           "800"
+	            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	            "Aura_ApplyToCaster"    "1"
+	        }
+	        "modifier_item_hostility_datadriven_aura"
+	        {
+	            "TextureName"		"hostility"
+	        }
+		}
+	}
+	"item_recipe_hostility"
+	{
+		"ID"							"4123"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1415"
+		"ItemResult"					"item_hostility"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_force"
+		}
+	}
+	"item_hunger"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4001"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_hunger"
+		
+		"ItemCost"						"460"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"hunger"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_power" 			"5"
+	        }
+			"02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "life_leech" 			"5"
+	        }
+		}
+	    "Modifiers"
+	    {
+			"modifier_hunger_life_leech_handler"
+			{
+				"Passive"  "1"
+				"IsHidden" "1"
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_hunger_life_leech"
+					}
+				}
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_hunger_life_leech"
+					}
+				}
+			}
+	        "modifier_hunger_life_leech"
+	        {
+	            "Passive"  "0"
+	            "IsHidden" "1"
+			}
+		}
+	}
+	"item_impulse" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4136"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_impulse"
+		
+		"ItemCost"						"3070"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"impulse"
+		"AbilitySpecial" {
+	        "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"10"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_haste"				"35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"%movespeed"				"5"
+			}
+		}
+	    "Modifiers" {
+	        "item_impulse_modifier" {
+	            "IsHidden"      "1"
+	            "IsBuff"        "1"
+	            "IsPurgable"    "0"
+	            "Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+		    	"Passive"       "1"
+	            "Properties" {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+	            }
+	        	"OnOrder" {
+	        		"RunScript" {
+	        			"ScriptFile"		"items/impulse_lua"
+	        			"Function"			"OnOrder"
+	        			"Caster"			"CASTER"
+	        			"Target"			"TARGET"
+	        		}
+	        	}
+	        }
+	        "item_impulse_melee_dash" {
+	        	"Duration"		"0.75"
+	        	"IsBuff"		"1"
+	        	"OnAttackLanded" {
+	        		"RunScript" {
+	        			"ScriptFile"		"items/impulse_lua"
+	        			"Function"			"OnAttackLanded"
+	        			"Caster"			"CASTER"
+	        			"Target"			"TARGET"
+	        		}
+	        	}
+	        	"OnCreated" {
+	        		"RunScript" {
+	        			"ScriptFile"		"items/impulse_lua"
+	        			"Function"			"ForceAttack"
+	        			"Caster"			"CASTER"
+	        			"Target"			"TARGET"
+	        		}
+	        	}
+	            "Properties" {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "750"
+	            }
+	        }
+	        "item_impulse_cooldown" {
+	        	"IsDebuff"		"1"
+	        	"TextureName"	"impulse"
+	        	"Duration"		"20"
+	        }
+	    }
+	
+	}
+	"item_recipe_impulse"
+	{
+		"ID"							"4135"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"2015"
+		"ItemResult"					"item_impulse"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_motion"
+		}
+	}
+	"item_inevitability"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4120"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_inevitability"
+		
+		"ItemCost"						"2975"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"inevitability"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "ranged_basic_attack_percent_frost"     "-25"
+	        }
+	        "02"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "melee_basic_attack_percent_frost"      "-40"
+	        }
+	        "03"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "ability_single_target_percent_frost"   "-35"
+	        }
+	        "04"
+	        {
+	            "var_type"                              "FIELD_INTEGER"
+	            "ability_area_dot_target_percent_frost" "-15"
+	        }
+	        "05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"30"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_life"			"500"
+			}
+		}
+		"Modifiers"
+		{
+			"item_inevitability_modifier"
+			{
+				"Passive" 		"1"  
+				"IsHidden" 		"1"  
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+	        "modifier_frostII_melee"
+	        {
+	            "TextureName"   "frost_ii"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_area_dot_target_percent_frost"
+				}
+	        }
+	        "modifier_frostII_ranged"
+	        {
+	            "TextureName"   "frost_ii"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ranged_basic_attack_percent_frost"
+				}
+	        }
+	        "modifier_frostII_single"
+	        {
+	            "TextureName"   "frost_ii"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_single_target_percent_frost"
+				}
+	        }
+	        "modifier_frostII_other"
+	        {
+	            "TextureName"   "frost_ii"
+	            "IsDebuff"      "1"
+	            "IsPurgable"    "1"
+	            
+	            "OnCreated" 
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"                "CASTER"
+	                    "EffectName"            "particles/slow_particles/slow_effect.vpcf"
+	                    "EffectAttachType"      "start_at_customorigin"
+	                    "ControlPointEntities"
+	                    {
+	                        "TARGET"    "attach_origin" // Control Point 0
+	                        "TARGET"    "attach_origin" // Control Point 1
+	                    }
+	                }
+	            }
+	            
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%ability_area_dot_target_percent_frost"
+				}
+	        }
+		}
+	
+	}
+	"item_recipe_inevitability"
+	{
+		"ID"							"4119"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1675"
+		"ItemResult"					"item_inevitability"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_control"
+		}
+	}
+	"item_influence"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4134"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_influence"
+		
+		"ItemCost"						"2645"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"influence"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_life"			"335"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"%movespeed"			"5"
+			}
+		}
+	    "Modifiers"
+	    {
+			"item_influence_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      	//This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 				"%added_life"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+				}
+			}
+	        "modifier_item_influence_datadriven_aura_emitter" {
+	            "Passive"               "1"
+	            "IsHidden"              "1"
+	            
+	            "Aura"                  "modifier_item_influence_datadriven_aura"
+	            "Aura_Radius"           "800"
+	            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	            "Aura_ApplyToCaster"    "0"
+	        }
+	        "modifier_item_influence_datadriven_aura" {
+	            "IsHidden"				"1"
+	            "OnCreated" {
+	            	"RunScript" {
+	            		"ScriptFile"		"items/influence_lua"
+	            		"Function"			"OnCreated"
+	            		"Target"			"TARGET"
+	            	}
+	            }
+	            "OnDestroy" {
+	            	"RunScript" {
+	            		"ScriptFile"		"items/influence_lua"
+	            		"Function"			"OnDestroy"
+	            		"Target"			"TARGET"
+	            	}
+	            }
+	        }
+	        "item_influence_movespeed_modifier" {
+	        	"TextureName"			"influence"
+	        	"Properties" {
+	        		"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "15"
+	        	}
+	        }
+	    }
+	
+	}
+	"item_recipe_influence"
+	{
+		"ID"							"4133"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1590"
+		"ItemResult"					"item_influence"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_motion"
+		}
+	}
+	"item_insight"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4154"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_insight"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"insight"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"			"35"
+			}
+		}
+		"Modifiers" {
+			"modifier_item_insight_range_ticker" {
+				"IsHidden"				"1"
+			    "Passive"				"1"
+			    "ThinkInterval" 		"0.1"
+			    "OnIntervalThink" {
+			    	"RunScript"	{
+			    		"ScriptFile"		"items/insight_lua"
+			    		"Function"			"tick"
+			    		"Target"			"TARGET"
+			    		"Caster"			"CASTER"
+			    	}
+			    }
+			}
+			"modifier_item_insight_bonus_attack_range" {
+				"IsHidden"				"1"
+				"Properties" {
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"1"
+				}
+				"Duration"				"0.2"
+			}
+		}
+	
+	}
+	"item_recipe_insight"
+	{
+		"ID"							"4153"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1880"
+		"ItemResult"					"item_insight"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_clarity"
+		}
+	}
+	"item_inspiration"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4044"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_inspiration"
+		
+		"ItemCost"						"1120"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"inspiration"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_haste" 			"30"
+	        }
+	
+		}
+	
+	}
+	"item_recipe_inspiration"
+	{
+		"ID"							"4043"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"660"
+		"ItemResult"					"item_inspiration"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_time"
+		}
+	}
+	"item_integrity"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4018"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_integrity"
+		
+		"ItemCost"						"900"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"integrity"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_armour" 			"55"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_FLOAT"
+	            "toughnessII" 			"0.10"
+	        }
+		}
+	}
+	"item_recipe_integrity"
+	{
+		"ID"							"4017"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		"ItemCost"						"520"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_integrity"
+		"ItemRequirements"
+		{
+			"01"						"item_resilience"
+		}
+	}
+	"item_judgement"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4114"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_judgement"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"judgement"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"added_power"					"50"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"added_life"					"250"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"added_defense_penetration"		"15"
+			}
+			//Unique passive managed in deal_damage
+		}
+		"Modifiers"
+		{
+			"item_judgement_modifier"
+			{
+				"Passive" 			"1"  
+				"IsHidden"			"1"  
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_judgement_sundering_strikes_armour_hit" {
+				"IsHidden"		"1"
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"		"4"
+			}
+			"item_judgement_sundering_strikes_magic_resistance_hit" {
+				"IsHidden"		"1"
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"		"4"
+			}
+			"item_judgement_sundering_strikes_armour_visible" {
+				"TextureName"		"sundering_strikes_armour"
+				"IsDebuff"			"1"
+			}
+			"item_judgement_sundering_strikes_magic_resistance_visible" {
+				"TextureName"		"sundering_strikes_magic_resistance"
+				"IsDebuff"			"1"
+			}
+		}
+	
+	}
+	"item_recipe_judgement"
+	{
+		"ID"							"4113"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_judgement"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_aggression"
+		}
+	}
+	"item_justice"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4112"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_justice"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"justice"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_life"			"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_mastery"			"10"
+			}
+		}
+		"Modifiers"
+		{
+			"item_justice_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_justice_cooldown" {
+				"Duration"		"2.5"
+				"TextureName"	"justice"
+				"IsDebuff"		"1"
+			}
+			"item_justice_power_overwhelming" {
+				"Duration"		"3"
+				"TextureName"	"justice"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "10"
+	            }
+			}
+		}
+	
+	}
+	"item_recipe_justice"
+	{
+		"ID"							"4111"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1850"
+		"ItemResult"					"item_justice"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_command"
+		}
+	}
+	"item_life"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4002"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_life"
+		
+		"ItemCost"						"420"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"life"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"120"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life_regen" 		"2"
+	        }
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_consume_health"	"3"			
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"added_consume_chance"	"0.33"
+			}
+		}
+		"Modifiers"
+		{
+			"item_life_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+				}
+			}
+		}
+	}
+	"item_might" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4030"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_might"
+		
+		"ItemCost"						"900"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"might"
+		"AbilitySpecial" {
+	        "01" {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_health" 			"150"
+	        }
+	        "02" {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_power" 			"15"
+	        }
+	
+		}
+		"Modifiers" {
+			"modifier_soul_collector" {
+				"IsHidden"	        "0"
+				"IsAuraActiveOnDeath" "1"
+				"RemoveOnDeath" 	"0"
+			} 
+			"modifier_soul_collector_hidden" {
+	            "IsHidden"	        "1"
+	            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsAuraActiveOnDeath" "1"
+				"RemoveOnDeath" 	"0"
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"4"
+				}
+	        }
+	        "modifier_soul_collector_passive" {
+	            "IsHidden"  "1"
+	            "Passive"   "1"
+				"IsAuraActiveOnDeath" "1"
+				"RemoveOnDeath" 	"0"
+	            "OnKill" {
+	                "RunScript" {
+	                    "Target"		"CASTER"
+	                    "ScriptFile"	"items/might_lua"
+	                    "Function"		"gain_stack"
+	                }
+	            }
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile"		"items/might_lua"
+						"Function"			"on_remove"
+						"Target"			"CASTER"
+					}
+				}
+	            "Properties" {
+	                "MODIFIER_PROPERTY_HEALTH_BONUS"			"%added_health"
+	            }
+	        }
+		}
+				
+	}
+	"item_recipe_might" {
+		"ID"							"4029"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"520"
+		"ItemResult"					"item_might"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			            "item_power"
+		}
+	}
+	"item_momentum" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4102"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_momentum"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"momentum"
+	
+		"AbilityCooldown"				"30"
+	
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"25"
+			}
+			"02" {
+				"var_type"					"FIELD_INTEGER"
+				"added_haste"				"40"
+			}
+			"03" {
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"35"
+			}
+	        "04" {
+	            "var_type"                  "FIELD_FLOAT"
+	            "added_tenacity"            "35"
+	        }
+		}
+	
+		"Modifiers" {
+			"modifier_momentum_enabler" {
+				"IsHidden"		"1"
+				"Passive"		"1"
+	
+				"OnCreated" {
+					"ApplyModifier" {
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_momentum_disable_block"
+					}
+				}
+				"OnRespawn" {
+					"ApplyModifier" {
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_momentum_disable_block"
+					}
+				}
+			}
+			"modifier_momentum_disable_block" {
+				"TextureName"		"item_momentum"
+				"RemoveOnDeath"		"0"
+	
+				"EffectName"		"particles/items3_fx/lotus_orb_shield.vpcf"
+				"EffectAttachType"	"follow_hitloc"
+			}
+		}
+		"precache" {
+			"particle"		"particles/items3_fx/lotus_orb_shield.vpcf"
+		}
+	}
+	"item_recipe_momentum" {
+		"ID"							"4101"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1515"
+		"ItemResult"					"item_momentum"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			"item_freedom"
+		}
+	}
+	"item_motion"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4040"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_motion"
+		
+		"ItemCost"						"900"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"motion"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_haste" 			"20"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "movespeed" 			"5"
+	        }
+		}
+	    "Modifiers"
+	    {
+	        "item_motion_modifier"
+	        {
+	            "IsHidden"      "1"
+	            "IsBuff"        "1"
+	            "IsPurgable"    "0"
+	            "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+	            "Passive"       "1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%movespeed"
+	            }
+	        }
+	    }
+	
+	}
+	"item_recipe_motion"
+	{
+		"ID"							"4039"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"480"
+		"ItemResult"					"item_motion"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			            "item_time"
+		}
+	}
+	"item_oppression"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4096"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_oppression"
+		
+		"ItemCost"						"2945"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"oppression"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_life" 				"225"
+	        }
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"40"
+			}
+	        "04"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "added_will_thief"          "3"
+	        }
+		}
+		"Modifiers"
+		{
+			"item_oppression_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+	        "modifier_item_oppression_datadriven_aura_emitter"
+	        {
+	            "Passive"               "1"
+	            "IsHidden"              "1"
+	            
+	            "Aura"                  "modifier_item_oppression_datadriven_aura"
+	            "Aura_Radius"           "800"
+	            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	            "Aura_ApplyToCaster"    "0"
+	        }
+	        "modifier_item_oppression_datadriven_aura"
+	        {
+	            "TextureName"		"oppression"
+	            "IsDebuff"			"1"
+	        }
+		}
+	
+	}
+	"item_recipe_oppression"
+	{
+		"ID"							"4095"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1445"
+		"ItemResult"					"item_oppression"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_balance"
+		}
+	}
+	"item_order"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4080"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_order"
+		
+		"ItemCost"						"2060"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"order"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_armour" 			"90"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_FLOAT"
+	            "toughnessIII" 			"0.15"
+	        }
+		}
+	
+	}
+	"item_recipe_order"
+	{
+		"ID"							"4079"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"800"
+		"ItemResult"					"item_order"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_integrity"
+		}
+	}
+	"item_pain"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4126"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_pain"
+		
+		"ItemCost"						"2575"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"pain"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"45"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_mastery"			"20"
+			}
+		}
+	}
+	"item_recipe_pain"
+	{
+		"ID"							"4125"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1415"
+		"ItemResult"					"item_pain"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_force"
+		}
+	}
+	"item_passion"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4164"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_passion"
+		
+		"ItemCost"						"2915"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"passion"
+		"AbilitySpecial" {
+	        "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_armour"				"50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_lifedrain"			"10"
+			}
+			"04" {
+				"var_type"					"FIELD_INTEGER"
+				"added_ability_lifedrain"	"15"
+			}
+		}
+	}
+	"item_recipe_passion"
+	{
+		"ID"							"4163"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1715"
+		"ItemResult"					"item_passion"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_desire"
+		}
+	}
+	"item_pestilence"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4064"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_pestilence"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"pestilence"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"400"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"30"
+			}
+		}
+	
+		"OnEquip" {
+			"RunScript" {
+				"ScriptFile"		"items/pestilence_lua"
+				"Function"			"OnEquip"
+				"Target"			"CASTER"
+			}
+		}
+		"OnUnequip" {
+			"RunScript" {
+				"ScriptFile"		"items/pestilence_lua"
+				"Function"			"OnUnequip"
+				"Target"			"CASTER"
+			}
+		}
+		"OnOwnerDied" {
+			"RunScript" {
+				"ScriptFile"		"items/pestilence_lua"
+				"Function"			"OnUnequip"
+				"Target"			"CASTER"
+			}
+		}
+	
+	
+		"Modifiers"
+		{
+			"item_pestilence_modifier"
+			{
+				"Passive" 		"1"  
+				"IsHidden" 		"1"  
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"modifier_plague_host_host" {
+				"TextureName"			"pestilence"
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"2"
+				}
+			}
+			"modifier_pestilence_cooldown" {
+				"IsHidden"				"1"
+			}
+			"modifier_pestilence_slow" {
+	            "TextureName"		"pestilence"
+	            "IsDebuff"        	"1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-20"
+	            }
+			}
+		}
+	
+	}
+	"item_recipe_pestilence"
+	{
+		"ID"							"4063"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1850"
+		"ItemResult"					"item_pestilence"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_purity"
+		}
+	}
+	"item_potency"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4158"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_potency"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"potency"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_mastery"			"20"
+			}
+		}
+	
+		"Modifiers" {
+			"modifier_potency_cooldown" {
+				"TextureName"			"potency"
+				"IsDebuff"				"1"
+				"Duration"				"6"
+			}
+		}
+	}
+	"item_recipe_potency"
+	{
+		"ID"							"4157"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_potency"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_energy"
+		}
+	}
+	"item_power"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"4003"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_power"
+		
+		"ItemCost"						"380"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"power"
+	
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"10"
+			}
+		}
+	}
+	"item_preservation"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4078"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_preservation"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"preservation"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_armour" 			"40"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"30"
+			}
+		}
+		"Modifiers" {
+			"modifier_preservation_passive" {
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnCreated" {
+					"RunScript" {
+						"ScriptFile" 	"items/preservation_lua"
+						"Function"		"OnCreated"
+						"Target"		"CASTER"
+					}
+				}
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile" 	"items/preservation_lua"
+						"Function"		"OnDestroy"
+						"Target"		"CASTER"
+					}
+				}
+			}
+			"modifier_ablative_armour" {
+				"TextureName"			"preservation"
+			}
+			"modifier_ablative_damage_reduction" {
+				"TextureName"			"preservation"
+				"IsDebuff"				"1"
+				"Duration"				"4"
+			}
+		}
+	}
+	"item_recipe_preservation"
+	{
+		"ID"							"4077"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_preservation"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_form"
+		}
+	}
+	"item_pride"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4012"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_pride"
+		
+		"ItemCost"						"1500"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"vigor"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"300"
+	        }
+	        "02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_armour" 			"30"
+	        }
+		}
+		
+		"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+		"Modifiers"
+		{
+			"item_pride_modifier_passive"
+			{
+				"Passive" 		"1"  
+				"IsHidden" 		"1"  
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_pride_modifier_blazing"
+			{
+				"TextureName"		"item_pride"
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"			"3"
+				
+				"ThinkInterval" 	"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"		"CASTER"
+						"ScriptFile"	"deal_damage"
+						"Function"		"damage"
+						"Damage" 		"10"
+						"PowerRatio"	"0"
+						"IsDoT"			"1"
+					}
+				}
+			}
+		}
+	}
+	"item_recipe_pride"
+	{
+		"ID"							"4011"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		"ItemCost"						"1080"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pride"
+		"ItemRequirements"
+		{
+			"01"						"item_life"
+		}
+	}
+	"item_prosperity"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4054"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_prosperity"
+		
+		"ItemCost"						"3300"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"prosperity"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_health" 			    "450"
+	        }
+	        "02"
+	        {
+	            "var_type"			        "FIELD_INTEGER"
+	            "added_armour"		        "20"
+	        }
+	        "03"
+	        {
+	            "var_type"		            "FIELD_INTEGER"
+	            "added_magic_resistance"	"15"
+	        }
+			"04"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"added_consume_health"	    "12"			
+			}
+			"05"
+			{
+				"var_type"				    "FIELD_FLOAT"
+				"added_consume_chance"	    "1"
+			}
+		}
+		"Modifiers"
+		{
+			"item_prosperity_modifier"
+			{
+				"Passive"       "1"  
+				"IsHidden"      "1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+				}
+	            "ThinkInterval" "60"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items/prosperity_lua"
+						"Function"			"add_stack"
+						"Target"			"CASTER"
+					}
+				}
+	            "OnDestroy"
+	            {
+					"RunScript"
+					{
+						"ScriptFile"		"items/prosperity_lua"
+						"Function"			"on_remove"
+						"Target"			"CASTER"
+					}
+	            }
+			}
+	        "item_prosperity_stack" {
+	            "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT"
+	        }
+	        "item_prosperity_stack_health" {
+	            "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
+	            "IsHidden"		"1"
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_HEALTH_BONUS" 			"25"
+	            }
+	        }
+		}
+	
+	}
+	"item_recipe_prosperity"
+	{
+		"ID"							"4053"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"2400"
+		"ItemResult"					"item_prosperity"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			            "item_vigor"
+		}
+	}
+	"item_purity"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4010"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_purity"
+		
+		"ItemCost"						"1200"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"purity"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"250"
+	        }
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"transfusion"			"15"
+			}
+		}
+		"Modifiers"
+		{
+			"item_purity_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+				"ThinkInterval" "%transfusion"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items/purity_lua"
+						"Function"			"transfuse"
+						"Target"			"CASTER"
+					}
+				}
+			}
+		}
+		"precache"
+		{
+			"particle"		"particles/transfusion/transfusion_projectile.vpcf"
+		}
+	}
+	"item_recipe_purity"
+	{
+		"ID"							"4009"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		"ItemCost"						"780"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_purity"
+		"ItemRequirements"
+		{
+			"01"						"item_life"
+		}
+	}
+	"item_pursuit"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4999"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_pursuit"
+		
+		"ItemCost"						"2765"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"pursuit"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_power"			"45"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"			"30"
+			}
+		}
+		"Modifiers" {
+			"modifier_pursuit_positive" {
+				"TextureName"		"pursuit"
+				"Duration"			"2"
+				"Properties" {
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"50"
+				}
+			}
+			"modifier_pursuit_negative" {
+				"TextureName"		"pursuit"
+				"IsDebuff"			"1"
+				"Duration"			"2"
+				"Properties" {
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"-50"
+				}
+			}
+		}
+	}
+	"item_recipe_pursuit"
+	{
+		"ID"							"4998"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1465"
+		"ItemResult"					"item_pursuit"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_control"
+		}
+	}
+	"item_rage"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4116"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_rage"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"rage"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"45"
+			}
+		}
+	}
+	"item_recipe_rage"
+	{
+		"ID"							"4115"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_rage"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_aggression"
+		}
+	}
+	"item_rampancy"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4058"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_rampancy"
+		
+		"ItemCost"						"2400"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"rampancy"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				            "FIELD_INTEGER"
+	            "added_health" 			            "550"
+	        }
+	        "02"
+			{
+				"var_type"				            "FIELD_INTEGER"
+				"added_consume_health"	            "12"			
+			}
+			"03"
+			{
+				"var_type"				            "FIELD_FLOAT"
+				"added_consume_chance"	            "1"
+			}
+	        "04"
+	        {
+	            "var_type"                          "FIELD_FLOAT"
+	            "added_life_percent_as_power"       "1.5" //Managed in stat_finder
+	        }
+		}
+		"Modifiers"
+		{
+			"item_rampancy_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_health"
+				}
+			}
+		}
+	
+	}
+	"item_recipe_rampancy"
+	{
+		"ID"							"4057"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_rampancy"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			            "item_vigor"
+		}
+	}
+	"item_rebirth"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4072"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_rebirth"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"rebirth"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"380"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_life_regen"		"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"35"
+			}
+			//Unique passive managed in deal_damage
+		}
+		"Modifiers"
+		{
+			"item_rebirth_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+				}
+			}
+			"item_rebirth_cooldown" {
+				"TextureName"		"rebirth"
+				"IsDebuff"			"1"
+			}
+		}
+	
+	}
+	"item_recipe_rebirth"
+	{
+		"ID"							"4071"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_rebirth"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_growth"
+		}
+	}
+	"item_resilience"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4004"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_resilience"
+		
+		"ItemCost"						"380"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"resilience"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_armour" 			"18"
+	        }
+			"02"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "damage_blocked" 		"3"
+	        }
+		}
+	}
+	"item_resolve"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4022"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_resolve"
+		
+		"ItemCost"						"1200"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"resolve"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_armour" 			    "40"
+	        }
+			"02"
+	        {
+	            "var_type" 				    "FIELD_INTEGER"
+	            "added_magic_resistance" 	"25"
+	        }
+	        "03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "added_shield_wall"         "1"
+	        }
+		}
+	}
+	"item_recipe_resolve"
+	{
+		"ID"						        "4021"
+	    "BaseClass"           				"item_datadriven"
+	    "ItemRecipe"          				"1" 
+	    "ItemCost"            				"440"
+	    "ItemResult"          				"item_resolve"
+	    "ItemRequirements"
+	    {
+	        "01"        "item_resilience;item_will"
+	    }
+	}
+	"item_resonance"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4162"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_resonance"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"resonance"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"			"40"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_mastery"			"25"
+			}
+		}
+	}
+	"item_recipe_resonance"
+	{
+		"ID"							"4161"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_resonance"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_energy"
+		}
+	}
+	"item_retribution" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4092"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_retribution"
+		
+		"ItemCost"						"2640"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"retribution"
+		"AbilitySpecial" {
+	        "01" {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_life" 				"255"
+	        }
+			"02" {
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"40"
+			}
+			"03" {
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"10"
+			}
+		}
+		"Modifiers" {
+			"item_retribution_modifier" {
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_retribution_mage_slayer_stacks" {  			//Stacks added in deal_damage
+				"TextureName"		"retribution"
+			}
+		}
+	
+	}
+	"item_recipe_retribution" {
+		"ID"							"4091"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1300"
+		"ItemResult"					"item_retribution"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"						"item_conviction"
+		}
+	}
+	"item_ruin"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4140"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_ruin"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"ruin"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_power"			"25"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"added_haste"			"35"
+			}
+		}
+	}
+	"item_recipe_ruin"
+	{
+		"ID"							"4139"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_ruin"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"						"item_abolition"
+		}
+	}
+	"item_stability"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4100"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_stability"
+		
+		"ItemCost"						"2665"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"stability"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_haste"				"40"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_life"				"335"
+			}
+	        "04"
+	        {
+	            "var_type"                  "FIELD_FLOAT"
+	            "added_tenacity"            "30"
+	        }
+		}
+		"Modifiers" {
+			"item_stability_modifier" {
+				"Passive" 		"1"  
+				"IsHidden" 		"1"  
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_stability_swift_recovery" {
+				"Duration"			"1"
+				"Properties" {
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "40"
+				}
+			}
+		}
+	
+	}
+	"item_recipe_stability" {
+		"ID"							"4099"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1180"
+		"ItemResult"					"item_stability"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_freedom"
+		}
+	}
+	"item_strife" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4104"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_strife"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"strife"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"30"
+			}
+			"02" {
+				"var_type"				"FIELD_INTEGER"
+				"added_life"			"250"
+			}
+		}
+		"Modifiers" {
+			"item_strife_modifier" {
+				"Passive" 		"1"  
+				"IsHidden" 		"1"  
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"modifier_strife_soul_collector" {
+				"IsHidden"					"1"
+				"RemoveOnDeath"				"0"
+				"IsAuraActiveOnDeath"		"1"
+			}
+			"item_strife_modifier_master" {
+				"Passive"			"1"
+				"IsHidden"			"1"
+	            "OnKill" {
+	                "RunScript" {
+	                    "Target"		"CASTER"
+	                    "ScriptFile"	"items/strife_lua"
+	                    "Function"		"gain_stack"
+	                }
+	            }
+				"OnDestroy" {
+					"RunScript" {
+						"ScriptFile"		"items/strife_lua"
+						"Function"			"on_remove"
+						"Target"			"CASTER"
+					}
+				}
+			}
+			"item_strife_stacking" {
+				"RemoveOnDeath"			"0"
+				"TextureName"			"item_strife"
+				"IsAuraActiveOnDeath"	"1"
+			}
+			"item_strife_power_bonus" {
+				"RemoveOnDeath"			"0"
+				"IsHidden"				"1"
+			}
+			"item_strife_health_bonus" {
+				"RemoveOnDeath"			"0"
+				"IsHidden"				"1"
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"1"
+				}
+			}
+		}
+	
+	}
+	"item_recipe_strife" {
+		"ID"							"4103"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1870"
+		"ItemResult"					"item_strife"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			"item_might"
+		}
+	}
+	"item_subjugation" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4084"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_subjugation"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"subjugation"
+		"AbilitySpecial" {
+	        "01" {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_armour" 				"55"
+	        }
+			"02" {
+				"var_type"					"FIELD_INTEGER"
+				"added_haste"				"30"
+			}
+			"03" {
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"35"
+			}
+		}
+		"Modifiers" {
+			"modifier_power_locked" {
+				"TextureName"		"subjugation"
+				"IsDebuff"			"1"
+				"Duration"			"3"
+			}
+		}
+	}
+	"item_recipe_subjugation" {
+		"ID"							"4083"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_subjugation"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"						"item_discipline"
+		}
+	}
+	"item_supremacy"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4108"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_supremacy"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"supremacy"
+		"AbilitySpecial"
+	    {
+	        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"added_power"			"90"
+		}
+		}
+	
+	}
+	"item_recipe_supremacy"
+	{
+		"ID"							"4107"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1850"
+		"ItemResult"					"item_supremacy"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_command"
+		}
+	}
+	"item_time"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4005"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_time"
+		
+		"ItemCost"						"420"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"time"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"15"
+			}
+		}
+	}
+	"item_valor"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4098"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_valor"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"valor"
+		"AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_magic_resistance"	"35"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"added_power"				"40"
+			}
+	    	"03"
+	        {
+	            "var_type"                  "FIELD_INTEGER"
+	            "added_will_thief"          "3"
+	        }
+		}
+		"Modifiers" {
+			"modifier_valor_passive" {
+				"Passive"				"1"
+			    "ThinkInterval" 		"0.03"
+			    "IsHidden"				"1"
+			    "OnIntervalThink" {
+			        "RunScript" {
+			        	"ScriptFile"		"items/valor_lua"
+			        	"Function"			"tick"
+			        }
+			    }
+			}
+			"modifier_valor_power" {
+				"TextureName"		"valor"
+			}
+			"modifier_valor_last_stand" {
+				"TextureName"		"last_stand"
+				"Duration"			"5"
+			}
+			"modifier_valor_last_stand_cooldown" {
+				"Duration"			"60"
+				"IsDebuff"			"1"
+				"TextureName"		"last_stand"
+			}
+		}
+	}
+	"item_recipe_valor"
+	{
+		"ID"							"4097"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_valor"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_balance"
+		}
+	}
+	"item_vengeance"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4068"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_vengeance"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"vengeance"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"350"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_armour"			"30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"15"
+			}
+		}
+		"Modifiers"
+		{
+			"item_vengeance_modifier" {
+				"Passive" 		"1"  
+				"IsHidden" 		"1"  
+				"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+			"item_vengeance_attack_modifier" {
+				"Passive"		"1"
+				"IsHidden"		"1"
+			}
+			"item_vengeance_burning_hidden" {
+				"IsHidden"				"1"
+				"Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"				"3"
+			}
+			"item_vengeance_burning" {
+				"TextureName"			"vengeance"
+				"IsDebuff"				"1"
+				"EffectName"			"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+				"EffectAttachType"		"follow_hitloc"
+			}
+		}
+		"precache" {
+			"particle"		"particles/item_vengeance/hellfire_blast_base.vpcf"
+			"particle"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+		}
+	}
+	"item_recipe_vengeance"
+	{
+		"ID"							"4067"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_vengeance"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_pride"
+		}
+	}
+	"item_vibrance"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4076"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_vibrance"
+		
+		"ItemCost"						"1920"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"vibrance"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"300"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_life_regen"		"8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"25"
+			}
+		}
+	
+		"OnEquip" {
+			"RunScript" {
+				"ScriptFile"		"items/vibrance_lua"
+				"Function"			"equip"
+				"Target"			"CASTER"
+			}
+		}
+		"OnUnequip" {
+			"RunScript" {
+				"ScriptFile"		"items/vibrance_lua"
+				"Function"			"unequip"
+				"Target"			"CASTER"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"item_vibrance_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+				}
+			}
+			"item_vibrance_regen_modifier" {
+				"IsHidden"									"1"
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"0.1"
+				}
+			}
+		}
+	}
+	"item_recipe_vibrance"
+	{
+		"ID"							"1921"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"980"
+		"ItemResult"					"item_vibrance"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"						"item_growth"
+		}
+	}
+	"item_vigor"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4008"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_vigor"
+		
+		"ItemCost"						"900"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"vigor"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 				"FIELD_INTEGER"
+	            "added_life" 			"350"
+	        }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"added_consume_health"	"7"			
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"added_consume_chance"	"0.66"
+			}
+		}
+		"Modifiers"
+		{
+			"item_vigor_modifier"
+			{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+		}
+	}
+	"item_recipe_vigor"
+	{
+		"ID"							"4007"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_recipe_arcane_boots"
+		
+		"ItemCost"						"480"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_vigor"
+		"ItemRequirements"
+		{
+			"01"						"item_life"
+		}
+	}
+	"item_voracity" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4168"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_voracity"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"voracity"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"50"
+			}
+			"02" {
+				"var_type"				"FIELD_INTEGER"
+				"added_lifedrain"		"10"
+			}
+		}
+		"Modifiers" {
+			"modifier_voracity_stack" {
+				"TextureName"	"voracity"
+				"Duration"		"4"
+			}
+		}
+	}
+	"item_recipe_voracity" {
+		"ID"							"4167"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1500"
+		"ItemResult"					"item_voracity"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			"item_consumption"
+		}
+	}
+	"item_will"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4006"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_will"
+		
+		"ItemCost"						"340"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"will"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "added_magic_resistance" 	"20"
+	        }
+			"02"
+	        {
+	            "var_type" 					"FIELD_INTEGER"
+	            "void_percent" 				"10"
+	        }
+		}
+	}
+	"item_wisdom"
+	{
+		"BaseClass"						"item_datadriven"
+		"ID"							"4110"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_wisdom"
+		
+		"ItemCost"						"3000"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"wisdom"
+		"AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"			            "FIELD_INTEGER"
+	            "added_power"			        "60"
+	        }
+	        "02"
+	        {
+	            "var_type"                      "FIELD_FLOAT"
+	            "added_power_percent_as_power"  "20"
+	        }
+	        //Unique passive managed in stat_finder
+		}
+	
+	}
+	"item_recipe_wisdom"
+	{
+		"ID"							"4109"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1850"
+		"ItemResult"					"item_wisdom"
+		"ItemShopTags"					""
+		"ItemRequirements"
+		{
+			"01"			"item_command"
+		}
+	}
+	"item_zeal" {
+		"BaseClass"						"item_datadriven"
+		"ID"							"4150"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_zeal"
+		
+		"ItemCost"						"2950"
+		"ItemPurchasable" 				"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"zeal"
+		"AbilitySpecial" {
+	        "01" {
+				"var_type"				"FIELD_INTEGER"
+				"added_haste"			"30"
+			}
+			"02" {
+				"var_type"				"FIELD_INTEGER"
+				"added_life"			"125"
+			}
+			"03" {
+				"var_type"				"FIELD_INTEGER"
+				"added_power"			"5"
+			}
+		}
+		"Modifiers" {
+			"item_zeal_modifier"{
+				"Passive" "1"  
+				"IsHidden" "1"  
+				"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+				"Properties" {
+					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				}
+			}
+		}
+	
+	}
+	"item_recipe_zeal"{
+		"ID"							"4149"
+		"BaseClass"						"item_datadriven"
+		"ItemRecipe"					"1"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"ItemCost"						"1830"
+		"ItemResult"					"item_zeal"
+		"ItemShopTags"					""
+		"ItemRequirements" {
+			"01"			"item_inspiration"
+		}
+	}
+}

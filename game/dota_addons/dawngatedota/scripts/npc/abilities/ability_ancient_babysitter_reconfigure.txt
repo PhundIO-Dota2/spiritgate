@@ -1,0 +1,103 @@
+"ability_ancient_babysitter_reconfigure" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"ancient_babysitter_reconfigure"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+
+    "AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityCooldown"				"1.5"
+    "AbilityCooldownFixed"          "1"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+    
+    "AbilitySpecial" {
+        "01" {
+            "var_type" 				            "FIELD_INTEGER"
+            "attack_speed_percent"          	"15 20 25 30 35"
+        }
+        "02" {
+            "var_type"                          "FIELD_INTEGER"
+            "ranged_magic_damage"               "10 15 20 25 30"
+        }
+        "03" {
+            "var_type"                          "FIELD_FLOAT"
+            "ranged_health_percent"             "2"
+        }
+        "04" {
+            "var_type"                          "FIELD_FLOAT"
+            "ranged_health_percent_power_ratio" "0.02"
+        }
+        "05" {
+            "var_type"                          "FIELD_INTEGER"
+            "melee_magic_damage"                "20 30 40 50 60"
+        }
+        "06" {
+            "var_type"                          "FIELD_FLOAT"
+            "melee_health_percent"              "8"
+        }
+        "07" {
+            "var_type"                          "FIELD_FLOAT"
+            "melee_health_percent_power_ratio"  "0.025"
+        }
+        "08" {
+            "var_type"                          "FIELD_INTEGER"
+            "max_damage_against_non_shapers"    "30 65 100 135 170"
+        }
+    }
+    
+    "OnSpellStart" {
+        "RunScript" {
+			"ScriptFile"	        "abilities/ancient_babysitter_reconfigure_lua"
+			"Function"		        "toggle"
+		}
+        "AttachEffect" {
+            "EffectName"            "particles/faris_reconfigure/reconfigure_change_base.vpcf"
+            "Target"                "CASTER"
+            "EffectAttachType"      "attach_hitloc"
+        }
+    }
+    
+    "Modifiers" {
+        "modifier_reconfigure_melee" {
+            "IsHidden"          "1"
+
+            "IsAuraActiveOnDeath" "1"
+            "RemoveOnDeath"     "0"
+            
+            "Properties" {
+                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"              "-345"
+            }
+        }
+        "modifier_reconfigure" {
+            "TextureName"       "ancient_babysitter_reconfigure"
+            "IsBuff"            "1"
+            "Passive"           "1"
+            
+            "OnAttackLanded" {
+                "RunScript" {
+                    "ScriptFile"                        "abilities/ancient_babysitter_reconfigure_lua"
+                    "Function"                          "on_attack_landed"
+                    "MeleeDamage"                       "%melee_magic_damage"
+                    "RangedDamage"                      "%ranged_magic_damage"
+                    "MeleeHealthPercent"                "%melee_health_percent"
+                    "RangedHealthPercent"               "%ranged_health_percent"
+                    "MeleeHealthPercentPowerRatio"      "%melee_health_percent_power_ratio"
+                    "RangedHealthPercentPowerRatio"     "%ranged_health_percent_power_ratio"
+                    "MaxDamageAgainstNonShapers"        "%max_damage_against_non_shapers"
+                    "Target"                            "TARGET"
+                }
+            }
+            
+            "Properties" {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%attack_speed_percent"
+            }
+        }
+    }
+    "precache" {
+        "particle"      "particles/faris_reconfigure/reconfigure_melee_base.vpcf"
+        "particle"      "particles/faris_reconfigure/reconfigure_ranged_base.vpcf"
+        "particle"      "particles/faris_reconfigure/reconfigure_change_base.vpcf"
+    }
+}

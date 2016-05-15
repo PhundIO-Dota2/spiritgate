@@ -1,0 +1,68 @@
+"spell_wither" {
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"AbilityTextureName"			"spell_wither"
+	
+	"AbilityCastRange"				"550"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"180"
+	"AbilityManaCost"				"0"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"550"
+		}
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"%reduced_movement_speed"	"-40"
+		}
+		"03" {
+			"var_type"				"FIELD_INTEGER"
+			"%reduced_attack_speed"	"-40"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"%reduced_damage"		"-30"
+		}
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+	}
+	
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"			"abilities/spell_wither_lua"
+			"Function"				"cast"
+			"Target"				"TARGET"
+		}
+	}
+
+	"Modifiers" {
+		"modifier_withered" {
+			"TextureName"	"spell_wither"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+
+			"EffectName"		"particles/spell_wither/wither_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"Properties" {
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%%reduced_attack_speed"
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%reduced_movement_speed" 
+			}
+		}
+	}
+
+	"precache" {
+		"particle"		"particles/spell_wither/wither_base.vpcf"
+		"particle"		"particles/spell_wither/wither_projectile_base.vpcf"
+	}
+}

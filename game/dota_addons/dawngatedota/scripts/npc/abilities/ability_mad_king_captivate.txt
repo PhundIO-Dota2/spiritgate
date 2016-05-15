@@ -1,0 +1,96 @@
+"ability_mad_king_captivate" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"mad_king_captivate"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"600"
+	
+	"AbilityCooldown"				"11 10 9 8 7"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_5"
+	"AnimationPlaybackRate"			"0.1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"600"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 					"FIELD_INTEGER"
+            "damage" 					"25 45 65 85 105"
+        }
+        "02" {
+            "var_type" 					"FIELD_FLOAT"
+            "damage_power_ratio" 		"0.35"
+        }
+        "03" {
+        	"var_type"					"FIELD_INTEGER"
+        	"cast_range"				"600"
+        }
+        "04" {
+        	"var_type"					"FIELD_INTEGER"
+        	"%movement_speed_slow"		"-30 -35 -40 -45 -50"
+        }
+        "05" {
+            "var_type" 					"FIELD_FLOAT"
+            "flourish_root_duration" 	"1 1.25 1.5 1.75 2"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/mad_king_captivate_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Damage"		 		"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"	
+			"CastRange"				"%cast_range"
+			"FlourishRootDuration"	"%flourish_root_duration"
+		}
+    }
+	"Modifiers" {
+		"modifier_captivate_slow" {
+			"TextureName"     	"mad_king_captivate"
+			"IsBuff" 			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"        "1"
+
+			"EffectName"		"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
+			"EffectAttachType"	"attach_hitloc"
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%movement_speed_slow" 
+			}
+		}
+		"modifier_captivate_rooted" {
+			"TextureName"		"mad_king_captivate"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+
+			"EffectName"		"particles/kom_captivate/captivate_root_base.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"States" {
+				"MODIFIER_STATE_ROOTED" 		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+	"precache" {
+		"particle"	"particles/kom_captivate/captivate_projectile_base.vpcf"
+		"particle"	"particles/kom_captivate/captivate_base.vpcf"
+		"particle"	"particles/kom_captivate/captivate_root_base.vpcf"
+		"particle"	"particles/units/heroes/hero_wisp/wisp_tether_slow.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

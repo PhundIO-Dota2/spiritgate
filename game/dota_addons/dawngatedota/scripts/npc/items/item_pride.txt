@@ -1,0 +1,79 @@
+"item_pride"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4012"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_pride"
+	
+	"ItemCost"						"1500"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"vigor"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"300"
+        }
+        "02"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_armour" 			"30"
+        }
+	}
+	
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	"Modifiers"
+	{
+		"item_pride_modifier_passive"
+		{
+			"Passive" 		"1"  
+			"IsHidden" 		"1"  
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"item_pride_modifier_blazing"
+		{
+			"TextureName"		"item_pride"
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration"			"3"
+			
+			"ThinkInterval" 	"1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"Target"		"CASTER"
+					"ScriptFile"	"deal_damage"
+					"Function"		"damage"
+					"Damage" 		"10"
+					"PowerRatio"	"0"
+					"IsDoT"			"1"
+				}
+			}
+		}
+	}
+}
+"item_recipe_pride"
+{
+	"ID"							"4011"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"BaseClass"						"item_recipe_arcane_boots"
+	
+	"ItemCost"						"1080"	
+	"ItemShopTags"					""
+	
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_pride"
+	"ItemRequirements"
+	{
+		"01"						"item_life"
+	}
+}

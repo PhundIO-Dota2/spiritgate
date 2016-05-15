@@ -1,0 +1,102 @@
+"ability_purifier_leech" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"purifier_leech"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"14"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "AbilityCastRange"       		"500"
+	"AbilityCastPoint" 				"0"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"	"500"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 								"FIELD_INTEGER"
+			"damage"          						"75 105 135 165 195"
+		}
+		"02" {
+			"var_type"								"FIELD_FLOAT"
+			"damage_power_ratio"					"0.5"
+		}
+        "03" {
+            "var_type"                              "FIELD_FLOAT"
+            "damage_duration"                       "2.5"
+        }
+        "04" {
+        	"var_type"								"FIELD_INTEGER"
+        	"shield"								"26 38 50 62 74"
+        }
+        "05" {
+        	"var_type"								"FIELD_FLOAT"
+        	"shield_health_ratio"					"0.025"
+        }
+        "06" {
+        	"var_type"								"FIELD_INTEGER"
+        	"shield_duration"						"2"
+        }
+        "07" {
+			"var_type"								"FIELD_INTEGER"
+			"cast_range"							"500"
+		}
+		"08" {
+			"var_type"								"FIELD_INTEGER"
+			"health_cost"							"25 35 45 55 65"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_TheTyphoon.FeedingFrenzy"
+			"Target"		"CASTER"
+		}
+		"RunScript" {	
+			"ScriptFile" 		"abilities/purifier_leech_lua"
+			"Function"			"cast"
+			"Damage"			"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"
+			"DamageDuration"	"%damage_duration"
+			"Shield"			"%shield"
+			"ShieldHealthRatio"	"%shield_health_ratio"
+			"ShieldDuration"	"%shield_duration"
+			"HealthCost"		"%health_cost"
+		}
+    }
+
+    "Modifiers" {
+    	"modifier_purifier_leech_shield" {
+    		"TextureName"		"purifier_leech"
+    		"IsUniversalShield"	"1"
+    		"Duration"			"2"
+    		"EffectName"		"particles/viyanna_leech/leech_shield_base.vpcf"
+    		"EffectAttachType"	"follow_hitloc"
+    	}
+    	"modifier_purifier_leeched_from" {
+    		"TextureName"		"purifier_leech"
+    		"IsDebuff"			"1"
+    		"Duration"			"%damage_duration"
+    		"EffectName"		"particles/viyanna_leech/leech_debuff_base.vpcf"
+    		"EffectAttachType"	"attach_hitloc"
+    	}
+    }
+	 
+	"precache" {
+		"soundfile"		"soundevents/custom_sounds.vsndevts"
+		"particle"		"particles/viyanna_leech/leech_shield_base.vpcf"
+		"particle"		"particles/viyanna_leech/leech_hit_base.vpcf"
+		"particle"		"particles/viyanna_leech/leech_debuff_base.vpcf"
+	}
+}

@@ -1,0 +1,92 @@
+"ability_art_prodigy_desaturate" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"art_prodigy_desaturate"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"10"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "AbilityCastRange"       		"525"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "525"
+    }
+	
+	"AbilitySpecial" {
+		"01" {
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"55 100 145 190 235"
+		}
+		"02" {
+			"var_type"						"FIELD_FLOAT"
+			"damage_power_ratio"			"0.6"
+		}
+        "03" {
+			"var_type" 						"FIELD_INTEGER"
+			"silence_duration"    			"1"
+		}
+		"04" {
+			"var_type"						"FIELD_FLOAT"
+			"silence_duration_power_ratio"	"0.0025"
+		}
+		"05" {
+			"var_type"						"FIELD_INTEGER"
+			"range"							"525"
+		}
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_ArtProdigy.AbilityDesaturateCast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"deal_damage"
+			"Function"				"disable"
+			"Target"				"TARGET"
+			"Caster"				"CASTER"
+			"DisableModifier"		"modifier_desaturate"
+			"Duration"				"%silence_duration"
+			"DurationPowerRatio"	"%silence_duration_power_ratio"
+		}
+		"RunScript" {
+			"ScriptFile"			"deal_damage"
+			"Function"				"damage"
+			"Caster"				"CASTER"
+			"Target"				"TARGET"
+			"Damage"				"%damage"
+			"PowerRatio"			"%damage_power_ratio"
+		}
+	}
+	"Modifiers" {
+		"modifier_desaturate" {
+			"TextureName"		"art_prodigy_desaturate"
+
+			"IsPurgable"		"1"
+
+			"EffectName"		"particles/zeri_desaturate/desaturate_ability_base.vpcf"
+			"EffectAttachType"	"follow_hitloc"
+
+		    "StatusEffectName"     "particles/zeri_desaturate/desaturation_status.vpcf"
+		    "StatusEffectPriority" "10"
+
+			"States" {
+				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/zeri_desaturate/desaturate_ability_base.vpcf"
+		"particle"	"particles/zeri_desaturate/desaturation_status.vpcf"
+	}
+}

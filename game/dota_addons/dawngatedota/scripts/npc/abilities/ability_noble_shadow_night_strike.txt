@@ -1,0 +1,67 @@
+"ability_noble_shadow_night_strike" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"noble_shadow_night_strike"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"10 9 8 7 6"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+    "TargetInfo" {
+        "Type"      "Cone"
+        "Radius"    "500"
+        "Width"		"1.4"
+    }
+
+	"AbilityCastRange"				"500"
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 									"FIELD_INTEGER"
+			"damage"									"60 100 140 180 220"
+		}
+		"02" {
+			"var_type"									"FIELD_FLOAT"
+			"damage_power_ratio"						"0.5"
+		}
+		"03" {
+			"var_type"									"FIELD_INTEGER"
+			"heal"										"10 15 20 25 30"
+		}
+		"04" {
+			"var_type"									"FIELD_FLOAT"
+			"heal_power_ratio"							"0.3"
+		}
+		"05" {
+			"var_type"									"FIELD_INTEGER"
+			"radius"									"500"
+		}
+	}
+	
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"			"abilities/noble_shadow_night_strike_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Radius"				"%radius"
+			"Damage"				"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"
+			"Heal"					"%heal"
+			"HealPowerRatio"		"%heal_power_ratio"
+		}
+		"FireSound" {
+			"EffectName"		"Hero_WarlockKnight.Devour"
+			"Target"			"CASTER"
+		}
+	}
+	
+	"precache" {
+		"soundfile"	    "soundevents/custom_sounds.vsndevts"
+		"particle"		"particles/kindra_night_strike/night_strike_base.vpcf"
+    }
+}

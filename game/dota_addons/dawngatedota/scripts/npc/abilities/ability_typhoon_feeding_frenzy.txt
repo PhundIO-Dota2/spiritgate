@@ -1,0 +1,111 @@
+"ability_typhoon_feeding_frenzy" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"typhoon_feeding_frenzy"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"10 9 8 7 6"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "AbilityCastRange"       		"525"
+	"AbilityCastPoint" 				"0"
+    
+    "AbilityManaCost"               "75 100 125 150 175"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "525"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 								"FIELD_INTEGER"
+			"damage"          						"50 95 140 185 230"
+		}
+        "02" {
+			"var_type" 								"FIELD_INTEGER"
+			"dot_damage"          					"13 20 28 35 43"
+		}
+		"03" {
+			"var_type"								"FIELD_INTEGER"
+			"cast_range"							"525"
+		}
+		"04" {
+			"var_type"								"FIELD_FLOAT"
+			"damage_power_ratio"					"0.7"
+		}
+        "05" {
+			"var_type"								"FIELD_FLOAT"
+			"dot_damage_power_ratio"			    "0.3"
+		}
+        "06" {
+            "var_type"                              "FIELD_FLOAT"
+            "duration"                              "2.5"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_TheTyphoon.FeedingFrenzy"
+			"Target"		"CASTER"
+		}
+		"TrackingProjectile" {
+			"Target"			"TARGET"
+			"EffectName"		"particles/amarynth_feeding_frenzy/feeding_frenzy_ability_base.vpcf"
+			"Dodgeable"			"0"
+			"ProvidesVision"	"0"
+			"MoveSpeed"			"600"
+			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+    }
+	"OnProjectileHitUnit" {
+		"DeleteOnHit"  "1"
+		"FireSound" {
+			"EffectName"	"Hero_TheTyphoon.FeedingFrenzyHit"
+			"Target"		"TARGET"
+		}
+		"RunScript" {
+			"Target"		"TARGET"
+			"ScriptFile"	"deal_damage"
+			"Function"		"damage"
+			"Damage" 		"%damage"
+			"PowerRatio"	"%damage_power_ratio"
+		}
+        "ApplyModifier" {
+            "Target"            "TARGET"
+            "ModifierName"      "modifier_feeding_frenzy_dot"
+        }
+	}
+	
+	"Modifiers" {
+        "modifier_feeding_frenzy_dot" {
+            "TextureName"   "typhoon_feeding_frenzy"
+            "IsDebuff"      "1"
+            "Duration"      "%duration"
+            
+            "OnCreated" {
+                "RunScript" {
+                    "ScriptFile"        "abilities/typhoon_feeding_frenzy_lua"
+                    "Function"          "feeding_frenzy"
+                    "Target"            "TARGET"
+                    "Damage"            "%dot_damage"
+                    "Duration"          "%duration"
+                    "PowerRatio"        "%dot_damage_power_ratio"
+                }
+            }
+        }
+	}
+	 
+	"precache" {
+		"soundfile"		"soundevents/custom_sounds.vsndevts"
+		"particle"		"particles/amarynth_feeding_frenzy/feeding_frenzy_ability_base.vpcf"
+	}
+}

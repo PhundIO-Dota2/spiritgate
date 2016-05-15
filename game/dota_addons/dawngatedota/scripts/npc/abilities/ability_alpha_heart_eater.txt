@@ -1,0 +1,63 @@
+"ability_alpha_heart_eater" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"alpha_heart_eater"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"10000"
+	
+	"AbilityCooldown"				"14 12.5 11 9.5 8"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+
+    "TargetInfo" {
+    	"Type"		"FullLine"
+    	"Radius"		"850"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"40 70 100 130 160"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.5"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"850"
+        }
+        "04" {
+        	"var_type"				"FIELD_INTEGER"
+        	"health_cost"			"30 50 70 90 110"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/alpha_heart_eater_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"PowerRatio"		"%damage_power_ratio"
+			"Range"				"%range"
+			"HealthCost"		"%health_cost"
+		}
+    }
+	"precache" {
+		"particle"	"particles/fenmore_heart_eater/heart_eater_base.vpcf"
+		"particle"	"particles/fenmore_heart_eater/heart_eater_paw_base.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

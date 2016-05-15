@@ -1,0 +1,69 @@
+"spell_dispel" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"spell_dispel"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	"AbilityManaCost"         		"0"
+
+	"AbilityCooldown"				"180"
+
+	"AbilityCooldownFixed"          "1"
+	"AbilityCannotSurge"            "1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
+	"IsCastableWhileHidden" 		"1"
+	
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"				"FIELD_INTEGER"
+        	"duration"				"3"
+        }
+        "02" {
+        	"var_type"				"FIELD_FLOAT"
+        	"disable_reduction"		"0.35"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"%movement_speed"		"50"
+        }
+        "04" {
+        	"var_type"				"FIELD_INTEGER"
+        	"movement_speed_duration"	"1"
+        }
+	}
+
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"		"abilities/spell_dispel_lua"
+			"Function"			"cast"
+		}
+		"FireEffect" {
+			"EffectName"        "particles/units/heroes/hero_brewmaster/brewmaster_dispel_magic_sphere.vpcf"
+			"EffectAttachType"  "attach_hitloc"
+			"Target"            "CASTER"
+		}
+		"ApplyModifier" {
+			"ModifierName"		"modifier_dispel_tenacity"
+			"Target" 			"CASTER"
+		}
+	}
+
+	"Modifiers" {
+		"modifier_dispel_tenacity" {
+			"Duration"		"%duration"
+		}
+		"modifier_dispel_movement_speed" {
+			"Duration"		"%movement_speed_duration"
+
+			"Properties" {
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%movement_speed" 
+			}
+		}
+	}
+
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_dispel_magic_sphere.vpcf"
+	}
+}

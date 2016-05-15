@@ -1,0 +1,99 @@
+"ability_noble_shadow_duskmantle" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"noble_shadow_duskmantle"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"9"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	
+    "AOERadius"						"275"
+
+    "TargetInfo" {
+    	"Type"		"Radius"
+    	"Radius"	"275"
+    }
+	
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"275"
+        }
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"50 85 120 155 190"
+		}
+		"03" {
+			"var_type"				"FIELD_FLOAT"
+			"damage_power_ratio"	"0.3"
+		}
+		"04" {
+            "var_type" 				"FIELD_INTEGER"
+            "%movespeed_reduction" 	"-25"
+        }
+        "05" {
+        	"var_type"				"FIELD_INTEGER"
+        	"movespeed_reduction_duration"		"2"
+        }
+    }
+	
+	"OnSpellStart" {
+		"ActOnTargets" {
+            "Target" {
+                "Center" 	"CASTER"
+                "Radius" 	"%radius"
+                "Teams"  	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            }
+			"Action" {
+				"RunScript" {
+					"Target"		"TARGET"
+					"ScriptFile"	"deal_damage"
+					"Function"		"damage"
+					"Damage" 		"%damage"
+					"PowerRatio"	"%damage_power_ratio"
+                    "AoE"           "1"
+				}
+				"ApplyModifier" {
+					"Target"		"TARGET"
+					"Caster"		"CASTER"
+					"ModifierName"	"modifier_duskmantle_slow"
+				}
+			}
+		}
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  		"CASTER"
+		}
+		"FireEffect" {
+			"EffectName"		"particles/kindra_duskmantle/duskmantle_base.vpcf"
+			"Target"			"CASTER"
+			"EffectAttachType"	"attach_origin"
+		}
+    }
+	
+	"Modifiers" {
+		"modifier_duskmantle_slow" {
+			"TextureName"	"cerulean_whirling_strike"
+			
+			"IsDebuff"		"1"
+			"IsPurgable"	"1"
+			"Duration"		"%movespeed_reduction_duration"
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%%movespeed_reduction"
+			}
+		}
+	}
+	 
+	"precache" {
+		"particle"	"particles/kindra_duskmantle/duskmantle_base.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+	}
+}

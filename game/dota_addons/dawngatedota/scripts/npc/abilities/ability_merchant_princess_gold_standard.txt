@@ -1,0 +1,52 @@
+"ability_merchant_princess_gold_standard" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"merchant_princess_gold_standard"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"16 14.5 13 11.5 10"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentStart"
+			"Target"  		"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/merchant_princess_gold_standard_lua"
+			"Function"			"gold_standard_add_buff"
+			"Target"			"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"basic_attack_reset"
+			"Function"			"Reset"
+			"Target"			"CASTER"
+		}
+	}
+	"Modifiers" {
+		"modifier_gold_standard" {
+			"TextureName"	"merchant_princess_gold_standard"
+			
+			"IsBuff"		"1"
+			"Duration"		"5"
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"		"abilities/merchant_princess_gold_standard_lua"
+					"Function"			"gold_standard_attack"
+					"Target"			"TARGET"
+				}
+			}
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/merchant_princess/gold_standard_copper.vpcf"
+		"particle"	"particles/merchant_princess/gold_standard_silver.vpcf"
+		"particle"	"particles/merchant_princess/gold_standard_gold.vpcf"
+		"particle"	"particles/merchant_princess/gold_standard_use.vpcf"
+	}
+}

@@ -1,0 +1,80 @@
+"item_faith"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4090"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_faith"
+	
+	"ItemCost"						"2730"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"faith"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 					"FIELD_INTEGER"
+            "added_life" 				"300"
+        }
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"50"
+		}
+	}
+	"Modifiers"
+	{
+		"item_faith_modifier_single" {
+			"Passive"			"1"
+			"IsHidden"			"1"
+		    "ThinkInterval" "3"
+		    "OnIntervalThink"
+		    {
+		        "RunScript"  {
+		        	"ScriptFile"	"items/faith_lua"
+		        	"Function"		"add_stack"
+		        	"Target"		"CASTER"
+		        }
+		    }
+            "OnTakeDamage"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "items/conviction_lua"
+                    "Function"      "take_damage"
+                    "Target"        "ATTACKER"
+                    "Damage"        "%attack_damage"
+                }
+            }
+		}
+		"item_faith_modifier" {
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"modifier_arcane_aegis" {
+			"TextureName"		"arcane_aegis"
+		}
+	}
+
+}
+"item_recipe_faith"
+{
+	"ID"							"4089"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1390"
+	"ItemResult"					"item_faith"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_conviction"
+	}
+}

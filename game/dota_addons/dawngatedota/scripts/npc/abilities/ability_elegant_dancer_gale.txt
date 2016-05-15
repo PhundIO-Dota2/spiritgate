@@ -1,0 +1,45 @@
+"ability_elegant_dancer_gale" {
+    "ScriptFile"                    "lua_abilities/ability_elegant_dancer_gale"
+    "BaseClass"                     "ability_lua"
+    "AbilityTextureName"     		"elegant_dancer_gale"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"3"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+
+	"AbilityManaCost"         		"0"
+
+    "AbilitySpecial" {
+        "01" {
+            "var_type"              "FIELD_INTEGER"
+            "radius"                "100"
+        }
+        "02" {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "75 115 155 195 235"
+        }
+        "03" {
+            "var_type"              "FIELD_FLOAT"
+            "damage_power_ratio"    "0.8"
+        }
+        "04" {
+            "var_type"              "FIELD_INTEGER"
+            "cast_range"            "750"
+        }
+    }
+
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+        "particle"  "particles/ashabel_gale/gale_projectile_base.vpcf"
+        "particle"  "particles/ashabel_gale/gale_hit.vpcf"
+        "particle"  "particles/ashabel_gale/gale_warning.vpcf"
+	}
+}

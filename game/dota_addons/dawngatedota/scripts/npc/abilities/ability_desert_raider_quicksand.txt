@@ -1,0 +1,84 @@
+"ability_desert_raider_quicksand" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"desert_raider_quicksand"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"625"
+	
+	"AbilityCooldown"				"14"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+
+	"AbilityManaCost"         		"20"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "275"
+        "Range"		"625"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 					"FIELD_INTEGER"
+            "radius" 					"275"
+        }
+        "02" {
+        	"var_type"					"FIELD_FLOAT"
+        	"%min_movement_speed_slow"	"-25 -30 -35 -40 -45"
+        }
+        "03" {
+        	"var_type"					"FIELD_FLOAT"
+        	"%max_movement_speed_slow"	"-60 -65 -70 -75 -80"
+        }
+		"04" {
+			"var_type"					"FIELD_INTEGER"
+			"cast_range"				"625"
+		}
+		"05" {
+			"var_type"					"FIELD_INTEGER"
+			"duration"					"4"
+		}
+    }
+	
+    "Modifiers" {
+    	"modifier_desert_raider_quicksand_stack" {
+    		"IsHidden"				"1"
+    		"Properties" {
+    			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-1"
+    		}
+    	}
+    	"modifier_desert_raider_quicksand" {
+    		"TextureName"			"desert_raider_quicksand"
+    		"IsDebuff"				"1"
+    	}
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/desert_raider_quicksand_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Caster"				"CASTER"
+			"Duration"				"%duration"
+			"Radius"				"%radius"
+			"MinMovementSpeedSlow"	"%%min_movement_speed_slow"
+			"MaxMovementSpeedSlow"	"%%max_movement_speed_slow"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/kahgen_quicksand/quicksand_base.vpcf"
+		"particle"	"particles/kahgen_dust_devil/dust_devil_debuff_base.vpcf"
+	}
+}

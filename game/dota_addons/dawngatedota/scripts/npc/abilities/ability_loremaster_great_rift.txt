@@ -1,0 +1,63 @@
+"ability_loremaster_great_rift" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"loremaster_great_rift"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"900"
+	
+	"AbilityCooldown"				"13 12 11 10 9"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_3"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"	"110"
+        "Range"		"900"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"110"
+        }
+        "02" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"80 130 180 230 280"
+        }
+        "03" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"0.75"
+        }
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"900"
+		}
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"			"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  				"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/loremaster_great_rift_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Caster"				"CASTER"
+			"Damage"				"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"
+			"Radius"				"%radius"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/zalgus_great_rift/great_rift_base.vpcf"
+	}
+}

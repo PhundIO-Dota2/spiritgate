@@ -1,0 +1,52 @@
+"item_life"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4002"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_life"
+	
+	"ItemCost"						"420"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"life"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"120"
+        }
+        "02"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life_regen" 		"2"
+        }
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_consume_health"	"3"			
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"added_consume_chance"	"0.33"
+		}
+	}
+	"Modifiers"
+	{
+		"item_life_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+			}
+		}
+	}
+}

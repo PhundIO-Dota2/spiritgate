@@ -1,0 +1,79 @@
+"ability_shepherd_battle_cry" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"shepherd_battle_cry"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"7"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+    "TargetInfo" {
+        "Type"      "Cone"
+        "Radius"    "480"
+        "Width"		"1.8"
+    }
+
+	"AbilityCastRange"				"480"
+	"AbilitySpecial" {
+        "01" {
+			"var_type" 									"FIELD_INTEGER"
+			"damage"									"60 95 130 165 200"
+		}
+		"02" {
+			"var_type"									"FIELD_FLOAT"
+			"damage_power_ratio"						"0.6"
+		}
+		"03" {
+			"var_type"									"FIELD_INTEGER"
+			"radius"									"480"
+		}
+		"04" {
+			"var_type"									"FIELD_INTEGER"
+			"%movespeed_reduction"						"-50 -55 -60 -65 -70"
+		}
+		"05" {
+			"var_type"									"FIELD_INTEGER"
+			"duration"									"1"
+		}
+	}
+	
+	"OnSpellStart" {
+		"RunScript" {
+			"ScriptFile"		"abilities/shepherd_battle_cry_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Radius"			"%radius"
+			"Damage"			"%damage"
+			"DamagePowerRatio"	"%damage_power_ratio"
+			"Duration"			"%duration"
+			"MovespeedReduction"	"%%movespeed_reduction"
+		}
+		"FireSound" {
+			"EffectName"		"Hero_WarlockKnight.Devour"
+			"Target"			"CASTER"
+		}
+	}
+	
+	"Modifiers" {
+		"modifier_battle_cry_reduced_movespeed_sheep" {
+			"Duration"		"1"
+			"IsHidden"		"1"
+
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" 	"-1"
+			}
+		}
+	}
+	"precache" {
+        "particle"		"particles/voluc_devour/devour_food.vpcf"
+        "particle"      "particles/voluc_devour/devour_ability_base.vpcf"
+		"soundfile"	    "soundevents/custom_sounds.vsndevts"
+		"particle"		"particles/kel_battlecry/battlecry_base.vpcf"
+    }
+}

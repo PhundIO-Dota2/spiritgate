@@ -1,0 +1,72 @@
+"item_devotion"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4062"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_devotion"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"devotion"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"300"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_armour"			"30"
+		}
+	}
+	"Modifiers"
+	{
+		"item_devotion_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+        "modifier_item_devotion_datadriven_aura_emitter"
+        {
+            "Passive"               "1"
+            "IsHidden"              "1"
+            
+            "Aura"                  "modifier_item_devotion_datadriven_aura"
+            "Aura_Radius"           "800"
+            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            "Aura_ApplyToCaster"    "1"
+        }
+        "modifier_item_devotion_datadriven_aura"
+        {
+            "TextureName"		"devotion"
+        }
+	}
+
+}
+"item_recipe_devotion"
+{
+	"ID"							"4061"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1850"
+	"ItemResult"					"item_devotion"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_purity"
+	}
+}

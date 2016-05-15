@@ -1,0 +1,37 @@
+"item_rage"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4116"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_rage"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"rage"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"45"
+		}
+	}
+}
+"item_recipe_rage"
+{
+	"ID"							"4115"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_rage"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_aggression"
+	}
+}

@@ -1,0 +1,50 @@
+"npc_dawngate_hero_flesh" {
+	"override_hero"				"npc_dota_hero_life_stealer"
+	
+	"AbilityLayout" 			"5"
+
+	"Ability1"					"ability_flesh_skewer" 
+	"Ability2"					"ability_flesh_grievous_wounds" 
+	"Ability3"					"ability_flesh_jagged_volley" 
+	"Ability7"					"ability_flesh_splintering_spines" 
+	"Ability15"					"ability_pure_shaper" 
+
+	"Ability4"					"ability_spacer1"
+	"Ability5"					"ability_universal_ability_ward"
+	"Ability6"					"ability_universal_ability"
+	"Ability8"					"ability_universal_attack"
+	"Ability9"					"ability_universal_recall"
+	"Ability10"					"consumable_vitality_potion" 	
+
+	"ArmorPhysical"				"0"										// Physical protection.
+	"MagicalResistance"			"0"										// Magical protection (percentage).
+
+	"AttackRate"                "1.5"     								// Speed of attack.
+	"AttackDamageMin"			"54"									// Damage range min.
+	"AttackDamageMax"			"54"									// Damage range max.
+	"AttackAnimationPoint"		"0.3"
+
+	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
+	"AttributeBaseStrength"		"0"										// Base strength
+	"AttributeStrengthGain"		"0"										// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"										// Base intelligence
+	"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"										// Base agility
+	"AttributeAgilityGain"		"0"										// Agility bonus per level.
+
+    "AttackRange"               "450"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	"ProjectileSpeed"           "1500"
+    "ProjectileModel"           "particles/vex_auto_base/vex_auto_base.vpcf"
+    
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"295"									// Speed.
+	"MovementTurnRate"			"10000.0"								// Turning rate.
+
+	"StatusHealth"				"520"									// Base health.
+	"StatusHealthRegen"			"1"										// Health regeneration rate.
+	"StatusMana"				"1"							        	// Base mana. TODO: +75 / level
+	"StatusManaRegen"			"1"										// Mana regeneration rate.
+
+	"VisionNighttimeRange"		"1800"									// Range of vision at night time.
+}

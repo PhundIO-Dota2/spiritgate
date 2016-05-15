@@ -1,0 +1,15 @@
+"npc_sculptor_masterpiece"
+{
+        "BaseClass"             "npc_dota_building"
+        "Model"                 "models/development/invisiblebox.vmdl"
+        "ModelScale"            "2"
+        "HasInventory"          "0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_FILLER"
+        "RingRadius"            "0"
+		
+	"vscripts"				"abilities/sculptor_inspiration_lua"
+
+        "VisionDaytimeRange"    "500"
+        "VisionNighttimeRange"  "500"
+}

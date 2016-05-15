@@ -1,0 +1,8 @@
+dawngate_1v1_single_lane
+{
+	material materials/overviews/dawngate_1v1_single_lane.vmat
+	pos_x -3072
+	pos_y 4608
+	scale 6.000
+}
+

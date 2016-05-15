@@ -1,0 +1,79 @@
+"ability_high_huntress_the_chase" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"high_huntress_the_chase"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"12"
+
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	
+	"AbilityManaCost"        		"20"
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "added_haste" 			"15 20 25 30 35"
+        }
+    }
+	
+	"OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"		"abilities/high_huntress_the_chase_lua"
+    		"Function"			"cast"
+    		"Target"			"TARGET"
+    	}
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  		"CASTER"
+		}
+    }
+	
+	"Modifiers" {
+		"modifier_high_huntress_chase_haste_thinker" {
+			"Passive"			"1"
+			"IsHidden"			"1"
+		    "ThinkInterval" 	"1"
+		    "OnIntervalThink" {
+		        "RunScript" {
+		        	"ScriptFile"		"abilities/high_huntress_the_chase_lua"
+		        	"Function"			"tick_haste_bonus"
+		        	"Target"			"TARGET"
+		        	"Caster"			"CASTER"
+		        }
+		    }
+		}
+		"modifier_high_huntress_chase_haste_bonus" {
+			"IsHidden"					"1"
+		}
+		"modifier_high_huntress_the_chase_movespeed" {
+			"TextureName"				"high_huntress_the_chase"
+			"Duration"					"3"
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"		"abilities/high_huntress_the_chase_lua"
+					"Function"			"on_attack"
+					"Target"			"TARGET"
+					"Caster"			"CASTER"
+				}
+			}
+		}
+		"modifier_high_huntress_the_chase_movespeed_hidden" {
+			"IsHidden"			"1"
+			"Duration"			"3"
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"1"
+			}
+		}
+		"modifier_high_huntress_the_chase_refresh" {
+			"Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE" 
+			"IsHidden"			"1"
+			"Duration"			"6.2"
+		}
+	}
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"	"particles/nissa_the_chase/nissa_the_chase_footsteps.vpcf"
+	}
+}

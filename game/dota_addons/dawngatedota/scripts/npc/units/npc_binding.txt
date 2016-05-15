@@ -1,0 +1,39 @@
+"npc_binding" {
+    "BaseClass"             "npc_dota_creature"
+    "Model"                 "models/binding/center.vmdl"
+    "ModelScale"            "80"
+    "HasInventory"          "0"
+
+    "HealthBarOffset"       "475"
+
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "RingRadius"            "205"
+
+    "VisionDaytimeRange"    "1400"
+    "VisionNighttimeRange"  "1400"
+
+    "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+    "AttackDamageMin"       "165.0"
+    "AttackDamageMax"       "165.0"
+    "AttackRate"            "10000000"
+    "AttackAnimationPoint"  "1"
+    "AttackAcquisitionRange""0"
+    "AttackRange"           "0"
+
+    "StatusHealth"          "3000"
+    "StatusHealthRegen"     "0"
+
+    "ProjectileModel"       "particles/guardian/guardian_aa_base.vpcf"
+    "ProjectileSpeed"       "900"
+
+    "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"         "0"
+
+    "AbilityLayout"         "5"
+    "Ability1"              "ability_binding_fire"
+    "Ability2"              "ability_guardian_snare_bubble"
+    "Ability3"              "ability_guardian_doom_laser"
+    "Ability4"              "ability_guardian_fire_field"
+    "Ability5"              "ability_universal_ability"
+}

@@ -1,0 +1,35 @@
+"ability_rage_shaper_adrenaline" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"rage_shaper_adrenaline"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_rage_shaper_adrenaline_passive" {
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"ThinkInterval"		"1"
+			"OnIntervalThink" {
+				"RunScript" {
+					"ScriptFile" 		"abilities/rage_adrenaline_shaper_lua"
+					"Function"			"tick"
+				}
+			}
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile" 		"abilities/rage_adrenaline_shaper_lua"
+					"Function"			"attack_landed"
+				}
+			}
+		}
+		"modifier_rage_adrenaline_stack" {	
+			"TextureName"		"rage_shaper_rage"
+			"IsHidden"			"1"
+		}
+	}
+	"precache" {
+		"particle"				"particles/freia_rage/rage_gain_base.vpcf"
+	}
+}

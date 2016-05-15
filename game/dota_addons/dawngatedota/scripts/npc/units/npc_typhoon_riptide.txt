@@ -1,0 +1,18 @@
+"npc_typhoon_riptide"
+{
+	"BaseClass"             "npc_dota_creature"
+	"Model"                 "models/development/invisiblebox.vmdl"
+	"ModelScale"            "2.5"
+	"HasInventory"          "0"
+
+	"BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+	"RingRadius"            "0"
+	
+	"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_FLY"
+	"HealthBarOffset"       "250000"
+	
+	"vscripts"				"abilities/npc_typhoon_riptide_lua"
+
+    "VisionDaytimeRange"    "0"
+    "VisionNighttimeRange"  "0"
+}

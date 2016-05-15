@@ -1,0 +1,24 @@
+"ability_health_shaper_pulse" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"health_shaper"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_health_shaper_pulse_tick" {
+		    "ThinkInterval" "0.1"
+		    "OnIntervalThink" {
+		    	"RunScript"	{
+		    		"ScriptFile"		"abilities/health_shaper_pulse_lua"
+		    		"Function"			"tick"
+		    		"Caster"			"CASTER"
+		    		"Target"			"CASTER"
+		    	}
+		    }
+		    "Passive"		"1"
+		    "IsHidden"		"1"
+		}
+	}
+}

@@ -1,0 +1,24 @@
+"ability_focus_shaper_double_edge" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"focus_shaper_double_edge"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_focus_shaper_double_edge" {
+			"Passive"		"1"
+			"IsHidden"		"1"
+			"OnAttackLanded" {
+				"RunScript" {
+					"ScriptFile"		"abilities/focus_shaper_double_edge_lua"
+					"Function"			"attack_landed"
+				}
+			}
+		}
+		"modifier_focus_shaper_double_edge_damage" {
+			"IsHidden"		"1"
+		}
+	}
+}

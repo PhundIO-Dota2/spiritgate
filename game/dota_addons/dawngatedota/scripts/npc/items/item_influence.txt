@@ -1,0 +1,95 @@
+"item_influence"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4134"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_influence"
+	
+	"ItemCost"						"2645"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"influence"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_life"			"335"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"40"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"%movespeed"			"5"
+		}
+	}
+    "Modifiers"
+    {
+		"item_influence_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      	//This makes duplicate items stack their properties
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 				"%added_life"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+			}
+		}
+        "modifier_item_influence_datadriven_aura_emitter" {
+            "Passive"               "1"
+            "IsHidden"              "1"
+            
+            "Aura"                  "modifier_item_influence_datadriven_aura"
+            "Aura_Radius"           "800"
+            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            "Aura_ApplyToCaster"    "0"
+        }
+        "modifier_item_influence_datadriven_aura" {
+            "IsHidden"				"1"
+            "OnCreated" {
+            	"RunScript" {
+            		"ScriptFile"		"items/influence_lua"
+            		"Function"			"OnCreated"
+            		"Target"			"TARGET"
+            	}
+            }
+            "OnDestroy" {
+            	"RunScript" {
+            		"ScriptFile"		"items/influence_lua"
+            		"Function"			"OnDestroy"
+            		"Target"			"TARGET"
+            	}
+            }
+        }
+        "item_influence_movespeed_modifier" {
+        	"TextureName"			"influence"
+        	"Properties" {
+        		"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "15"
+        	}
+        }
+    }
+
+}
+"item_recipe_influence"
+{
+	"ID"							"4133"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1590"
+	"ItemResult"					"item_influence"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"			"item_motion"
+	}
+}

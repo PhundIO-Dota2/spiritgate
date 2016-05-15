@@ -1,0 +1,72 @@
+"item_conquest"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4138"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_conquest"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"conquest"
+	"AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"35"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"25"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"%movespeed"			"5"
+		}
+	}
+    "Modifiers"
+    {
+        "item_conquest_modifier"
+        {
+            "IsHidden"      "1"
+            "IsBuff"        "1"
+            "IsPurgable"    "0"
+            "Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+	    	"Passive"       "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+            }
+        }
+        "item_conquest_aftermath" {
+        	"TextureName"		"conquest"
+        	"Duration"			"6"
+        }
+        "item_conquest_aftermath_cooldown" {
+        	"IsDebuff"		"1"
+        	"TextureName"	"conquest"
+        	"Duration"		"3"
+    	}
+    }
+
+}
+"item_recipe_conquest"
+{
+	"ID"							"4137"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_conquest"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_abolition"
+	}
+}

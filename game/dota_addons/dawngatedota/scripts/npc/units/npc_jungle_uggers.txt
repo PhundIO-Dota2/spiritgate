@@ -1,0 +1,178 @@
+"npc_jungle_small_ugger" {
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/bristleback/bristleback.vmdl"
+        "ModelScale"            "0.6"
+        "Level"                 "1"
+        "HealthBarOffset"       "140"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+        "AttackDamageMin"       "18.0"
+        "AttackDamageMax"       "18.0"
+        "AttackRate"            "2"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange""0"
+        "AttackRange"           "130"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        //"BountyGoldMin"         "4"
+        //"BountyGoldMax"         "4"
+        "BountyXP"              "40"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "206"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "350"
+        "StatusHealthRegen"     "0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "1400"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}
+"npc_jungle_big_ugger" {
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.vmdl"
+        "ModelScale"            "0.9"
+        "Level"                 "1"
+        "HealthBarOffset"       "200"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+        "AttackDamageMin"       "39.0"
+        "AttackDamageMax"       "39.0"
+        "AttackRate"            "2"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange""0"
+        "AttackRange"           "130"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        //"BountyGoldMin"         "38"
+        //"BountyGoldMax"         "38"
+        "BountyXP"              "160"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "140"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "206"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "1200"
+        "StatusHealthRegen"     "0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "1400"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}
+"npc_jungle_ugly_ugger" {
+        // General
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl"
+        "ModelScale"            "1"
+        "Level"                 "1"
+        "HealthBarOffset"       "200"
+        "HasInventory"          "0"
+       
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+       
+        // Attack
+        //----------------------------------------------------------------
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+        "AttackDamageMin"       "41.0"
+        "AttackDamageMax"       "41.0"
+        "AttackRate"            "1"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange""0"
+        "AttackRange"           "130"
+       
+        // Bounty
+        //----------------------------------------------------------------
+        //"BountyGoldMin"         "38"
+        //"BountyGoldMax"         "38"
+        "BountyXP"              "240"
+       
+        // Bounds
+        //----------------------------------------------------------------
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "140"
+       
+        // Movement
+        //----------------------------------------------------------------
+        "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+        "MovementSpeed"         "206"
+        "MovementTurnRate"      "10000"
+       
+        // Status
+        //----------------------------------------------------------------
+        "StatusHealth"          "1600"
+        "StatusHealthRegen"     "0"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+       
+        // Vision
+        //----------------------------------------------------------------
+        "VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "1400"
+       
+        // Team
+        //----------------------------------------------------------------
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}

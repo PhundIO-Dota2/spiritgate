@@ -1,0 +1,67 @@
+"item_rebirth"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4072"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_rebirth"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"rebirth"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"380"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_life_regen"		"5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_haste"			"35"
+		}
+		//Unique passive managed in deal_damage
+	}
+	"Modifiers"
+	{
+		"item_rebirth_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"%added_life_regen"
+			}
+		}
+		"item_rebirth_cooldown" {
+			"TextureName"		"rebirth"
+			"IsDebuff"			"1"
+		}
+	}
+
+}
+"item_recipe_rebirth"
+{
+	"ID"							"4071"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_rebirth"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_growth"
+	}
+}

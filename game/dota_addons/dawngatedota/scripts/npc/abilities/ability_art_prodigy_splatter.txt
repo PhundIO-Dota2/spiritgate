@@ -1,0 +1,125 @@
+"ability_art_prodigy_splatter" {
+	"BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"art_prodigy_splatter"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"900"
+	
+	"AbilityCooldown"				"11 10 9 8 7"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "210"
+        "Range"		"900"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 					"FIELD_INTEGER"
+            "damage" 					"65 110 155 200 245"
+        }
+        "02" {
+            "var_type" 					"FIELD_FLOAT"
+            "damage_power_ratio" 		"0.55"
+        }
+        "03" {
+            "var_type" 					"FIELD_FLOAT"
+            "slow" 						"-15 -20 -25  -35 -35"
+        }
+        "04" {
+        	"var_type"					"FIELD_INTEGER"
+        	"magic_resist_reduction"	"15 20 25 30 35"
+        }
+        "05" {
+        	"var_type"					"FIELD_INTEGER"
+        	"radius"					"210"
+        }
+        "06" {
+        	"var_type"					"FIELD_INTEGER"
+        	"range"						"900"
+        }
+        "07" {
+        	"var_type"					"FIELD_INTEGER" 
+        	"duration"					"3"
+        }
+    }
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"Hero_ArtProdigy.AbilitySplatterCast"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/ability_ground_target_aoe_lua"
+			"Function"			"cast"
+			
+			"Caster"			"CASTER"
+			"Target"			"POINT"
+			"Speed"				"700"
+
+			"EffectName"		"particles/zeri_splatter/splatter_ability_base.vpcf"
+			"EffectEndcapName"	"particles/zeri_splatter/splatter_explosion.vpcf"
+
+			"HitEffect" {
+				"Disable" {
+					"DisableModifier"	"modifier_art_prodigy_splatter_slow"
+					"Target"			"RADIUS"
+					"Radius"			"%radius"
+					"SourceAbility"		"SELF"
+					"Duration"			"%duration"
+				}
+				"Damage" {
+					"Amount"			"%damage"
+					"PowerRatio"		"%damage_power_ratio"
+					"Target"			"RADIUS"
+					"Radius"			"%radius"
+				}
+				"AddStacks" {
+					"Caster"			"CASTER"
+					"Target"			"RADIUS"
+					"Radius"			"%radius"
+					"SourceAbility"		"SELF"
+					"Stacks"			"%magic_resist_reduction"
+					"MaxStacks"			"%magic_resist_reduction"
+					"ModifierName"		"modifier_art_prodigy_splatter_mr_reduction"
+					"Duration"			"%duration"
+					"PowerRatio"		"0.125"
+				}
+				"FireSound" {
+					"EffectName"		"Hero_ArtProdigy.AbilitySplatterLand"
+				}
+			}
+		}
+    }
+	"Modifiers" {
+		"modifier_art_prodigy_splatter_slow" {
+			"TextureName"   	"art_prodigy_splatter"
+			"IsBuff" 			"0"
+			"IsDebuff"			"1"
+			"IsPurgable"		"1"
+			"EffectName"		"particles/zeri_splatter/splatter_slow_effect.vpcf"
+			"EffectAttachType"	"attach_origin"
+			
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow" 
+			}
+		}
+		"modifier_art_prodigy_splatter_mr_reduction" {
+			"IsHidden"			"1"
+		}
+	}
+	"precache" {
+		"particle"	"particles/zeri_splatter/splatter_ability_base.vpcf"
+		"particle"	"particles/zeri_splatter/splatter_explosion.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

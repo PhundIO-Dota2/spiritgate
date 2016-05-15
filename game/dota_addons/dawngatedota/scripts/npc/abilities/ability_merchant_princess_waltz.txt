@@ -1,0 +1,58 @@
+"ability_merchant_princess_waltz" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"merchant_princess_waltz"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"5000000"
+	"AbilityCooldown"				"14 13 12 11 10"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"	"350"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"40 65 90 115 140"
+		}
+		"02" {
+			"var_type"				"FIELD_FLOAT"
+			"power_ratio"			"0.25"
+		}
+        "03" {
+            "var_type" 				"FIELD_INTEGER"
+            "distance" 				"350"
+        }
+        "04" {
+            "var_type" 				"FIELD_INTEGER"
+            "coin_radius" 			"300"
+        }
+	}
+	
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+        "RunScript" {
+			"ScriptFile"		"abilities/merchant_princess_waltz_lua"
+			"Function"			"waltz"
+			"Target"			"POINT"
+			"Distance"			"%distance"
+			"CoinRadius"		"%coin_radius"
+			"PowerRatio"		"%power_ratio"
+			"Damage"			"%damage"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/merchant_princess/waltz.vpcf"
+	}
+}

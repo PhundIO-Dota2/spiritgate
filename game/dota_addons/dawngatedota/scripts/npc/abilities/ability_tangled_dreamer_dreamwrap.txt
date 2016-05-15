@@ -1,0 +1,80 @@
+"ability_tangled_dreamer_dreamwrap" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"tangled_dreamer_dreamwrap"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"14 13 12 11 10"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_ABILITY_4"
+	"AnimationPlaybackRate"			"0.6"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	
+    "AbilityCastRange"       		"600"
+	"AbilityCastPoint" 				"0"
+	
+    "TargetInfo" {
+        "Type"      "Range"
+        "Radius"    "600"
+    }
+
+	"AbilitySpecial" {
+		"01" {
+			"var_type"				"FIELD_FLOAT"
+			"%movespeed"			"0.20 0.225 0.25 0.275 0.30"
+		}
+		"02" {
+			"var_type"				"FIELD_INTEGER"
+			"shield"				"35 50 65 80 95"
+		}
+		"03" {
+			"var_type"				"FIELD_FLOAT"
+			"shield_power_ratio"	"0.35"
+		}
+		"04" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"600"
+		}
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"3"
+		}
+	}
+	"Modifiers" {
+		"modifier_dreamwrap" {
+			"TextureName"		"tangled_dreamer_dreamwrap"
+			"Duration"			"%duration"
+
+			"EffectName"		"particles/dibs_dreamwrap/dreamwrap_base.vpcf"
+			"EffectAttachType"	"attach_hitloc"
+		}
+		"modifier_dreamwrap_speed" {
+			"IsHidden"			"1"
+			"Duration"			"%duration"
+            "Properties" {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%movespeed"
+            }
+		}
+	}
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"			"dawngatedota.sculptor_Embrace"
+			"Target"  				"TARGET"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/tangled_dreamer_dreamwrap_lua"
+			"Function"				"cast"
+			"Shield"				"%shield"
+			"ShieldPowerRatio"		"%shield_power_ratio"
+		}
+	}
+	"precache" {
+		"soundfile" "soundevents/custom_sounds.vsndevts"
+		"particle"	"particles/dibs_dreamwrap/dreamwrap_base.vpcf"
+	}
+}

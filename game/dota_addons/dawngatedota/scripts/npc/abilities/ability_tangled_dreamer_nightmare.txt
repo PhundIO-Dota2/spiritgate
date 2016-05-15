@@ -1,0 +1,92 @@
+"ability_tangled_dreamer_nightmare" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"tangled_dreamer_nightmare"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"650"
+	
+	"AbilityCooldown"				"6 5.5 5 4.5 4"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+
+	"AbilityManaCost"         		"0"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "100"
+        "Range"		"650"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"60 100 140 180 220"
+        }
+        "02" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"0.6"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"bad_dreams_damage"		"60 85 110 135 160"
+        }
+        "04" {
+        	"var_type"						"FIELD_FLOAT"
+        	"bad_dreams_damage_power_ratio"	"0.6"
+        }
+        "05" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"100"
+        }
+		"06" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"650"
+		}
+		"07" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"5"
+		}
+    }
+	
+    "Modifiers" {
+    	"modifier_bad_dreams" {
+    		"Duration"			"5"
+    		"IsDebuff"			"1"
+    		"IsPurgeable"		"1"
+
+    		"EffectName"			"particles/dibs_nightmare/nightmare_debuff.vpcf"
+    		"EffectAttachType"		"follow_overhead"
+    	}
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"					"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  						"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"					"abilities/tangled_dreamer_nightmare_lua"
+			"Function"						"cast"
+			"Target"						"POINT"
+			"Caster"						"CASTER"
+			"Damage"						"%damage"
+			"DamagePowerRatio"				"%damage_power_ratio"
+			"BadDreamsDamage"				"%bad_dreams_damage"
+			"BadDreamsDamagePowerRatio"		"%bad_dreams_damage_power_ratio"
+			"Radius"						"%radius"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/dibs_nightmare/dibs_nightmare_base.vpcf"
+		"particle"	"particles/dibs_nightmare/nightmare_debuff.vpcf"
+		"particle"	"particles/dibs_nightmare/nightmare_debuff_hit.vpcf"
+	}
+}

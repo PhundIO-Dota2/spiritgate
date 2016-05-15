@@ -1,0 +1,8 @@
+"ability_spacer1" {
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+}
+"ability_spacer2" {
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+}

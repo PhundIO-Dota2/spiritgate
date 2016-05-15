@@ -1,0 +1,115 @@
+"ability_winters_bride_ice_lance" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"winters_bride_ice_lance"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"100000"
+	
+	"AbilityCooldown"				"1.5"
+	"AbilityCastPoint"              "0.03"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_1"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+    "TargetInfo" {
+        "Type"      "FullLine"
+        "Radius"    "900"
+    }
+    
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "damage" 				"45 65 85 105 125"
+        }
+        "02" {
+            "var_type" 				"FIELD_FLOAT"
+            "damage_power_ratio" 	"0.35"
+        }
+        "03" {
+        	"var_type"				"FIELD_INTEGER"
+        	"range"					"900"
+        }
+        "04" {
+        	"var_type"				"FIELD_INTEGER"
+        	"frost_cost"			"1"
+        }
+        "05" {
+        	"var_type"				"FIELD_FLOAT"
+        	"%slow_per_stack"		"-5 -7.5 -10 -12.5 -15"
+        }
+        "06" {
+        	"var_type"				"FIELD_FLOAT"
+        	"%base_slow"			"-20"
+        }
+    }
+	
+    "OnAbilityPhaseStart" {
+        "RunScript" {
+            "ScriptFile"        "abilities/winters_bride_ice_lance_lua"
+            "Function"          "precast"
+        }
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"	"dawngatedota.merchant_princess_FinalPaymentCoin"
+			"Target"  		"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"		"abilities/winters_bride_ice_lance_lua"
+			"Function"			"cast"
+			"Target"			"POINT"
+			"Damage"		 	"%damage"
+			"PowerRatio"		"%damage_power_ratio"
+			"Range"				"%range"
+		}
+    }
+    "Modifiers" {
+    	"modifier_ice_lance_frost_passive" {
+    		"IsHidden"			"1"
+    		"Passive"			"1"
+    		"ThinkInterval"		"0.5"
+    		"OnIntervalThink" {
+    			"RunScript" {
+    				"ScriptFile"		"abilities/winters_bride_ice_lance_lua"
+    				"Function"			"try_regen_frost"
+    				"Caster"			"CASTER"
+    				"Target"			"CASTER"
+    			}
+    		}
+    	}
+    	"modifier_ice_lance_slow" {
+    		"IsHidden"			"1"
+
+    		"EffectName"		"particles/slow_particles/slow_effect.vpcf"
+    		"EffectAttachType"	"follow_origin"
+
+    		"Properties" {
+    			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%base_slow"
+    		}
+    	}
+    	"modifier_ice_lance_slow_stack" {
+    		"IsHidden"			"0"
+    		"TextureName"		"winters_bride_ice_lance"
+
+    		"Properties" {
+    			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%%slow_per_stack"
+    		}
+    	}
+    	"recent_cast_modifier" {
+    		"Duration"			"6"
+    		"TextureName"		"winters_bride_ice_lance"
+    		"IsDebuff"			"1"
+    	}
+    }
+	"precache" {
+		"particle"	"particles/frostivus_gameplay/drow_ice_trail.vpcf"
+		"particle"	"particles/slow_particles/slow_effect.vpcf"
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+	}
+}

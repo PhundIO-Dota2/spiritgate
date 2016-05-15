@@ -1,0 +1,47 @@
+"item_subjugation" {
+	"BaseClass"						"item_datadriven"
+	"ID"							"4084"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_subjugation"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"subjugation"
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 					"FIELD_INTEGER"
+            "added_armour" 				"55"
+        }
+		"02" {
+			"var_type"					"FIELD_INTEGER"
+			"added_haste"				"30"
+		}
+		"03" {
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"35"
+		}
+	}
+	"Modifiers" {
+		"modifier_power_locked" {
+			"TextureName"		"subjugation"
+			"IsDebuff"			"1"
+			"Duration"			"3"
+		}
+	}
+}
+"item_recipe_subjugation" {
+	"ID"							"4083"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1500"
+	"ItemResult"					"item_subjugation"
+	"ItemShopTags"					""
+	"ItemRequirements" {
+		"01"						"item_discipline"
+	}
+}

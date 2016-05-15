@@ -1,0 +1,97 @@
+"item_pestilence"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4064"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_pestilence"
+	
+	"ItemCost"						"3000"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"pestilence"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 				"FIELD_INTEGER"
+            "added_life" 			"400"
+        }
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"added_power"			"30"
+		}
+	}
+
+	"OnEquip" {
+		"RunScript" {
+			"ScriptFile"		"items/pestilence_lua"
+			"Function"			"OnEquip"
+			"Target"			"CASTER"
+		}
+	}
+	"OnUnequip" {
+		"RunScript" {
+			"ScriptFile"		"items/pestilence_lua"
+			"Function"			"OnUnequip"
+			"Target"			"CASTER"
+		}
+	}
+	"OnOwnerDied" {
+		"RunScript" {
+			"ScriptFile"		"items/pestilence_lua"
+			"Function"			"OnUnequip"
+			"Target"			"CASTER"
+		}
+	}
+
+
+	"Modifiers"
+	{
+		"item_pestilence_modifier"
+		{
+			"Passive" 		"1"  
+			"IsHidden" 		"1"  
+			"Attributes" 	"MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+		"modifier_plague_host_host" {
+			"TextureName"			"pestilence"
+			"Properties" {
+				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT" 	"2"
+			}
+		}
+		"modifier_pestilence_cooldown" {
+			"IsHidden"				"1"
+		}
+		"modifier_pestilence_slow" {
+            "TextureName"		"pestilence"
+            "IsDebuff"        	"1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-20"
+            }
+		}
+	}
+
+}
+"item_recipe_pestilence"
+{
+	"ID"							"4063"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1850"
+	"ItemResult"					"item_pestilence"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_purity"
+	}
+}

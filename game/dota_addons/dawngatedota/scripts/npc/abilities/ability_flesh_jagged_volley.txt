@@ -1,0 +1,83 @@
+"ability_flesh_jagged_volley" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"flesh_jagged_volley"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"5"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCastRange"       		"750"
+	
+	"AbilityCooldown"				"12 11 10 9 8"
+	"AbilityCastPoint"              "0"
+	
+	"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
+	"AnimationPlaybackRate"			"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_PHYSICAL"
+	
+    "TargetInfo" {
+        "Type"      "PointTargetRadius"
+        "Radius"    "170"
+        "Range"		"750"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 				"FIELD_INTEGER"
+            "radius" 				"170"
+        }
+        "02" {
+        	"var_type"				"FIELD_INTEGER"
+        	"damage"				"50 85 120 155 190"
+        }
+        "03" {
+        	"var_type"				"FIELD_FLOAT"
+        	"damage_power_ratio"	"0.3"
+        }
+        "04" {
+        	"var_type"				"FIELD_FLOAT"
+        	"%movement_speed_slow"	"-30 -35 -40 -45 -50"
+        }
+		"05" {
+			"var_type"				"FIELD_INTEGER"
+			"cast_range"			"750"
+		}
+		"06" {
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+    }
+	
+    "Modifiers" {
+    	"modifier_jagged_volley_slow" {
+    		"TextureName"			"flesh_jagged_volley"
+    		"IsDebuff"				"1"
+			"Properties" {
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%%movement_speed_slow" 
+			}
+    	}
+    }
+
+	"OnSpellStart" {
+		"FireSound" {
+			"EffectName"		"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"Target"  			"CASTER"
+		}
+		"RunScript" {
+			"ScriptFile"			"abilities/flesh_jagged_volley_lua"
+			"Function"				"cast"
+			"Target"				"POINT"
+			"Caster"				"CASTER"
+			"Duration"				"%duration"
+			"Damage"				"%damage"
+			"DamagePowerRatio"		"%damage_power_ratio"
+			"Radius"				"%radius"
+		}
+    }
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+		"particle"	"particles/vex_jagged_volley/jagged_volley_hitground_base.vpcf"
+		"particle"	"particles/vex_jagged_volley/jagged_volley_up_base.vpcf"
+	}
+}

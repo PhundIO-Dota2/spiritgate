@@ -1,0 +1,83 @@
+"item_oppression"
+{
+	"BaseClass"						"item_datadriven"
+	"ID"							"4096"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_oppression"
+	
+	"ItemCost"						"2945"
+	"ItemPurchasable" 				"1"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemAliases"					"oppression"
+	"AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type" 					"FIELD_INTEGER"
+            "added_life" 				"225"
+        }
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_magic_resistance"	"35"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"added_power"				"40"
+		}
+        "04"
+        {
+            "var_type"                  "FIELD_INTEGER"
+            "added_will_thief"          "3"
+        }
+	}
+	"Modifiers"
+	{
+		"item_oppression_modifier"
+		{
+			"Passive" "1"  
+			"IsHidden" "1"  
+			"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"      //This makes duplicate items stack their properties
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%added_life"
+			}
+		}
+        "modifier_item_oppression_datadriven_aura_emitter"
+        {
+            "Passive"               "1"
+            "IsHidden"              "1"
+            
+            "Aura"                  "modifier_item_oppression_datadriven_aura"
+            "Aura_Radius"           "800"
+            "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_ENEMY"
+            "Aura_Types"            "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+            "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            "Aura_ApplyToCaster"    "0"
+        }
+        "modifier_item_oppression_datadriven_aura"
+        {
+            "TextureName"		"oppression"
+            "IsDebuff"			"1"
+        }
+	}
+
+}
+"item_recipe_oppression"
+{
+	"ID"							"4095"
+	"BaseClass"						"item_datadriven"
+	"ItemRecipe"					"1"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"ItemCost"						"1445"
+	"ItemResult"					"item_oppression"
+	"ItemShopTags"					""
+	"ItemRequirements"
+	{
+		"01"						"item_balance"
+	}
+}

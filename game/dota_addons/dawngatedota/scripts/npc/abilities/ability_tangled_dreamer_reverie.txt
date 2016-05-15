@@ -1,0 +1,61 @@
+"ability_tangled_dreamer_reverie" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"tangled_dreamer_reverie"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_ULTIMATE"
+	"MaxLevel" 						"3"
+	"AbilityManaCost"         		"0"
+	
+	"AbilityCooldown"				"140 130 120"
+
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+
+    "TargetInfo" {
+        "Type"      "Radius"
+        "Radius"    "800"
+    }
+
+	"AbilitySpecial" {
+        "01" {
+            "var_type" 						"FIELD_INTEGER"
+            "added_power" 					"25 35 46"
+        }
+        "02" {
+            "var_type" 						"FIELD_FLOAT"
+            "added_power_power_ratio" 		"0.15"
+        }
+        "03" {
+            "var_type" 						"FIELD_INTEGER"
+            "radius" 						"800"
+        }
+    }
+	
+	"OnSpellStart" {
+    	"RunScript" {
+    		"ScriptFile"		"abilities/tangled_dreamer_reverie_lua"
+    		"Function"			"cast"
+    		"PowerRatio"		"%power_ratio"
+    		"AddedPower"		"%added_power"
+    		"Radius"			"%radius"
+    	}
+		"FireSound" {
+			"EffectName"	"dawngatedota.cerulean_WhirlingStrike"
+			"Target"  		"CASTER"
+		}
+    }
+
+    "Modifiers" {
+    	"modifier_reverie_power" { 
+    		"Duration"		"0.5"
+    		"IsBuff"		"1"
+    	}
+    }
+
+	"precache" {
+		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+		"particle"	"particles/dibs_reverie/reverie_base.vpcf"
+		"particle"	"particles/dibs_reverie/reverie_begin_base.vpcf"
+		"particle"	"particles/dibs_reverie/reverie_flylocation_base.vpcf"
+		"particle"	"particles/dibs_reverie/reverie_fly_start_base.vpcf"
+		"particle"	"particles/dibs_reverie/reverie_movement_wind.vpcf"
+	}
+}
