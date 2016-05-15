@@ -4,6 +4,8 @@
 	</scripts>
 	<Panel>
 		<Panel id="spell_icon_loader">
+			<Image src="file://{images}/custom_game/context_ping_menu.png"/>
+			<Image src="file://{images}/custom_game/context_ping_menu_selection.png"/>
 			<Image src="file://{images}/custom_game/minimap_arrow.png"/>
 			<Image src="file://{images}/custom_game/minimap_arrow_blue.png"/>
 			<Image src="file://{images}/custom_game/minimap_arrow_red.png"/>

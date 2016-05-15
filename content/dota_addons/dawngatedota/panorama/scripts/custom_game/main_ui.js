@@ -173,7 +173,7 @@ function OnPlayerSpawn(event) {
 	var local_pid = Players.GetLocalPlayer()
 	var local_hero = Players.GetPlayerHeroEntityIndex( local_pid )
 	$.Schedule(0.1, function() {
-		$("#PlayerInfoAvatarImage").heroname = Entities.GetUnitName(local_hero)
+		//$("#PlayerInfoAvatarImage").heroname = Entities.GetUnitName(local_hero)
 		update_hud_icons()
 	})
 	
