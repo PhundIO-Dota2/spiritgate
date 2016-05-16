@@ -497,7 +497,11 @@ function GameMode:OnLastHit(keys)
   local old_gold = caster:GetGold()
 
   if bounty_application_ratios[target:GetUnitName()] ~= nil then
-    caster:ModifyGold(bounty_application_ratios[target:GetUnitName()] + bounty_application_ratios_nearby[target:GetUnitName()], true, 0)
+    local modifier = 1
+    if target:GetUnitName() == "npc_well_worker" and caster:HasModifier("modifier_role_predator") then
+      modifier = modifier * 2
+    end
+    caster:ModifyGold((bounty_application_ratios[target:GetUnitName()] + bounty_application_ratios_nearby[target:GetUnitName()]) * modifier, true, 0)
   end
 
   if (target:GetUnitName() == "npc_creep_melee" or target:GetUnitName() == "npc_creep_ranged") and caster:HasModifier("modifier_role_gladiator") then
@@ -646,6 +650,7 @@ function GameMode:OnEntityKilled( keys )
 				end
 			end
 		end
+
     if killedUnit:GetUnitName() == "npc_creep_melee" and nearby_enemy:IsHero() then
       local gold_base = bounty_application_ratios_nearby[killedUnit:GetUnitName()]
       if nearby_enemy:HasModifier("modifier_role_tactician") then

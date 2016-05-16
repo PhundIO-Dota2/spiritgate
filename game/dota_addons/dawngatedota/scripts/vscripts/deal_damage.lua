@@ -346,7 +346,34 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
 
     local final_damage_dealt = damage_table.damage
 
-	ApplyDamage(damage_table)
+    if final_damage_dealt > target:GetHealth() and target:IsHero() then
+        target:ForceKill(false)
+        caster:IncrementKills(target:entindex())
+        local gold_reward = target:GetLevel() * 15 + 80 + RandomInt(0, 50)
+        local exp_reward = target:GetLevel() * 75 + 200 + RandomInt(0, 50)
+        if caster:HasModifier("modifier_role_predator") then
+            gold_reward = gold_reward * 1.5
+            exp_reward = exp_reward * 1.3
+        end
+        for assistor, timer in pairs(target.kill_assist_timers) do
+            if assistor ~= caster and assistor:IsHero() then
+                local assistor_gold_reward = target:GetLevel() * 8 + 40 + RandomInt(0, 25)
+                local assistor_exp_reward = target:GetLevel() * 40 + 100 + RandomInt(0, 40)
+                if assistor:HasModifier("modifier_role_predator") then
+                    assistor_gold_reward = assistor_gold_reward * 2
+                    assistor_exp_reward = assistor_exp_reward * 1.3
+                end
+                assistor:ModifyGold(assistor_gold_reward, true, DOTA_ModifyGold_HeroKill)
+                assistor:AddExperience(assistor_exp_reward, DOTA_ModifyXP_HeroKill, false, true)
+                SendOverheadEventMessage(assistor, OVERHEAD_ALERT_GOLD, assistor, assistor_gold_reward, nil)
+            end
+        end
+        caster:ModifyGold(gold_reward, true, DOTA_ModifyGold_HeroKill)
+        caster:AddExperience(exp_reward, DOTA_ModifyXP_HeroKill, false, true)
+        SendOverheadEventMessage(caster, OVERHEAD_ALERT_GOLD, caster, gold_reward, nil)
+    else
+        ApplyDamage(damage_table)
+    end
 
     deal_on_hit(caster, target, ability, damage_table.damage_type)
 

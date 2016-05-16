@@ -212,6 +212,7 @@ function GameMode:InitGameMode()
 
   GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, "FilterExecuteOrder"), self )
   GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(GameMode, "FilterDamage"), self)
+  GameRules:GetGameModeEntity():SetModifyGoldFilter(Dynamic_Wrap(GameMode,"FilterModifyGold"),self)
 end
 
 function GameMode:OnContextPingSend(source, event)
@@ -276,6 +277,13 @@ function GameMode:SpiritgateChat(source, event)
   local pid = source.PlayerID
   local text = source.text
   CustomGameEventManager:Send_ServerToTeam(PlayerResource:GetTeam(pid), "SpiritgateChat", {pid = pid, text = text})  
+end
+
+function GameMode:FilterModifyGold( filterTable )
+  local playerid = filterTable.player_id_const
+  local hero = PlayerResource:GetPlayer(playerid):GetAssignedHero()
+
+  return true
 end
 
 function GameMode:FilterExecuteOrder( filterTable )
