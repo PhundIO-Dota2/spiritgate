@@ -88,6 +88,7 @@ function GameMode:OnAllPlayersLoaded()
     if HeroSelectTimeLeft >= 0 then
       return 1
     end
+    dofile("creep_spawner")
     for i=0, 9 do
       if PlayerResource:IsValidPlayerID(i) then
         local player = PlayerResource:GetPlayer(i)
@@ -168,7 +169,6 @@ GAME_STARTED = false
 
 function GameMode:OnGameInProgress()
   GAME_STARTED = true
-  dofile("creep_spawner")
   return nil
 end
 

@@ -14,7 +14,8 @@ Timers:CreateTimer(60 * 10, tick_creep_level)
 function StartSpawner(spawner, team, path)
   Timers:CreateTimer(function()
     for i=1, 3 do
-      local unitMelee = CreateUnitByName("npc_creep_melee", spawner:GetAbsOrigin(), true, nil, nil, team)
+      local unitMelee = CreateUnitByName("npc_creep_melee", spawner:GetAbsOrigin() + Vector(RandomInt(-100, 100), RandomInt(-100, 100), 0), true, nil, nil, team)
+      unitMelee:SetHullRadius(5)
       unitMelee:FindAbilityByName("ability_universal_ability"):ApplyDataDrivenModifier(unitMelee, unitMelee, "modifier_spiritgate_creep", {})
       local unitMeleePathPoint = 1
 
@@ -38,8 +39,8 @@ function StartSpawner(spawner, team, path)
         ExecuteOrderFromTable(order)
         return reorder_tick_time
       end)
-      Timers:CreateTimer(1, function()
-        local unitRanged = CreateUnitByName("npc_creep_ranged", spawner:GetAbsOrigin(), true, nil, nil, team)
+      Timers:CreateTimer(1.5, function()
+        local unitRanged = CreateUnitByName("npc_creep_ranged", spawner:GetAbsOrigin() + Vector(RandomInt(-100, 100), RandomInt(-100, 100), 0), true, nil, nil, team)
 
         unitRanged.creep_level_armour = creep_level * 0.28
         unitRanged.creep_level_magic_resistance = creep_level * 0.5
@@ -88,7 +89,7 @@ paths = {
 Entities:FindByName(nil, "waypoint_botlane_center"):Destroy()
 Entities:FindByName(nil, "waypoint_toplane_center"):Destroy()
 
-Timers:CreateTimer(90, function()
+Timers:CreateTimer(60, function()
   StartSpawner(good_spawner, DOTA_TEAM_GOODGUYS, paths[1])
   StartSpawner(bad_spawner, DOTA_TEAM_BADGUYS, paths[2])
   StartSpawner(good_spawner, DOTA_TEAM_GOODGUYS, paths[3])
