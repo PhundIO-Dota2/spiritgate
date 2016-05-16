@@ -368,7 +368,21 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
         600, --10
     }
 
-    if final_damage_dealt > target:GetHealth() and target:IsHero() then
+    if --[[final_damage_dealt > target:GetHealth() and]] target:IsHero() then
+        local assistor_pids = {}
+        for assistor, timer in pairs(target.kill_assist_timers) do
+            assistor_pids[#assistor_pids + 1] = assistor:GetPlayerOwnerID()
+        end
+        local killer_data_sent = caster:GetUnitName()
+        if caster:IsHero() then
+            killer_data_sent = caster:GetPlayerOwnerID()
+        end
+        CustomGameEventManager:Send_ServerToAllClients("SpiritgateHeroKill", { 
+            killer = killer_data_sent,
+            killer_is_hero = caster:IsHero(),
+            assistors = assistor_pids,
+            dead_hero = target:GetPlayerOwnerID()
+        })
         if caster:IsHero() then
             if caster.current_streak == nil then
                 caster.current_streak = 0
@@ -379,18 +393,20 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
         if target.current_streak == nil then
             target.current_streak = 0
         end
-        target:ForceKill(false)
-        caster:IncrementKills(target:entindex())
-        local gold_reward = streak_reward_gold[math.max(0, math.max(17, caster.current_streak + 8))]
+        --target:ForceKill(false)
+        local gold_reward = streak_reward_gold[math.max(1, math.min(19, target.current_streak + 9))]
         local exp_reward = target:GetLevel() * 75 + 200 + RandomInt(0, 50)
-        if caster:HasModifier("modifier_role_predator") then
-            gold_reward = gold_reward * 1.5
-            exp_reward = exp_reward * 1.3
+        if caster:IsHero() then
+            caster:IncrementKills(target:entindex())
+            if caster:HasModifier("modifier_role_predator") then
+                gold_reward = gold_reward * 1.5
+                exp_reward = exp_reward * 1.3
+            end
         end
         for assistor, timer in pairs(target.kill_assist_timers) do
             if assistor ~= caster and assistor:IsHero() then
-                local assistor_gold_reward = target:GetLevel() * 10 + 120 + RandomInt(0, 25)
-                local assistor_exp_reward = target:GetLevel() * 40 + 100 + RandomInt(0, 40)
+                local assistor_gold_reward = (streak_reward_gold[math.max(1, math.min(19, target.current_streak + 9))]) / 2
+                local assistor_exp_reward = (target:GetLevel() * 75 + 200 + RandomInt(0, 50)) / 2
                 if assistor:HasModifier("modifier_role_predator") then
                     assistor_gold_reward = assistor_gold_reward * 2
                     assistor_exp_reward = assistor_exp_reward * 1.3
@@ -400,9 +416,11 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
                 SendOverheadEventMessage(assistor, OVERHEAD_ALERT_GOLD, assistor, assistor_gold_reward, nil)
             end
         end
-        caster:ModifyGold(gold_reward, true, DOTA_ModifyGold_HeroKill)
-        caster:AddExperience(exp_reward, DOTA_ModifyXP_HeroKill, false, true)
-        SendOverheadEventMessage(caster, OVERHEAD_ALERT_GOLD, caster, gold_reward, nil)
+        if caster:IsHero() then
+            caster:ModifyGold(gold_reward, true, DOTA_ModifyGold_HeroKill)
+            caster:AddExperience(exp_reward, DOTA_ModifyXP_HeroKill, false, true)
+            SendOverheadEventMessage(caster, OVERHEAD_ALERT_GOLD, caster, gold_reward, nil)
+        end
 
         if target.current_streak > 0 then target.current_streak = 0 end
         target.current_streak = target.current_streak - 1

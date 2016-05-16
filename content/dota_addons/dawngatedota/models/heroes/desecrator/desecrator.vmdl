@@ -3,11 +3,9 @@
 	_class = "CVModel"
 	m_meshList =
 	{
-		_class = "CVmeshList"
 		m_meshList =
 		[
 			{
-				_class = "CVmesh"
 				m_meshName = "desecrator"
 				m_meshFile = "models/heroes/desecrator/desecrator.smd"
 				m_materialSearchPath = "materials/models/heroes/desecrator/"
@@ -42,7 +40,6 @@
 	}
 	m_physicsMeshList =
 	{
-		_class = "CVphysicsMeshList"
 		m_meshList =
 		[
 		]
@@ -59,16 +56,13 @@
 			_class = "CVhitBoxSetListReference"
 			m_pObject =
 			{
-				_class = "CVhitBoxSetList"
 				m_HitBoxSets =
 				[
 					{
-						_class = "CVhitBoxSet"
 						m_name = "default"
 						m_HitBoxes =
 						[
 							{
-								_class = "CVhitBox"
 								m_name = "head"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -95,7 +89,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "arm_l2"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -122,7 +115,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "arm_r2"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -149,7 +141,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "arm_l3"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -176,7 +167,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "arm_r3"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -203,7 +193,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "arm_l4"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -230,7 +219,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "arm_r4"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -257,7 +245,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "spine1"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -284,7 +271,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "leg_l1"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -311,7 +297,6 @@
 								]
 							},
 							{
-								_class = "CVhitBox"
 								m_name = "leg_r1"
 								m_sSurfaceProperty = ""
 								m_nGroupId = 0
@@ -352,7 +337,6 @@
 		_class = "CVanimGroupReference"
 		m_pObject =
 		{
-			_class = "CVanimGroup"
 			m_Name = ""
 			m_pReferenceSkeleton =
 			{
@@ -375,7 +359,6 @@
 					_class = "CVanimGroupReference"
 					m_pObject =
 					{
-						_class = "CVanimGroup"
 						m_Name = "anims"
 						m_pReferenceSkeleton =
 						{
@@ -398,7 +381,6 @@
 						m_Vanim =
 						[
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_idle"
 								m_Filepath = "models/heroes/desecrator/desecrator_idle.smd"
 								m_nStartframe = 0
@@ -406,7 +388,6 @@
 								m_flFps = 50.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = true
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -423,7 +404,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_IDLE"
 										m_nWeight = 1
 									},
@@ -440,7 +420,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -459,7 +438,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -467,7 +445,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_walk"
 								m_Filepath = "models/heroes/desecrator/desecrator_walk.smd"
 								m_nStartframe = 0
@@ -475,7 +452,6 @@
 								m_flFps = 90.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = true
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -492,7 +468,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_RUN"
 										m_nWeight = 1
 									},
@@ -503,7 +478,6 @@
 								m_MotionFrames =
 								[
 									{
-										_class = "CMotionFrame"
 										m_nFrame = 0
 										m_bExtractTX = true
 										m_bExtractTY = true
@@ -525,7 +499,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -544,7 +517,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -552,7 +524,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_attack1"
 								m_Filepath = "models/heroes/desecrator/desecrator_attack1.smd"
 								m_nStartframe = 0
@@ -560,7 +531,6 @@
 								m_flFps = 30.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -577,7 +547,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_ATTACK"
 										m_nWeight = 1
 									},
@@ -588,7 +557,6 @@
 								m_MotionFrames =
 								[
 									{
-										_class = "CMotionFrame"
 										m_nFrame = 0
 										m_bExtractTX = true
 										m_bExtractTY = true
@@ -610,7 +578,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -629,7 +596,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -637,7 +603,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_attack2"
 								m_Filepath = "models/heroes/desecrator/desecrator_attack2.smd"
 								m_nStartframe = 0
@@ -645,7 +610,6 @@
 								m_flFps = 30.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -662,7 +626,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_ATTACK2"
 										m_nWeight = 1
 									},
@@ -673,7 +636,6 @@
 								m_MotionFrames =
 								[
 									{
-										_class = "CMotionFrame"
 										m_nFrame = 0
 										m_bExtractTX = true
 										m_bExtractTY = true
@@ -695,7 +657,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -714,7 +675,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -722,7 +682,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_disabled"
 								m_Filepath = "models/heroes/desecrator/desecrator_disabled.smd"
 								m_nStartframe = 0
@@ -730,7 +689,6 @@
 								m_flFps = 30.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = true
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -747,7 +705,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_DISABLED"
 										m_nWeight = 1
 									},
@@ -764,7 +721,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -783,7 +739,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -791,7 +746,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_flail"
 								m_Filepath = "models/heroes/desecrator/desecrator_flail.smd"
 								m_nStartframe = 0
@@ -799,7 +753,6 @@
 								m_flFps = 15.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = true
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -816,7 +769,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_FLAIL"
 										m_nWeight = 1
 									},
@@ -833,7 +785,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -852,7 +803,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -860,7 +810,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_cast1"
 								m_Filepath = "models/heroes/desecrator/desecrator_cast1.smd"
 								m_nStartframe = 0
@@ -868,7 +817,6 @@
 								m_flFps = 30.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -885,7 +833,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_CAST_ABILITY_1"
 										m_nWeight = 1
 									},
@@ -902,7 +849,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -921,7 +867,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -929,7 +874,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_cast2"
 								m_Filepath = "models/heroes/desecrator/desecrator_cast2.smd"
 								m_nStartframe = 0
@@ -937,7 +881,6 @@
 								m_flFps = 30.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -954,7 +897,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_CAST_ABILITY_2"
 										m_nWeight = 1
 									},
@@ -971,7 +913,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -990,7 +931,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -998,7 +938,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_cast3"
 								m_Filepath = "models/heroes/desecrator/desecrator_cast3.smd"
 								m_nStartframe = 0
@@ -1006,7 +945,6 @@
 								m_flFps = 30.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -1035,7 +973,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -1054,7 +991,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -1062,7 +998,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_cast4"
 								m_Filepath = "models/heroes/desecrator/desecrator_cast4.smd"
 								m_nStartframe = 0
@@ -1070,7 +1005,6 @@
 								m_flFps = 30.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -1087,7 +1021,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_CAST_ABILITY_4"
 										m_nWeight = 1
 									},
@@ -1104,7 +1037,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -1123,7 +1055,6 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -1131,7 +1062,6 @@
 								m_MotionFramesRootBone = ""
 							},
 							{
-								_class = "CVanim"
 								m_Animationname = "desecrator_death"
 								m_Filepath = "models/heroes/desecrator/desecrator_death.smd"
 								m_nStartframe = 0
@@ -1139,7 +1069,6 @@
 								m_flFps = 90.000000
 								m_Loop =
 								{
-									_class = "CAnimationLoop"
 									m_bLoop = false
 									m_bSmoothLoop = false
 									m_nSmoothLoopStart = 0
@@ -1156,7 +1085,6 @@
 								m_Activities =
 								[
 									{
-										_class = "CActivity"
 										m_Name = "ACT_DOTA_DIE"
 										m_nWeight = 1
 									},
@@ -1167,7 +1095,6 @@
 								m_MotionFrames =
 								[
 									{
-										_class = "CMotionFrame"
 										m_nFrame = 0
 										m_bExtractTX = true
 										m_bExtractTY = true
@@ -1189,7 +1116,6 @@
 								m_pAlignAnimation = null
 								m_adjustAnimation =
 								{
-									_class = "CAdjustAnimation"
 									m_translation =
 									[
 										0.000000,
@@ -1208,7 +1134,70 @@
 								]
 								m_sequenceParams =
 								{
-									_class = "CVAnimResourceSequenceParams"
+									m_flFadeInTime = 0.200000
+									m_flFadeOutTime = 0.200000
+								}
+								m_folderName = ""
+								m_MotionFramesRootBone = ""
+							},
+							{
+								m_Animationname = "desecrator_idle_portrait"
+								m_Filepath = "models/heroes/desecrator/desecrator_idle.smd"
+								m_nStartframe = 0
+								m_nEndframe = 40
+								m_flFps = 15.000000
+								m_Loop =
+								{
+									m_bLoop = true
+									m_bSmoothLoop = false
+									m_nSmoothLoopStart = 0
+									m_nSmoothLoopEnd = 0
+									m_StartLoop =
+									{
+										_class = "CVAnimCmdStartLoop"
+										m_bEnabled = false
+										m_nLoopRestart = 0
+									}
+								}
+								m_bHidden = false
+								m_bDisable = false
+								m_Activities =
+								[
+									{
+										m_Name = "ACT_DOTA_IDLE"
+										m_nWeight = 1
+									},
+								]
+								m_AnimationEvents =
+								[
+								]
+								m_MotionFrames =
+								[
+								]
+								m_pIkRules =
+								[
+								]
+								m_pAlignAnimation = null
+								m_adjustAnimation =
+								{
+									m_translation =
+									[
+										0.000000,
+										0.000000,
+										0.500000,
+									]
+									m_rotation =
+									[
+										0.000000,
+										0.000000,
+										0.000000,
+									]
+								}
+								m_Keywords =
+								[
+								]
+								m_sequenceParams =
+								{
 									m_flFadeInTime = 0.200000
 									m_flFadeOutTime = 0.200000
 								}
@@ -1241,11 +1230,9 @@
 		_class = "CVNodeMaterialGroupListReference"
 		m_pObject =
 		{
-			_class = "NodeMaterialGroupList_t"
 			m_materialGroups =
 			[
 				{
-					_class = "NodeMaterialGroup_t"
 					m_name = "default"
 					m_materialList =
 					[
@@ -1295,11 +1282,9 @@
 	]
 	m_pMaterialRemapList =
 	{
-		_class = "CVMaterialRemapList"
 		m_vMaterialRemapList =
 		[
 			{
-				_class = "CVMaterialRemap"
 				m_sSearchMaterial = "*"
 				m_sReplaceMaterial = "materials/models/heroes/rotting_tomb.vmat"
 			},

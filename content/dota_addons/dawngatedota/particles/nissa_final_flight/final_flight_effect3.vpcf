@@ -2,7 +2,7 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_flConstantRadius = 220.000000
-	m_flConstantLifespan = 0.500000
+	m_flConstantLifespan = 0.250000
 	m_Operators =
 	[
 		{
@@ -30,6 +30,7 @@
 			m_nOrientationType = 2
 			m_flFinalTextureScaleU = -1.000000
 			m_hTexture = resource:"materials/particle/smoke_spiral01.vtex"
+			m_flSelfIllumAmount = 1.000000
 		},
 	]
 	m_Initializers =

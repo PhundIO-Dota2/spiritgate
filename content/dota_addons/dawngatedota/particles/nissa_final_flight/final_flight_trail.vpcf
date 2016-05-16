@@ -1,7 +1,7 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_flConstantRadius = 200.000000
+	m_flConstantRadius = 175.000000
 	m_flConstantLifespan = 0.150000
 	m_Operators =
 	[
@@ -16,7 +16,7 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 0.500000
+			m_flEndScale = 1.500000
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
@@ -28,13 +28,18 @@
 				255,
 			]
 		},
+		{
+			_class = "C_OP_PositionLock"
+		},
 	]
 	m_Renderers =
 	[
 		{
 			_class = "C_OP_RenderSprites"
 			m_nOrientationType = 2
-			m_hTexture = resource:"materials/particle/particle_ring_thicksoft.vtex"
+			m_flSelfIllumAmount = 1.000000
+			m_flSourceAlphaValueToMapToZero = 0.454000
+			m_hTexture = resource:"materials/particle/particle_ring_wavy2c.vtex"
 		},
 	]
 	m_Initializers =
@@ -63,6 +68,9 @@
 				144,
 				255,
 			]
+		},
+		{
+			_class = "C_INIT_RandomRotation"
 		},
 	]
 	m_Emitters =

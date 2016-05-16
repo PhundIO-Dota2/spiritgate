@@ -1,14 +1,16 @@
 #ChatMessage {
-	width: 100%;
 	height: 40px;
+	horizontal-align: right;
+	background-color: gradient( linear, 0% 0%, 0% 75%, from( #000000FF ), to( #00000000 ) );
 }
 
 #ChatMessage Label {
-	margin: 2px;
+	margin-top: 2px;
+	margin-bottom: 2px;
 	font-size: 20px;
-	text-align: right;
-	horizontal-align: right;
-
-	background-color: #00000055;
-	border: 1px solid #000000AA;
+	vertical-align: center;
+}
+#ChatMessage Image {
+	margin: 5px;
+	font-size: 20px;
 }

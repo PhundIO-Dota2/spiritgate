@@ -2,7 +2,7 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_flConstantRadius = 280.000000
-	m_flConstantLifespan = 0.500000
+	m_flConstantLifespan = 0.250000
 	m_Operators =
 	[
 		{

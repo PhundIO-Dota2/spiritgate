@@ -9,7 +9,7 @@
 		255,
 	]
 	m_flConstantRadius = 100.000000
-	m_flConstantLifespan = 0.200000
+	m_flConstantLifespan = 0.500000
 	m_Operators =
 	[
 		{
@@ -17,16 +17,24 @@
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.800000
 		},
 		{
 			_class = "C_OP_FadeInSimple"
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 1.100000
+			m_flEndScale = 1.500000
 		},
 		{
 			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 300
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
 		},
 	]
 	m_Renderers =
@@ -34,7 +42,7 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nOrientationType = 2
-			m_hTexture = resource:"materials/particle/particle_ring_wave_crisp_3.vtex"
+			m_hTexture = resource:"materials/particle/particle_ring_pulled_half.vtex"
 		},
 	]
 	m_Initializers =
@@ -42,12 +50,15 @@
 		{
 			_class = "C_INIT_CreateWithinBox"
 		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
 	]
 	m_Emitters =
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 15.000000
+			m_flEmitRate = 50.000000
 			m_flEmissionDuration = 4.000000
 		},
 	]
