@@ -62,7 +62,6 @@ function GameMode:OnAllPlayersLoaded()
   )
   dofile("mapscripts/guardian")
   dofile("mapscripts/jungle")
-  dofile("mapscripts/binding")
   dofile("mapscripts/parasite")
   local spiritwell = require("mapscripts/spiritwell")
   spiritwell.init()
@@ -89,6 +88,7 @@ function GameMode:OnAllPlayersLoaded()
       return 1
     end
     dofile("creep_spawner")
+    dofile("mapscripts/binding")
     for i=0, 9 do
       if PlayerResource:IsValidPlayerID(i) then
         local player = PlayerResource:GetPlayer(i)

@@ -19,7 +19,10 @@
 	    		<Panel id="PlayerInfo" class="panel-bottom flow-down">
 	    			<Panel id="PlayerInfoTopRow" style="height: 72%;" class="fill-width flow-right">
 	    				<Panel id="PlayerInfoAvatar" style="width: height-percentage(75%); horizontal-align: center;" class="fill-height margin-4">
-	    					<DOTAScenePanel style="width:100%; height:100%;" map="faris_portrait" camera="camera1"/>
+	    					<DOTAHeroMovie id="PlayerInfoAvatarImage" class="fill" heroname="npc_dota_hero_abaddon">
+
+	    					</DOTAHeroMovie>
+	    					<!--DOTAScenePanel style="width:100%; height:100%;" map="faris_portrait" camera="camera1"/-->
 	    				</Panel>
 	    			</Panel>
 	    			<Panel id="PlayerInfoBottomRow" class="fill flow-right	">

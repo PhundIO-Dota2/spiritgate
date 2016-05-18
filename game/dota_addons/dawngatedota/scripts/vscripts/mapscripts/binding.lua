@@ -38,6 +38,7 @@ function CreateBinding(name, team)
 
 	local binding = CreateUnitByName("npc_binding", binding_spawner:GetAbsOrigin(), false, nil, nil, team)
 	binding:SetHullRadius(195)
+	binding:SetAbsOrigin(GetGroundPosition(binding:GetAbsOrigin(), binding))
 	if string.find(name, "bad") then
 		binding:SetModel("models/binding/center_bad.vmdl")
 		binding:SetOriginalModel("models/binding/center_bad")
@@ -132,7 +133,7 @@ function TickBinding(binding, team)
 	end
 	if binding.target ~= nil and not binding.target:IsNull() then
 		local target_vector = -(binding:GetAbsOrigin() - binding.target:GetAbsOrigin()):Normalized()
-		target_vector = target_vector
+		target_vector = Vector(target_vector.x, target_vector.y, 0)
 		binding:SetForwardVector((binding:GetForwardVector() * 9 + target_vector) / 10)
 	end
 	if not binding.target then

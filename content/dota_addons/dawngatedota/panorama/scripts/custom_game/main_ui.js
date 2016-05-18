@@ -133,8 +133,19 @@ function update_hud_icons() {
 		}
 	}
 	$("#PlayerInfoShaperPassive").SetImage("file://{images}/custom_game/spellicons/" + Abilities.GetAbilityTextureName(passive_ability_id) + ".png")
-	//$("#PlayerInfoAvatarImage").heroname = event.shaper
+
+	var heroname = Entities.GetUnitName(local_pid_hero)
+	if(heroname == "npc_dota_hero_rattletrap" || heroname == "npc_dota_hero_undying") {
+		if ($("#PlayerInfoAvatarImage") != null) {
+			$("#PlayerInfoAvatarImage").DeleteAsync(0)
+			var new_hero_panel = $("#PlayerInfoAvatar").BLoadLayoutFromString('<root><Panel><DOTAScenePanel style="width:100%; height:100%;" map="' + heroname.replace("npc_dota_hero", "npc_hero") + '" camera="camera1"/></Panel></root>', false, false)
+		}
+	}
+	else {
+		$("#PlayerInfoAvatarImage").heroname = heroname
+	}
 }
+update_hud_icons()
 
 function OnUpdateInventory() {
 	var local_pid = Players.GetLocalPlayer()

@@ -368,7 +368,7 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
         600, --10
     }
 
-    if --[[final_damage_dealt > target:GetHealth() and]] target:IsHero() then
+    if final_damage_dealt > target:GetHealth() and target:IsHero() then
         local assistor_pids = {}
         for assistor, timer in pairs(target.kill_assist_timers) do
             assistor_pids[#assistor_pids + 1] = assistor:GetPlayerOwnerID()
