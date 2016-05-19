@@ -1,5 +1,8 @@
 <div class="row">
-	{% for file in glob("static/image/screenshots/*.*") %}
+	Some screenshots are not representative of the current version of the mod.
+	{% set files = glob("static/image/screenshots/*.*") %}
+	{{ files.reverse() }}
+	{% for file in files %}
 		<div class="col-xs-6">
 			<a class="thumbnail" href="{{file}}">
 				<img src="{{file}}"/>
