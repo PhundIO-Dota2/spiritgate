@@ -25,8 +25,8 @@
 #AbilityBarPanel {
 	vertical-align: bottom;
 	horizontal-align: center;
-	height: 50%;
-	width: height-percentage(175%);
+	height: 55%;
+	width: height-percentage(150%);
 }
 #AbilityBar {
 	width: 100%;
@@ -45,13 +45,15 @@
 	background-color: #000000CC;
 }
 .ability-bar-side-pane {
-	width: 15%;
+	width: 17%;
 	height: 100%;
+	margin-top: 13%;
 }
 .ability-bar-center {
 	width: 70%;
 	height: 100%;
-	background-color: #020202;
+	background-image: url("file://{images}/custom_game/ui/ability_panel_background.png");
+	background-size: 100% 100%;
 }
 #AbilityBarLevelUps {
 	height: 9%;
@@ -60,13 +62,12 @@
 }
 #AbilityBarAbilities {
 	width: 100%;
-	height: 60%;
-	background-color: #020202;
+	height: 45%;
+	margin-top: 26%;
 }
 #AbilityBarBars {
 	width: 100%;
 	height: 40%;
-	background-color: #020202;
 }
 .ability-panel {
 	height: 100%;
@@ -79,7 +80,6 @@
 	margin: 1px;
 	margin-bottom: 0px;
 	color: #020202;
-	background-color: #00000000;
 	text-align: center;
 	background-image: url("file://{images}/custom_game/hud/spell_learn_action.png");
 	background-size: 100% 100%;
@@ -98,7 +98,6 @@
 .level-indicator {
 	width: 10%;
 	height: 100%;
-	background-color: black;
 	vertical-align: center;
 }
 .level-indicator-tick {
@@ -152,18 +151,8 @@
 	margin-bottom: 0px;
 }
 
-#StatsVim {
-	horizontal-align: right;
-	width: 75%;
-	text-align: center;
-}
-#StatsExp {
-	horizontal-align: right;
-	width: 75%;
-	text-align: center;
-}
 #StatsLeft {
-	background-image: url("file://{images}/custom_game/hud/panel.png");
+	background-image: url("file://{images}/custom_game/ui/ability_panel_left.png");
 	background-size: 100% 100%;
 }
 #StatsLeft  Label{

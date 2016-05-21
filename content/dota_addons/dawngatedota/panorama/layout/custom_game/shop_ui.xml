@@ -67,7 +67,7 @@
         </Panel>
       </Panel>
       <Panel class="shop_button_holder flow-right fill" style="margin-bottom: 0%;" hittest="false">
-        <Panel class="PlayerInfoSpacerFaker panel-bottom" style="width: height-percentage(68%); height: 35%;" hittest="false">
+        <Panel class="PlayerInfoSpacerFaker panel-bottom" style="width: height-percentage(90%); height: 25%;" hittest="false">
         </Panel>
         <Panel class="shop_button" onactivate="ShowShop()" hittest="true">
           <Label id="ShopButtonLabel" text="Shop" class="margin-4">

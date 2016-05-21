@@ -5,21 +5,18 @@
 
 #PanelInventory {
 	height: 35%;
-	width: height-percentage(16%);
+	width: height-percentage(42%);
 	vertical-align: bottom;
-	background-color: #020202;
 }
 .inventory_item {
-	border: 1px solid #FFFFFF33;
-	background-color: #020202;
-	margin-right: 2px;
+	margin-left: 4px;
+	margin-bottom: 2px; 
+	margin-top: 2px; 
+	width: 33%;
 }
 .inventory_item_cooldown {
 	background-color: #020202AA;
 	height: 100%;
-}
-#PanelInventoryItem6 {
-	border-bottom: 3px solid #FFFFFF33;
 }
 
 #TopBar {
@@ -30,31 +27,24 @@
 #TopBarOpenMenu {
 }
 
-#PlayerInfoTopRow {
-	background-color: #020202;
-}
-
 #PlayerInfo {
 	height: 35%;
-	width: height-percentage(56%);
-}
-
-#PlayerInfoBottomRow {
-	background-color: #020202;
-	box-shadow: fill #020202 -1px -1px 2px 2px;
+	width: height-percentage(50%);
+	background-image: url("file://{images}/custom_game/ui/hero_panel_background.png");
+	background-size: 100% 100%;
 }
 
 #PlayerInfoAvatarImage {
-	background-color: #020202;
 	box-shadow: fill #020202 -2px -2px 4px 4px;
 	border: 1px solid #565656;
 	border-bottom: 3px solid #565656;
 	margin-bottom: 1px;
+	margin: 4px;
 }
 
 .passive {
-	background-color: #020202;
 	box-shadow: fill #020202 -2px -2px 4px 4px;
+	margin: 4px;
 }
 
 .statlabel {

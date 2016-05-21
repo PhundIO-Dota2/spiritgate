@@ -17,6 +17,7 @@
 	    	</Panel>
 	    	<Panel id="MainScreen" class="flow-right fill" hittest="false">
 	    		<Panel id="PlayerInfo" class="panel-bottom flow-down">
+		    		<Image id="PlayerInfoTopFiller" style="height: 5.75%; width: 100%;"/>
 	    			<Panel id="PlayerInfoTopRow" style="height: 72%;" class="fill-width flow-right">
 	    				<Panel id="PlayerInfoAvatar" style="width: height-percentage(75%); horizontal-align: center;" class="fill-height margin-4">
 	    					<DOTAHeroMovie id="PlayerInfoAvatarImage" class="fill" heroname="npc_dota_hero_abaddon">
@@ -33,43 +34,44 @@
 	    				<Panel id="PlayerInfoStats" class="fill flow-right margin-4">
 	    					<Panel id="PlayerInfoStatsLeftRow" class="fill flow-down even-space-horiz">
 	    						<Panel id="PlayerInfoStatsAttackDamage" class="fill-width even-space-vertical flow-right margin-4" onmouseover="showAttackDamageTooltip()" onmouseout="hideAttackDamageTooltip()">
-	    							<Label class="statlabel panel-center" id="PlayerInfoStatsAttackDamageLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #4fd077;" text="999"/>
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsAttackDamageLabel" style="color: #fcfcfc; font-size: 17px; text-align: center; color: #4fd077;" text="999"/>
 	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_attack.png" style=""/>
 	    						</Panel>
 	    						<Panel id="PlayerInfoStatsArmour" class="fill-width even-space-vertical flow-right margin-4">
-	    							<Label class="statlabel panel-center" id="PlayerInfoStatsArmourLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #f5c562;" text="999"/>
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsArmourLabel" style="color: #fcfcfc; font-size: 17px; text-align: center; color: #f5c562;" text="999"/>
 	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_armour.png" style=""/>
 	    						</Panel>
 	    						<Panel id="PlayerInfoStatsMagicResistance" class="fill-width even-space-vertical flow-right margin-4">
-	    							<Label class="statlabel panel-center" id="PlayerInfoStatsMagicResistanceLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #e39eed;" text="999"/>
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsMagicResistanceLabel" style="color: #fcfcfc; font-size: 17px; text-align: center; color: #e39eed;" text="999"/>
 	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_mresist.png" style=""/>
 	    						</Panel>
 	    					</Panel>
 	    					<Panel id="PlayerInfoStatsRightRow" class="fill flow-down even-space-horiz">
 	    						<Panel id="PlayerInfoStatsPower" class="fill-width even-space-vertical flow-right margin-4" onmouseover="showPowerTooltip()" onmouseout="hidePowerTooltip()">
-	    							<Label class="statlabel panel-center" id="PlayerInfoStatsPowerLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #54ff52;" text="999"/>
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsPowerLabel" style="color: #fcfcfc; font-size: 17px; text-align: center; color: #54ff52;" text="999"/>
 	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_power.png" style=""/>
 	    						</Panel>
 	    						<Panel id="PlayerInfoStatsHaste" class="fill-width even-space-vertical flow-right margin-4" onmouseover="showHasteTooltip()" onmouseout="hideHasteTooltip()">
-	    							<Label class="statlabel panel-center" id="PlayerInfoStatsHasteLabel" style="color: #fcfcfc; font-size: 18px; text-align: center; color: #d1deff;" text="999"/>
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsHasteLabel" style="color: #fcfcfc; font-size: 17px; text-align: center; color: #d1deff;" text="999"/>
 	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_haste.png" style=""/>
 	    						</Panel>
     							<Panel id="PlayerInfoStatsMovespeed" class="fill-width even-space-vertical flow-right margin-4">
-	    							<Label class="statlabel panel-center" id="PlayerInfoStatsMovespeedLabel" style="color: #fcfcfc; font-size: 18px; text-align: center;" text="999"/>
+	    							<Label class="statlabel panel-center" id="PlayerInfoStatsMovespeedLabel" style="color: #fcfcfc; font-size: 17px; text-align: center;" text="999"/>
 	    							<Image class="statimage panel-center" src="file://{images}/custom_game/hud/icon_stat_movespeed.png" style=""/>
 	    						</Panel>
 	    					</Panel>
 	    				</Panel>
 	    			</Panel>
 	    		</Panel>
-		    	<Panel id="PanelInventory" class="flow-down">
-					<Panel id="PanelInventoryItem1" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
-		    		<Panel id="PanelInventoryItem2" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
-		    		<Panel id="PanelInventoryItem3" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
-		    		<Panel id="PanelInventoryItem4" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
-		    		<Panel id="PanelInventoryItem5" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
-		    		<Panel id="PanelInventoryItem6" class="inventory_item even-space-vertical fill-width" style="margin-bottom: 2px; margin-top: 2px;"/>
-	    		</Panel>
+		    	<Image id="PanelInventory" class="flow-down" src="file://{images}/custom_game/ui/hero_panel_inventory.png">
+		    		<Panel id="PanelInventoryTopMargin" style="height: 6.5%; width: 100%;"/>
+					<Panel id="PanelInventoryItem1" class="inventory_item even-space-vertical"/>
+		    		<Panel id="PanelInventoryItem2" class="inventory_item even-space-vertical"/>
+		    		<Panel id="PanelInventoryItem3" class="inventory_item even-space-vertical"/>
+		    		<Panel id="PanelInventoryItem4" class="inventory_item even-space-vertical"/>
+		    		<Panel id="PanelInventoryItem5" class="inventory_item even-space-vertical"/>
+		    		<Panel id="PanelInventoryItem6" class="inventory_item even-space-vertical"/>
+	    		</Image>
 	    	</Panel>
 	    </Panel>
     </Panel>

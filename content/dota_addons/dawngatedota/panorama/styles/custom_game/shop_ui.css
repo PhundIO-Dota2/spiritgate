@@ -11,10 +11,9 @@
 	box-shadow: #FFFFFF 0px 0px 3px 0px rgba(50, 50, 50, 1);
 }
 .shop_button {
-	width: 5%;
-	height: 3.5%;
+	width: height-percentage(230%);
+	height: 3%;
 	vertical-align: bottom;
-	background-color: #201c1b;
 }
 .shop_button:hover  {
 	border: 1px solid #666;

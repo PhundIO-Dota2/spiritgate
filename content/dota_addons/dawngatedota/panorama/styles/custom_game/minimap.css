@@ -2,14 +2,15 @@
 	width: 100%; 
 	height: width-percentage(100%); 
 	vertical-align: bottom; 
-	border: 2px solid white;
-	background-color: #000000AA;
+	background-image: url('file://{images}/custom_game/ui/minimap.png');
+	background-size: 100% 100%;
 }
 #Minimap {
 	width: 100%;
 	height: 100%;
 	opacity-mask: url('file://{images}/custom_game/minimap_dusk_and_dawn.png');
 	opacity: 0.73;
+	margin: 6px;
 }
 
 #MinimapHeroImage {
