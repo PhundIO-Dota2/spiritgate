@@ -2,7 +2,7 @@ function DuressAttackLanded(event)
 	local caster = event.caster
 	local target = event.target
 	local item = event.ability
-	if item:GetCooldownTimeRemaining() == 0 then
+	if item:GetCooldownTimeRemaining() == 0 and target:IsHero() then
 		if target.recently_duressed then
 			item:ApplyDataDrivenModifier(caster, target, "modifier_duress_rooted", {Duration = 0.5})
 			Timers:RemoveTimer(target.recently_duressed_timer)
@@ -15,7 +15,7 @@ function DuressAttackLanded(event)
 			target.recently_duressed_timer = nil
 		end)
 		item:StartCooldown(15)
-	else
+	elseif item:GetCooldownTimeRemaining() >= 1 then
 		item:StartCooldown(item:GetCooldownTimeRemaining() - 1)
 	end
 end

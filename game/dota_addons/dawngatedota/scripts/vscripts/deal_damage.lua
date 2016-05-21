@@ -393,7 +393,7 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
         if target.current_streak == nil then
             target.current_streak = 0
         end
-        --target:ForceKill(false)
+        target:ForceKill(false)
         local gold_reward = streak_reward_gold[math.max(1, math.min(19, target.current_streak + 9))]
         local exp_reward = target:GetLevel() * 75 + 200 + RandomInt(0, 50)
         if caster:IsHero() then
