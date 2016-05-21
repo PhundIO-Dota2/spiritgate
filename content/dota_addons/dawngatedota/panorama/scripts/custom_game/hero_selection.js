@@ -34,7 +34,7 @@ BuildPlayerPanel = function(index) {
     index -= 5;
   }
   player_panel = $.CreatePanel("Panel", team_panel, team + "PlayerPanel" + index);
-  player_panel.AddClass("even-spaccle-vertical");
+  player_panel.AddClass("even-space-vertical");
   player_panel.AddClass("flow-right");
   player_panel.style.width = "100%";
   player_avatar_panel = $.CreatePanel("DOTAAvatarImage", player_panel, team + "PlayerAvatar" + index);
@@ -345,11 +345,14 @@ OnChatSubmitted = function() {
 };
 
 OnSpiritgateChat = function(data) {
-  var chat_message_panel, chat_panel;
-  chat_panel = $("#BottomPanelChatArea");
-  chat_message_panel = $.CreatePanel("Label", chat_panel, "ChatMessage");
-  chat_message_panel.style.fontSize = "20px";
-  return chat_message_panel.text = Players.GetPlayerName(data.pid) + ":" + data.text;
+  if(data.text.length > 0) {
+    var chat_message_panel, chat_panel;
+    chat_panel = $("#BottomPanelChatArea");
+    chat_message_panel = $.CreatePanel("Label", chat_panel, "ChatMessage");
+    chat_message_panel.style.fontSize = "20px";
+    chat_message_panel.text = Players.GetPlayerName(data.pid) + ":" + data.text;
+    chat_panel.ScrollToBottom()
+  }
 };
 
 GameEvents.Subscribe("picking_time_update", OnTimeUpdate);

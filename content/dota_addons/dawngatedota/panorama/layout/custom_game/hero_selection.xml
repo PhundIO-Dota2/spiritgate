@@ -70,12 +70,12 @@
     					</Button>
     				</Panel>
     			</Panel>
-                <Panel id="BottomPanelChat" style="width: 100%; height: 18.5%;" class="flow-down">
-                    <Panel id="BottomPanelChatArea" style="width: 100%; height: 84%; overflow: squish scroll;" class="flow-down">
+                <Panel id="BottomPanelChat" style="width: 100%; height: 22%;" class="flow-down">
+                    <Panel id="BottomPanelChatArea" style="width: 100%; height: 86%; overflow: squish scroll;" class="flow-down">
 
                     </Panel>
-                    <Panel id="BottomPanelChatEntry" style="width: 100%; height: 15%;" class="flow-right">
-                        <TextEntry id="ChatEntry" maxchars="100" placeholder="Chat..." style="width: 100%; height: 100%;" oninputsubmit="OnChatSubmitted()"/>
+                    <Panel id="BottomPanelChatEntry" style="width: 97%; height: 14%;" class="flow-right">
+                        <TextEntry id="ChatEntry" maxchars="100" placeholder="" style="width: 100%; height: 100%; font-size: 20px;" oninputsubmit="OnChatSubmitted()"/>
                     </Panel>
                 </Panel>
     		</Panel>
