@@ -1,0 +1,24 @@
+"ability_pure_shaper_mark_of_consumption" {
+    "BaseClass"              		"ability_datadriven"
+    "AbilityTextureName"     		"pure_shaper_mark_of_consumption"
+	"AbilityType"            		"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel" 						"1"
+	
+	"AbilityBehavior"        		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers" {
+		"modifier_mark_of_consumption" {
+		    "ThinkInterval" 	"0.1"
+    		"OnIntervalThink" {
+    			"RunScript"
+    			{
+    				"ScriptFile"	"abilities/pure_shaper_mark_of_consumption_lua"
+    				"Function"		"tick_consumption_damage"
+    				"Target"		"TARGET"
+    			}
+    		}
+    		"Duration"			"2"
+    		"IsDebuff"			"1"
+		}
+	}
+}

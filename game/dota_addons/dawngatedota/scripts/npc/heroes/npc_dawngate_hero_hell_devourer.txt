@@ -10,7 +10,7 @@
 	"Ability2"					"ability_hell_devourer_curse_of_weakness" 
 	"Ability3"					"ability_hell_devourer_devour" 
 	"Ability7"					"ability_hell_devourer_damnation" 
-	"Ability15"					"ability_pure_shaper" 
+	"Ability15"					"ability_pure_shaper_mark_of_consumption" 
 
 	"Ability4"					"ability_spacer1"
 	"Ability5"					"ability_universal_ability_ward"

@@ -53,7 +53,7 @@ function GameMode:OnFirstPlayerLoaded()
   DebugPrint("[BAREBONES] First Player has loaded")
 end
 
-local HeroSelectTimeLeft = 600
+local HeroSelectTimeLeft = 60
 function GameMode:OnAllPlayersLoaded()
   DebugPrint("[BAREBONES] All Players have loaded into the game")
   Convars:RegisterCommand( "dofile", function( cmd, filename )

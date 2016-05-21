@@ -342,6 +342,11 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
         damage_table.damage = damage_table.damage * (1 - 0.01 * math.min(10, count_modifiers(target, "modifier_jungle_buff_armour_reduction_hidden")))
     end
 
+    if caster:FindAbilityByName("ability_pure_shaper_mark_of_consumption") and is_ability(ability) and ability:GetAbilityName() ~= "ability_universal_ability" and ability:GetAbilityName() ~= "ability_pure_shaper_mark_of_consumption" then
+        caster:FindAbilityByName("ability_pure_shaper_mark_of_consumption"):ApplyDataDrivenModifier(caster, target, "modifier_mark_of_consumption", {})
+        target.consumption_damage = 0
+    end
+
     damage_table.damage = damage_table.damage * (1 + find_stat(target, "damage_taken"))
 
     local final_damage_dealt = damage_table.damage

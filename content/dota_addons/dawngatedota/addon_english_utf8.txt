@@ -1068,6 +1068,11 @@
 		"DOTA_Tooltip_modifier_pure_shaper_compound_interest_stack"                       		"Compound Interest"
 		"DOTA_Tooltip_modifier_pure_shaper_compound_interest_stack_Description"           		"4 stacks will cause you take take additional damage from Merchant Princess"
 
+		"DOTA_Tooltip_ability_ability_pure_shaper_mark_of_consumption"                    		"Pure Shaper: Mark Of Consumption"
+		"DOTA_Tooltip_ability_ability_pure_shaper_mark_of_consumption_Description"        		"You can cast abilities freely\nWhenever you deal damage with an ability, apply Mark of Consumption, causing the target to take 3%% (+1.5%% Power) of their maximum health as damage over 2 seconds. You are healed for half of this amount.\nDamage against non-shapers is halved and cannot apply more than 46 damage"
+		"DOTA_Tooltip_modifier_mark_of_consumption"                                       		"Mark Of Consumption"
+		"DOTA_Tooltip_modifier_mark_of_consumption_Description"                           		"Taking damage over time based on your maximum health, healing Warlock Knight"
+
 		"DOTA_Tooltip_ability_ability_pride_shaper"                                       		"Pride Shaper"
 		"DOTA_Tooltip_ability_ability_pride_shaper_Description"                           		"You can cast abilities freely\n\nSome abilities may apply pyre to enemies, Pyre burns enemies for 8 (+5% Power) damage per second over 3 seconds per stack. Additional stacks of Pyre refresh the duration."
 		"DOTA_Tooltip_modifier_pride_shaper_pyre"                                         		"Pyre"

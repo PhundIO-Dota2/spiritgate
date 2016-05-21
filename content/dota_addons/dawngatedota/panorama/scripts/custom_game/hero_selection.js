@@ -135,7 +135,7 @@ shaper_choices_table = {
   "npc_dota_hero_meepo": ["tangled_dreamer_nightmare", "tangled_dreamer_dreamwrap", "tangled_dreamer_ripple", "tangled_dreamer_reverie", "pure_shaper"],
   "npc_dota_hero_life_stealer": ["flesh_skewer", "flesh_grievous_wounds", "flesh_jagged_volley", "flesh_splintering_spines", "pure_shaper"],
   "npc_dota_hero_axe": ["cerulean_whirling_strike", "cerulean_ritual_bulwark", "cerulean_impale", "cerulean_shores_calling", "pure_shaper"],
-  "npc_dota_hero_skeleton_king": ["hell_devourer_sentinel_strike", "hell_devourer_curse_of_weakness", "hell_devourer_devour", "hell_devourer_damnation", "pure_shaper"],
+  "npc_dota_hero_skeleton_king": ["hell_devourer_sentinel_strike", "hell_devourer_curse_of_weakness", "hell_devourer_devour", "hell_devourer_damnation", "pure_shaper_mark_of_consumption"],
   "npc_dota_hero_legion_commander": ["high_huntress_branching_blade", "high_huntress_the_chase", "high_huntress_wing_clip", "high_huntress_final_flight", "focus_shaper"],
   "npc_dota_hero_crystal_maiden": ["winters_bride_ice_lance", "winters_bride_iceberg", "winters_bride_shatter", "winters_bride_avalanche", "frost_shaper"],
   "npc_dota_hero_earth_spirit": ["sculptor_inspiring_strike", "sculptor_embrace", "sculptor_kinetic_sculpture", "sculptor_masterpiece", "inspired_shaper"],

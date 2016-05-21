@@ -416,6 +416,12 @@
 			<Image src="file://{images}/custom_game/spellicons/winters_bride_ice_lance.png"/>
 			<Image src="file://{images}/custom_game/spellicons/winters_bride_ice_lance_disabled.png"/>
 			<Image src="file://{images}/custom_game/spellicons/winters_bride_shatter.png"/>
+			<Image src="file://{images}/custom_game/ui/ability_panel_background.png"/>
+			<Image src="file://{images}/custom_game/ui/ability_panel_left.png"/>
+			<Image src="file://{images}/custom_game/ui/ability_panel_right.png"/>
+			<Image src="file://{images}/custom_game/ui/hero_panel_background.png"/>
+			<Image src="file://{images}/custom_game/ui/hero_panel_inventory.png"/>
+			<Image src="file://{images}/custom_game/ui/minimap.png"/>
 			<Image src="file://{images}/heroes/icons/npc_dota_hero_phantom_assassin.png"/>
 			<Image src="file://{images}/heroes/icons/npc_dota_hero_queenofpain.png"/>
 			<Image src="file://{images}/heroes/icons/npc_dota_hero_rattletrap.png"/>
