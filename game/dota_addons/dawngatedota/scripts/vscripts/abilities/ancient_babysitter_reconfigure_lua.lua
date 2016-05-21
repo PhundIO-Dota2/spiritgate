@@ -11,6 +11,10 @@ function toggle(event)
     ability_reaver:SetLevel(highest_level)
     ability_sentinel:SetLevel(highest_level)
 
+    if caster.in_bush then
+        caster.is_model_swapping = true
+    end
+
     if caster:HasModifier("modifier_reconfigure_melee") then
         caster:RemoveModifierByName("modifier_reconfigure_melee")
         caster:SwapAbilities("ability_ancient_babysitter_access_memory_reaver", "ability_ancient_babysitter_access_memory_sentinel", false, true)

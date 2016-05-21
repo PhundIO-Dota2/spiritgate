@@ -93,8 +93,9 @@ function GameMode:OnAllPlayersLoaded()
       if PlayerResource:IsValidPlayerID(i) then
         local player = PlayerResource:GetPlayer(i)
         local selected_skin = selected_skins[i]
-        if selected_shapers[i] == "npc_dota_hero_bane" then
+        if selected_shapers[i] == nil then
           selected_shapers[i] = "npc_dota_hero_rattletrap"
+          selected_skin = "default"
         end
         if selected_roles[i] == nil then
           selected_roles[i] = "Tactician"

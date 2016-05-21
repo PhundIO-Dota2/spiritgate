@@ -57,6 +57,14 @@ function exit_grass(trigger)
             trigger.activator.in_bush = false
             trigger.activator:RemoveModifierByName("modifier_bush_invisible")
             trigger.activator:RemoveModifierByName("modifier_bush_invisible_revealed")
+
+            if trigger.activator.is_model_swapping == nil then trigger.activator.is_model_swapping = false end
+            print(trigger.activator:GetPlayerOwnerID())
+            print(trigger.activator.is_model_swapping)
+            if trigger.activator.is_model_swapping then
+                trigger.activator.is_model_swapping = false
+                enter_grass(trigger)
+            end
         end)
     end
 end

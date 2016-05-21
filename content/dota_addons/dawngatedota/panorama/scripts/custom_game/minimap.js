@@ -1,4 +1,4 @@
-var map_size = 15800
+var map_size = 14336
 
 function getXOffset(panel) {
 	if(panel.GetParent() != null) {
