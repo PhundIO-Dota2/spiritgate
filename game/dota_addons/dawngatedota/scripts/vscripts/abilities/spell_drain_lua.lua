@@ -36,9 +36,15 @@ function cast(event)
 	ticks = 0
 
 	Timers:CreateTimer(0.5, function()
+		if target:IsNull() or not target:IsAlive() then
+			return
+		end
 		tick_damage()
 		ticks = ticks + 1
 		Timers:CreateTimer(1, function()
+			if target:IsNull() or not target:IsAlive() then
+				return
+			end
 			ticks = ticks + 1
 
 			do_particle("particles/spell_drain/drain_health.vpcf")
