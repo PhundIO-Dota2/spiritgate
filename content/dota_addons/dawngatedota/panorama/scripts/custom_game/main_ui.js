@@ -175,6 +175,7 @@ function OnUpdateInventory() {
 
 			var cooldown_pane = $.CreatePanel("Panel", item_pane, "PanelItemCooldown" + (i + 1))
 			cooldown_pane.AddClass("inventory_item_cooldown")
+			cooldown_pane.hittest = false
 		}
 	}
 }
