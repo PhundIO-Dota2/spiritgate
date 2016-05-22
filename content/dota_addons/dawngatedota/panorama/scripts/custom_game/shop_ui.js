@@ -333,6 +333,12 @@ ShowItems = function(tier, name) {
     image_pane.SetImage("file://{images}/custom_game/items/square_items/" + item.toLowerCase() + ".png");
     if (item !== "") {
       label_pane = $.CreatePanel('Label', root_pane, "Item" + item + "PanelLabel");
+      var pid = Players.GetLocalPlayer()
+      if(costs[item] > Players.GetGold(pid)) {
+        label_pane.AddClass("item-label-expensive")
+      } else {
+        label_pane.RemoveClass("item-label-expensive")
+      }
       return label_pane.text = item + "\n	Cost: " + costs[item];
     }
   };
@@ -364,8 +370,8 @@ ItemPanelInventoryMouseExit = function(item_index, item_name) {
 
 
 function UpdateItemCosts() {
-  local_pid = Players.GetLocalPlayer();
-  local_hero = Players.GetPlayerHeroEntityIndex(local_pid);
+  var local_pid = Players.GetLocalPlayer();
+  var local_hero = Players.GetPlayerHeroEntityIndex(local_pid);
   for(var item in costs) {
     var item_panel = $("#Item" + item + "PanelLabel")
     var cost = costs[item]
@@ -399,6 +405,11 @@ function UpdateItemCosts() {
             cost = costs[item] - costs[ingredient]
           }
         }
+      }
+      if(cost > Players.GetGold(local_pid)) {
+        item_panel.AddClass("item-label-expensive")
+      } else {
+        item_panel.RemoveClass("item-label-expensive")
       }
       item_panel.text = item + "\n\tCost: " + cost
     }
@@ -454,3 +465,10 @@ GameEvents.Subscribe("dota_inventory_changed", OnUpdateInventory);
 GameEvents.Subscribe("player_spawn", OnUpdateInventory);
 
 OnUpdateInventory();
+
+function tick_update() {
+  UpdateItemCosts()
+  $.Schedule(0.25, tick_update)
+}
+
+tick_update()

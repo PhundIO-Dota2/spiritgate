@@ -144,3 +144,6 @@
 .current_inventory_item Image:active {
 	border: 2px solid #FFFFFF;
 }
+.item-label-expensive {
+	text-shadow: 0px 0px 2px 6.0 #FF000015;
+}

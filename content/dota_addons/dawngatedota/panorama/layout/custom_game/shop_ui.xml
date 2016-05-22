@@ -19,27 +19,27 @@
             <Panel class="shop-tier-panel flow-down" id="ShopItemsTier1" style="margin-left: 48px;">
               <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemLifePanel" onactivate="ItemPanelOnActivate(1, '', 'Life')" onmouseover="ItemPanelMouseOver('Life')" onmouseout="ItemPanelMouseExit('Life')">
                 <Image class="shop-item shop-item-t1" id="ItemLife" src="file://{images}/custom_game/items/square_items/life.png" style=""/>
-                <Label text="Life\n    Cost: 420"/>
+                <Label id="ItemLifePanelLabel" text="Life\n    Cost: 420"/>
               </Panel>
               <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemResiliencePanel" onactivate="ItemPanelOnActivate(1, '', 'Resilience')" onmouseover="ItemPanelMouseOver('Resilience')" onmouseout="ItemPanelMouseExit('Resilience')">
                 <Image class="shop-item shop-item-t1" id="ItemResilience" src="file://{images}/custom_game/items/square_items/resilience.png" style=""/>
-                <Label text="Resilience\n    Cost: 380"/>
+                <Label id="ItemResiliencePanelLabel" text="Resilience\n    Cost: 380"/>
               </Panel>
               <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemWillPanel" onactivate="ItemPanelOnActivate(1, '', 'Will')" onmouseover="ItemPanelMouseOver('Will')" onmouseout="ItemPanelMouseExit('Will')">
                 <Image class="shop-item shop-item-t1" id="ItemWill" src="file://{images}/custom_game/items/square_items/will.png" style=""/>
-                <Label text="Will\n    Cost: 340"/>
+                <Label id="ItemWillPanelLabel" text="Will\n    Cost: 340"/>
               </Panel>
               <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemPowerPanel" onactivate="ItemPanelOnActivate(1, '', 'Power')" onmouseover="ItemPanelMouseOver('Power')" onmouseout="ItemPanelMouseExit('Power')">
                 <Image class="shop-item shop-item-t1" id="ItemPower" src="file://{images}/custom_game/items/square_items/power.png" style=""/>
-                <Label text="Power\n    Cost: 380"/>
+                <Label id="ItemPowerPanelLabel" text="Power\n    Cost: 380"/>
               </Panel>
               <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemTimePanel" onactivate="ItemPanelOnActivate(1, '', 'Time')" onmouseover="ItemPanelMouseOver('Time')" onmouseout="ItemPanelMouseExit('Time')">
                 <Image class="shop-item shop-item-t1" id="ItemTime" src="file://{images}/custom_game/items/square_items/time.png" style=""/>
-                <Label text="Time\n    Cost: 420"/>
+                <Label id="ItemTimePanelLabel" text="Time\n    Cost: 420"/>
               </Panel>
               <Panel class="shop-item-panel flow-right even-space-vertical fill" id="ItemHungerPanel" onactivate="ItemPanelOnActivate(1, '', 'Hunger')" onmouseover="ItemPanelMouseOver('Hunger')" onmouseout="ItemPanelMouseExit('Hunger')">
                 <Image class="shop-item shop-item-t1" id="ItemHunger" src="file://{images}/custom_game/items/square_items/hunger.png" style=""/>
-                <Label text="Hunger\n    Cost: 460"/>
+                <Label id="ItemHungerPanelLabel" text="Hunger\n    Cost: 460"/>
               </Panel>
             </Panel>
             <Panel class="shop-tier-panel flow-down" id="ShopItemsTier2">
