@@ -142,7 +142,7 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
 
     local pre_damage_health = target:GetHealth()
 	
-    if ability == nil then
+    if ability == nil or ability:GetAbilityName() == "ability_universal_ability" then
         local precision = find_stat(caster, "precision")
         damage_table.damage = damage_table.damage + precision
     else
@@ -802,7 +802,7 @@ function deal_on_hit(caster, target, ability, damage_type)
                 frost_item:ApplyDataDrivenModifier(caster, target, "modifier_frostII_other", { Duration = 1 })
             end
         end
-    elseif frost_item ~= nil and ability == nil and caster:IsRangedAttacker() then --Frost Ranged Basic
+    elseif frost_item ~= nil and ability:GetAbilityName() == "ability_universal_ability" and caster:IsRangedAttacker() then --Frost Ranged Basic
         local f1 = find_unique_passive(caster, "ranged_basic_attack_percent_frost", true)
         if f1 < 0 then
             if target:HasModifier("modifier_frostII_melee") then
@@ -863,7 +863,7 @@ function deal_on_hit(caster, target, ability, damage_type)
                     frost_item:ApplyDataDrivenModifier(caster, target, "modifier_frostI_other", { Duration = 1 })
                 end
             end
-        elseif ability == nil and caster:IsRangedAttacker() then --Frost Ranged Basic
+        elseif ability == nil or ability:GetAbilityName() == "ability_universal_ability" and caster:IsRangedAttacker() then --Frost Ranged Basic
             local f1 = find_unique_passive(caster, "ranged_basic_attack_percent_frost", true)
             if f1 < 0 then
                 if target:HasModifier("modifier_frostI_melee") then
@@ -1007,7 +1007,7 @@ function deal_on_hit(caster, target, ability, damage_type)
 end
 
 function should_propogate_on_hit(ability)
-    return ability == nil or ability == "FATE"
+    return ability:GetAbilityName() == "ability_universal_ability" or ability == "FATE"
 end
 
 function is_ability(ability)
@@ -1019,7 +1019,8 @@ function is_ability(ability)
         ability ~= "RUIN" and 
         ability ~= "RESONANCE" and
         ability ~= "RETRIBUTION" and
-        ability ~= "GLORY"
+        ability ~= "GLORY" and
+        ability:GetAbilityName() ~= "ability_universal_ability"
 end
 
 function disable( event )
