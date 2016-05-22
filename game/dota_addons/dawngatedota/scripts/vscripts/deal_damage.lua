@@ -319,6 +319,9 @@ function deal_damage(caster, target, damage, powerRatio, damage_type, ability, i
     if caster:HasModifier("modifier_mortal_strike") then
         drain = drain * 0.5
     end
+
+    if isAoE and not isDoT then drain = drain * 0.5 end
+    if isDoT then drain = drain * 0.33 end
     
     deal_damage_heal(caster, caster, drain, 0, 0)
 

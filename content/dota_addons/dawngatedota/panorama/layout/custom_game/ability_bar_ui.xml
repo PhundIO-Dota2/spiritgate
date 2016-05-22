@@ -79,24 +79,6 @@
           <Panel class="ability-bar-side-pane" hittest='false'/>
         </Panel>
       </Panel>
-      <Panel id="AbilityBarLevelUps" class="flow-right" hittest="false">
-        <Button id="AbilityQlevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(0)">
-        </Button>
-        <Button id="AbilityWlevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(1)">
-        </Button>
-        <Button id="AbilityElevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(2)">
-        </Button>
-        <Button id="AbilityRlevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(3)">
-        </Button>
-        <Button id="AbilitySpell1levelup" class="levelup-panel flow-down" onactivate="SpellBook(1)">
-        </Button>
-        <Button id="AbilitySpell2levelup" class="levelup-panel flow-down" onactivate="SpellBook(2)">
-        </Button>
-        <Button id="AbilitySpell3levelup" class="levelup-panel flow-down" onactivate="SpellBook(3)">
-        </Button>
-        <Button id="AbilityConsumablelevelup" class="levelup-panel flow-down">
-        </Button>
-      </Panel>
       <Panel id="AbilityBar" class="flow-right" hittest="true">
         <Panel id="StatsLeft" class="ability-bar-side-pane">
           <Label id="StatsVim" style="color: white; text-align: left; margin-left: 20%; width: 80%; height: 20%; margin-top: 73%; font-size: 14px; text-shadow: 0px 0px 1px 1.0 #000000;">
@@ -106,6 +88,24 @@
           <Label id="LevelLabel" text="?" style="text-align: center; margin-left: 58%; width: 40%; height: 36%; margin-top: 44%; font-size: 36px; text-shadow: 0px 0px 3px 3.0 #FFFFFF;"/>
         </Panel>
         <Panel id="AbilityBarCenter" class="ability-bar-center flow-down">
+          <Panel id="AbilityBarLevelUps" class="flow-right" hittest="false">
+            <Button id="AbilityQlevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(0)">
+            </Button>
+            <Button id="AbilityWlevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(1)">
+            </Button>
+            <Button id="AbilityElevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(2)">
+            </Button>
+            <Button id="AbilityRlevelup" class="levelup-panel flow-down" onactivate="LevelupSpell(3)">
+            </Button>
+            <Button id="AbilitySpell1levelup" class="levelup-panel flow-down" onactivate="SpellBook(1)">
+            </Button>
+            <Button id="AbilitySpell2levelup" class="levelup-panel flow-down" onactivate="SpellBook(2)">
+            </Button>
+            <Button id="AbilitySpell3levelup" class="levelup-panel flow-down" onactivate="SpellBook(3)">
+            </Button>
+            <Button id="AbilityConsumablelevelup" class="levelup-panel flow-down" style="opacity:0.001;">
+            </Button>
+          </Panel>
           <Panel id="AbilityBarAbilities" class="flow-right">
             <Panel id="AbilityQ" class="ability-panel flow-down" onmouseover="AbilityMouseOver(0)" onmouseout="AbilityMouseExit(0)">
             </Panel>

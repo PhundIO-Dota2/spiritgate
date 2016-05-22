@@ -48,6 +48,18 @@
 		},
 		{
 			_class = "C_INIT_CreateWithinBox"
+			m_vecMin =
+			[
+				0.000000,
+				0.000000,
+				100.000000,
+			]
+			m_vecMax =
+			[
+				0.000000,
+				0.000000,
+				100.000000,
+			]
 		},
 	]
 	m_Emitters =

@@ -356,23 +356,20 @@ Update = function() {
   update_cooldown(Entities.GetAbilityByName(local_entity, "ability_universal_recall"), 8);
   update_cooldown(Entities.GetAbilityByName(local_entity, "ability_universal_ability_ward"), 9);
   $("#HealthBarProgress").style.width = Entities.GetHealthPercent(local_entity) + "%";
-  if (Entities.GetAbilityPoints(local_entity) > 0) {
-    $("#AbilityBarLevelUps").style.opacity = 1;
-    update_ability_levelup = function(ability_id) {
-      var ability, levelup_pane;
-      ability = Entities.GetAbility(local_entity, ability_id + (ability_id == 3 ? 3 : 0));
-      levelup_pane = $("#" + abilities[ability_id] + "levelup");
-      if (ability_id < 4 && Abilities.CanAbilityBeUpgraded(ability) === AbilityLearnResult_t.ABILITY_CAN_BE_UPGRADED) {
-        levelup_pane.enabled = true;
-      } else {
-        levelup_pane.enabled = false;
-      }
-    };
-    for (ability_id = n = 0; n <= 7; ability_id = ++n) {
-      update_ability_levelup(ability_id);
+  $("#AbilityBarLevelUps").style.opacity = 1;
+  update_ability_levelup = function(ability_id) {
+    var ability, levelup_pane;
+    ability = Entities.GetAbility(local_entity, ability_id + (ability_id == 3 ? 3 : 0));
+    levelup_pane = $("#" + abilities[ability_id] + "levelup");
+    if (ability_id < 4 && Entities.GetAbilityPoints(local_entity) > 0 && Abilities.CanAbilityBeUpgraded(ability) === AbilityLearnResult_t.ABILITY_CAN_BE_UPGRADED) {
+      levelup_pane.enabled = true;
+      levelup_pane.RemoveClass("disabled-levelup-pane");
+    } else {
+      levelup_pane.AddClass("disabled-levelup-pane");
     }
-  } else {
-    $("#AbilityBarLevelUps").style.opacity = 0;
+  };
+  for (ability_id = n = 0; n <= 6; ability_id = ++n) {
+    update_ability_levelup(ability_id);
   }
   UpdateAbilityLevel = function(ability_index) {
     var UpdateAbilityIndicator, indicator_index, o, p, results, results1;
