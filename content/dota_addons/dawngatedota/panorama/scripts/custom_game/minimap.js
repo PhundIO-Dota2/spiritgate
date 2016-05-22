@@ -1,4 +1,9 @@
-var map_size = 14336
+var map_size = 17500
+
+var MAX_Y = 0.84
+var MIN_Y = 0.0
+var MAX_X = 0.89
+var MIN_X = 0.075
 
 function getXOffset(panel) {
 	if(panel.GetParent() != null) {
@@ -17,17 +22,17 @@ function click_minimap() {
 	var cursor_x = GameUI.GetCursorPosition()[0]
 	var cursor_y = GameUI.GetCursorPosition()[1]
 
-	var map_relative_x = (cursor_x - getXOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutwidth
-	var map_relative_y = (cursor_y - getYOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutheight
+	var map_relative_x = Math.min(Math.max((cursor_x - getXOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutwidth, MIN_X), MAX_X)
+	var map_relative_y = Math.min(Math.max((cursor_y - getYOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutheight, MIN_Y), MAX_Y)
 
-	GameEvents.SendCustomGameEventToServer("MinimapMove", {x: map_relative_x, y: map_relative_y})
+	GameEvents.SendCustomGameEventToServer("MinimapMove", {x: map_relative_x * 1.055, y: map_relative_y * 1.055})
 }
 function right_click_minimap() {
 	var cursor_x = GameUI.GetCursorPosition()[0]
 	var cursor_y = GameUI.GetCursorPosition()[1]
 
-	var map_relative_x = (cursor_x - getXOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutwidth
-	var map_relative_y = (cursor_y - getYOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutheight
+	var map_relative_x = Math.min(Math.max((cursor_x - getXOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutwidth, MIN_X), MAX_X)
+	var map_relative_y = Math.min(Math.max((cursor_y - getYOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutheight, MIN_Y), MAX_Y)
 
 	var new_pos = [map_relative_x * map_size - map_size / 2, -map_relative_y * map_size + map_size / 2, 150]
 
@@ -35,7 +40,7 @@ function right_click_minimap() {
 	Particles.SetParticleControl(pid, 0, new_pos); 
 	Particles.SetParticleControl(pid, 1, [0, 255, 0]); 
 
-	GameEvents.SendCustomGameEventToServer("MinimapMovePlayer", {x: map_relative_x, y: map_relative_y})
+	GameEvents.SendCustomGameEventToServer("MinimapMovePlayer", {x: map_relative_x * 1.055, y: map_relative_y * 1.055})
 }
 
 var is_in_minimap = false;
@@ -81,8 +86,8 @@ function update_minimap() {
 	}
 
 	var camera_pos = Game.ScreenXYToWorld(Game.GetScreenWidth() / 2, Game.GetScreenHeight() / 2)
-	var relative_camera_x = (camera_pos[0] + map_size / 2) / map_size
-	var relative_camera_y = (camera_pos[1] + map_size / 2) / map_size
+	var relative_camera_x = Math.max(Math.min((camera_pos[0] + map_size / 2) / map_size, MAX_X), MIN_X)
+	var relative_camera_y = Math.max(Math.min((camera_pos[1] + map_size / 2) / map_size, MAX_Y), MIN_Y)
 	$("#MinimapCamera").style.marginLeft = (relative_camera_x * 100 - 10) + "%";
 	$("#MinimapCamera").style.marginTop = 100 - (relative_camera_y * 100 + 7) + "%";
 
