@@ -60,7 +60,7 @@
             "Target"            "CASTER"
         }
 		"FireSound" {
-			"EffectName"	"dawngatedota.cerulean_WhirlingStrike"
+			"EffectName"	"Spiritgate.DesertRaiderQ"
 			"Target"  		"CASTER"
 		}
     }
@@ -91,7 +91,6 @@
     }
 	 
 	"precache" {
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
         "particle"  "particles/kahgen_dust_devil/dust_devil_base.vpcf"
         "particle"  "particles/kahgen_dust_devil/dust_devil_debuff_base.vpcf"
 	}

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"aoe",
+				"isAoE"
+			],
+			[
 				"DAMAGE_TY",
 				"DAMAGE_TYPE_MAGICAL"
 			],
@@ -510,28 +514,16 @@
 			[
 				"dota_hero",
 				"npc_dota_hero_enigma"
-			],
-			[
-				"player",
-				"player_panel_bottom"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Gavin/Desktop/changelog.txt",
+			"file": "/C/Projects/SovietRogue/server.py",
 			"settings":
 			{
-				"buffer_size": 3054,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "game/dota_addons/dawngatedota/scripts/vscripts/deal_damage.lua",
-			"settings":
-			{
-				"buffer_size": 51687,
+				"buffer_size": 539,
 				"line_ending": "Windows"
 			}
 		}
@@ -583,23 +575,32 @@
 	"expanded_folders":
 	[
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/resource",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game"
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities"
 	],
 	"file_history":
 	[
+		"/C/Users/Gavin/Desktop/changelog.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/soundevents/shaper_sounds.vsndevts",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_desert_raider_dust_devil.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_desert_raider_quicksand.txt",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/addon_game_mode.lua",
+		"/C/Users/Gavin/AppData/Local/Temp/Temp1_230PassiveSkillTree.zip/230PassiveSkillTree.txt",
+		"/C/Users/Gavin/Desktop/Teardrops on my Guitar",
+		"/C/Users/Gavin/Desktop/PoESkillTree-Ascendancy-2.2.8/PoESkillTree/Data/Skilltree.txt",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/ability_bar_ui.xml",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/ability_bar_ui.js",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/bush_script.lua",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/ability_bar_ui.css",
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/deal_damage.lua",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/shop_ui.xml",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/shop_ui.css",
+		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/shop_ui.js",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/gamemode.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_pure_shaper_mark_of_consumption.txt",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/minimap.css",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/bush_script.lua",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/minimap.js",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/ancient_babysitter_reconfigure_lua.lua",
 		"/C/Program Files (x86)/Steam/steamapps/common/dota 2 beta/content/dota_addons/dawngatedota/tooltips_english.txt",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/deal_damage.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/pure_shaper_mark_of_consumption_lua.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/alpha_ravenous_pack_lua.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/resource/addon_english.txt",
@@ -607,17 +608,11 @@
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/heroes/npc_dawngate_hero_hell_devourer.txt",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/hero_selection.js",
 		"/C/Users/Gavin/Desktop/unparity",
-		"/C/Users/Gavin/Desktop/changelog.txt",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/hero_selection.css",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/hero_selection.xml",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_drain_lua.lua",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/ability_bar_ui.xml",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/ability_bar_ui.css",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/main_ui.xml",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/shop_ui.css",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/layout/custom_game/shop_ui.xml",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/styles/custom_game/main_ui.css",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/ability_bar_ui.js",
 		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/main_ui.js",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/items/duress_lua.lua",
 		"/C/Users/Gavin/Desktop/Dawngate to DoTA.txt",
@@ -641,7 +636,6 @@
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/test_script.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/mapscripts/spiritwell.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/resource/overviews/2v2_single_lane_jungle.txt",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/addon_game_mode.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/elegant_dancer_stance_dance_lua.lua",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/items/item_vibrance.txt",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/items/vibrance_lua.lua",
@@ -695,7 +689,6 @@
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_alpha_heart_eater.txt",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_inspired_shaper.txt",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/spiritgate_math_util.lua",
-		"/C/Projects/DoTA 2/dawngatedota/content/dota_addons/dawngatedota/panorama/scripts/custom_game/shop_ui.js",
 		"/C/ftb/FTBHorizonsII/minecraft/config/difficultlife.cfg",
 		"/C/Projects/DoTA 2/dawngatedota/launcher/src/.gitignore",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/ability_universal_recall.txt",
@@ -713,13 +706,7 @@
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/units/npc_well_worker.txt",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_wither.txt",
 		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/abilities/spell_wither_lua.lua",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/loadout/unique_passive_duelist.lua",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_drain.txt",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/consumable_vitality_potion.txt",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_blitz.txt",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_exceed.txt",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_tailwind.txt",
-		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/npc/abilities/spell_deflect.txt"
+		"/C/Projects/DoTA 2/dawngatedota/game/dota_addons/dawngatedota/scripts/vscripts/loadout/unique_passive_duelist.lua"
 	],
 	"find":
 	{
@@ -745,6 +732,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"activated",
+			"opacity",
+			"disabled",
+			"background-image",
+			"0px",
+			"text-shad",
+			"open",
+			"cost > Players.",
 			"== nil",
 			"is_ability",
 			"15800",
@@ -864,15 +859,7 @@
 			"\"\"\n",
 			"First cast",
 			"potency",
-			"barebones_spew",
-			"spew",
-			"resolut",
-			"deal_on_hit",
-			"ruin",
-			"conquest",
-			"retribution",
-			"ApplyDamage",
-			"target"
+			"barebones_spew"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -914,64 +901,32 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Gavin/Desktop/changelog.txt",
+					"file": "/C/Projects/SovietRogue/server.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3054,
+						"buffer_size": 539,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1151,
-								1151
+								181,
+								181
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Dota Reborn Package/dota-kv/dotaKV.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "game/dota_addons/dawngatedota/scripts/vscripts/deal_damage.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 51687,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								41445,
-								41445
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 14149.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

@@ -62,7 +62,7 @@
 
 	"OnSpellStart" {
 		"FireSound" {
-			"EffectName"	"Hero_Winter_Wyvern.ColdEmbrace.Cast"
+			"EffectName"	"Spiritgate.DesertRaiderW"
 			"Target"  		"CASTER"
 		}
 		"RunScript" {
@@ -77,7 +77,6 @@
 		}
     }
 	"precache" {
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
 		"particle"	"particles/kahgen_quicksand/quicksand_base.vpcf"
 		"particle"	"particles/kahgen_dust_devil/dust_devil_debuff_base.vpcf"
 	}
