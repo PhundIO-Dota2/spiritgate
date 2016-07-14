@@ -1,22 +1,16 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_ConstantColor =
-	[
-		130,
-		195,
-		255,
-		255,
-	]
-	m_flConstantRadius = 140.000000
-	m_Operators =
+	m_ConstantColor = [ 130, 195, 255, 255 ]
+	m_flConstantRadius = 140.0
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_MovementPlaceOnGround"
-			m_flOffset = 3.000000
-			m_flMaxTraceLength = 3.000000
-			m_flTolerance = 0.000000
-			m_flTraceOffset = 0.000000
+			m_flOffset = 3.0
+			m_flMaxTraceLength = 3.0
+			m_flTolerance = 0.0
+			m_flTraceOffset = 0.0
 		},
 		{
 			_class = "C_OP_PositionLock"
@@ -28,16 +22,23 @@
 		{
 			_class = "C_OP_FadeInSimple"
 		},
+		{
+			_class = "C_OP_OscillateScalarSimple"
+			m_Rate = 1.0
+			m_Frequency = 0.5
+		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
 			m_nOrientationType = 2
 			m_hTexture = resource:"materials/buffring/buffring.vtex"
+			m_flSelfIllumAmount = 1.0
+			m_flOverbrightFactor = 2.0
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinBox"
@@ -48,7 +49,7 @@
 			m_nAlphaMax = 170
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"

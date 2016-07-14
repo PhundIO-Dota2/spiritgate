@@ -1,1033 +1,1623 @@
-<!-- schema text {7e125a45-3d83-4043-b292-9e24f8ef27b4} generic {198980d8-3a93-4919-b4c6-dd1fb07a3a4b} -->
-CVModel CVModel_0
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-	CVmeshList m_meshList = CVmeshList
+	_class = "CVModel"
+	m_meshList = 
 	{
-		CVmesh[] m_meshList = 
+		m_meshList = 
 		[
-			CVmesh
 			{
-				string m_meshName = "zeri"
-				string m_meshFile = "models/heroes/zeri/zeri.smd"
-				string m_materialSearchPath = "materials/models/heroes/zeri/"
-				bool m_bSkinParentedObjects = true
-				bool m_bLegacySkinParentedTransforms = false
-				bool m_bExpensiveTangents = false
-				bool m_bExpensiveVertices = false
-				bool m_bIgnoreCloth = false
-				bool m_bGetSkinningFromLod0 = false
-				CVmorphInfo* m_pMorphInfo = NULL
-			}
+				m_meshName = "zeri"
+				m_meshFile = "models/heroes/zeri/zeri.smd"
+				m_materialSearchPath = "materials/models/heroes/zeri/"
+				m_bSkinParentedObjects = true
+				m_bLegacySkinParentedTransforms = false
+				m_bExpensiveTangents = false
+				m_bExpensiveVertices = false
+				m_bHighPrecisionTexCoords = false
+				m_bIgnoreCloth = false
+				m_bGetSkinningFromLod0 = false
+				m_pMorphInfo = null
+			},
 		]
 	}
-	CVClothProxyMeshList m_clothProxyMeshList = CVClothProxyMeshList
+	m_clothProxyMeshList = 
 	{
-		CVClothProxyMesh[] m_clothProxyMeshList = 
-		[
-			
-		]
-		float m_flClothEnableThreshold = 0.050000
-		bool m_bCreateStaticBone = false
-		int m_nMaxBonesPerVertex = 4
-		bool m_bRemoveUnusedBonesEnabled = false
-		bool m_bDriveMeshesWithBacksolvedJointsOnly = true
-		float m_flMatchProxiesToMeshes = 1.000000
-		float m_flReservedFloat = 0.000000
-		int m_nReservedInt = 0
-		bool m_bReservedBool1 = false
-		bool m_bReservedBool2 = false
-		bool m_bReservedBool3 = false
-		bool m_bReservedBool4 = false
+		_class = "CVClothProxyMeshList"
+		m_flClothEnableThreshold = 0.05
+		m_bCreateStaticBone = false
+		m_nMaxBonesPerVertex = 4
+		m_bRemoveUnusedBonesEnabled = false
+		m_bDriveMeshesWithBacksolvedJointsOnly = true
+		m_flMatchProxiesToMeshes = 1.0
+		m_flReservedFloat = 0.0
+		m_nReservedInt = 0
+		m_bReservedBool1 = false
+		m_bReservedBool2 = false
+		m_bReservedBool3 = false
+		m_bReservedBool4 = false
+		m_clothProxyMeshList = [  ]
 	}
-	CVphysicsMeshList m_physicsMeshList = CVphysicsMeshList
+	m_physicsMeshList = 
 	{
-		CVphysicsMesh[] m_meshList = 
-		[
-			
-		]
+		m_meshList = [  ]
 	}
-	CVmodelInfo* m_pModelInfo = NULL
-	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
+	m_pModelInfo = null
+	m_pBoneFlagList = 
 	{
-		CVBoneFlagList* m_pObject = NULL
-		string m_sFileName = ""
+		_class = "CVBoneFlagListReference"
+		m_pObject = null
 	}
-	CVhitBoxSetListReference[] m_pHitBoxSetLists = 
+	m_pHitBoxSetLists = 
 	[
-		CVhitBoxSetListReference
 		{
-			CVhitBoxSetList* m_pObject = &CVhitBoxSetList_0
-			string m_sFileName = ""
+			_class = "CVhitBoxSetListReference"
+			m_pObject = 
+			{
+				m_HitBoxSets = 
+				[
+					{
+						m_name = "default"
+						m_HitBoxes = 
+						[
+							{
+								m_name = "pelvis"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "pelvis"
+								m_vMinBounds = [ -17.969954, -14.057564, -13.188578 ]
+								m_vMaxBounds = [ 17.700953, 20.58017, 16.869207 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "spine1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "spine1"
+								m_vMinBounds = [ -11.981041, -2.578262, -10.641222 ]
+								m_vMaxBounds = [ 11.712048, 13.86808, 11.361414 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "spine2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "spine2"
+								m_vMinBounds = [ -18.583202, -6.327156, -9.574581 ]
+								m_vMaxBounds = [ 17.802555, 22.148743, 13.608082 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm_l_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm_l_1"
+								m_vMinBounds = [ -8.923166, -8.494386, -20.738579 ]
+								m_vMaxBounds = [ 11.74518, 34.02684, 5.585571 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm_r_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm_r_1"
+								m_vMinBounds = [ -10.120028, -7.430957, -17.924431 ]
+								m_vMaxBounds = [ 9.575085, 34.033848, 5.118073 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "neck"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "neck"
+								m_vMinBounds = [ -7.865662, -1.260086, -7.54749 ]
+								m_vMaxBounds = [ 7.462225, 7.312164, 7.493644 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm_l_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm_l_2"
+								m_vMinBounds = [ -6.252869, -5.566089, -5.921936 ]
+								m_vMaxBounds = [ 6.134451, 30.451664, 5.030441 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "arm_r_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "arm_r_2"
+								m_vMinBounds = [ -6.06, 0.019413, -5.901917 ]
+								m_vMaxBounds = [ 6.274594, 30.45874, 5.026688 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "head"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "head"
+								m_vMinBounds = [ -12.923301, -0.817077, -13.094141 ]
+								m_vMaxBounds = [ 12.725327, 16.946257, 12.186981 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l"
+								m_vMinBounds = [ -2.818333, -0.059818, -1.837296 ]
+								m_vMaxBounds = [ 3.516019, 6.766796, 0.985214 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r"
+								m_vMinBounds = [ -3.471335, 0.361977, -1.876587 ]
+								m_vMaxBounds = [ 2.820262, 7.188587, 1.012634 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_m_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_m_1"
+								m_vMinBounds = [ -1.67955, -2.348305, -4.862938 ]
+								m_vMaxBounds = [ 1.220612, 6.816376, 4.31089 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_mf_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_mf_1"
+								m_vMinBounds = [ -0.867498, -0.416878, -1.244507 ]
+								m_vMaxBounds = [ 1.042019, 1.416485, 0.376434 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_nf_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_nf_1"
+								m_vMinBounds = [ -0.76541, -0.605171, -1.372238 ]
+								m_vMaxBounds = [ 0.817312, 1.079865, 0.10881 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_ff_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_ff_1"
+								m_vMinBounds = [ -0.894791, -0.125484, -1.615311 ]
+								m_vMaxBounds = [ 0.917931, 1.359783, 0.091812 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_lf_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_lf_1"
+								m_vMinBounds = [ -1.17, -0.425331, -1.086014 ]
+								m_vMaxBounds = [ 0.770151, 0.977356, 0.293716 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_t_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_t_1"
+								m_vMinBounds = [ -1.033438, -1.678062, -1.710709 ]
+								m_vMaxBounds = [ 1.259737, 1.814892, 0.312195 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_mf_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_mf_1"
+								m_vMinBounds = [ -1.005892, 0.369167, -1.290237 ]
+								m_vMaxBounds = [ 0.960049, 2.031059, 0.419449 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_nf_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_nf_1"
+								m_vMinBounds = [ -0.706554, 0.397007, -1.270691 ]
+								m_vMaxBounds = [ 0.985977, 1.791672, 0.383408 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_ff_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_ff_1"
+								m_vMinBounds = [ -0.68676, 0.168068, -1.41748 ]
+								m_vMaxBounds = [ 1.201469, 1.573917, 0.391418 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_lf_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_lf_1"
+								m_vMinBounds = [ -0.927288, 0.170673, -1.142273 ]
+								m_vMaxBounds = [ 0.92757, 1.646313, 0.30545 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_t_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_t_1"
+								m_vMinBounds = [ -0.816536, -1.421757, -1.513641 ]
+								m_vMaxBounds = [ 1.592537, 2.118523, 0.593658 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "cape_back_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "cape_back_1"
+								m_vMinBounds = [ -7.653693, -8.206757, -3.478916 ]
+								m_vMaxBounds = [ 7.185347, 12.280434, 0.713196 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_1"
+								m_vMinBounds = [ -10.618534, -9.292961, -0.79969 ]
+								m_vMaxBounds = [ 9.562325, 16.848984, 7.458076 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_l1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_l1"
+								m_vMinBounds = [ -9.294374, -9.980988, -2.442101 ]
+								m_vMaxBounds = [ 11.7932, 14.768486, 9.876648 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_r1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_r1"
+								m_vMinBounds = [ -1.609688, -9.370399, -9.27857 ]
+								m_vMaxBounds = [ 10.041618, 14.686188, 12.164309 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_back_l1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_back_l1"
+								m_vMinBounds = [ -5.539116, -9.524887, -10.790169 ]
+								m_vMaxBounds = [ 3.243881, 11.62207, 9.970989 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_back_r1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_back_r1"
+								m_vMinBounds = [ -10.892765, -7.860703, -5.187904 ]
+								m_vMaxBounds = [ 9.414907, 12.819756, 4.124237 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "leg_l_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "leg_l_1"
+								m_vMinBounds = [ -8.50709, 3.592049, -9.25478 ]
+								m_vMaxBounds = [ 9.335398, 45.919941, 10.568317 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "leg_r_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "leg_r_1"
+								m_vMinBounds = [ -9.173913, 3.587082, -9.254781 ]
+								m_vMaxBounds = [ 8.66858, 45.914978, 10.568315 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_back_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_back_1"
+								m_vMinBounds = [ -15.526015, -0.36161, -4.220505 ]
+								m_vMaxBounds = [ 15.257014, 19.863083, 1.670586 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "brush_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "brush_1"
+								m_vMinBounds = [ -12.209278, -98.80069, -11.8484 ]
+								m_vMaxBounds = [ 12.220428, 77.722778, 11.06694 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_l_long_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_l_long_1"
+								m_vMinBounds = [ -1.012859, -0.133316, -3.847614 ]
+								m_vMaxBounds = [ 1.49054, 7.430862, 2.2467 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_r_long_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_r_long_1"
+								m_vMinBounds = [ -2.475308, 0.048538, -1.437599 ]
+								m_vMaxBounds = [ 3.595847, 7.465073, 1.063248 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_m_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_m_2"
+								m_vMinBounds = [ -1.155323, -1.095123, -4.494904 ]
+								m_vMaxBounds = [ 1.626369, 5.297676, 2.708893 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_mf_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_mf_2"
+								m_vMinBounds = [ -0.843463, -0.373924, -0.960312 ]
+								m_vMaxBounds = [ 0.866497, 2.042408, 0.30574 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_nf_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_nf_2"
+								m_vMinBounds = [ -0.452408, -0.5028, -1.029129 ]
+								m_vMaxBounds = [ 0.525815, 1.640053, 0.086975 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_ff_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_ff_2"
+								m_vMinBounds = [ -0.656811, -0.124512, -1.181442 ]
+								m_vMaxBounds = [ 0.795271, 2.32938, 0.022873 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_lf_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_lf_2"
+								m_vMinBounds = [ -0.775101, -0.342613, -0.940536 ]
+								m_vMaxBounds = [ 0.574146, 1.610172, 0.173126 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_t_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_t_2"
+								m_vMinBounds = [ -0.49741, -0.76453, -1.145859 ]
+								m_vMaxBounds = [ 0.874866, 1.599745, 0.079483 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_mf_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_mf_2"
+								m_vMinBounds = [ -0.733202, 0.108776, -0.861618 ]
+								m_vMaxBounds = [ 0.754206, 2.531624, 0.31308 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_nf_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_nf_2"
+								m_vMinBounds = [ -0.639622, 0.32592, -0.926437 ]
+								m_vMaxBounds = [ 0.505707, 2.651505, 0.262115 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_ff_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_ff_2"
+								m_vMinBounds = [ -0.598888, -0.197365, -1.069519 ]
+								m_vMaxBounds = [ 0.84152, 4.558277, 0.184158 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_lf_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_lf_2"
+								m_vMinBounds = [ -0.725056, -0.003033, -0.912903 ]
+								m_vMaxBounds = [ 0.603832, 1.939934, 0.225342 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_t_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_t_2"
+								m_vMinBounds = [ -0.238308, 0.398632, -0.733231 ]
+								m_vMaxBounds = [ 0.749493, 1.692932, 0.199997 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "cape_back_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "cape_back_2"
+								m_vMinBounds = [ -11.907091, -4.472153, -5.353285 ]
+								m_vMaxBounds = [ 11.062506, 18.260948, 0.495958 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_2"
+								m_vMinBounds = [ -11.855417, -5.409561, -1.168438 ]
+								m_vMaxBounds = [ 10.652777, 17.318588, 9.548897 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_l2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_l2"
+								m_vMinBounds = [ -10.735048, -3.717865, -7.087204 ]
+								m_vMaxBounds = [ 17.539257, 14.420532, 11.324291 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_r2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_r2"
+								m_vMinBounds = [ -5.591248, -3.628822, -11.038578 ]
+								m_vMaxBounds = [ 11.219498, 14.842674, 18.31213 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_l2.001"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_l2.001"
+								m_vMinBounds = [ -9.768898, -5.823349, -16.293158 ]
+								m_vMaxBounds = [ 8.803268, 15.25869, 11.112776 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_back_r2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_back_r2"
+								m_vMinBounds = [ -15.569702, -5.731194, -9.495838 ]
+								m_vMaxBounds = [ 10.177361, 15.365181, 10.422874 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bow"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bow"
+								m_vMinBounds = [ -19.210976, -0.961531, -11.960503 ]
+								m_vMaxBounds = [ 20.311665, 13.928099, 2.172066 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "leg_l_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "leg_l_2"
+								m_vMinBounds = [ -4.956612, -1.275002, -6.555821 ]
+								m_vMaxBounds = [ 4.887594, 43.097172, 5.997159 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "leg_r_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "leg_r_2"
+								m_vMinBounds = [ -4.726073, -1.277515, -6.555826 ]
+								m_vMaxBounds = [ 5.118145, 43.094658, 5.997189 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_back_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_back_2"
+								m_vMinBounds = [ -10.827826, -3.817261, -4.299194 ]
+								m_vMaxBounds = [ 10.558827, 25.511299, 1.276451 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_l_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_l_1"
+								m_vMinBounds = [ -9.463024, -17.64444, -14.32761 ]
+								m_vMaxBounds = [ 0.295498, 9.255371, 12.392344 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_r_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_r_1"
+								m_vMinBounds = [ -0.525608, -16.934898, -14.327616 ]
+								m_vMaxBounds = [ 9.232922, 9.355377, 12.39234 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "brush_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "brush_2"
+								m_vMinBounds = [ -9.083626, 0.306427, -9.388138 ]
+								m_vMaxBounds = [ 9.165806, 18.518158, 8.087273 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "eye_size_l"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "eye_size_l"
+								m_vMinBounds = [ -1.575161, -0.749115, -0.788291 ]
+								m_vMaxBounds = [ 1.115941, 1.665924, 0.624768 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "eye_size_r"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "eye_size_r"
+								m_vMinBounds = [ -1.628556, -0.7491, -0.788286 ]
+								m_vMaxBounds = [ 1.062549, 1.665939, 0.624771 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_b_l"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_b_l"
+								m_vMinBounds = [ -2.690228, 1.171679, -3.560394 ]
+								m_vMaxBounds = [ 3.158226, 10.797222, 3.020401 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_b_r"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_b_r"
+								m_vMinBounds = [ -2.990387, 0.249512, -3.341507 ]
+								m_vMaxBounds = [ 3.716507, 10.73584, 2.737366 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_l_long_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_l_long_2"
+								m_vMinBounds = [ -2.128456, -0.09053, -0.908054 ]
+								m_vMaxBounds = [ 1.767265, 7.566086, 0.648668 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_r_long_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_r_long_2"
+								m_vMinBounds = [ -0.974505, -0.09053, -1.993551 ]
+								m_vMaxBounds = [ 0.301435, 7.566086, 1.947742 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hair_m_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hair_m_3"
+								m_vMinBounds = [ -0.61121, -2.793193, -1.647095 ]
+								m_vMaxBounds = [ 0.555794, 1.377201, 1.101761 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "eye_low_l"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "eye_low_l"
+								m_vMinBounds = [ -1.495867, -1.030884, -1.033981 ]
+								m_vMaxBounds = [ 2.924604, 2.844876, 2.995148 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "eye_low_r"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "eye_low_r"
+								m_vMinBounds = [ -2.351007, -1.030883, -1.033981 ]
+								m_vMaxBounds = [ 2.069463, 2.844878, 2.995148 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_mf_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_mf_3"
+								m_vMinBounds = [ -0.58301, -0.231995, -0.788559 ]
+								m_vMaxBounds = [ 0.682171, 2.929985, 0.13942 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_nf_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_nf_3"
+								m_vMinBounds = [ -0.491929, -0.558754, -0.759842 ]
+								m_vMaxBounds = [ 0.45977, 2.056717, 0.117767 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_ff_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_ff_3"
+								m_vMinBounds = [ -0.393505, -0.022064, -0.834381 ]
+								m_vMaxBounds = [ 0.676983, 2.428391, 0.019318 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_lf_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_lf_3"
+								m_vMinBounds = [ -0.585241, 0.087616, -0.733566 ]
+								m_vMaxBounds = [ 0.381042, 1.821964, 0.039566 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_l_t_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_l_t_3"
+								m_vMinBounds = [ -0.23156, -0.022182, -0.602386 ]
+								m_vMaxBounds = [ 0.653591, 1.414669, -0.003906 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_mf_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_mf_3"
+								m_vMinBounds = [ -0.581236, -0.11618, -0.810928 ]
+								m_vMaxBounds = [ 0.668358, 3.05344, 0.16478 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_nf_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_nf_3"
+								m_vMinBounds = [ -0.547115, -0.066643, -0.727402 ]
+								m_vMaxBounds = [ 0.386412, 2.55278, 0.16011 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_ff_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_ff_3"
+								m_vMinBounds = [ -0.460598, -0.099819, -0.866531 ]
+								m_vMaxBounds = [ 0.605452, 2.362003, -0.004059 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_lf_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_lf_3"
+								m_vMinBounds = [ -0.579453, 0.238792, -0.725235 ]
+								m_vMaxBounds = [ 0.379036, 1.954433, 0.056671 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "hand_r_t_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "hand_r_t_3"
+								m_vMinBounds = [ -0.218178, 0.281559, -0.590973 ]
+								m_vMaxBounds = [ 0.566589, 1.718418, 0.147507 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "cape_back_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "cape_back_3"
+								m_vMinBounds = [ -13.935324, -3.470779, -4.301724 ]
+								m_vMaxBounds = [ 13.564924, 9.141426, 0.019751 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_3"
+								m_vMinBounds = [ -14.558815, -4.323456, -0.084664 ]
+								m_vMaxBounds = [ 14.108871, 8.074455, 4.569613 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_l3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_l3"
+								m_vMinBounds = [ -13.708099, -4.796349, -5.058216 ]
+								m_vMaxBounds = [ 18.189663, 8.00325, 8.188356 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_r3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_r3"
+								m_vMinBounds = [ -7.469521, -4.738594, -12.098446 ]
+								m_vMaxBounds = [ 9.194672, 8.072075, 17.6024 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_front_l3.001"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_front_l3.001"
+								m_vMinBounds = [ -11.47047, -6.476173, -15.007717 ]
+								m_vMaxBounds = [ 10.783836, 8.981262, 10.998581 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "poncho_back_r3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "poncho_back_r3"
+								m_vMinBounds = [ -16.420391, -6.42086, -9.675819 ]
+								m_vMaxBounds = [ 12.028065, 9.045425, 9.011391 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bow_l"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bow_l"
+								m_vMinBounds = [ -5.44722, 5.493553, -4.050575 ]
+								m_vMaxBounds = [ 6.857599, 20.161558, 5.9674 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "bow_r"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "bow_r"
+								m_vMinBounds = [ -5.684797, 6.538311, -4.199081 ]
+								m_vMaxBounds = [ 6.937891, 19.032349, 6.688461 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "leg_l_4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "leg_l_4"
+								m_vMinBounds = [ -4.784864, -5.596664, -4.4199 ]
+								m_vMaxBounds = [ 4.463844, 15.413532, 1.719244 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "leg_r_4"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "leg_r_4"
+								m_vMinBounds = [ -4.302312, -5.596622, -4.419878 ]
+								m_vMaxBounds = [ 4.946402, 15.413574, 1.719223 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_back_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_back_3"
+								m_vMinBounds = [ -21.572927, -10.679108, -10.002169 ]
+								m_vMaxBounds = [ 21.303919, 24.39164, 1.035912 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_l_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_l_2"
+								m_vMinBounds = [ -7.152077, -2.758987, -11.82041 ]
+								m_vMaxBounds = [ 0.054928, 15.933231, 12.624866 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_r_2"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_r_2"
+								m_vMinBounds = [ -0.304344, -2.473221, -11.820416 ]
+								m_vMaxBounds = [ 6.902649, 15.960468, 12.624866 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "dress_front_1"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "dress_front_1"
+								m_vMinBounds = [ -20.928335, -11.145088, -7.562304 ]
+								m_vMaxBounds = [ 21.19734, 25.631721, 1.30064 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+							{
+								m_name = "brush_3"
+								m_sSurfaceProperty = ""
+								m_nGroupId = 0
+								m_sBoneName = "brush_3"
+								m_vMinBounds = [ -8.935322, 0.514404, -8.595959 ]
+								m_vMaxBounds = [ 9.017494, 25.177521, 7.29509 ]
+								m_bTranslationOnly = false
+								m_cRenderColor = [ 0, 0, 0, 0 ]
+							},
+						]
+					},
+				]
+				m_AutoCreateSetName = ""
+			}
+		},
+	]
+	m_pAttachmentLists = 
+	[
+		{
+			_class = "CVattachmentListReference"
+			m_pObject = 
+			{
+				m_name = ""
+				m_attachments = 
+				[
+					{
+						m_name = "attach_attack1"
+						m_influences = 
+						[
+							{
+								m_influenceName = "brush_2"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+					{
+						m_name = "attach_hitloc"
+						m_influences = 
+						[
+							{
+								m_influenceName = "spine1"
+								m_vTranslationOffset = [ 0.0, 0.0, 0.0 ]
+								m_vRotationOffset = [ 0.0, 0.0, 0.0 ]
+								m_flWeight = 1.0
+								m_bRoot = false
+							},
+						]
+					},
+				]
+			}
+		},
+	]
+	m_pAnimGroup = 
+	{
+		_class = "CVanimGroupReference"
+		m_pObject = 
+		{
+			m_Name = ""
+			m_pReferenceSkeleton = 
+			{
+				_class = "CVReferenceSkeletonReference"
+				m_pObject = null
+			}
+			m_pBoneFlagList = 
+			{
+				_class = "CVBoneFlagListReference"
+				m_pObject = null
+			}
+			m_pSeqGroup = 
+			{
+				_class = "CVseqGroupReference"
+				m_pObject = null
+			}
+			m_pAnimGroups = [  ]
+			m_Vanim = 
+			[
+				{
+					m_Animationname = "zeri_walk"
+					m_Filepath = "models/heroes/zeri/zeri_walk.smd"
+					m_nStartframe = 0
+					m_nEndframe = 29
+					m_flFps = 25.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = true
+						m_nSmoothLoopStart = 1
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_RUN"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.5
+						m_flFadeOutTime = 0.5
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_idle_rare"
+					m_Filepath = "models/heroes/zeri/zeri_idle.smd"
+					m_nStartframe = 0
+					m_nEndframe = 200
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 1
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE_RARE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_idle"
+					m_Filepath = "models/heroes/zeri/zeri_idle.smd"
+					m_nStartframe = 250
+					m_nEndframe = 300
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_IDLE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_attack1"
+					m_Filepath = "models/heroes/zeri/zeri_attack1.smd"
+					m_nStartframe = 0
+					m_nEndframe = 30
+					m_flFps = 35.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.5
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_attack2"
+					m_Filepath = "models/heroes/zeri/zeri_attack2.smd"
+					m_nStartframe = 0
+					m_nEndframe = 30
+					m_flFps = 35.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_ATTACK2"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.5
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_stunned"
+					m_Filepath = "models/heroes/zeri/zeri_stunned.smd"
+					m_nStartframe = 0
+					m_nEndframe = 58
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = true
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_DISABLED"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_ability1"
+					m_Filepath = "models/heroes/zeri/zeri_ability1.smd"
+					m_nStartframe = 0
+					m_nEndframe = 24
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_1"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_ability3"
+					m_Filepath = "models/heroes/zeri/zeri_ability3.smd"
+					m_nStartframe = 0
+					m_nEndframe = 20
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_3"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_ability4"
+					m_Filepath = "models/heroes/zeri/zeri_ability4.smd"
+					m_nStartframe = 0
+					m_nEndframe = 30
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_CAST_ABILITY_4"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_death"
+					m_Filepath = "models/heroes/zeri/zeri_death.smd"
+					m_nStartframe = 0
+					m_nEndframe = 38
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_DIE"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+				{
+					m_Animationname = "zeri_death_special"
+					m_Filepath = "models/heroes/zeri/zeri_death.smd"
+					m_nStartframe = 0
+					m_nEndframe = 38
+					m_flFps = 30.0
+					m_Loop = 
+					{
+						m_bLoop = false
+						m_bSmoothLoop = false
+						m_nSmoothLoopStart = 0
+						m_nSmoothLoopEnd = 0
+						m_StartLoop = 
+						{
+							_class = "CVAnimCmdStartLoop"
+							m_bEnabled = false
+							m_nLoopRestart = 0
+						}
+					}
+					m_bHidden = false
+					m_bDisable = false
+					m_Activities = 
+					[
+						{
+							m_Name = "ACT_DOTA_DIE_SPECIAL"
+							m_nWeight = 1
+						},
+					]
+					m_AnimationEvents = [  ]
+					m_MotionFrames = [  ]
+					m_pIkRules = [  ]
+					m_pAlignAnimation = null
+					m_adjustAnimation = 
+					{
+						m_translation = [ 0.0, 0.0, 0.0 ]
+						m_rotation = [ 0.0, 0.0, 0.0 ]
+					}
+					m_Keywords = [  ]
+					m_sequenceParams = 
+					{
+						m_flFadeInTime = 0.2
+						m_flFadeOutTime = 0.2
+					}
+					m_folderName = ""
+					m_MotionFramesRootBone = ""
+				},
+			]
+			m_sScripts = [  ]
+			m_folderNames = [  ]
 		}
-	]
-	CVattachmentListReference[] m_pAttachmentLists = 
-	[
-		CVattachmentListReference
+	}
+	m_pMaterialGroupList = 
+	{
+		_class = "CVNodeMaterialGroupListReference"
+		m_pObject = 
 		{
-			CVattachmentList* m_pObject = &CVattachmentList_0
-			string m_sFileName = ""
-		}
-	]
-	CVanimGroupReference[] m_pAnimGroups = 
-	[
-		CVanimGroupReference
-		{
-			CVanimGroup* m_pObject = &CVanimGroup_0
-			string m_sFileName = ""
-		}
-	]
-	CVNodeMaterialGroupListReference m_pMaterialGroupList = CVNodeMaterialGroupListReference
-	{
-		NodeMaterialGroupList_t* m_pObject = &NodeMaterialGroupList_t_0
-		string m_sFileName = ""
-	}
-	CVMeshGroupListReference m_pMeshGroupList = CVMeshGroupListReference
-	{
-		MeshGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVLODGroupListReference m_pLodGroupList = CVLODGroupListReference
-	{
-		LODGroupList_t* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVpropBreakableListReference m_pPropBreakableList = CVpropBreakableListReference
-	{
-		CVpropBreakableList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVpropDataListReference m_pPropDataList = CVpropDataListReference
-	{
-		CVpropDataList* m_pObject = NULL
-		string m_sFileName = ""
-	}
-	CVConstraintListReference[] m_pConstraintLists = 
-	[
-		
-	]
-	string m_collision = ""
-	string m_softbody = ""
-	string m_sMDLFilename = ""
-	string[] m_sOffsetHitboxSets = 
-	[
-		
-	]
-	float(3) m_vHitboxSetOffset = ( 0.000000, 0.000000, 0.000000 )
-	string[] m_scriptFiles = 
-	[
-		
-	]
-	CVMaterialRemapList* m_pMaterialRemapList = NULL
-	float m_flFbxScale = 1.000000
-	float m_flQCScale = 1.000000
-	float(3) m_vOrigin = ( 0.000000, 0.000000, 0.000000 )
-	CVPsf* m_pvPsf = NULL
-	string m_keyValueText = ""
-	bool m_bStaticProp = false
-	bool m_bEnableClothProcessing = true
-	float m_flClothEnableThreshold = 0.050000
-	int m_nMaxClothVertsPerMesh = 2048
-	bool m_bBuildClothBoneHierarchy = false
-	symbol m_nNavType = AUTH_NAV_MESH
-	bool m_bMakeUniqueVMeshes = false
-	bool m_bMakeImplicitBindPoseSequence = false
-	bool m_bAdjustSkeletonFromBoneFlags = false
-}
-
-CVhitBoxSetList CVhitBoxSetList_0
-{
-	CVhitBoxSet[] m_HitBoxSets = 
-	[
-		CVhitBoxSet
-		{
-			string m_name = "default"
-			CVhitBox[] m_HitBoxes = 
+			m_materialGroups = 
 			[
-				CVhitBox
 				{
-					string m_name = "spine1"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "spine1"
-					float(3) m_vMinBounds = ( -15.307319, -8.862480, -11.186352 )
-					float(3) m_vMaxBounds = ( 15.547839, 27.780472, 13.885654 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
+					m_name = "default"
+					m_materialList = 
+					[
+						"materials/models/heroes/zeri/material.vmat",
+					]
 				},
-				CVhitBox
-				{
-					string m_name = "spine3"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "spine3"
-					float(3) m_vMinBounds = ( -15.902199, -9.749718, -8.606890 )
-					float(3) m_vMaxBounds = ( 18.115574, 19.420500, 13.320475 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "leg_l1"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "leg_l1"
-					float(3) m_vMinBounds = ( -11.551989, 0.372201, -4.752718 )
-					float(3) m_vMaxBounds = ( 11.897955, 40.555161, 12.058100 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "leg_r1"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "leg_r1"
-					float(3) m_vMinBounds = ( -11.500907, -0.572398, -10.614695 )
-					float(3) m_vMaxBounds = ( 11.546556, 35.157036, 4.964441 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "hand_l3"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "hand_l3"
-					float(3) m_vMinBounds = ( -3.845333, -3.908566, -1.293030 )
-					float(3) m_vMaxBounds = ( 3.979806, 4.966015, 1.295685 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "hand_r3"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "hand_r3"
-					float(3) m_vMinBounds = ( -4.754269, -3.441032, -2.092957 )
-					float(3) m_vMaxBounds = ( 4.698830, 7.438087, 3.320969 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "brush1"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "brush1"
-					float(3) m_vMinBounds = ( -4.420387, -4.097168, -4.368396 )
-					float(3) m_vMaxBounds = ( 3.692928, 124.310822, 2.749711 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "leg_l2"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "leg_l2"
-					float(3) m_vMinBounds = ( -8.004508, -9.001984, -7.167991 )
-					float(3) m_vMaxBounds = ( 7.322140, 36.107304, 8.904797 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "leg_r2"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "leg_r2"
-					float(3) m_vMinBounds = ( -7.250141, -9.004784, -7.162407 )
-					float(3) m_vMaxBounds = ( 8.074547, 36.104496, 8.908722 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "head"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "head"
-					float(3) m_vMinBounds = ( -12.145114, -6.574814, -10.632120 )
-					float(3) m_vMaxBounds = ( 12.428926, 21.818123, 15.167322 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "leg_l3"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "leg_l3"
-					float(3) m_vMinBounds = ( -3.407432, -5.495573, -4.460971 )
-					float(3) m_vMaxBounds = ( 3.460104, 9.416660, 1.783583 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				},
-				CVhitBox
-				{
-					string m_name = "leg_r3"
-					string m_sSurfaceProperty = ""
-					int m_nGroupId = 0
-					string m_sBoneName = "leg_r3"
-					float(3) m_vMinBounds = ( -3.476497, -5.491833, -1.783795 )
-					float(3) m_vMaxBounds = ( 3.391037, 9.420400, 4.460767 )
-					uint(4) m_cRenderColor = ( 0, 0, 0, 0 )
-				}
 			]
 		}
-	]
-}
-
-CVattachmentList CVattachmentList_0
-{
-	string m_name = ""
-	CVattachment[] m_attachments = 
-	[
-		CVattachment
-		{
-			string m_name = "attach_hitloc"
-			CVattachmentInfluence[] m_influences = 
-			[
-				CVattachmentInfluence
-				{
-					string m_influenceName = "spine1"
-					float(3) m_vTranslationOffset = ( 0.000000, 0.000000, 0.000000 )
-					float(3) m_vRotationOffset = ( 0.000000, 0.000000, 0.000000 )
-					float m_flWeight = 1.000000
-					bool m_bRoot = false
-				}
-			]
-		},
-		CVattachment
-		{
-			string m_name = "attach_attack1"
-			CVattachmentInfluence[] m_influences = 
-			[
-				CVattachmentInfluence
-				{
-					string m_influenceName = "brush1"
-					float(3) m_vTranslationOffset = ( -0.000031, 138.952179, 0.000000 )
-					float(3) m_vRotationOffset = ( 0.000000, 0.000012, 0.000003 )
-					float m_flWeight = 1.000000
-					bool m_bRoot = false
-				}
-			]
-		}
-	]
-}
-
-CVanimGroup CVanimGroup_0
-{
-	string m_Name = "default"
-	CVReferenceSkeletonReference m_pReferenceSkeleton = CVReferenceSkeletonReference
-	{
-		CVReferenceSkeleton* m_pObject = NULL
-		string m_sFileName = ""
 	}
-	CVBoneFlagListReference m_pBoneFlagList = CVBoneFlagListReference
+	m_pMeshGroupList = 
 	{
-		CVBoneFlagList* m_pObject = NULL
-		string m_sFileName = ""
+		_class = "CVMeshGroupListReference"
+		m_pObject = null
 	}
-	CVseqGroupReference m_pSeqGroup = CVseqGroupReference
+	m_pLodGroupList = 
 	{
-		CVseqGroup* m_pObject = NULL
-		string m_sFileName = ""
+		_class = "CVLODGroupListReference"
+		m_pObject = null
 	}
-	CVanimGroupReference[] m_pAnimGroups = 
-	[
-		CVanimGroupReference
-		{
-			CVanimGroup* m_pObject = NULL
-			string m_sFileName = ""
-		}
-	]
-	CVanim[] m_Vanim = 
-	[
-		CVanim
-		{
-			string m_Animationname = "zeri_idle"
-			string m_Filepath = "models/heroes/zeri/zeri_idle.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 60
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = true
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_IDLE"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_walk"
-			string m_Filepath = "models/heroes/zeri/zeri_walk.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 30
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = true
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_RUN"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				CMotionFrame
-				{
-					int m_nFrame = 0
-					bool m_bExtractTX = true
-					bool m_bExtractTY = true
-					bool m_bExtractTZ = false
-					bool m_bExtractRX = false
-					bool m_bExtractRY = false
-					bool m_bExtractRZ = false
-					bool m_bDiscardTX = false
-					bool m_bDiscardTY = false
-					bool m_bDiscardTZ = false
-					bool m_bDiscardRX = false
-					bool m_bDiscardRY = false
-					bool m_bDiscardRZ = false
-				}
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_attack1"
-			string m_Filepath = "models/heroes/zeri/zeri_attack1.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 15
-			float m_flFps = 20.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_ATTACK"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				CMotionFrame
-				{
-					int m_nFrame = 0
-					bool m_bExtractTX = true
-					bool m_bExtractTY = true
-					bool m_bExtractTZ = false
-					bool m_bExtractRX = false
-					bool m_bExtractRY = false
-					bool m_bExtractRZ = false
-					bool m_bDiscardTX = false
-					bool m_bDiscardTY = false
-					bool m_bDiscardTZ = false
-					bool m_bDiscardRX = false
-					bool m_bDiscardRY = false
-					bool m_bDiscardRZ = false
-				}
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_attack2"
-			string m_Filepath = "models/heroes/zeri/zeri_attack2.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 15
-			float m_flFps = 20.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_ATTACK2"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				CMotionFrame
-				{
-					int m_nFrame = 0
-					bool m_bExtractTX = true
-					bool m_bExtractTY = true
-					bool m_bExtractTZ = false
-					bool m_bExtractRX = false
-					bool m_bExtractRY = false
-					bool m_bExtractRZ = false
-					bool m_bDiscardTX = false
-					bool m_bDiscardTY = false
-					bool m_bDiscardTZ = false
-					bool m_bDiscardRX = false
-					bool m_bDiscardRY = false
-					bool m_bDiscardRZ = false
-				}
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_cast1"
-			string m_Filepath = "models/heroes/zeri/zeri_cast1.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 20
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_CAST_ABILITY_1"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_cast2"
-			string m_Filepath = "models/heroes/zeri/zeri_cast2.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 18
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_CAST_ABILITY_2"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_cast3"
-			string m_Filepath = "models/heroes/zeri/zeri_cast3.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 15
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_CAST_ABILITY_3"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_cast4"
-			string m_Filepath = "models/heroes/zeri/zeri_cast4.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 25
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_CAST_ABILITY_4"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_disabled"
-			string m_Filepath = "models/heroes/zeri/zeri_disabled.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 28
-			float m_flFps = 15.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = true
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_DISABLED"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_flail"
-			string m_Filepath = "models/heroes/zeri/zeri_flail.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 15
-			float m_flFps = 30.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_FLAIL"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		},
-		CVanim
-		{
-			string m_Animationname = "zeri_death"
-			string m_Filepath = "models/heroes/zeri/zeri_death.smd"
-			int m_nStartframe = 0
-			int m_nEndframe = 53
-			float m_flFps = 20.000000
-			CAnimationLoop m_Loop = CAnimationLoop
-			{
-				bool m_bLoop = false
-				bool m_bSmoothLoop = false
-				int m_nSmoothLoopStart = 0
-				int m_nSmoothLoopEnd = 0
-				CVAnimCmdStartLoop m_StartLoop = CVAnimCmdStartLoop
-				{
-					bool m_bEnabled = false
-					int m_nLoopRestart = 0
-				}
-			}
-			bool m_bHidden = false
-			CActivity[] m_Activities = 
-			[
-				CActivity
-				{
-					string m_Name = "ACT_DOTA_DIE"
-					int m_nWeight = 1
-				}
-			]
-			CAnimationEvent[] m_AnimationEvents = 
-			[
-				
-			]
-			CMotionFrame[] m_MotionFrames = 
-			[
-				CMotionFrame
-				{
-					int m_nFrame = 0
-					bool m_bExtractTX = true
-					bool m_bExtractTY = true
-					bool m_bExtractTZ = false
-					bool m_bExtractRX = false
-					bool m_bExtractRY = false
-					bool m_bExtractRZ = false
-					bool m_bDiscardTX = false
-					bool m_bDiscardTY = false
-					bool m_bDiscardTZ = false
-					bool m_bDiscardRX = false
-					bool m_bDiscardRY = false
-					bool m_bDiscardRZ = false
-				}
-			]
-			CIKrule*[] m_pIkRules = 
-			[
-				
-			]
-			CAlignAnimation* m_pAlignAnimation = NULL
-			CAdjustAnimation m_adjustAnimation = CAdjustAnimation
-			{
-				float(3) m_translation = ( 0.000000, 0.000000, 0.000000 )
-				float(3) m_rotation = ( 0.000000, 0.000000, 0.000000 )
-			}
-			string[] m_Keywords = 
-			[
-				
-			]
-			CVAnimResourceSequenceParams m_sequenceParams = CVAnimResourceSequenceParams
-			{
-				float m_flFadeInTime = 0.200000
-				float m_flFadeOutTime = 0.200000
-			}
-		}
-	]
-	string[] m_sScripts = 
-	[
-		
-	]
-}
-
-NodeMaterialGroupList_t NodeMaterialGroupList_t_0
-{
-	NodeMaterialGroup_t[] m_materialGroups = 
-	[
-		NodeMaterialGroup_t
-		{
-			string m_name = "default"
-			string[] m_materialList = 
-			[
-				"materials/models/heroes/zeri/material.vmat"
-			]
-		}
-	]
+	m_pPropBreakableList = 
+	{
+		_class = "CVpropBreakableListReference"
+		m_pObject = null
+	}
+	m_pPropDataList = 
+	{
+		_class = "CVpropDataListReference"
+		m_pObject = null
+	}
+	m_pConstraintLists = [  ]
+	m_collision = ""
+	m_softbody = ""
+	m_sMDLFilename = ""
+	m_sOffsetHitboxSets = [  ]
+	m_vHitboxSetOffset = [ 0.0, 0.0, 0.0 ]
+	m_scriptFiles = [  ]
+	m_pMaterialRemapList = null
+	m_flFbxScale = 1.0
+	m_flQCScale = 1.0
+	m_vOrigin = [ 0.0, 0.0, 0.0 ]
+	m_pPsfList = null
+	m_keyValueText = ""
+	m_bStaticProp = false
+	m_bEnableClothProcessing = true
+	m_flClothEnableThreshold = 0.05
+	m_nMaxClothVertsPerMesh = 2048
+	m_bBuildClothBoneHierarchy = false
+	m_nNavType = "AUTH_NAV_MESH"
+	m_bMakeUniqueVMeshes = false
+	m_bMakeImplicitBindPoseSequence = false
+	m_bAdjustSkeletonFromBoneFlags = false
+	m_pAnimGroups = [  ]
 }
