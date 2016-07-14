@@ -1,9 +1,9 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_flConstantRadius = 15.000000
-	m_flConstantLifespan = 0.300000
-	m_Children =
+	m_flConstantRadius = 15.0
+	m_flConstantLifespan = 0.3
+	m_Children = 
 	[
 		{
 			m_ChildRef = resource:"particles/spell_vanquish/vanquish_explosion.vpcf"
@@ -12,35 +12,25 @@
 			m_ChildRef = resource:"particles/spell_vanquish/vanquish_dots.vpcf"
 		},
 	]
-	m_Operators =
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
-			[
-				0.000000,
-				0.000000,
-				-6000.000000,
-			]
+			m_Gravity = [ 0.0, 0.0, -15000.0 ]
 		},
 		{
 			_class = "C_OP_Decay"
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndTime = 1.500000
-			m_flEndScale = 4.000000
+			m_flEndTime = 1.5
+			m_flEndScale = 6.0
+			m_flStartScale = 0.0
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade =
-			[
-				255,
-				255,
-				0,
-				255,
-			]
-			m_flFadeStartTime = 0.500000
+			m_ColorFade = [ 255, 255, 0, 255 ]
+			m_flFadeStartTime = 0.5
 		},
 		{
 			_class = "C_OP_FadeInSimple"
@@ -52,55 +42,36 @@
 			_class = "C_OP_PositionLock"
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
-			_class = "C_OP_RenderSprites"
-			m_flSelfIllumAmount = 1.000000
-			m_hTexture = resource:"materials/particle/particle_glow_04.vtex"
+			_class = "C_OP_RenderRopes"
+			m_nMaxTesselation = 255
+			m_flTessScale = 0.0
+			m_flTextureVWorldSize = 155.0
+			m_flSelfIllumAmount = 1.0
+			m_hTexture = resource:"materials/particle/beam_jagged_04.vtex"
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinBox"
-			m_vecMin =
-			[
-				0.000000,
-				0.000000,
-				300.000000,
-			]
-			m_vecMax =
-			[
-				0.000000,
-				0.000000,
-				300.000000,
-			]
+			m_vecMin = [ 0.0, 0.0, 700.0 ]
+			m_vecMax = [ 0.0, 0.0, 700.0 ]
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
-			[
-				255,
-				144,
-				16,
-				255,
-			]
-			m_ColorMax =
-			[
-				255,
-				128,
-				0,
-				255,
-			]
+			m_ColorMin = [ 255, 144, 16, 255 ]
+			m_ColorMax = [ 255, 128, 0, 255 ]
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmissionDuration = 0.250000
-			m_flEmitRate = 50.000000
+			m_flEmissionDuration = 0.25
+			m_flEmitRate = 50.0
 		},
 	]
 }

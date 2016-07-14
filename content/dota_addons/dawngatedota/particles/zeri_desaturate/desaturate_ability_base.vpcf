@@ -1,16 +1,16 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_flConstantRadius = 90.000000
-	m_flConstantLifespan = 0.500000
-	m_Operators =
+	m_flConstantRadius = 90.0
+	m_flConstantLifespan = 0.5
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
 		},
 		{
 			_class = "C_OP_Spin"
-			m_nSpinRateDegrees = 90
+			m_nSpinRateDegrees = 5
 		},
 		{
 			_class = "C_OP_FadeInSimple"
@@ -21,15 +21,21 @@
 		{
 			_class = "C_OP_Decay"
 		},
+		{
+			_class = "C_OP_PositionLock"
+		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_hTexture = resource:"materials/particle/brood_web.vtex"
+			m_hTexture = resource:"materials/particle/water_splash/water_splash.vtex"
+			m_flAnimationRate = 1.0
+			m_flSelfIllumAmount = 1.0
+			m_bDisableZBuffering = true
 		},
 	]
-	m_Initializers =
+	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomRotation"
@@ -39,25 +45,31 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
-			[
-				0.000000,
-				0.000000,
-				100.000000,
-			]
-			m_OffsetMax =
-			[
-				0.000000,
-				0.000000,
-				100.000000,
-			]
+			m_OffsetMin = [ 0.0, 0.0, 100.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 100.0 ]
+		},
+		{
+			_class = "C_INIT_RandomScalar"
+			m_flMin = 130.0
+			m_flMax = 200.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 100
+			m_nAlphaMax = 200
 		},
 	]
-	m_Emitters =
+	m_Emitters = 
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 5
+			m_nParticlesToEmit = 3
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/zeri_desaturate/desaturate_debuff.vpcf"
 		},
 	]
 }
