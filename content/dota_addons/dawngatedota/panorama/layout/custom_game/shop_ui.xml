@@ -49,7 +49,10 @@
           </Panel>
         </Panel>
         <Panel id="ShopBottom" class="flow-right">
-          <Label style="margin-left: 4px;" text="Double click to buy and sell"/>
+          <Panel id="ShopBottomLeftText" class="flow-down" style="margin-left: 8px;">
+            <Label text="Double click to buy and sell"/>
+            <Label id="VimLabel"/>
+          </Panel>
           <Panel id="CurrentInventoryPanel" class="flow-right" style="width: 70%; height: 100%;">
             <Panel id="InventoryItem1" class="current_inventory_item even-space-horiz fill-height">
             </Panel>

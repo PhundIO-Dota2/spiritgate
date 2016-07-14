@@ -468,6 +468,7 @@ OnUpdateInventory();
 
 function tick_update() {
   UpdateItemCosts()
+  $("#VimLabel").text = "Vim: " + Players.GetGold(Players.GetLocalPlayer())
   $.Schedule(0.25, tick_update)
 }
 
