@@ -135,7 +135,7 @@ function update_hud_icons() {
 	$("#PlayerInfoShaperPassive").SetImage("file://{images}/custom_game/spellicons/" + Abilities.GetAbilityTextureName(passive_ability_id) + ".png")
 
 	var heroname = Entities.GetUnitName(local_pid_hero)
-	if(heroname == "npc_dota_hero_rattletrap" || heroname == "npc_dota_hero_undying") {
+	if(heroname == "npc_dota_hero_rattletrap" || heroname == "npc_dota_hero_undying" || heroname == "npc_dota_hero_spectre") {
 		if ($("#PlayerInfoAvatarImage") != null) {
 			$("#PlayerInfoAvatarImage").DeleteAsync(0)
 			var new_hero_panel = $("#PlayerInfoAvatar").BLoadLayoutFromString('<root><Panel><DOTAScenePanel style="width:100%; height:100%;" map="' + heroname.replace("npc_dota_hero", "npc_hero") + '" camera="camera1"/></Panel></root>', false, false)
