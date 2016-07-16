@@ -40,7 +40,7 @@
 		{
 			_class = "C_INIT_RandomScalar"
 			m_flMin = 15.0
-			m_flMax = 35.0
+			m_flMax = 65.0
 		},
 		{
 			_class = "C_INIT_RandomRotation"
@@ -62,4 +62,5 @@
 			_class = "C_OP_ContinuousEmitter"
 		},
 	]
+	m_flConstantRadius = 15.0
 }
