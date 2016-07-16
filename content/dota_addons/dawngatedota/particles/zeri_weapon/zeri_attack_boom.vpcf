@@ -12,45 +12,48 @@
 			_class = "C_OP_Decay"
 		},
 		{
-			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 0.0
-		},
-		{
-			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 136, 13, 109, 255 ]
-		},
-		{
 			_class = "C_OP_FadeOutSimple"
-			m_flFadeOutTime = 0.5
 		},
 	]
 	m_Renderers = 
 	[
 		{
-			_class = "C_OP_RenderRopes"
-			m_nMaxTesselation = 7
-			m_flTextureVWorldSize = 100.0
-			m_bFitCycleToLifetime = true
-			m_flSelfIllumAmount = 1.0
-			m_hTexture = resource:"materials/particle/beam_blood_03.vtex"
+			_class = "C_OP_RenderSprites"
+			m_flAnimationRate = 1.75
+			m_hTexture = resource:"materials/particle/water/splash.vtex"
+		},
+		{
+			_class = "C_OP_RenderSprites"
+			m_flAnimationRate = 1.75
+			m_hTexture = resource:"materials/particle/water_splash/water_splash.vtex"
 		},
 	]
 	m_Initializers = 
 	[
 		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 255, 26, 98, 255 ]
+			m_ColorMax = [ 143, 9, 132, 255 ]
+		},
+		{
 			_class = "C_INIT_CreateWithinSphere"
 			m_nControlPointNumber = 3
 		},
 		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 255, 33, 103, 255 ]
-			m_ColorMax = [ 63, 39, 46, 255 ]
+			_class = "C_INIT_RandomScalar"
+			m_flMin = 35.0
+			m_flMax = 80.0
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 0.25
+			m_flEmitRate = 15.0
 		},
 	]
 }
