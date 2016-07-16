@@ -1109,6 +1109,7 @@ function deal_damage_heal(caster, target, amount, power_ratio, health_ratio)
     if heal_total >= 0.1 then
         local pid = ParticleManager:CreateParticle("particles/healed/healed_base.vpcf", PATTACH_CUSTOMORIGIN, nil)
         ParticleManager:SetParticleControl(pid, 0, target:GetAbsOrigin())
+        ParticleManager:SetParticleControl(pid, 1, Vector(math.min(heal_total * 2 / target:GetMaxHealth() * 100, 100), 0, 0))
     end
     
 
