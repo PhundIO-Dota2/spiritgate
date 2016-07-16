@@ -1,18 +1,12 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_flConstantRadius = 25.0
-	m_flConstantLifespan = 0.0
+	m_flConstantRadius = 15.0
+	m_flConstantLifespan = 0.25
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/zeri_weapon/zeri_attack_effects1.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/zeri_weapon/zeri_attack_effects2.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/zeri_weapon/zeri_attack_boom.vpcf"
+			m_ChildRef = resource:"particles/parasite/parasite_auto_boom1.vpcf"
 			m_bEndCap = true
 		},
 	]
@@ -26,11 +20,10 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 3.0
+			m_flStartScale = 3.0
 		},
 		{
 			_class = "C_OP_Decay"
-			m_nOpEndCapState = 1
 		},
 		{
 			_class = "C_OP_MaxVelocity"
@@ -38,44 +31,38 @@
 			m_nOverrideCP = 2
 		},
 		{
-			_class = "C_OP_SetChildControlPoints"
-			m_nFirstControlPoint = 3
-			m_bSetOrientation = true
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 1.0
 		},
 	]
 	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_flSelfIllumAmount = 1.0
 			m_hTexture = resource:"materials/particle/particle_glow_02.vtex"
+		},
+		{
+			_class = "C_OP_RenderSprites"
+			m_flSelfIllumAmount = 1.0
+			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white_v3.vtex"
 		},
 	]
 	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
+			m_nControlPointNumber = 3
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 255, 29, 89, 255 ]
-			m_ColorMax = [ 57, 29, 59, 255 ]
+			m_ColorMin = [ 123, 216, 255, 255 ]
+			m_ColorMax = [ 103, 144, 255, 255 ]
 		},
 	]
 	m_Emitters = 
 	[
 		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 2
-		},
-	]
-	m_ForceGenerators = 
-	[
-		{
-			_class = "C_OP_AttractToControlPoint"
-			m_fForceAmount = 1000000.0
-			m_fFalloffPower = 0.0
-			m_nControlPointNumber = 1
+			_class = "C_OP_ContinuousEmitter"
 		},
 	]
 }

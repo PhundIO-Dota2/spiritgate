@@ -6,6 +6,9 @@
 	m_Children = 
 	[
 		{
+			m_ChildRef = resource:"particles/parasite/parasite_fire_ball.vpcf"
+		},
+		{
 			m_ChildRef = resource:"particles/parasite/parasite_auto_boom1.vpcf"
 			m_bEndCap = true
 		},
