@@ -1010,7 +1010,7 @@ function deal_on_hit(caster, target, ability, damage_type)
 end
 
 function should_propogate_on_hit(ability)
-    return ability:GetAbilityName() == "ability_universal_ability" or ability == "FATE"
+    return ability == nil or ability:GetAbilityName() == "ability_universal_ability" or ability == "FATE"
 end
 
 function is_ability(ability)
@@ -1107,11 +1107,10 @@ function deal_damage_heal(caster, target, amount, power_ratio, health_ratio)
     end
 
     if heal_total >= 0.1 then
-        local pid = ParticleManager:CreateParticle("particles/healed/healed_base.vpcf", PATTACH_CUSTOMORIGIN, nil)
-        ParticleManager:SetParticleControl(pid, 0, target:GetAbsOrigin())
+        local pid = ParticleManager:CreateParticle("particles/healed/healed_base.vpcf", PATTACH_POINT, target)
+        ParticleManager:SetParticleControlEnt(pid, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
         ParticleManager:SetParticleControl(pid, 1, Vector(math.min(heal_total * 2 / target:GetMaxHealth() * 100, 100), 0, 0))
     end
-    
 
     target:Heal(heal_total, caster)
 end
