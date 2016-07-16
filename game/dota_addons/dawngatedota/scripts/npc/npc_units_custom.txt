@@ -9,7 +9,7 @@
 	    "HealthBarOffset"       "475"
 	
 	    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
-	    "RingRadius"            "205"
+	    "RingRadius"            "100"
 	
 	    "VisionDaytimeRange"    "1400"
 	    "VisionNighttimeRange"  "1400"
