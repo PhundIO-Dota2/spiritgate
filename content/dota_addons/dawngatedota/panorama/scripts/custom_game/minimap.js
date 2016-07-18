@@ -25,7 +25,9 @@ function click_minimap() {
 	var map_relative_x = Math.min(Math.max((cursor_x - getXOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutwidth, MIN_X), MAX_X)
 	var map_relative_y = Math.min(Math.max((cursor_y - getYOffset($("#MinimapPanel"))) / $("#MinimapPanel").actuallayoutheight, MIN_Y), MAX_Y)
 
-	GameEvents.SendCustomGameEventToServer("MinimapMove", {x: map_relative_x * 1.055, y: map_relative_y * 1.055})
+	GameUI.SetCameraTargetPosition([map_relative_x * 1.055 * map_size - map_size / 2, -map_relative_y * 1.055 * map_size + map_size / 2, 0], 0.15)
+
+	//GameEvents.SendCustomGameEventToServer("MinimapMove", {x: map_relative_x * 1.055, y: map_relative_y * 1.055})
 }
 function right_click_minimap() {
 	var cursor_x = GameUI.GetCursorPosition()[0]
