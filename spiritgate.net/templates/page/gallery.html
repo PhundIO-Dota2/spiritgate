@@ -1,7 +1,7 @@
 <div class="row">
 	Some screenshots are not representative of the current version of the mod.
 	{% set files = glob("static/image/screenshots/*.*") %}
-	{{ files.reverse() }}
+	{{ files.reverse() or "" }}
 	{% for file in files %}
 		<div class="col-xs-6">
 			<a class="thumbnail" href="{{file}}">
