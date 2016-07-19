@@ -1,4 +1,0 @@
-hxcpp=3.2.205
-hxcpp_api_level=321
-no_console=1
-hxcpp=C:\HaxeToolkit\haxelib/hxcpp/3,2,205/
