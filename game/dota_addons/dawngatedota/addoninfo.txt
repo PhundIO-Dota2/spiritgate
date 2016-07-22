@@ -79,10 +79,10 @@
             "Command"   "+SpiritgateAbilityWard"
             "Name"      "SpiritgateAbilityWard"
         }
-        "13" {
-            "Key"       "enter"
-            "Command"   "+SpiritgateSelectChat"
-            "Name"      "SpiritgateSelectChat"
-        }
+        //"13" {
+        //    "Key"       "enter"
+        //    "Command"   "+SpiritgateSelectChat"
+        //    "Name"      "SpiritgateSelectChat"
+        //}
     }
 }
