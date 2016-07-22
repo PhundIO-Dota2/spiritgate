@@ -7,6 +7,7 @@ local binding_names = {
 	"binding_good_4",
 	"binding_good_5",
 	"binding_good_6",
+
 	"binding_bad_1",
 	"binding_bad_2",
 	"binding_bad_3",
@@ -21,6 +22,7 @@ local binding_teams = {
 	DOTA_TEAM_GOODGUYS,
 	DOTA_TEAM_GOODGUYS,
 	DOTA_TEAM_GOODGUYS,
+
 	DOTA_TEAM_BADGUYS,
 	DOTA_TEAM_BADGUYS,
 	DOTA_TEAM_BADGUYS,
@@ -28,8 +30,27 @@ local binding_teams = {
 	DOTA_TEAM_BADGUYS,
 	DOTA_TEAM_BADGUYS,
 }
+local binding_invulnerability_reliance = { --The binding will become destroyable after the binding with the name is destroyed.
+	4,
+	3,
+	nil,
+	nil,
+	1,
+	2,
 
-function CreateBinding(name, team) 
+	nil,
+	nil,
+	8,
+	7,
+	10,
+	9,
+}
+
+local bindings = {
+	
+}
+
+function CreateBinding(name, team, reliance) 
 	local binding_spawner = Entities:FindByName(nil, name)
 	if binding_spawner == nil then
 		print("Could not find binding spawner: " .. name)
@@ -37,6 +58,12 @@ function CreateBinding(name, team)
 	end
 
 	local binding = CreateUnitByName("npc_binding", binding_spawner:GetAbsOrigin(), false, nil, nil, team)
+	bindings[#bindings + 1] = binding
+
+	if reliance ~= nil then
+		binding:AddNewModifier(caster, nil, "modifier_invulnerable", {})
+	end
+
 	binding:SetHullRadius(195)
 	binding:SetAbsOrigin(GetGroundPosition(binding:GetAbsOrigin(), binding))
 	if string.find(name, "bad") then
@@ -55,16 +82,16 @@ function CreateBinding(name, team)
 	binding.fire_cooldown = 0.25
 	binding.target = nil
 
-	Timers:CreateTimer(function() return TickBinding(binding, team) end)
+	Timers:CreateTimer(function() return TickBinding(binding, team, reliance) end)
 	Timers:CreateTimer(function()
 		if binding:IsNull() or not binding:IsAlive() then return end
 
-		AddFOWViewer(DOTA_TEAM_GOODGUYS, binding:GetAbsOrigin(), 10, 0.25, true)
-		AddFOWViewer(DOTA_TEAM_BADGUYS, binding:GetAbsOrigin(), 10, 0.25, true)
-		return 0.24
+		AddFOWViewer(DOTA_TEAM_GOODGUYS, binding:GetAbsOrigin(), 10, 1, true)
+		AddFOWViewer(DOTA_TEAM_BADGUYS, binding:GetAbsOrigin(), 10, 1, true)
+		return 1
 	end)
 end
-function TickBinding(binding, team)
+function TickBinding(binding, team, reliance)
 	if binding:IsNull() or not binding:IsAlive() then 
 		if binding.laser_pid then
 			ParticleManager:DestroyParticle(binding.laser_pid, true)
@@ -154,9 +181,13 @@ function TickBinding(binding, team)
 			binding.laser_pid = nil
 		end
 	end
+
+	if reliance ~= nil and bindings[reliance]:IsNull() then
+	  binding:RemoveModifierByName("modifier_invulnerable")
+    end
 	return 1 / 30
 end
 
 for i=1, #binding_names do
-	CreateBinding(binding_names[i], binding_teams[i])
+	CreateBinding(binding_names[i], binding_teams[i], binding_invulnerability_reliance[i])
 end
